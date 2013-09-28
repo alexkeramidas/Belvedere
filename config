@@ -5,6 +5,7 @@
 	symlinks = false
 	ignorecase = true
 	hideDotFiles = dotGitOnly
+	autocrlf = true
 [remote "origin"]
 	url = git@github.com:alexkeramidas/Belvedere.git
 	fetch = +refs/*:refs/*
