@@ -2,8 +2,8 @@
 %html
     %head
         %title BelvedereGit
-        %link{href: "application.css"}
-        %script{href: "application.js"}
+        = stylesheet_link_tag "application"
+        = javascript_include_tag "application"
         
     %body
         = yield
