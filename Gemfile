@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-#Ruby version declaration
+#Ruby version
 ruby '1.9.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem 'bootstrap-sass'
 
 # Use postgresql as the database for Active Record
 gem 'pg'

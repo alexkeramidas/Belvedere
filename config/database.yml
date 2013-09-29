@@ -56,7 +56,9 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: Belvedere_production
+  database: dfpf5kmq39mr72
   pool: 5
-  username: Belvedere_git
-  password:
+  username: qitjibqjzsedhf
+  password: nqKQx7TbBC2uLpAeFnM_u_BuH0
+  host: ec2-54-228-235-149.eu-west-1.compute.amazonaws.com
+  port: 5432
