@@ -4,6 +4,8 @@
         %title BelvedereGit
         = stylesheet_link_tag "application"
         = javascript_include_tag "application"
-        
+
     %body
+        = link_to "home", root_url
+        = link_to "about", about_url
         = yield
