@@ -22,10 +22,10 @@ p, ol, ul, td {
 }
 
 a {
-    color: #fff;
+    color: #f5f4e6;
   
     &:visited {
-        color: #fff;
+        color: #f5f4e6;
     }
   
     &:hover {
@@ -34,9 +34,8 @@ a {
 }
 
 #top-menu, #bottom-menu {
-    background-color: #B80033;
+    background-color: rgba(184, 0, 51, .9);
     border-top: 1px solid #B4808F;
-    opacity: .8;
     
     position: fixed;
     padding: 0;
@@ -67,7 +66,7 @@ a {
                     text-decoration: none;
             
                     &:before {
-                        color: #fff;
+                        color: #f5f4e6;
                     }
                 }
                 
@@ -118,7 +117,7 @@ a {
         position: relative;
         
         &:hover {
-            color: #fff;
+            color: #f5f4e6;
             text-decoration: none;
             
             &:before {
