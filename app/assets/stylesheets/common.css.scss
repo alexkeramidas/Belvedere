@@ -1,0 +1,6 @@
+@import "bootstrap";
+
+html {
+  background: image-url('bg.jpg') no-repeat center center fixed;
+  @include background-size(cover);
+}
