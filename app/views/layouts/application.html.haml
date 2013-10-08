@@ -6,6 +6,19 @@
         = javascript_include_tag "application"
 
     %body
-        = link_to "home", root_url
-        = link_to "about", about_url
-        = yield
+        #top-menu
+            .content.clearfix
+                = link_to root_url do
+                    = image_tag "logo.png"
+                %div
+                    = link_to "The Hotel", about_url
+                    = link_to "Accommodation", root_url
+                    = link_to "Services", root_url
+                    = link_to "Location", root_url
+                    = link_to "News-Offers", articles_url
+        #page-body
+            = yield
+        #bottom-menu
+            .content.clearfix
+                = link_to "CONTACT", root_url
+                = link_to "PHOTO GALLERY", root_url
