@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-#Ruby version
+# Ruby version
 ruby '1.9.3'
 
 gem 'rails', '4.0.0'
+
+# Use Twitter Bootstrap for SASS
 gem 'bootstrap-sass'
 
 # Use postgresql as the database for Active Record
@@ -18,8 +20,13 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# Use HAML for .html.haml views
 gem 'haml'
+# Scaffolding also uses HAML
 gem 'haml-rails'
+
+# Use Decorators instead of Helpers
+gem 'draper', '~> 1.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
