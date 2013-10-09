@@ -22,3 +22,16 @@
             .content.clearfix
                 = link_to "CONTACT", root_url
                 = link_to "PHOTO GALLERY", root_url
+        
+        = javascript_include_tag '/assets/jquery.mCustomScrollbar.js'
+        :javascript
+            (function($){
+                $(window).load(function(){
+                    $(".scrollable").mCustomScrollbar({
+                        scrollButtons:{
+                            enable:true
+                        },
+                        theme:"dark"
+                    });
+                });
+            })(jQuery);
