@@ -1,0 +1,36 @@
+.about {
+    height: 100%;
+    padding: 50px;
+    background-color: rgba(245, 206, 146, .40);
+
+    .content{
+        background: #927f6d;
+        background-color: rgba(146, 127, 109, .90);
+        padding: 30px 50px;
+        border-radius: 20px;
+        width: 270px;
+        word-wrap: break-word;
+        box-shadow: rgba(0,0,0,1) 2px 2px 10px;
+
+        h1{
+            font-family: 'Century Gothic';
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+
+        h2{
+            font-family: 'Century Gothic';
+            color: #000;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+
+            &.title{
+                color: #e99924;
+                font-weight: normal;
+                margin-top: 25px;
+            }
+        }
+    }
+}
