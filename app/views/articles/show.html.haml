@@ -1,22 +1,20 @@
 %p#notice= notice
 %p
-  %strong Title:
-  = @article.title
+    %strong Title:
+    = @article.title
 %p
-  %strong Description:
-  = @article.description
+    %strong Description:
+    = @article.description
 %p
-  %strong Visible:
-  = @article.visible
+    %strong Visible:
+    = @article.visible
 %p
-  %strong Created at:
-  = @article.created_at
+    %strong Created at:
+    = @article.created_at
 %p
-  %strong Last edit:
-  = @article.last_edit
+    %strong Last edit:
+    = @article.last_edit
 %p
-  %strong Article type:
-  = @article.article_type
-= link_to 'Edit', edit_article_path(@article)
-|
+    %strong Article type:
+    = @article.article_type
 = link_to 'Back', articles_path
