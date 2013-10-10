@@ -1,11 +1,18 @@
 !!! html
-%html
+%html{data: {bg: "'#{image_url('bg1.jpg')}','#{image_url('bg2.jpg')}','#{image_url('bg3.jpg')}','#{image_url('bg4.jpg')}'"}}
     %head
         %title BelvedereGit
         = stylesheet_link_tag "application"
         = javascript_include_tag "application"
 
     %body
+        :javascript
+            jQuery(function() {
+                window.$M = new (BelvedereGit.#{params[:controller]} || BelvedereGit.Base)(#{@bootstrap_data});
+                if (typeof $M['#{params[:action]}'] === 'function') {
+                    return $M['#{params[:action]}'].call();
+                }
+            });
         #top-menu
             .content.clearfix
                 = link_to root_url do
@@ -22,16 +29,3 @@
             .content.clearfix
                 = link_to "CONTACT", root_url
                 = link_to "PHOTO GALLERY", root_url
-        
-        = javascript_include_tag 'jquery.mCustomScrollbar.concat.min'
-        :javascript
-            (function($){
-                $(document).ready(function(){
-                    $(".scrollable").mCustomScrollbar({
-                        scrollButtons:{
-                            enable:true
-                        },
-                        theme:"dark"
-                    });
-                });
-            })(jQuery);

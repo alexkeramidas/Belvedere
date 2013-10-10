@@ -1,4 +1,14 @@
 @import "bootstrap";
+    
+::selection {
+    background: #efb7a7;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #efb7a7;
+    color: #fff;
+}
 
 html {
     height: 100%;
