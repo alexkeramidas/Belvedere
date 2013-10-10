@@ -1,3 +1,55 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.articles {
+    margin: 50px;
+
+    h1 {
+        color: #e99924;
+        display: table;
+        background-color: rgba(184, 0, 51, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h2 {
+        padding-left: 20px;
+        color: #e99924;
+    }
+
+    .posts {
+        background: #e99924;
+        background-color: rgba(146, 127, 109, .9);
+        border-radius: 20px;
+
+        .post {
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        .date {
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        .show {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: rgba(184, 0, 51, 0.9);
+            display: table;
+            text-transform: uppercase;
+            font-weight: bolder;
+
+            a {
+                text-decoration: none;
+                color: #e99924;
+            }
+
+            a:visited {
+                color: #e99924;
+            }
+        }
+
+        &:last-child {
+            padding-bottom: 30px;
+        }
+    }
+}

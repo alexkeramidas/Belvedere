@@ -1,23 +1,8 @@
-%h1 Listing articles
-%table
-    %thead
-        %tr
-            %th Title
-            %th Description
-            %th Visible
-            %th Created at
-            %th Article type
-            %th
-            %th
-            %th
-    %tbody
+.articles
+    %h1 Belvedere Hotel News
+    .posts
         - @articles.each do |article|
-            %tr
-                %td= article.title
-                %td= article.description
-                %td= article.visible
-                %td= article.created_at
-                %td= article.article_type
-                %td= link_to 'Show', article
-                %td= link_to 'Edit', edit_article_path(article)
-                %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
+            %h2= article.title
+            .post= article.description
+            %details.date= article.created_at
+            %p.show= link_to 'Show', article
