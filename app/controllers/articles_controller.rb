@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     # GET /articles/1.json
     def show
     end
-    
+
     #################
     # TO BE DELETED #
     #################
@@ -68,9 +68,9 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-        params.require(:article).permit(:title, :description, :visible, :created_at, :last_edit, :article_type)
+        params.require(:article).permit(:title, :description, :visible, :created_at, :article_type)
     end
-    
+
     #################
 
     # Use callbacks to share common setup or constraints between actions.

@@ -6,7 +6,6 @@
             %th Description
             %th Visible
             %th Created at
-            %th Last edit
             %th Article type
             %th
             %th
@@ -18,7 +17,6 @@
                 %td= article.description
                 %td= article.visible
                 %td= article.created_at
-                %td= article.last_edit
                 %td= article.article_type
                 %td= link_to 'Show', article
                 %td= link_to 'Edit', edit_article_path(article)
