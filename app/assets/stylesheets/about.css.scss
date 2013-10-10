@@ -3,7 +3,7 @@
     min-height: 100%;
     max-height: 100%;
     display: table-cell;
-    background-color: rgba(245, 206, 146, .40);
+    background-color: rgba(245, 226, 146, .2);
     padding: 50px;
     overflow: hidden;
 
@@ -14,7 +14,7 @@
         min-height: 370px;
         max-height: 570px;
         background: #927f6d;
-        background-color: rgba(146, 127, 109, .90);
+        background-color: rgba(146, 127, 109, .9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 20px;
     }
@@ -35,7 +35,7 @@
         }
 
         h1 {
-            font-family: 'Century Gothic';
+            font-family: 'Century Gothic', verdana, arial, helvetica, sans-serif;
             font-weight: bold;
             font-size: 25px;
             line-height: 25px;
@@ -44,7 +44,7 @@
         }
 
         h2 {
-            font-family: 'Century Gothic';
+            font-family: 'Century Gothic', verdana, arial, helvetica, sans-serif;
             color: #000;
             font-weight: bold;
             font-size: 18px;
