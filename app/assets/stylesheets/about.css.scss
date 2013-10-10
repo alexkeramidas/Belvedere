@@ -25,7 +25,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        margin: 35px 50px;
+        margin: 35px 40px 35px 50px;
         word-wrap: break-word;
         overflow: hidden;
         
@@ -39,7 +39,8 @@
             font-weight: bold;
             font-size: 25px;
             line-height: 25px;
-            margin-bottom: 15px;
+            margin: 0;
+            padding-bottom: 15px;
         }
 
         h2 {
@@ -48,11 +49,13 @@
             font-weight: bold;
             font-size: 18px;
             line-height: 18px;
+            margin: 0;
+            padding-bottom: 5px;
 
             &.title {
                 color: #e99924;
                 font-weight: normal;
-                margin-top: 20px;
+                padding-top: 20px;
             }
         }
     }
