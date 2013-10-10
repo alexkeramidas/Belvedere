@@ -26,7 +26,7 @@
         = javascript_include_tag '/assets/jquery.mCustomScrollbar.concat.min.js'
         :javascript
             (function($){
-                $(window).load(function(){
+                $(document).ready(function(){
                     $(".scrollable").mCustomScrollbar({
                         scrollButtons:{
                             enable:true
