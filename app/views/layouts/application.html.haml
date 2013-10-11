@@ -15,7 +15,7 @@
             });
         
         - @bg_list.each_with_index do |img, i|
-            .bg-img{id: "bg#{i+1}", style: "background-image: url('#{image_url(img[:filename])}'); display: '#{img[:default] ? 'block' : 'none'}'"}
+            .bg-img{id: "bg#{i+1}", style: "background-image: url('#{image_url(img[:filename])}'); display: #{img[:default] ? 'block' : 'none'}"}
         
         #page-wrapper
             #page-content

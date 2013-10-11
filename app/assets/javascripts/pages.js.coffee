@@ -6,10 +6,3 @@ class BelvedereGit.pages extends BelvedereGit.Base
         super
 
         this
-
-
-    home: () ->
-        changeBackground = ->
-            window.bgoffs = 0  if window.bgoffs >= bg_list.length
-            jQuery('html').css 'background-image', ->
-                "url(#{bg_list[window.bgoffs++]})"
