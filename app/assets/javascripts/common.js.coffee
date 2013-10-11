@@ -7,5 +7,12 @@ class BelvedereGit.Base
         # Put your general code here. Don't worry about document ready since this
         # code will only be called once the document is ready
         
+        $(".scrollable").mCustomScrollbar({
+            scrollButtons:{
+                enable:true
+            },
+            theme:"dark"
+        });
+
         # MAKE SURE YOU RETURN this
         this

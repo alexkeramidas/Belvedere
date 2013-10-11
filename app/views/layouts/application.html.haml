@@ -1,5 +1,5 @@
 !!! html
-%html{data: {bg: "'#{image_url('bg1.jpg')}','#{image_url('bg2.jpg')}','#{image_url('bg3.jpg')}','#{image_url('bg4.jpg')}'"}}
+%html
     %head
         %title BelvedereGit
         = stylesheet_link_tag "application"
@@ -13,19 +13,27 @@
                     return $M['#{params[:action]}'].call();
                 }
             });
-        #top-menu
-            .content.clearfix
-                = link_to root_url do
-                    = image_tag "logo.png"
-                %div
-                    = link_to "The Hotel", about_url
-                    = link_to "Accommodation", root_url
-                    = link_to "Services", root_url
-                    = link_to "Location", root_url
-                    = link_to "News-Offers", articles_url
-        #page-body
-            = yield
-        #bottom-menu
-            .content.clearfix
-                = link_to "CONTACT", root_url
-                = link_to "PHOTO GALLERY", root_url
+        
+        - @bg_list.each_with_index do |img, i|
+            .bg-img{id: "bg#{i+1}", style: "background-image: url('#{image_url(img[:filename])}'); display: '#{img[:default] ? 'block' : 'none'}'"}
+        
+        #page-wrapper
+            #page-content
+                #top-menu
+                    .content.clearfix
+                        = link_to root_url do
+                            = image_tag "logo.png"
+                        %div
+                            = link_to "The Hotel", about_url
+                            = link_to "Accommodation", root_url
+                            = link_to "Services", root_url
+                            = link_to "Location", root_url
+                            = link_to "News-Offers", articles_url
+                
+                #page-body
+                    = yield
+                
+                #bottom-menu
+                    .content.clearfix
+                        = link_to "CONTACT", root_url
+                        = link_to "PHOTO GALLERY", root_url
