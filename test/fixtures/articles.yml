@@ -5,7 +5,6 @@ one:
     description: MyText
     visible: false
     created_at: 2013-09-29 18:58:51
-    last_edit: 2013-09-29 18:58:51
     article_type: 1
 
 two:
@@ -13,5 +12,4 @@ two:
     description: MyText
     visible: false
     created_at: 2013-09-29 18:58:51
-    last_edit: 2013-09-29 18:58:51
     article_type: 1

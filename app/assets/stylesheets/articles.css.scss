@@ -1,3 +1,77 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.articles {
+    height: auto;
+    min-height: 100%;
+    max-height: 100%;
+    display: table-cell;
+    background-color: rgba(245, 226, 146, .2);
+    padding: 50px;
+    overflow: hidden;
+
+    h1 {
+        color: #e99924;
+        display: table;
+        background-color: rgba(184, 0, 51, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .wrapper {
+        position: relative;
+        height: 100%;
+        min-height: 370px;
+        max-height: 570px;
+        background: #927f6d;
+        background-color: rgba(146, 127, 109, .9);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border-radius: 20px;
+    }
+
+    .posts {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 35px 40px;
+        word-wrap: break-word;
+        overflow: hidden;
+
+        .scrollable {
+            height: 100%;
+            overflow: auto;
+        }
+
+        h2 {
+            padding-left: 20px;
+            color: #e99924;
+        }
+
+        .post {
+            padding-left: 10px;
+        }
+
+        .date {
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        .show {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: rgba(184, 0, 51, 0.9);
+            display: table;
+            text-transform: uppercase;
+            font-weight: bolder;
+
+            a {
+                text-decoration: none;
+                color: #e99924;
+            }
+
+            a:visited {
+                color: #e99924;
+            }
+        }
+    }
+}
