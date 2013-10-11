@@ -1,6 +1,8 @@
 .articles
     %h1= @article.title
-    .posts
-        .post= @article.description
-        %details.date= @article.created_at
-        %p.show= link_to 'Back', articles_path
+    .wrapper
+        .posts
+            .scrollable
+                .post= @article.description
+                %details.date= @article.created_at
+                %p.show= link_to 'Back', articles_path

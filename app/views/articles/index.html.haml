@@ -1,8 +1,10 @@
 .articles
     %h1 Belvedere Hotel News
-    .posts
-        - @articles.each do |article|
-            %h2= article.title
-            .post= article.description
-            %details.date= article.created_at
-            %p.show= link_to 'Show', article
+    .wrapper
+        .posts
+            .scrollable
+                - @articles.each do |article|
+                    %h2= article.title
+                    .post= article.description
+                    %details.date= article.created_at
+                    %p.show= link_to 'Show', article
