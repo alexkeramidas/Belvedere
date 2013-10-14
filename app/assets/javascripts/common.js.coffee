@@ -20,30 +20,37 @@ class BelvedereGit.Base
         
         # Full-page carousel
         
-        bgFade = (id) ->
+        bgAnimFade = (id) ->
             bg_count = $('.bg-img').length
             if id == 1
                 id_prev = bg_count
             else
                 id_prev = id - 1
-            $("#bg#{id}.bg-img").fadeIn 4000
+            $("#bg#{id}.bg-img").css('z-index', -2)
+            $("#bg#{id_prev}.bg-img").css('z-index', -1)
+            $("#bg#{id}.bg-img").css('display', 'block')
             $("#bg#{id_prev}.bg-img").fadeOut 4000
         
-        clearInterval(window.bgInterval)
+        bgAnimClear = ->
+            clearInterval(window.bgInterval)
         
-        if $('.bg-img').length > 1
-            window.bgInterval = setInterval (->
-                bg_count = $('.bg-img').length
-                bg_prev = $('.bg-img').filter(':visible')
-                bg_next = bg_prev.next('.bg-img').attr('id')
-                
-                if bg_prev.attr('id') == "bg#{bg_count}"
-                    bg_next = "bg1"
-                
-                bg_next_id = parseInt(bg_next.replace('bg',''))
-                
-                bgFade bg_next_id
-            ), 6000
+        bgAnimAuto = ->
+            if $('.bg-img').length > 1
+                window.bgInterval = setInterval (->
+                    bg_count = $('.bg-img').length
+                    bg_prev = $('.bg-img').filter(':visible')
+                    bg_next = bg_prev.next('.bg-img').attr('id')
+                    
+                    if bg_prev.attr('id') == "bg#{bg_count}"
+                        bg_next = "bg1"
+                    
+                    bg_next_id = parseInt(bg_next.replace('bg',''))
+                    
+                    bgAnimFade bg_next_id
+                ), 6000
+        
+        bgAnimClear()
+        bgAnimAuto()
 
 
         # MAKE SURE YOU RETURN this
