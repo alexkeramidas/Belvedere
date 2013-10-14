@@ -46,6 +46,7 @@ a {
 }
 
 .bg-img {
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -54,6 +55,10 @@ a {
     background: no-repeat;
     @include background-size(cover);
     z-index: -2;
+    
+    &.active {
+        display: block;
+    }
 }
 
 #page-wrapper {

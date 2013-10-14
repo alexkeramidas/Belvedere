@@ -15,12 +15,13 @@
             });
         
         - @bg_list.each_with_index do |img, i|
-            .bg-img{id: "bg#{i+1}", style: "background-image: url('#{image_url(img[:filename])}'); display: #{img[:default] ? 'block' : 'none'}"}
+            .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", style: "background-image: url('#{image_url(img[:filename])}');"}
         
         #page-wrapper
-            #bg-slider-controls
-                - @bg_list.each_with_index do |img, i|
-                    = link_to "", "##{i+1}", id: "bg-link-#{i+1}", class: "#{img[:default] ? 'active' : ''}"
+            - if @bg_list.length > 1
+                #bg-slider-controls
+                    - @bg_list.each_with_index do |img, i|
+                        = link_to "", "##{i+1}", id: "bg-link-#{i+1}", class: "#{img[:default] ? 'active' : ''}"
             
             #page-content
                 #top-menu
