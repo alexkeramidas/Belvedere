@@ -51,7 +51,7 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
-    background: no-repeat center center fixed;
+    background: no-repeat;
     @include background-size(cover);
     z-index: -2;
 }
