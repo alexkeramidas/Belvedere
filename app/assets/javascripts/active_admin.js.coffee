@@ -5,4 +5,4 @@ $(document).ready ->
         plugins: 'code image'
         mode: 'textareas'
         theme : 'modern'
-        width: '76%'
+        width: '78%'
