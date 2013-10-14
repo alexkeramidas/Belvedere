@@ -3,6 +3,6 @@
     .wrapper
         .posts
             .scrollable
-                .post= @article.description
+                .post= sanitize(@article.description)
                 %details.date= @article.created_at
                 %p.show= link_to 'Back', articles_path
