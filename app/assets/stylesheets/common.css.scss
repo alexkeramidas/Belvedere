@@ -28,11 +28,11 @@ p, ol, ul, td {
 a {
     color: #f5f4e6;
     text-decoration: none;
-  
+
     &:visited {
         color: #f5f4e6;
     }
-  
+
     &:hover {
         color: #B80033;
     }
@@ -41,11 +41,11 @@ a {
 #top-menu, #bottom-menu {
     background-color: #B80033;
     background-color: rgba(184, 0, 51, .9);
-    
+
     display: table-row;
     padding: 0;
     width: 100%;
-    
+
     .content {
         display: table-cell;
     }
@@ -53,17 +53,17 @@ a {
 
 #top-menu {
     top: 0;
-    
+
     .content {
         border-bottom: 1px solid #B4808F;
         box-shadow: 10px 0px 20px #000;
         padding: 30px 30px 3px 30px;
-    
+
         div {
             float: right;
             padding-top: 32px;
             text-align: right;
-        
+
             a {
                 position: relative;
                 display: inline-block;
@@ -72,23 +72,23 @@ a {
                 color: #f5f4e6;
                 text-decoration: none;
                 padding: 10px;
-                
+
                 &:hover {
                     background-color: #E99924;
                     color: #595757;
                     text-decoration: none;
-            
+
                     &:before {
                         color: #f5f4e6;
                     }
                 }
-                
+
                 &:before {
                     content: "|";
                     position: absolute;
                     left: -6px;
                 }
-                
+
                 &:first-child {
                     &:before {
                         content: "";
@@ -97,7 +97,7 @@ a {
             }
         }
     }
-    
+
     img {
         padding-bottom: 17px;
     }
@@ -119,35 +119,35 @@ a {
     color: #000;
     font-size: 15px;
     font-weight: bold;
-    
+
     .content {
         border-top: 1px solid #B4808F;
         box-shadow: -10px 0px 20px #000;
         padding: 20px;
     }
-    
+
     a {
         color: #000;
         text-decoration: none;
         display: inline-block;
         padding: 10px;
         position: relative;
-        
+
         &:hover {
             color: #f5f4e6;
             text-decoration: none;
-            
+
             &:before {
                 color: #000;
             }
         }
-            
+
         &:before {
             content: "|";
             position: absolute;
             left: -6px;
         }
-        
+
         &:first-child {
             &:before {
                 content: "";
@@ -187,7 +187,7 @@ div {
     padding-bottom: 0;
     margin-bottom: 20px;
     background-color: #f0f0f0;
-  
+
     h2 {
         text-align: left;
         font-weight: bold;
@@ -198,7 +198,7 @@ div {
         background-color: #c00;
         color: #fff;
     }
-  
+
     ul li {
         font-size: 12px;
         list-style: square;

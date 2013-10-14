@@ -135,11 +135,11 @@ ActiveAdmin.setup do |config|
     # Active Admin resources and pages from here.
     #
     # config.before_filter :do_something_awesome
-    
+
     # == Setting a Favicon
     #
     # config.favicon = '/assets/favicon.ico'
-    
+
     # == Register Stylesheets & Javascripts
     #
     # We recommend using the built in Active Admin layout and loading
@@ -154,7 +154,8 @@ ActiveAdmin.setup do |config|
     #
     # To load a javascript file:
     #   config.register_javascript 'my_javascript.js'
-    
+    config.register_javascript 'tinymce-jquery.js'
+
     # == CSV options
     #
     # Set the CSV builder separator
@@ -162,7 +163,7 @@ ActiveAdmin.setup do |config|
     #
     # Force the use of quotes
     # config.csv_options = { :force_quotes => true }
-    
+
     # == Menu System
     #
     # You can add a navigation menu to be used in your application, or configure a provided menu
@@ -183,7 +184,7 @@ ActiveAdmin.setup do |config|
     #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
     #     end
     #   end
-    
+
     # == Download Links
     #
     # You can disable download links on resource listing pages,
@@ -204,14 +205,14 @@ ActiveAdmin.setup do |config|
     #     admin.download_links = proc { can?(:view_download_links) }
     #
     #   end
-    
+
     # == Pagination
     #
     # Pagination is enabled by default for all resources.
     # You can control the default per page count for all resources here.
     #
     # config.default_per_page = 30
-    
+
     # == Filters
     #
     # By default the index screen includes a β€�Filtersβ€� sidebar on the right
