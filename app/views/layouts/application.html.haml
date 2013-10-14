@@ -29,11 +29,11 @@
                         = link_to root_url do
                             = image_tag "logo.png"
                         %div
-                            = link_to "The Hotel", about_url
+                            = link_to "The Hotel", about_url, class: "#{params[:controller]=='pages' && params[:action]=='about' ? 'active' : ''}"
                             = link_to "Accommodation", root_url
                             = link_to "Services", root_url
                             = link_to "Location", root_url
-                            = link_to "News-Offers", articles_url
+                            = link_to "News-Offers", articles_url, class: "#{params[:controller]=='articles' ? 'active' : ''}"
                 
                 #page-body
                     = yield
