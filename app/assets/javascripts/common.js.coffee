@@ -20,15 +20,16 @@ class BelvedereGit.Base
         
         # Full-page carousel
         
-        bgAnimFade = (id) ->
-            bg_count = $('.bg-img').length
-            if id == 1
-                id_prev = bg_count
-            else
-                id_prev = id - 1
-            $("#bg#{id}.bg-img").css('z-index', -2)
+        bgAnimFade = (id_prev, id_next) ->
+            $(".bg-img").css('z-index', -2)
             $("#bg#{id_prev}.bg-img").css('z-index', -1)
-            $("#bg#{id}.bg-img").css('display', 'block')
+            $("#bg#{id_next}.bg-img").css('display', 'block')
+            setTimeout (->
+                $("#bg-slider-controls a").removeClass('active')
+            ), 1500
+            setTimeout (->
+                $("#bg-link-#{id_next}").addClass('active')
+            ), 1500
             $("#bg#{id_prev}.bg-img").fadeOut 4000
         
         bgAnimClear = ->
@@ -44,13 +45,24 @@ class BelvedereGit.Base
                     if bg_prev.attr('id') == "bg#{bg_count}"
                         bg_next = "bg1"
                     
+                    bg_prev_id = parseInt(bg_prev.attr('id').replace('bg',''))
                     bg_next_id = parseInt(bg_next.replace('bg',''))
                     
-                    bgAnimFade bg_next_id
+                    bgAnimFade bg_prev_id, bg_next_id
                 ), 6000
+                
+        bgAnimManual = (id) ->
+            bgAnimClear()
+            id_prev = parseInt($('#bg-slider-controls a.active').attr('href').replace('#',''))
+            bgAnimFade(id_prev, id)
         
         bgAnimClear()
         bgAnimAuto()
+        
+        $('#bg-slider-controls a').click ->
+            bg_next = parseInt($(this).attr('href').replace('#',''))
+            bgAnimManual(bg_next)
+            false
 
 
         # MAKE SURE YOU RETURN this
