@@ -6,32 +6,39 @@
         = javascript_include_tag "application"
 
     %body
-        #top-menu
-            .content.clearfix
-                = link_to root_url do
-                    = image_tag "logo.png"
-                %div
-                    = link_to "The Hotel", about_url
-                    = link_to "Accommodation", root_url
-                    = link_to "Services", root_url
-                    = link_to "Location", root_url
-                    = link_to "News-Offers", articles_url
-        #page-body
-            = yield
-        #bottom-menu
-            .content.clearfix
-                = link_to "CONTACT", root_url
-                = link_to "PHOTO GALLERY", root_url
-        
-        = javascript_include_tag 'jquery.mCustomScrollbar.concat.min'
         :javascript
-            (function($){
-                $(document).ready(function(){
-                    $(".scrollable").mCustomScrollbar({
-                        scrollButtons:{
-                            enable:true
-                        },
-                        theme:"dark"
-                    });
-                });
-            })(jQuery);
+            jQuery(function() {
+                window.$M = new (BelvedereGit.#{params[:controller]} || BelvedereGit.Base)(#{@bootstrap_data});
+                if (typeof $M['#{params[:action]}'] === 'function') {
+                    return $M['#{params[:action]}'].call();
+                }
+            });
+        
+        - @bg_list.each_with_index do |img, i|
+            .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", style: "background-image: url('#{image_url(img[:filename])}');"}
+        
+        #page-wrapper
+            - if @bg_list.length > 1
+                #bg-slider-controls
+                    - @bg_list.each_with_index do |img, i|
+                        = link_to "", "##{i+1}", id: "bg-link-#{i+1}", class: "#{img[:default] ? 'active' : ''}"
+            
+            #page-content
+                #top-menu
+                    .content.clearfix
+                        = link_to root_url do
+                            = image_tag "logo.png"
+                        %div
+                            = link_to "The Hotel", about_url
+                            = link_to "Accommodation", root_url
+                            = link_to "Services", root_url
+                            = link_to "Location", root_url
+                            = link_to "News-Offers", articles_url
+                
+                #page-body
+                    = yield
+                
+                #bottom-menu
+                    .content.clearfix
+                        = link_to "CONTACT", root_url
+                        = link_to "PHOTO GALLERY", root_url
