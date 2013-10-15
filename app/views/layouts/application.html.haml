@@ -3,6 +3,7 @@
     %head
         %title BelvedereGit
         = stylesheet_link_tag "application"
+        = javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
         = javascript_include_tag "application"
 
     %body
@@ -14,31 +15,21 @@
                 }
             });
         
-        - @bg_list.each_with_index do |img, i|
-            .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", style: "background-image: url('#{image_url(img[:filename])}');"}
+        - if !@bg_list.blank?
+            - @bg_list.each_with_index do |img, i|
+                .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", style: "background-image: url('#{image_url(img[:filename])}');"}
         
         #page-wrapper
-            - if @bg_list.length > 1
-                #bg-slider-controls
-                    - @bg_list.each_with_index do |img, i|
-                        = link_to "", "##{i+1}", id: "bg-link-#{i+1}", class: "#{img[:default] ? 'active' : ''}"
+            - if !@bg_list.blank?
+                - if @bg_list.length > 1
+                    #bg-slider-controls
+                        - @bg_list.each_with_index do |img, i|
+                            = link_to "", "##{i+1}", id: "bg-link-#{i+1}", class: "#{img[:default] ? 'active' : ''}"
             
             #page-content
-                #top-menu
-                    .content.clearfix
-                        = link_to root_url do
-                            = image_tag "logo.png"
-                        %div
-                            = link_to "The Hotel", about_url, class: "#{params[:controller]=='pages' && params[:action]=='about' ? 'active' : ''}"
-                            = link_to "Accommodation", root_url
-                            = link_to "Services", root_url
-                            = link_to "Location", root_url
-                            = link_to "News-Offers", articles_url, class: "#{params[:controller]=='articles' ? 'active' : ''}"
+                = render 'layouts/top_menu'
                 
                 #page-body
                     = yield
                 
-                #bottom-menu
-                    .content.clearfix
-                        = link_to "CONTACT", root_url
-                        = link_to "PHOTO GALLERY", root_url
+                = render 'layouts/bottom_menu'

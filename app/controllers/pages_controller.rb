@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+    layout 'map', only: :location
+    
     def home
         @bg_list = [
             { filename: "bg1.jpg", default: true }, 
@@ -11,5 +13,9 @@ class PagesController < ApplicationController
 
     def about
 
+    end
+    
+    def location
+        
     end
 end
