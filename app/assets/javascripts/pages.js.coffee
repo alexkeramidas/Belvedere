@@ -8,39 +8,23 @@ class BelvedereGit.pages extends BelvedereGit.Base
         this
 
     location: () ->
-        MyControl = (controlDiv, map) ->
+        PositioningControl = (controlDiv, map) ->
             controlDiv.style.padding = '5px'
-            
-            controlUI = document.createElement('div')
-            controlUI.style.backgroundColor = 'white'
-            controlUI.style.borderStyle = 'solid'
-            controlUI.style.borderWidth = '2px'
-            controlUI.style.cursor = 'pointer'
-            controlUI.style.textAlign = 'center'
-            controlUI.id = 'mycontrol'
-            controlUI.title = 'Click to set the map to Home'
-            controlDiv.appendChild(controlUI)
-            
-            controlText = document.createElement('div')
-            controlText.style.fontFamily = 'Arial,sans-serif'
-            controlText.style.fontSize = '12px'
-            controlText.style.paddingLeft = '4px'
-            controlText.style.paddingRight = '4px'
-            controlText.innerHTML = '<strong>Home</strong>'
-            controlUI.appendChild(controlText)
-            
-            controlUI.click ->
-                map.setCenter(chicago)
+            controlDiv.style.height = '110px'
+            controlDiv.id = 'mycontrol'
 
         initialize = ->
+            belvedereLocation = new google.maps.LatLng(39.147625, 23.460580)
+            
             mapOptions =
-                zoom: 8,
-                center: new google.maps.LatLng(-34.397, 150.644),
+                zoom: 14,
+                center: belvedereLocation,
                 mapTypeControl: true,
                 mapTypeControlOptions: {
                     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
                     position: google.maps.ControlPosition.TOP_RIGHT
                 },
+                panControl: false,
                 zoomControl: true,
                 zoomControlOptions: {
                     style: google.maps.ZoomControlStyle.LARGE,
@@ -50,11 +34,26 @@ class BelvedereGit.pages extends BelvedereGit.Base
             
             map = new google.maps.Map(document.getElementById("map"), mapOptions);
             
+            marker = new google.maps.Marker
+                position: belvedereLocation,
+                map: map,
+                title: 'Belvedere Hotel'
+            
             controlDiv = document.createElement('div')
-            myControl = new MyControl(controlDiv, map)
+            myControl = new PositioningControl(controlDiv, map)
             
             controlDiv.index = 1
             
             map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv)
+        
+            google.maps.event.addListener map, 'tilesloaded', ->
+                $('#mycontrol').css('position','relative').css('right','').css('float','right').css('clear','both')
+                $('.gmnoprint.gm-style-mtc').css('position','relative').css('right','').css('float','right').css('clear','both')
+            
+            google.maps.event.addListener map, 'idle', ->
+                google.maps.event.trigger(this, 'tilesloaded')
+                
+            google.maps.event.addDomListener window, 'resize', ->
+                map.setCenter(belvedereLocation)
         
         initialize()
