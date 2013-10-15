@@ -1,0 +1,10 @@
+#top-menu{class: "#{'location' if params[:controller]=='pages' && params[:action]=='location'}"}
+    .content.clearfix
+        = link_to root_url do
+            = image_tag "logo.png"
+        %div
+            = link_to "The Hotel", about_url, class: "#{params[:controller]=='pages' && params[:action]=='about' ? 'active' : ''}"
+            = link_to "Accommodation", root_url
+            = link_to "Services", root_url
+            = link_to "Location", location_url, class: "#{params[:controller]=='pages' && params[:action]=='location' ? 'active' : ''}"
+            = link_to "News-Offers", articles_url, class: "#{params[:controller]=='articles' ? 'active' : ''}"
