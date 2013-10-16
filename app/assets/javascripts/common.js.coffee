@@ -18,12 +18,12 @@ class BelvedereGit.Base
         
         bgAnimFade = (id_next, ms) ->
             bgAnimPrepare(id_next)
-            $prevElem = $(".bg-img.active")
+            $prevElem = $('.bg-img.active')
             
             $prevElem.removeClass('active')
             $("#bg#{id_next}.bg-img").css('display', 'block')
             
-            $("#bg-slider-controls a").removeClass('active')
+            $('#bg-slider-controls a').removeClass('active')
             $("#bg-link-#{id_next}").addClass('active')
             
             $("#bg#{id_next}.bg-img").addClass('active')
@@ -77,11 +77,11 @@ class BelvedereGit.Base
         
         # Custom scrollbars for elements with the 'scrollable' class
             
-        $(".scrollable").mCustomScrollbar({
+        $('.scrollable').mCustomScrollbar({
             scrollButtons:{
-                enable:true
+                enable: true
             },
-            theme:"dark"
+            theme: 'dark'
         })
 
 
