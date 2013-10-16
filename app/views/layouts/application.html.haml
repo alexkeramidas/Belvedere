@@ -16,7 +16,7 @@
         
         - if !@bg_list.blank?
             - @bg_list.each_with_index do |img, i|
-                .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", style: "background-image: url('#{image_url(img[:filename])}');"}
+                .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", style: "background-image: url('#{image_url(img[:filename])}'); filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{image_url(img[:filename])}',sizingMethod='scale'); -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_url(img[:filename])},sizingMethod=scale)';"}
         
         #page-wrapper
             - if !@bg_list.blank?
