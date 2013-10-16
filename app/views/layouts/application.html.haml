@@ -26,9 +26,9 @@
                             = link_to "", "##{i+1}", id: "bg-link-#{i+1}", class: "#{img[:default] ? 'active' : ''}"
             
             #page-content
-                = render 'layouts/top_menu'
+                = render 'shared/top_menu'
                 
                 #page-body
                     = yield
                 
-                = render 'layouts/bottom_menu'
+                = render 'shared/bottom_menu'

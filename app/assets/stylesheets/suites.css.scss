@@ -1,0 +1,39 @@
+.rooms {
+    background-color: rgba(245, 226, 146, .2);
+
+    h1 {
+        color: #e99924;
+        background-color: rgba(184, 0, 51, 0.9);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border-radius: 6px;
+        margin-top: 0;
+        padding: 15px 48px;
+    }
+
+    .wrapper {
+        position: relative;
+        height: 80%;
+        min-height: 310px;
+        max-height: 570px;
+        background: #927f6d;
+        background-color: rgba(146, 127, 109, .9);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border-radius: 6px;
+    }
+
+    .posts {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 35px 40px;
+        word-wrap: break-word;
+        overflow: hidden;
+
+        .scrollable {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+}

@@ -9,8 +9,12 @@ BelvedereGit::Application.routes.draw do
 
     # You can have the root of your site routed with "root"
     root 'pages#home'
+    
     get 'about' => 'pages#about'
     get 'location' => 'pages#location'
+    
+    get 'accommodation' => 'suites#index'
+    get 'accommodation/:id' => 'suites#show'
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'

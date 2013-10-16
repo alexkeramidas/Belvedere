@@ -3,11 +3,11 @@
 
     h1 {
         color: #e99924;
-        display: table;
         background-color: rgba(184, 0, 51, 0.9);
-        border-radius: 10px;
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border-radius: 6px;
         margin-top: 0;
-        padding: 15px;
+        padding: 15px 48px;
     }
 
     .wrapper {
@@ -18,7 +18,7 @@
         background: #927f6d;
         background-color: rgba(146, 127, 109, .9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
-        border-radius: 20px;
+        border-radius: 6px;
     }
 
     .posts {
@@ -37,8 +37,15 @@
         }
 
         h2 {
-            padding-left: 20px;
+            background: #584848;
+            background: rgba(0, 0, 0, .2);
+            margin: 10px;
+            padding: 10px;
             color: #e99924;
+            
+            &:first-child {
+                margin-top: 0;
+            }
         }
 
         .post {
@@ -51,11 +58,11 @@
         }
 
         .show {
-            margin: 5px;
+            margin: 10px;
             padding: 10px;
             border-radius: 20px;
             background-color: rgba(184, 0, 51, 0.9);
-            display: table;
+            display: inline-block;
             text-transform: uppercase;
             font-weight: bolder;
 

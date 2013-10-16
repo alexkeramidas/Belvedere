@@ -26,6 +26,22 @@ body {
     line-height: 18px;
 }
 
+h1 {
+    font-family: 'Calisto MT', 'MS Serif', century, times;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    text-shadow: 2px 1px rgba(0, 0, 0, .5);
+}
+
+h2 {
+    font-family: 'Century Gothic', verdana, arial, helvetica, sans-serif;
+    font-size: 23px;
+    line-height: 23px;
+    font-weight: normal;
+    text-shadow: 2px 2px rgba(0, 0, 0, .5);
+}
+
 p, ol, ul, td {
     font-family: 'Century Gothic', verdana, arial, helvetica, sans-serif;
     font-size: 13px;
@@ -136,6 +152,7 @@ a {
 
                 &:hover, &.active {
                     background-color: #E99924;
+                    border-radius: 3px;
                     color: #595757;
                     text-decoration: none;
 
