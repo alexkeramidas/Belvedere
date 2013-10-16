@@ -6,19 +6,9 @@ class BelvedereGit.Base
         @bd = bootstrap_data
         # Put your general code here. Don't worry about document ready since this
         # code will only be called once the document is ready
-        
-        
-        # Custom scrollbars for elements with the 'scrollable' class
             
-        $(".scrollable").mCustomScrollbar({
-            scrollButtons:{
-                enable:true
-            },
-            theme:"dark"
-        });
-        
-        
-        # Full-page carousel
+            
+        # Full-page carousel methods
         
         bgAnimPrepare = (id_next) ->
             $('.bg-img').stop()
@@ -28,17 +18,18 @@ class BelvedereGit.Base
         
         bgAnimFade = (id_next, ms) ->
             bgAnimPrepare(id_next)
-            $prevElem = $(".bg-img.active")
+            $prevElem = $('.bg-img.active')
             
             $prevElem.removeClass('active')
             $("#bg#{id_next}.bg-img").css('display', 'block')
             
-            $("#bg-slider-controls a").removeClass('active')
+            $('#bg-slider-controls a').removeClass('active')
             $("#bg-link-#{id_next}").addClass('active')
+            
+            $("#bg#{id_next}.bg-img").addClass('active')
             
             $.when($prevElem.fadeOut ms).done (->
                 $prevElem.css('opacity', 0)
-                $("#bg#{id_next}.bg-img").addClass('active')
             )
         
         bgAnimAuto = ->
@@ -63,14 +54,35 @@ class BelvedereGit.Base
         bgAnimClear = ->
             clearInterval(window.bgInterval)
         
-        bgAnimClear()
-        bgAnimAuto()
         
-        $('#bg-slider-controls a').click ->
-            if $(this).hasClass('')
-                bg_next = parseInt($(this).attr('href').replace('#',''))
-                bgAnimManual(bg_next)
-            false
+        # Image preloader
+        
+        $('body').waitForImages
+            finished: ->
+                $('#bg-slider-controls').show()
+                
+                
+                # Full-page carousel callbacks
+                
+                bgAnimClear()
+                bgAnimAuto()
+                
+                $('#bg-slider-controls a').click ->
+                    if $(this).hasClass('')
+                        bg_next = parseInt($(this).attr('href').replace('#',''))
+                        bgAnimManual(bg_next)
+                    false
+            waitForAll: true
+        
+        
+        # Custom scrollbars for elements with the 'scrollable' class
+            
+        $('.scrollable').mCustomScrollbar({
+            scrollButtons:{
+                enable: true
+            },
+            theme: 'dark'
+        })
 
 
         # MAKE SURE YOU RETURN this
