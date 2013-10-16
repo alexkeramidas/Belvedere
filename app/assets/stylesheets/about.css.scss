@@ -33,6 +33,7 @@
             font-weight: bold;
             font-size: 25px;
             line-height: 25px;
+            text-shadow: none;
             margin: 0;
             padding-bottom: 15px;
         }
@@ -43,12 +44,14 @@
             font-weight: bold;
             font-size: 18px;
             line-height: 18px;
+            text-shadow: none;
             margin: 0;
             padding-bottom: 5px;
 
             &.title {
                 color: #e99924;
                 font-weight: normal;
+                text-shadow: 2px 2px rgba(0, 0, 0, .5);
                 padding-top: 20px;
             }
         }
