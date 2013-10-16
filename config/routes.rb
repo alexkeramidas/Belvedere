@@ -14,7 +14,6 @@ BelvedereGit::Application.routes.draw do
     get 'location' => 'pages#location'
     
     get 'accommodation' => 'suites#index'
-    get 'accommodation/:id' => 'suites#show'
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'

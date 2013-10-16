@@ -3,6 +3,7 @@
 
     h1 {
         color: #e99924;
+        background: #b20731;
         background-color: rgba(184, 0, 51, 0.9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 6px;
@@ -38,7 +39,7 @@
 
         h2 {
             background: #584848;
-            background: rgba(0, 0, 0, .2);
+            background-color: rgba(0, 0, 0, .2);
             margin: 10px;
             padding: 10px;
             color: #e99924;
@@ -60,7 +61,8 @@
         .show {
             margin: 10px;
             padding: 10px;
-            border-radius: 20px;
+            border-radius: 9999px;
+            background: #b20731;
             background-color: rgba(184, 0, 51, 0.9);
             display: inline-block;
             text-transform: uppercase;

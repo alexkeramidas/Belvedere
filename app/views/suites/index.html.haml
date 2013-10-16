@@ -1,10 +1,9 @@
-.rooms
-    %h1 Belvedere Hotel - Rooms &amp; Suites
-    .wrapper
-        .posts
-            .scrollable
-                - @rooms.each do |room|
-                    %h2= room.title
-                    .post= sanitize(room.description, :tags => []).truncate(1000)
-                    %details.date= room.created_at
-                    %p.show= link_to 'Show', room
+.rooms.clearfix
+    .rooms-list.pull-left
+        %h1 Belvedere Hotel - Rooms &amp; Suites
+        .wrapper
+            - @rooms.each do |room|
+                %h2= room.title
+                .post= room.description.html_safe
+    .image-gallery.pull-left
+        = image_tag "bg1.jpg", size: "600x380"
