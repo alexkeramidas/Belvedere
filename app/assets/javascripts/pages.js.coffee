@@ -8,10 +8,14 @@ class BelvedereGit.pages extends BelvedereGit.Base
         this
 
     location: () ->
-        PositioningControl = (controlDiv, map) ->
+        MyPositioningControl = (controlDiv, map) ->
             controlDiv.style.padding = '5px'
             controlDiv.style.height = '110px'
             controlDiv.id = 'mycontrol'
+            
+        positionControls = ->
+            $('#mycontrol').css('position','relative').css('right','').css('float','right').css('clear','both')
+            $('.gmnoprint.gm-style-mtc').css('position','relative').css('right','').css('float','right').css('clear','both')
 
         initialize = ->
             belvedereLocation = new google.maps.LatLng(39.147625, 23.460580)
@@ -40,18 +44,17 @@ class BelvedereGit.pages extends BelvedereGit.Base
                 title: 'Belvedere Hotel'
             
             controlDiv = document.createElement('div')
-            myControl = new PositioningControl(controlDiv, map)
+            myControl = new MyPositioningControl(controlDiv, map)
             
             controlDiv.index = 1
             
             map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv)
         
             google.maps.event.addListener map, 'tilesloaded', ->
-                $('#mycontrol').css('position','relative').css('right','').css('float','right').css('clear','both')
-                $('.gmnoprint.gm-style-mtc').css('position','relative').css('right','').css('float','right').css('clear','both')
+                positionControls()
             
             google.maps.event.addListener map, 'idle', ->
-                google.maps.event.trigger(this, 'tilesloaded')
+                positionControls()
                 
             google.maps.event.addDomListener window, 'resize', ->
                 map.setCenter(belvedereLocation)

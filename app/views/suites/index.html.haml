@@ -2,8 +2,12 @@
     .rooms-list.pull-left
         %h1 Belvedere Hotel - Rooms &amp; Suites
         .wrapper
-            - @rooms.each do |room|
-                %h2= room.title
-                .post= room.description.html_safe
+            .content
+                .scrollable
+                    - @rooms.each do |room|
+                        %ul.nav.nav-tabs.nav-stacked
+                            %li
+                                = link_to room.title, '#test1', data: {toggle: 'collapse'}
+                                #test1.collapse= room.description.html_safe
     .image-gallery.pull-left
         = image_tag "bg1.jpg", size: "600x380"
