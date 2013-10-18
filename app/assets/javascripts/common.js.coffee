@@ -13,10 +13,13 @@ class BelvedereGit.Base
         $('.scrollable').mCustomScrollbar({
             mouseWheelPixels: 120,
             scrollInertia: 0,
-            scrollButtons:{
+            scrollButtons: {
                 enable: true,
                 scrollSpeed: 30,
                 scrollAmount: 50
+            },
+            advanced: {
+                updateOnContentResize: true
             },
             theme: 'dark'
         })

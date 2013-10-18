@@ -4,10 +4,10 @@
         .wrapper
             .content
                 .scrollable
-                    - @rooms.each do |room|
-                        %ul.nav.nav-tabs.nav-stacked
+                    %ul.nav.nav-tabs.nav-stacked
+                        - @rooms.each_with_index do |room, i|
                             %li
-                                = link_to room.title, '#test1', data: {toggle: 'collapse'}
-                                #test1.collapse= room.description.html_safe
+                                = link_to room.title, "#descr_#{i}", class: 'collapse-link'
+                                .collapsible{id: "descr_#{i}"}= room.description.html_safe
     .image-gallery.pull-left
         = image_tag "bg1.jpg", size: "600x380"

@@ -64,18 +64,32 @@
         .scrollable {
             height: 100%;
             overflow: auto;
+            
+            .mCSB_container {
+                margin-right: 25px;
+                
+                &.mCS_no_scrollbar {
+                    margin-right: 10px;
+                }
+            }
         }
     }
     
     ul.nav {
-        margin-right: 10px;
-        
         li {
             a {
                 background-color: #666;
                 background-color: rgba(0, 0, 0, .4);
                 color: #f5f4e6;
                 text-decoration: none;
+            }
+            
+            .collapsible {
+                display: none;
+                
+                &.open {
+                    display: block;
+                }
             }
         }
     }

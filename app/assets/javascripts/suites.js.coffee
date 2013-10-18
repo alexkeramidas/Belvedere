@@ -6,13 +6,16 @@ class BelvedereGit.suites extends BelvedereGit.Base
         super
 
         this
-
-    index: () ->
-        updateScrollbarSize = ->
-            $('.scrollable').mCustomScrollbar('update')
         
-        $(".rooms .scrollable ul li .collapse").on
-            hidden: ->
-                updateScrollbarSize()
-            shown: ->
-                updateScrollbarSize()
+    index: () ->
+        $('.collapse-link').click ->
+            collapsible_id = $(this).attr('href').replace(/.*#{1}/,'#')
+            $collapsible = $(collapsible_id)
+            
+            if $collapsible.hasClass('open')
+                $collapsible.slideUp(200).removeClass('open')
+            else
+                $collapsible.parent().siblings().find('.collapsible').slideUp(200).removeClass('open')
+                $collapsible.slideDown(200).addClass('open')
+            
+            false
