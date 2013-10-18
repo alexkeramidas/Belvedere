@@ -7,7 +7,7 @@
                     %ul.nav.nav-tabs.nav-stacked
                         - @rooms.each_with_index do |room, i|
                             %li
-                                = link_to room.title, "#descr_#{i}", class: 'collapse-link'
+                                = link_to room.title, "#descr_#{i}", class: 'collapse-link', id: "link_#{i}"
                                 .collapsible{id: "descr_#{i}"}= room.description.html_safe
     .image-gallery.pull-left
         = image_tag "bg1.jpg", size: "600x380"
