@@ -11,8 +11,11 @@ class BelvedereGit.suites extends BelvedereGit.Base
         
         collapsibleEvent = jQuery.Event("collapsibleOpened")
         
+        window.link_offs = {}
+        $('.collapse-link').each ->
+            window.link_offs[$(this).attr('id')] = - $("##{$(this).attr('id')}")[0].offsetTop
+        
         $('.collapse-link').click ->
-            link_id = $(this).attr('id')
             collapsible_id = $(this).attr('href').replace(/.*#{1}/,'#')
             $collapsible = $(collapsible_id)
             
@@ -26,4 +29,5 @@ class BelvedereGit.suites extends BelvedereGit.Base
 
         $('.collapsible').bind 'collapsibleOpened', (e) ->
             link_id = $(this).prev().attr('id')
-            $('.scrollable').mCustomScrollbar('scrollTo', "##{link_id}")
+            $container = $('.scrollable .mCSB_container')
+            $container.css('top', window.link_offs[link_id])

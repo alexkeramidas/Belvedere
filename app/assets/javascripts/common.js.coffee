@@ -16,7 +16,7 @@ class BelvedereGit.Base
             scrollButtons: {
                 enable: true,
                 scrollSpeed: 30,
-                scrollAmount: 50
+                scrollAmount: 30
             },
             advanced: {
                 updateOnContentResize: true
