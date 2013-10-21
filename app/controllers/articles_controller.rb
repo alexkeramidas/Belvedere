@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     # GET /articles
     # GET /articles.json
     def index
-        @articles = Article.where(:article_type => 1)
+        @articles = Article.where(:article_type => 1, :visible => true)
     end
 
     # GET /articles/1

@@ -4,7 +4,7 @@ class SuitesController < ApplicationController
     # GET /articles
     # GET /articles.json
     def index
-        @rooms = Article.where(:article_type => 2)
+        @rooms = Article.where(:article_type => 2, :visible => true)
     end
 
     # GET /articles/1

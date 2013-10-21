@@ -19,6 +19,7 @@ class BelvedereGit.Base
                 scrollAmount: 30
             },
             advanced: {
+                autoScrollOnFocus: false,
                 updateOnContentResize: true
             },
             theme: 'dark'
