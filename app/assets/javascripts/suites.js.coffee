@@ -8,8 +8,7 @@ class BelvedereGit.suites extends BelvedereGit.Base
         this
         
     index: () ->
-        collapsibleOpened = jQuery.Event("collapsibleOpened")
-        collapsibleClosed = jQuery.Event("collapsibleClosed")
+        collapsibleEvent = jQuery.Event("collapsibleEvent")
         
         $container = $('.scrollable .mCSB_container')
         
@@ -22,17 +21,16 @@ class BelvedereGit.suites extends BelvedereGit.Base
             $collapsible = $(collapsible_id)
             
             if $collapsible.hasClass('open')
-                $collapsible.slideUp(200).trigger(collapsibleClosed).removeClass('open')
+                $collapsible.removeClass('open').slideUp(200)
             else
                 $collapsible.parent().siblings().find('.collapsible').slideUp(200).removeClass('open')
-                $collapsible.slideDown(200).trigger(collapsibleOpened).addClass('open')
+                $collapsible.slideDown(200, (->
+                        $(this).addClass('open').trigger(collapsibleEvent)
+                    )
+                )
             
             false
 
-        $('.collapsible').bind 'collapsibleOpened', (e) ->
+        $('.collapsible').bind 'collapsibleEvent', (e) ->
             link_id = $(this).prev().attr('id')
             $container.css('top', link_offs[link_id])
-        
-        $('.collapsible').bind 'collapsibleClosed', (e) ->
-            link_id = $(this).prev().attr('id')
-            $container.css('top', 0)

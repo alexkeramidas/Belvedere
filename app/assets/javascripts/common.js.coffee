@@ -9,7 +9,7 @@ class BelvedereGit.Base
         
         
         # Custom scrollbars for elements with the 'scrollable' class
-            
+        
         $('.scrollable').mCustomScrollbar({
             mouseWheelPixels: 120,
             scrollInertia: 0,
