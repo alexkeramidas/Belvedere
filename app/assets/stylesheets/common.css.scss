@@ -5,11 +5,11 @@
     font-family: 'DellaRespira-Regular';
     font-style: normal;
     font-weight: 400;
-    src: url(font_path('DellaRespira-Regular.eot'));
-    src: url(font_path('DellaRespira-Regular.eot?#iefix')) format('embedded-opentype'),
-         url(font_path('DellaRespira-Regular.woff')) format('woff'),
-         url(font_path('DellaRespira-Regular.ttf')) format('truetype'),
-         url(font_path('DellaRespira-Regular.svg#DellaRespira-Regular')) format('svg');
+    src: url(asset_path('DellaRespira-Regular.eot'));
+    src: url(asset_path('DellaRespira-Regular.eot?#iefix')) format('embedded-opentype'),
+         url(asset_path('DellaRespira-Regular.woff')) format('woff'),
+         url(asset_path('DellaRespira-Regular.ttf')) format('truetype'),
+         url(asset_path('DellaRespira-Regular.svg#DellaRespira-Regular')) format('svg');
 }
 
 ::selection {
