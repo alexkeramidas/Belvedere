@@ -1,5 +1,17 @@
 @import "bootstrap";
-    
+
+@import "//fonts.googleapis.com/css?family=Della+Respira";
+@font-face {
+    font-family: 'DellaRespira-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url(font_path('DellaRespira-Regular.eot'));
+    src: url(font_path('DellaRespira-Regular.eot?#iefix')) format('embedded-opentype'),
+         url(font_path('DellaRespira-Regular.woff')) format('woff'),
+         url(font_path('DellaRespira-Regular.ttf')) format('truetype'),
+         url(font_path('DellaRespira-Regular.svg#DellaRespira-Regular')) format('svg');
+}
+
 ::selection {
     background: #efb7a7;
     color: #fff;
@@ -27,10 +39,11 @@ body {
 }
 
 h1 {
-    font-family: 'Calisto MT', 'MS Serif', century, times;
+    font-family: 'Della Respira', 'DellaRespira-Regular', serif;
     font-size: 30px;
     line-height: 30px;
-    font-weight: normal;
+    font-style: normal;
+    font-weight: 400;
     text-shadow: 2px 1px rgba(0, 0, 0, .5);
 }
 
@@ -97,12 +110,12 @@ a {
             width: 20px;
             height: 20px;
             background: #fff;
-            border: 2px solid #E99924;
+            border: 2px solid #e99924;
             border-radius: 50%;
             margin-left: 8px;
             
             &.active {
-                background: #B80033;
+                background: #8f0017;
             }
         }
     }
@@ -116,8 +129,8 @@ a {
 }
 
 #top-menu, #bottom-menu {
-    background-color: #B80033;
-    background-color: rgba(184, 0, 51, .9);
+    background-color: #5f0015;
+    background-color: rgba(95, 0, 21, .9);
 
     display: table-row;
     padding: 0;
@@ -133,7 +146,7 @@ a {
     min-height: 103px;
 
     .content {
-        border-bottom: 1px solid #B4808F;
+        border-bottom: 1px solid #86001d;
         box-shadow: 0px 10px 15px rgba(0, 0, 0, .4);
         padding: 30px 30px 3px 30px;
 
@@ -152,9 +165,9 @@ a {
                 padding: 10px;
 
                 &:hover, &.active {
-                    background-color: #E99924;
+                    background-color: #e99924;
                     border-radius: 3px;
-                    color: #595757;
+                    color: #5f0015;
                     text-decoration: none;
 
                     &:before {
@@ -211,24 +224,24 @@ a {
     font-weight: bold;
 
     .content {
-        border-top: 1px solid #B4808F;
+        border-top: 1px solid #86001d;
         box-shadow: 0px -10px 15px rgba(0, 0, 0, .4);
         padding: 20px;
     }
 
     a {
-        color: #000;
+        color: #cf5037;
         text-decoration: none;
         display: inline-block;
         padding: 10px;
         position: relative;
 
         &:hover {
-            color: #f5f4e6;
+            color: #e99924;
             text-decoration: none;
 
             &:before {
-                color: #000;
+                color: #cf5037;
             }
         }
 

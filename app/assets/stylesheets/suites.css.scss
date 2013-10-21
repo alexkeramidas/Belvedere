@@ -1,9 +1,12 @@
 .rooms {
     min-width: 700px;
     background-color: rgba(245, 226, 146, .2);
+    background-image: image-url('striped_bg.png');
+    background-repeat: repeat;
+    background-size: 6px 6px;
     
     .rooms-list, .image-gallery {
-        width: auto;
+        width: 49%;
         max-width: 49%;
         height: 100%;
     }
@@ -30,8 +33,8 @@
 
     h1 {
         color: #e99924;
-        background: #b20731;
-        background-color: rgba(184, 0, 51, 0.9);
+        background: #8f0017;
+        background-color: rgba(143, 0, 23, 0.9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 6px;
         margin-top: 0;
@@ -40,6 +43,7 @@
 
     .wrapper {
         position: relative;
+        width: 100%;
         height: 320px;
         min-height: 320px;
         max-height: 570px;
@@ -47,6 +51,47 @@
         background-color: rgba(146, 127, 109, .9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 6px;
+    }
+    
+    .content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 30px 20px 30px 30px;
         overflow: hidden;
+
+        .scrollable {
+            height: 100%;
+            overflow: auto;
+            
+            .mCSB_container {
+                margin-right: 25px;
+                
+                &.mCS_no_scrollbar {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    
+    ul.nav {
+        li {
+            a {
+                background-color: #666;
+                background-color: rgba(0, 0, 0, .4);
+                color: #f5f4e6;
+                text-decoration: none;
+            }
+            
+            .collapsible {
+                display: none;
+                
+                &.open {
+                    display: block;
+                }
+            }
+        }
     }
 }
