@@ -15,4 +15,10 @@ class Suite < ActiveRecord::Base
     def self.visible
         self.where(:visible => true)
     end
+    
+    # Object methods
+    
+    def photo_gallery
+        Photo.where(:article_id => id)
+    end
 end
