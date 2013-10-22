@@ -4,7 +4,7 @@ class SuitesController < ApplicationController
     # GET /articles
     # GET /articles.json
     def index
-        @rooms = Article.where(:article_type => 2, :visible => true)
+        @rooms = Suite.valid.visible
     end
 
     # GET /articles/1
@@ -15,6 +15,6 @@ class SuitesController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-        @room = Article.find(params[:id])
+        @room = Suite.valid.visible.find(params[:id])
     end
 end

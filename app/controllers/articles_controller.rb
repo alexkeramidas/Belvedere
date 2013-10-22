@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     # GET /articles
     # GET /articles.json
     def index
-        @articles = Article.where(:article_type => 1, :visible => true)
+        @articles = Article.valid.visible
     end
 
     # GET /articles/1
@@ -77,6 +77,6 @@ class ArticlesController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-        @article = Article.find(params[:id])
+        @article = Article.valid.visible.find(params[:id])
     end
 end

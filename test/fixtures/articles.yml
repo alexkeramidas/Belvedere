@@ -1,5 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+require 'test_helper'
+class SuitesTest < ActiveSupport::TestCase
+  set_fixture_class :articles => Suites
+  fixtures: :articles
+end
+
+
 one:
     title: MyString
     description: MyText
