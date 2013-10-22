@@ -48,7 +48,7 @@ gem 'jbuilder', '~> 1.2'
 
 #Use Paperclip with ImageMagick
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
-gem 'rmagick', '2.13.2'
+gem 'rmagick', '2.13.2', :git => 'git://github.com/rmagick/rmagick.git'
 
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.

@@ -17,6 +17,12 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/rmagick/rmagick.git
+  revision: 962d56cba3a132d590be1dd062f2a3a2efa48545
+  specs:
+    rmagick (2.13.2)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 1d8982325fb43ee654b9476b34213a37429d7e22
   specs:
@@ -158,7 +164,6 @@ GEM
     request_store (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
-    rmagick (2.13.2)
     sass (3.2.12)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -210,7 +215,7 @@ DEPENDENCIES
   pg
   rails (= 4.0.0)
   rails_12factor
-  rmagick (= 2.13.2)
+  rmagick (= 2.13.2)!
   sass-rails (~> 4.0.0)
   sdoc
   tinymce-rails

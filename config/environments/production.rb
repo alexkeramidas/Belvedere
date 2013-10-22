@@ -1,6 +1,8 @@
 BelvedereGit::Application.configure do
     # Settings specified here will take precedence over those in config/application.rb.
 
+    ENV["DATABASE_URL"] = 'postgres://qitjibqjzsedhf:nqKQx7TbBC2uLpAeFnM_u_BuH0@ec2-54-228-235-149.eu-west-1.compute.amazonaws.com:5432/dfpf5kmq39mr72'
+
     # Code is not reloaded between requests.
     config.cache_classes = true
 
