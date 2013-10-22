@@ -16,4 +16,4 @@
 /tmp
 
 # Ignore locally uploaded photos
-/public/system/photos
+/public/photos
