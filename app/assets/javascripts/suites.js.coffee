@@ -17,13 +17,28 @@ class BelvedereGit.suites extends BelvedereGit.Base
             link_offs[$(this).attr('id')] = - $("##{$(this).attr('id')}")[0].offsetTop
         
         $('.collapse-link').click ->
+            $link = $(this)
             collapsible_id = $(this).attr('href').replace(/.*#{1}/,'#')
             $collapsible = $(collapsible_id)
+            $gallery = $($(this).data('gal'))
+                
+            $('.collapse-link').removeClass('active')
+            $link.addClass('active')
             
             if $collapsible.hasClass('open')
                 $collapsible.removeClass('open').slideUp(200)
             else
                 $collapsible.parent().siblings().find('.collapsible').slideUp(200).removeClass('open')
+                
+                $('.gallery').each ->
+                    $(this).removeClass('visible')
+                    if $(this).hasClass('carousel')
+                        $(this).removeClass('carousel').removeClass('slide').carousel('pause')
+                
+                $gallery.addClass('visible')
+                
+                if $gallery.find('.item').length > 1
+                    $gallery.addClass('carousel').addClass('slide').carousel({interval: 10000})
                 $collapsible.slideDown(200, (->
                         $(this).addClass('open').trigger(collapsibleEvent)
                     )

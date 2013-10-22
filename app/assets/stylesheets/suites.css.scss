@@ -12,22 +12,47 @@
     }
     
     .rooms-list {
-        float: left;
         margin-right: 10px;
     }
     
     .image-gallery {
-        float: right;
+        position: relative;
         height: auto;
         max-height: 390px;
-        background: #927f6d;
-        background-color: rgba(146, 127, 109, .9);
+        background: #8f8275;
         border-radius: 6px;
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         overflow: hidden;
         
+        .gallery {
+            position: absolute;
+            display: none;
+            margin-bottom: 0;
+            
+            &.visible {
+                position: relative;
+                display: block;
+            }
+        }
+        
         img {
             width: 100%;
+        }
+        
+        .carousel-control {
+            border-radius: 9999px;
+            color: #fff;
+            font-size: 30px;
+            line-height: 43px;
+            text-decoration: none;
+            
+            &.left {
+                padding-right: 3px;
+            }
+            
+            &.right {
+                padding-left: 3px;
+            }
         }
     }
 
@@ -83,6 +108,10 @@
                 background-color: rgba(0, 0, 0, .4);
                 color: #f5f4e6;
                 text-decoration: none;
+                
+                &.active {
+                    background-color: #696969;
+                }
             }
             
             .collapsible {

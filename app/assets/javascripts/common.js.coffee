@@ -24,6 +24,8 @@ class BelvedereGit.Base
             },
             theme: 'dark'
         })
+        
+        $('.carousel').carousel()
 
 
         # MAKE SURE YOU RETURN this
