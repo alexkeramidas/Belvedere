@@ -26,6 +26,31 @@ class BelvedereGit.Base
         })
         
         $('.carousel').carousel()
+        
+        $('a.fancybox').fancybox
+            cyclic: true
+            autoDimensions: true
+            onComplete: ->
+                current_img_url = $('#fancybox-content img').attr('src')
+                current_img_path = "#{current_img_url.replace(window.location.protocol+'//'+window.location.host, '')}"
+                current_offset = $('.gallery.visible .carousel-inner').children().index($("a.fancybox[href*='#{current_img_path}']").parent())
+                $('.gallery.visible').carousel(current_offset)
+        
+        
+        # Custom resizable Fancybox
+        
+        calculateFancyboxDisplayRatio = ->
+            $('#fancybox-content').width() / $('#fancybox-content').height()
+        
+        calculateNewFancyboxWidth = (h) ->
+            calculateFancyboxDisplayRatio() * h
+        
+        $(window).resize ->
+            new_height = $('body').height() - 100
+            new_width = calculateNewFancyboxWidth(new_height)
+            $('#fancybox-overlay').css('height', $('body').height())
+            $('#fancybox-content').css('height', new_height).css('width', new_width)
+            $('#fancybox-wrap').css('width', new_width + 20)
 
 
         # MAKE SURE YOU RETURN this

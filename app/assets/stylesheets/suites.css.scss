@@ -25,6 +25,7 @@
         overflow: hidden;
         
         .gallery {
+            width: 100%;
             position: absolute;
             display: none;
             margin-bottom: 0;
@@ -37,6 +38,8 @@
         
         img {
             width: 100%;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .carousel-control {

@@ -93,6 +93,8 @@ GEM
       request_store (~> 1.0.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
     haml (4.0.3)
@@ -207,6 +209,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   draper (~> 1.0)
+  fancybox-rails
   haml
   haml-rails
   jbuilder (~> 1.2)

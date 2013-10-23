@@ -40,6 +40,9 @@ gem 'tinymce-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Use fancybox as the default image preview script
+gem 'fancybox-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

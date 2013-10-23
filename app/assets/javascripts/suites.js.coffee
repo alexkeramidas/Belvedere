@@ -8,6 +8,30 @@ class BelvedereGit.suites extends BelvedereGit.Base
         this
         
     index: () ->
+        missingImgReposition = ->
+            $('.gallery.visible .item img[src*="missing"]').each ->
+                $(this).css('margin-top', parseInt(($('.image-gallery').height() - $(this).height()) / 2))
+                
+        galleryControlsReposition = ->
+            $('.gallery.visible .carousel-control').each ->
+                $(this).css('top', parseInt($('.image-gallery').height() / 2))
+        
+        setGalleryHeight = ->
+            min = parseInt($('.image-gallery').css('max-height'))
+            $('.gallery.visible .item').each ->
+                if $(this).height() < min
+                    min = $(this).height()
+            $('.image-gallery').css('height', min)
+            
+            missingImgReposition()
+            galleryControlsReposition()
+        
+        $(window).load ->
+            setGalleryHeight()
+        
+        $(window).resize ->
+            setGalleryHeight()
+        
         collapsibleEvent = jQuery.Event("collapsibleEvent")
         
         $container = $('.scrollable .mCSB_container')
@@ -38,11 +62,15 @@ class BelvedereGit.suites extends BelvedereGit.Base
                 $gallery.addClass('visible')
                 
                 if $gallery.find('.item').length > 1
-                    $gallery.addClass('carousel').addClass('slide').carousel({interval: 10000})
+                    $gallery.addClass('carousel').addClass('slide').carousel({interval: 10000}).on 'slid', (e) ->
+                        current_pos = $('.gallery.visible .carousel-inner .active').index()
+                        $.fancybox.pos(current_pos)
                 $collapsible.slideDown(200, (->
                         $(this).addClass('open').trigger(collapsibleEvent)
                     )
                 )
+                
+                setGalleryHeight()
             
             false
 
