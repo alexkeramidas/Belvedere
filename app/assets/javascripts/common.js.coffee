@@ -39,15 +39,23 @@ class BelvedereGit.Base
         
         # Custom resizable Fancybox
         
-        calculateFancyboxDisplayRatio = ->
-            $('#fancybox-content').width() / $('#fancybox-content').height()
+        window.calculateImageDisplayRatio = (img) ->
+            img_width = img.width()
+            img_height = img.height()
+            if img_width == 0 || img_height == 0
+                img_width = img.attr('data-width')
+                img_height = img.attr('data-height')
+            img_width / img_height
         
-        calculateNewFancyboxWidth = (h) ->
-            calculateFancyboxDisplayRatio() * h
+        window.calculateNewImageWidth = (img, h) ->
+            calculateImageDisplayRatio(img) * h
+        
+        window.calculateNewImageHeight = (img, w) ->
+            parseInt(w / calculateImageDisplayRatio(img))
         
         $(window).resize ->
             new_height = $('body').height() - 100
-            new_width = calculateNewFancyboxWidth(new_height)
+            new_width = window.calculateNewImageWidth($('#fancybox-content'), new_height)
             $('#fancybox-overlay').css('height', $('body').height())
             $('#fancybox-content').css('height', new_height).css('width', new_width)
             $('#fancybox-wrap').css('width', new_width + 20)

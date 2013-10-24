@@ -20,7 +20,7 @@
                         - room.photo_gallery.each_with_index do |photo, j|
                             .item{class: "#{'active' if j==0}"}
                                 = link_to photo.image.url(:original, :timestamp => false), class: 'fancybox', rel: "gallery#{i}" do
-                                    = image_tag photo.image.url(:original, :timestamp => false), size: '600x380'
+                                    = image_tag photo.image.url(:original, :timestamp => false), size: '600x380', data: {width: photo.width, height: photo.height}
                 - if room.photo_gallery.length > 1
                     = link_to '', "#gallery#{i}", data: {slide: 'prev'}, class: 'carousel-control left icon-chevron-left'
                     = link_to '', "#gallery#{i}", data: {slide: 'next'}, class: 'carousel-control right icon-chevron-right'
