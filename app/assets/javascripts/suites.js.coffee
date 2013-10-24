@@ -94,4 +94,9 @@ class BelvedereGit.suites extends BelvedereGit.Base
 
         $('.collapsible').bind 'collapsibleEvent', (e) ->
             link_id = $(this).prev().attr('id')
-            $container.css('top', link_offs[link_id])
+            
+            list_container_height = $(this).closest('.mCSB_container').height()
+            scrollable_height = $(this).closest('.scrollable').height()
+            
+            if list_container_height > scrollable_height
+                $container.css('top', link_offs[link_id])
