@@ -53,6 +53,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'rmagick', '2.13.2', :git => 'git://github.com/rmagick/rmagick.git'
 
+#Use amazon s3 to upload images
+gem 'aws-sdk'
+
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false

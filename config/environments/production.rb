@@ -3,6 +3,15 @@ BelvedereGit::Application.configure do
 
     ENV["DATABASE_URL"] = 'postgres://qitjibqjzsedhf:nqKQx7TbBC2uLpAeFnM_u_BuH0@ec2-54-228-235-149.eu-west-1.compute.amazonaws.com:5432/dfpf5kmq39mr72'
 
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV['belvedere-assets'],
+        :access_key_id => ENV['AKIAIKF76EAOSA6ZYP3Q'],
+        :secret_access_key => ENV['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']
+      }
+    }
+
     # Code is not reloaded between requests.
     config.cache_classes = true
 
