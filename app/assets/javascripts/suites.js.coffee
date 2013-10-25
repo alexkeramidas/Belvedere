@@ -8,23 +8,34 @@ class BelvedereGit.suites extends BelvedereGit.Base
         this
         
     index: () ->
+        # Vertically aligns missing images according to current gallery height
         missingImgReposition = ->
             $('.gallery.visible .item img[src*="missing"]').each ->
                 $(this).css('margin-top', parseInt(($('.image-gallery').height() - $(this).height()) / 2))
-                
+        
+        # Vertically aligns the 'previous' and 'next' buttons according to current gallery height
         galleryControlsReposition = ->
             $('.gallery.visible .carousel-control').each ->
                 $(this).css('top', parseInt($('.image-gallery').height() / 2))
         
-        galleryCarouselStart = (gal) ->
+        # Initializes gallery animation and attaches fancybox-related events
+        galleryCarouselInit = (gal) ->
             if gal.find('.item').length > 1
-                gal.addClass('carousel').addClass('slide').carousel({interval: 10000}).on 'slid', (e) ->
+                gal.addClass('carousel').addClass('slide').carousel({interval: 10000}).on('slide', (e) ->
+                    $img = gal.find('.item.active img')
+                    new_height = window.calculateNewImageHeight($img, gal.width())
+                    $img.css('width', gal.width()).css('height', new_height)
+                ).on('slid', (e) ->
                     if window.fancyClick == false
-                        current_pos = $('.gallery.visible .carousel-inner .active').index()
+                        current_pos = gal.find('.carousel-inner .active').index()
                         $.fancybox.pos(current_pos)
                     else
+                        e.stopImmediatePropagation()
                         window.fancyClick = false
+                )
         
+        # Image gallery height is set to the minimum height of its contained images
+        # Contained elements are also repositioned accordingly
         setGalleryHeight = ->
             min = parseInt($('.image-gallery').css('max-height'))
             $('.gallery.visible .item').each ->
@@ -36,14 +47,21 @@ class BelvedereGit.suites extends BelvedereGit.Base
             missingImgReposition()
             galleryControlsReposition()
         
-        $(window).load ->
+        # Prepares gallery for display
+        galleryPrepare = ->
             $gal = $('.gallery.visible')
-            galleryCarouselStart($gal)
+            galleryCarouselInit($gal)
             setGalleryHeight()
+        
+        galleryPrepare()
+        
+        $(window).load ->
+            galleryPrepare()
         
         $(window).resize ->
             setGalleryHeight()
         
+        # Define custom event that fires when one of the collapsible list items is opened
         collapsibleEvent = jQuery.Event("collapsibleEvent")
         
         $container = $('.scrollable .mCSB_container')
@@ -52,8 +70,10 @@ class BelvedereGit.suites extends BelvedereGit.Base
         $('.collapse-link').each ->
             link_offs[$(this).attr('id')] = - $("##{$(this).attr('id')}")[0].offsetTop
         
+        # Identifies whether somebody clicked on the 'next' or 'previous' fancybox arrows
         window.fancyClick = false
         
+        # What happens when we click on one of the collapsible list items
         $('.collapse-link').click ->
             $link = $(this)
             collapsible_id = $(this).attr('href').replace(/.*#{1}/,'#')
@@ -75,7 +95,7 @@ class BelvedereGit.suites extends BelvedereGit.Base
                 
                 $gallery.addClass('visible')
                 
-                galleryCarouselStart($gallery)
+                galleryCarouselInit($gallery)
                 
                 $collapsible.slideDown(200, (->
                         $(this).addClass('open').trigger(collapsibleEvent)
@@ -86,12 +106,14 @@ class BelvedereGit.suites extends BelvedereGit.Base
             
             false
 
+        # Triggers when fancybox is opened and its 'next' and 'previous' controls are used
         $('a.fancybox').on 'click', (e) ->
             $('#fancybox-left').on 'click', (e) ->
                 window.fancyClick = true
             $('#fancybox-right').on 'click', (e) ->
                 window.fancyClick = true
 
+        # Scrolls scrollable area accordingly when our custom collapsible event is fired
         $('.collapsible').bind 'collapsibleEvent', (e) ->
             link_id = $(this).prev().attr('id')
             

@@ -27,6 +27,10 @@ class BelvedereGit.Base
         
         $('.carousel').carousel()
         
+        # Make certain that fancybox works with turbolinks
+        $(document).bind 'page:change', ->
+            $.fancybox.init()
+        
         $('a.fancybox').fancybox
             cyclic: true
             autoDimensions: true
@@ -34,6 +38,7 @@ class BelvedereGit.Base
                 current_img_url = $('#fancybox-content img').attr('src')
                 current_img_path = "#{current_img_url.replace(window.location.protocol+'//'+window.location.host, '')}"
                 current_offset = $('.gallery.visible .carousel-inner').children().index($("a.fancybox[href*='#{current_img_path}']").parent())
+                $.fancybox.current_offs = current_offset
                 $('.gallery.visible').carousel(current_offset)
         
         
@@ -55,10 +60,12 @@ class BelvedereGit.Base
         
         $(window).resize ->
             new_height = $('body').height() - 100
-            new_width = window.calculateNewImageWidth($('#fancybox-content'), new_height)
-            $('#fancybox-overlay').css('height', $('body').height())
-            $('#fancybox-content').css('height', new_height).css('width', new_width)
-            $('#fancybox-wrap').css('width', new_width + 20)
+            img_height = $(".gallery.visible .item").eq($.fancybox.current_offs).find('img').attr('data-height')
+            if img_height >= new_height
+                new_width = window.calculateNewImageWidth($('#fancybox-content'), new_height)
+                $('#fancybox-overlay').css('height', $('body').height())
+                $('#fancybox-content').css('height', new_height).css('width', new_width)
+                $('#fancybox-wrap').css('width', new_width + 20)
 
 
         # MAKE SURE YOU RETURN this
