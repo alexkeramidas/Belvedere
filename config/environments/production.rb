@@ -6,9 +6,9 @@ BelvedereGit::Application.configure do
     config.paperclip_defaults = {
         :storage => :s3,
         :s3_credentials => {
-            :bucket => ENV['belvedere-assets'],
-            :access_key_id => ENV['AKIAIKF76EAOSA6ZYP3Q'],
-            :secret_access_key => ENV['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']
+                :bucket => ENV['S3_BUCKET_NAME'],
+                :access_key_id => ENV['AWSAccessKeyId'],
+                :secret_access_key => ENV['AWSSecretKey']
             }
     }
 
