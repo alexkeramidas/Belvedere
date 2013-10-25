@@ -23,8 +23,7 @@ class BelvedereGit.suites extends BelvedereGit.Base
             if gal.find('.item').length > 1
                 gal.addClass('carousel').addClass('slide').carousel({interval: 10000}).on('slide', (e) ->
                     $img = gal.find('.item.active img')
-                    new_height = window.calculateNewImageHeight($img, gal.width())
-                    $img.css('width', gal.width()).css('height', new_height)
+                    $img.width(gal.width())
                 ).on('slid', (e) ->
                     if window.fancyClick == false
                         current_pos = gal.find('.carousel-inner .active').index()
@@ -59,6 +58,7 @@ class BelvedereGit.suites extends BelvedereGit.Base
             galleryPrepare()
         
         $(window).resize ->
+            $('.gallery.visible .item.active img').width($('.gallery.visible').width())
             setGalleryHeight()
         
         # Define custom event that fires when one of the collapsible list items is opened
