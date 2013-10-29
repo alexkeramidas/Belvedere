@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-    belongs_to :suite
+    belongs_to :suite, :foreign_key => 'article_id'
 
     has_attached_file :image,
                       :url => "/photos/:style/:filename",

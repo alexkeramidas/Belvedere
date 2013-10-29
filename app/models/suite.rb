@@ -1,7 +1,7 @@
 class Suite < ActiveRecord::Base
     self.table_name = "articles"
 
-    has_many :photos, :dependent => :destroy
+    has_many :photos, :foreign_key => 'article_id', :dependent => :destroy
     accepts_nested_attributes_for :photos, :allow_destroy => true
 
     validates_acceptance_of :article_type, :accept => 2
@@ -19,6 +19,6 @@ class Suite < ActiveRecord::Base
     # Object methods
 
     def photo_gallery
-        Photo.where(:suite_id => id)
+        Photo.where(:article_id => id)
     end
 end
