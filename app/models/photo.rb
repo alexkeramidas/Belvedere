@@ -6,6 +6,8 @@ class Photo < ActiveRecord::Base
                       :path => ":rails_root/public/photos/:style/:filename",
                       :styles => { :medium => "300x300>", :thumb => "100x100>" },
                       :default_url => "/images/:style/missing.png"
+    
+    validates_attachment_presence :image
 
     def photo_geometry(style = :original)
         @geometry ||= {}

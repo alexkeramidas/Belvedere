@@ -5,6 +5,8 @@ class Suite < ActiveRecord::Base
     accepts_nested_attributes_for :photos, :allow_destroy => true
 
     validates_acceptance_of :article_type, :accept => 2
+    
+    validates_associated :photos
 
     # Class methods
 
