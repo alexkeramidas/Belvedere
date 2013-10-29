@@ -10,6 +10,22 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
         default_actions
     end
 
+    show do |ad|
+      attributes_table do
+        row :title
+        row :description
+        row :images do
+          ul do
+            ad.photos.each do |img|
+              ul do
+                image_tag(img.image.url(:medium))
+              end
+            end
+           end
+        end
+      end
+    end
+
     form :html => { :multipart => true} do |f|
         f.inputs "Room" do
             f.input :title
@@ -18,16 +34,19 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
         end
         f.inputs "Photos" do
             f.has_many :photos do |p|
+                unless p.object.new_record?
+                    p.input :_destroy, :as=>:boolean, :label => "Delete Image?"
+                end
                 p.input :description
-                p.input :image, :as => :file
+                p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.image.url(:thumb))
             end
         end
-        f.buttons
+        f.actions
     end
 
     controller do
         def permitted_params
-            params.permit rooms: [:title, :description, :visible, :article_type => 2,  photos_attributes: [:suite_id, :description, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at]]
+            params.permit rooms: [:title, :description, :visible, :article_type => 2,  photos_attributes: [:id, :suite_id, :description, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy]]
         end
         def scoped_collection
             Suite.valid

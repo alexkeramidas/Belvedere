@@ -1,8 +1,8 @@
 class Suite < ActiveRecord::Base
     self.table_name = "articles"
 
-    has_many :photos
-    accepts_nested_attributes_for :photos
+    has_many :photos, :dependent => :destroy
+    accepts_nested_attributes_for :photos, :allow_destroy => true
 
     validates_acceptance_of :article_type, :accept => 2
 
