@@ -2,6 +2,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
     config.per_page = 10
 
     index do
+        selectable_column
         column :title
         column :description
         column :visible
@@ -29,7 +30,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
     form :html => { :multipart => true} do |f|
         f.inputs "Room" do
             f.input :title
-            f.input :description
+            f.input :description, :input_html => { :class => "tinymce-jquery" }
             f.input :visible
         end
         f.inputs "Photos" do
@@ -48,7 +49,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
         def permitted_params
             params.permit rooms: [:title, :description, :visible, :article_type => 2,  photos_attributes: [:id, :article_id, :description, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :_destroy]]
         end
-        
+
         def scoped_collection
             Suite.valid
         end

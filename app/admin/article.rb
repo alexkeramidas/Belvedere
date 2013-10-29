@@ -2,6 +2,7 @@ ActiveAdmin.register Article, :as => 'News' do
     config.per_page = 10
 
     index do
+        selectable_column
         column :title
         column :description
         column :visible
@@ -16,7 +17,7 @@ ActiveAdmin.register Article, :as => 'News' do
             f.input :description, :input_html => { :class => "tinymce-jquery" }
             f.input :visible
         end
-        f.buttons
+        f.actions
     end
 
     controller do

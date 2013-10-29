@@ -23,4 +23,8 @@ class Photo < ActiveRecord::Base
         photo_geometry.height.to_i
     end
 
+    def name
+        self.image_file_name
+    end
+
 end
