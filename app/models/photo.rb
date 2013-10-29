@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
                       :url => "/photos/:style/:filename",
                       :path => ":rails_root/public/photos/:style/:filename",
                       :styles => { :medium => "300x300>", :thumb => "100x100>" },
-                      :default_url => "/images/:style/missing.png"
+                      :default_url => "/assets/missing.png"
     
     validates_attachment_presence :image
 
@@ -23,8 +23,31 @@ class Photo < ActiveRecord::Base
         photo_geometry.height.to_i
     end
 
-    def name
-        self.image_file_name
+    def generate_url(style = :original)
+        if file_exists(style)
+            image.url(style, timestamp: false)
+        else
+            missing_url
+        end
     end
 
+    def generate_path(style = :original)
+        if file_exists(style)
+            image.path(style, timestamp: false)
+        else
+            missing_url
+        end
+    end
+    
+    def missing_url
+        ActionController::Base.new.view_context.image_path('missing.png')
+    end
+    
+    def file_exists(style = :original)
+        if image.exists?
+            photo_exists = (image.options[:storage] == :s3) ? AWS::S3::S3Object.exists?(image.url(style), bucket_name) : File.exist?(image.path(style))
+        else
+            photo_exists = false
+        end
+    end
 end

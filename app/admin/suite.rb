@@ -1,5 +1,13 @@
 ActiveAdmin.register Suite, :as => 'Rooms' do
     config.per_page = 10
+    
+    filter :photos, collection: proc {Photo.all.map { |photo| [photo.image_file_name, photo.id] }}
+    filter :title
+    filter :description
+    filter :visible
+    filter :created_at
+    filter :article_type
+    filter :updated_at
 
     index do
         selectable_column
@@ -19,7 +27,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
           ul do
             ad.photos.each do |img|
               ul do
-                image_tag(img.image.url(:medium))
+                image_tag(img.generate_url(:medium))
               end
             end
            end
@@ -39,7 +47,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
                     p.input :_destroy, :as=>:boolean, :label => "Delete Image?"
                 end
                 p.input :description
-                p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.image.url(:thumb))
+                p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.generate_url(:thumb))
             end
         end
         f.actions

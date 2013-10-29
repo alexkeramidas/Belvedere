@@ -23,5 +23,4 @@ ActiveAdmin.register AdminUser do
       params.permit admin_user: [:email, :password, :password_confirmation]
     end
   end
-
 end
