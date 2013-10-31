@@ -20,12 +20,17 @@ class PagesController < ApplicationController
     end
     
     def photo_gallery
-        @bg_list = [
-            { filename: "bg1.jpg", default: true }, 
-            { filename: "bg2.jpg", default: false }, 
-            { filename: "bg3.jpg", default: false }, 
-            { filename: "bg4.jpg", default: false }, 
-            { filename: "bg5.jpg", default: false }
-        ]
+        @gallery = PhotoGallery.latest
+        
+        if !@gallery.blank?
+            @bg_list = Array.new
+            
+            if @gallery.photos.length > 0
+                @gallery.photos.each_with_index do |photo, i|
+                    i == 0 ? def_flag = true : false
+                    @bg_list << { filename: photo.decorate.photo_path(:original), default: def_flag }
+                end
+            end
+        end
     end
 end

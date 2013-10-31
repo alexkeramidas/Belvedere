@@ -9,6 +9,9 @@ class BelvedereGit.pages extends BelvedereGit.Base
         
     home: () ->
         $('body').bgCarousel()
+        
+    photo_gallery: () ->
+        $('body').bgCarousel()
 
     location: () ->
         MyPositioningControl = (controlDiv, map) ->
