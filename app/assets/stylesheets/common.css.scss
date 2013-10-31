@@ -237,7 +237,7 @@ a {
         padding: 10px;
         position: relative;
 
-        &:hover {
+        &:hover, &.active {
             color: #e99924;
             text-decoration: none;
 

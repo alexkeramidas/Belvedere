@@ -18,4 +18,8 @@ class PagesController < ApplicationController
     def location
         
     end
+    
+    def photo_gallery
+        
+    end
 end
