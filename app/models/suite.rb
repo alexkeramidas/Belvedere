@@ -9,18 +9,12 @@ class Suite < ActiveRecord::Base
     validates_associated :photos
 
     # Class methods
-
+    
     def self.valid
         self.where(:article_type => 2)
     end
 
     def self.visible
         self.where(:visible => true)
-    end
-
-    # Object methods
-
-    def photo_gallery
-        Photo.where(:article_id => id)
     end
 end
