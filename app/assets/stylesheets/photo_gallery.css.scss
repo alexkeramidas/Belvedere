@@ -1,0 +1,43 @@
+#page-body .photo-gallery {
+    background-color: transparent;
+    
+    h1 {
+        width: 314px;
+        color: #e99924;
+        background: #8f0017;
+        background-color: rgba(143, 0, 23, 0.85);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border-radius: 6px;
+        margin-top: 0;
+        padding: 15px 28px;
+    }
+
+    .wrapper {
+        position: relative;
+        width: 370px;
+        height: auto;
+        min-height: 210px;
+        max-height: 470px;
+        background: #927f6d;
+        background-color: rgba(146, 127, 109, .85);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border-radius: 6px;
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 15px 30px 15px 30px;
+        word-wrap: break-word;
+        overflow: hidden;
+
+        .scrollable {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+}
+
