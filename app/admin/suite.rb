@@ -27,7 +27,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
           ul do
             ad.photos.each do |img|
               ul do
-                image_tag(img.generate_url(:medium))
+                image_tag(img.decorate.photo_path(:medium))
               end
             end
            end
@@ -47,7 +47,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
                     p.input :_destroy, :as=>:boolean, :label => "Delete Image?"
                 end
                 p.input :description
-                p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.generate_url(:thumb))
+                p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.decorate.photo_path(:thumb))
             end
         end
         f.actions

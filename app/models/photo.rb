@@ -11,6 +11,9 @@ class Photo < ActiveRecord::Base
     
     validates_attachment_presence :image
 
+    # ATTENTION!! photo_geometry is not to be used directly from within views and controllers,
+    # since it will generate an error if the image in question does not exist.
+    # Use the decorator's photo_data, photo_path and photo_geometry instead.
     def photo_geometry(style = :original)
         @geometry ||= {}
         photo_path = (image.options[:storage] == :s3) ? image.url(style) : image.path(style)
