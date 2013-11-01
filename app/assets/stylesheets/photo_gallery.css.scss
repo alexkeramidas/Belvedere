@@ -4,9 +4,11 @@
     h1 {
         width: 314px;
         color: #e99924;
-        background: #8f0017;
-        background-color: rgba(143, 0, 23, 0.85);
+        background: #3a0e15;
+        background-color: rgba(58, 14, 21, 0.85);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border: 1px solid #864a4c;
+        border: 1px solid rgba(255, 155, 155, .45);
         border-radius: 6px;
         margin-top: 0;
         padding: 15px 28px;
@@ -20,6 +22,11 @@
         max-height: 470px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .85);
+        background-image: radial-gradient( rgba(109, 74, 92, .25) 20%, transparent 20% ),
+                          radial-gradient( rgba(109, 74, 92, .25) 20%, transparent 20% ),
+                          linear-gradient(135deg, transparent 48%, rgba(150, 107, 128, .5) 49%, rgba(92, 36, 64, .5) 51%, transparent 52% ),
+                          linear-gradient(-135deg, transparent 48%, rgba(150, 107, 128, .5) 49%, rgba(92, 36, 64, .5) 51%, transparent 52% );
+        background-size: 20px 20px;
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 6px;
     }

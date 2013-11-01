@@ -41,7 +41,7 @@ body {
 
 h1 {
     font-family: 'Della Respira', 'DellaRespira-Regular', serif;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 30px;
     font-style: normal;
     font-weight: 400;
@@ -83,7 +83,7 @@ a {
     left: 0;
     right: 0;
     background: no-repeat;
-    @include background-size(cover);
+    background-size: cover;
     z-index: -2;
     
     &.active {
