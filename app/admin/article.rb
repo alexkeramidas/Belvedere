@@ -14,7 +14,7 @@ ActiveAdmin.register Article, :as => 'News' do
     form do |f|
         f.inputs do
             f.input :title
-            f.input :description, :input_html => { :class => "tinymce-jquery" }
+            f.input :description, as: :html_editor
             f.input :visible
         end
         f.actions
