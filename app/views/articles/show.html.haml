@@ -4,5 +4,5 @@
         .posts
             .scrollable
                 .post= sanitize(@article.description)
-                %details.date= @article.created_at
+                .date= @article.created_at
                 %p.show-article= link_to 'Back', articles_path

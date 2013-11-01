@@ -6,5 +6,5 @@
                 - @articles.each do |article|
                     %h2= article.title
                     .post= sanitize(article.description, :tags => []).truncate(1000)
-                    %details.date= article.created_at
+                    .date= article.created_at
                     %p.show-article= link_to 'Show', article

@@ -68,7 +68,8 @@ class BelvedereGit.suites extends BelvedereGit.Base
         
         link_offs = {}
         $('.collapse-link').each ->
-            link_offs[$(this).attr('id')] = - $("##{$(this).attr('id')}")[0].offsetTop
+            $parent = $(this).parent()
+            link_offs["link_#{$parent.index()}"] = - ($parent.index() * ($parent.height() + parseInt($parent.css('margin-top')) + parseInt($parent.css('margin-bottom'))))
         
         # Identifies whether somebody clicked on the 'next' or 'previous' fancybox arrows
         window.fancyClick = false
