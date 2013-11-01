@@ -40,6 +40,7 @@ class BelvedereGit.Base
                 current_offset = $('.gallery.visible .carousel-inner').children().index($("a.fancybox[href*='#{current_img_path}']").parent())
                 $.fancybox.current_offs = current_offset
                 $('.gallery.visible').carousel(current_offset)
+                fancyboxContainersResize()
         
         
         # Custom resizable Fancybox
@@ -58,30 +59,34 @@ class BelvedereGit.Base
         window.calculateNewImageHeight = (img, w) ->
             parseInt(w / calculateImageDisplayRatio(img))
         
-        $(window).resize ->
+        fancyboxContainersResize = () ->
+            $('#fancybox-overlay').css('width', '100%').css('height', $('body').height())
+            $('#fancybox-outer').css('height', 'auto').css('width', 'auto')
+            $('#fancybox-wrap').css('width', 'auto').css('height', 'auto')
+        
+        fancyboxResize = () ->
             new_base_width = $('body').width() - 100
             new_base_height = $('body').height() - 100
             
             img_width = $(".gallery.visible .item").eq($.fancybox.current_offs).find('img').attr('data-width')
             img_height = $(".gallery.visible .item").eq($.fancybox.current_offs).find('img').attr('data-height')
             
-            new_width = window.calculateNewImageWidth($('#fancybox-content'), new_base_height)
-            new_height = window.calculateNewImageHeight($('#fancybox-content'), new_base_width)
+            new_width = window.calculateNewImageWidth($($('.collapse-link.active').attr('data-gal')).find('.item.active img'), new_base_height)
+            new_height = window.calculateNewImageHeight($($('.collapse-link.active').attr('data-gal')).find('.item.active img'), new_base_width)
 
             current_width = $('#fancybox-img').width()
             current_height = $('#fancybox-img').height()
 
+            fancyboxContainersResize()
+            
             if new_base_width > 20 && new_base_height > 20
                 if img_width >= new_base_width && new_height <= new_base_height
-                    $('#fancybox-overlay').css('width', '100%').css('height', $('body').height())
                     $('#fancybox-content').css('width', new_base_width).css('height', new_height)
-                    $('#fancybox-outer').css('height', 'auto').css('width', 'auto')
-                    $('#fancybox-wrap').css('width', 'auto').css('height', 'auto')
                 else if img_height >= new_base_height && new_width <= new_base_width
-                    $('#fancybox-overlay').css('width', '100%').css('height', $('body').height())
                     $('#fancybox-content').css('height', new_base_height).css('width', new_width)
-                    $('#fancybox-outer').css('height', 'auto').css('width', 'auto')
-                    $('#fancybox-wrap').css('width', 'auto').css('height', 'auto')
+        
+        $(window).resize ->
+            fancyboxResize()
 
 
         # MAKE SURE YOU RETURN this
