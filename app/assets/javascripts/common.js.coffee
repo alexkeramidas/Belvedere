@@ -75,11 +75,13 @@ class BelvedereGit.Base
                 if img_width >= new_base_width && new_height <= new_base_height
                     $('#fancybox-overlay').css('width', '100%').css('height', $('body').height())
                     $('#fancybox-content').css('width', new_base_width).css('height', new_height)
-                    $('#fancybox-wrap').css('width', new_base_width + 20).css('height', new_height + 20)
+                    $('#fancybox-outer').css('height', 'auto').css('width', 'auto')
+                    $('#fancybox-wrap').css('width', 'auto').css('height', 'auto')
                 else if img_height >= new_base_height && new_width <= new_base_width
                     $('#fancybox-overlay').css('width', '100%').css('height', $('body').height())
                     $('#fancybox-content').css('height', new_base_height).css('width', new_width)
-                    $('#fancybox-wrap').css('width', new_width + 20)
+                    $('#fancybox-outer').css('height', 'auto').css('width', 'auto')
+                    $('#fancybox-wrap').css('width', 'auto').css('height', 'auto')
 
 
         # MAKE SURE YOU RETURN this
