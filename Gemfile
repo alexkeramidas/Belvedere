@@ -8,6 +8,9 @@ gem 'rails', '4.0.0'
 # Use Twitter Bootstrap for SASS
 gem 'bootstrap-sass'
 
+# Use Font Awesome for icon fonts
+gem 'font-awesome-sass'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
@@ -32,8 +35,6 @@ gem 'draper', '~> 1.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use editor for ActiveAdmin
 gem 'active_admin_editor'
-
-# Use TinyuMCE for Active Admin
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

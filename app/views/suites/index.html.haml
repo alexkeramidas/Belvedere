@@ -23,5 +23,5 @@
                                 = link_to photo.photo_path(:original), class: 'fancybox', rel: "gallery#{i}" do
                                     = image_tag photo.photo_path(:original), size: '600x380', data: {width: photo.photo_geometry(:original).width, height: photo.decorate.photo_geometry(:original).height}
                 - if room.photos.length > 1
-                    = link_to '', "#gallery#{i}", data: {slide: 'prev'}, class: 'carousel-control left icon-chevron-left'
-                    = link_to '', "#gallery#{i}", data: {slide: 'next'}, class: 'carousel-control right icon-chevron-right'
+                    = link_to '', "#gallery#{i}", data: {slide: 'prev'}, class: 'carousel-control left fa-chevron-left'
+                    = link_to '', "#gallery#{i}", data: {slide: 'next'}, class: 'carousel-control right fa-chevron-right'

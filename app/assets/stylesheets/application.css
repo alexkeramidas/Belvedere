@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap
+ *= require font-awesome
  *= require fancybox
  *= require active_admin/editor/wysiwyg
  *= require_tree ../../../vendor/assets/stylesheets

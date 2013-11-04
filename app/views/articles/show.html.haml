@@ -3,6 +3,7 @@
     .wrapper
         .posts
             .scrollable
+                = link_to articles_path, class: 'title clearfix' do
+                    %h3.pull-left.fa-long-arrow-left Go Back to News &amp; Offers
+                    %h3.pull-right.fa-calendar= @article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
                 .post= sanitize(@article.description)
-                %details.date= @article.created_at
-                %p.show-article= link_to 'Back', articles_path

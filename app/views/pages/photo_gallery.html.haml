@@ -1,0 +1,7 @@
+.photo-gallery
+    .title
+        %h1= @gallery.title
+    .wrapper
+        .content
+            .scrollable
+                .desc= sanitize(@gallery.description)
