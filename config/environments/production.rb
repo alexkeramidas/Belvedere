@@ -73,6 +73,9 @@ BelvedereGit::Application.configure do
     # config.assets.precompile += %w( search.js )
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
+    # Run initilizers on assets precompile
+    config.initialize_on_precompile = true
+
     # Ignore bad email addresses and do not raise email delivery errors.
     # Set this to true and configure the email server for immediate delivery to raise delivery errors.
     # config.action_mailer.raise_delivery_errors = false

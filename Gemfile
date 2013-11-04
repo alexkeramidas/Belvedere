@@ -33,9 +33,8 @@ gem 'draper', '~> 1.0'
 
 # Use ActiveAdmin for the site's administration
 gem 'activeadmin', github: 'gregbell/active_admin'
-
-# Use TinyuMCE for Active Admin
-gem 'tinymce-rails'
+# Use editor for ActiveAdmin
+gem 'active_admin_editor'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
