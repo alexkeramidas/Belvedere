@@ -100,6 +100,8 @@ GEM
     execjs (2.0.2)
     fancybox-rails (0.2.1)
       railties (>= 3.1.0)
+    font-awesome-sass (4.0.1)
+      sass-rails (>= 3.1.1)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
     haml (4.0.3)
@@ -218,6 +220,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   draper (~> 1.0)
   fancybox-rails
+  font-awesome-sass
   haml
   haml-rails
   jbuilder (~> 1.2)

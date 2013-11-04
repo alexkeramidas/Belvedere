@@ -1,5 +1,3 @@
-@import "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css";
-
 @import "//fonts.googleapis.com/css?family=Della+Respira";
 @font-face {
     font-family: 'DellaRespira-Regular';
@@ -20,6 +18,12 @@
 ::-moz-selection {
     background: #efb7a7;
     color: #fff;
+}
+
+[class^='fa-'], [class*=' fa-']{
+    &:before {
+        font-family: FontAwesome !important;
+    }
 }
 
 html {
@@ -51,6 +55,14 @@ h2 {
     font-family: 'Century Gothic', verdana, arial, helvetica, sans-serif;
     font-size: 23px;
     line-height: 23px;
+    font-weight: normal;
+    text-shadow: 2px 2px rgba(0, 0, 0, .5);
+}
+
+h3 {
+    font-family: 'Century Gothic', verdana, arial, helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
     font-weight: normal;
     text-shadow: 2px 2px rgba(0, 0, 0, .5);
 }

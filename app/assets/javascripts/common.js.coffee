@@ -25,13 +25,18 @@ class BelvedereGit.Base
             theme: 'dark'
         })
         
+        # Initialize carousel for elements with the 'carousel' class
+        
         $('.carousel').carousel()
         
         # Make certain that fancybox works with turbolinks
+        
         $(document).bind 'page:change', ->
             $.fancybox.init()
         
-        $('a.fancybox').fancybox
+        # Initialize fancybox for links within galleries, that have the 'fancybox' class
+        
+        $('.gallery a.fancybox').fancybox
             cyclic: true
             autoDimensions: true
             onComplete: ->
@@ -43,7 +48,7 @@ class BelvedereGit.Base
                 fancyboxContainersResize()
         
         
-        # Custom resizable Fancybox
+        # Custom resizable Fancybox for image galleries
         
         window.calculateImageDisplayRatio = (img) ->
             img_width = img.width()

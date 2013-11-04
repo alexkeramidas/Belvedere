@@ -8,6 +8,9 @@ gem 'rails', '4.0.0'
 # Use Twitter Bootstrap for SASS
 gem 'bootstrap-sass'
 
+# Use Font Awesome for icon fonts
+gem 'font-awesome-sass'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
