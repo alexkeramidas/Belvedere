@@ -1,0 +1,12 @@
+.contact
+    .formwrapper
+        = form_tag("/search", method: "POST", :class => "contactform") do
+            .scrollable
+                %h1 Contact Belvedere Hotel
+                = text_field_tag :name, nil, :class => "name feedback-input validate[required,custom[onlyLetter],length[0,100]]", :placeholder => "Name"
+                = email_field_tag :email, nil, :class => "email feedback-input", :placeholder => "Email"
+                = text_area_tag :comment, nil, :class => "comment feedback-input validate[required,length[6,300]]", :placeholder => "Please send your message"
+                = button_tag "SEND", :class => "send-button send"
+                .ease
+        end
+
