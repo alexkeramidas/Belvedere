@@ -14,120 +14,108 @@
         background-color: rgba(146, 127, 109, .9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 6px;
-        float:left;
+    }
 
-        .contactform {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: 20px 35px;
-            word-wrap: break-word;
-            overflow: hidden;
+    .contactform {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 35px 45px;
+        word-wrap: break-word;
+        overflow: hidden;
 
-            .scrollable {
-                height: 100%;
-                overflow: auto;
+        .scrollable {
+            height: 100%;
+            overflow: auto;
+        }
 
-                h1 {
-                font-weight: bold;
-                font-size: 25px;
-                color: #5f0015;
-                line-height: 25px;
-                text-shadow: none;
-                margin: 0;
-                padding-bottom: 15px;
-                }
+        h1 {
+            font-weight: bold;
+            color: #5f0015;
+            line-height: 25px;
+            text-shadow: 2px 2px rgba(119, 68, 51, .7);
+            margin: 0;
+            padding-bottom: 25px;
+        }
 
-                .feedback-input {
-                    color:#3c3c3c;
-                    font-family: Helvetica, Arial, sans-serif;
-                    font-weight:500;
-                    font-size: 18px;
-                    border-radius: 0;
-                    line-height: 22px;
-                    background-color: #fbfbfb;
-                    padding: 13px 0px 13px 42px;
-                    margin-bottom: 10px;
-                    width :80%;
-                    border: 3px solid rgba(0,0,0,0);
-                }
+        input[type=text],
+        input[type=email],
+        textarea {
+            width: 99%;
+            color: #3c3c3c;
+            background-color: #fff;
+            border: 2px solid #fff;
+            border-radius: 0;
+            padding: 10px 5px 10px 42px;
+            margin-bottom: 10px;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
 
-                .feedback-input:focus{
-                    background: #fff;
-                    box-shadow: 0;
-                    border: 3px solid #E99924;
-                    color: #3498db;
-                    outline: none;
-                    padding: 13px 0px 13px 42px;
-                }
-
-                .focused{
-                    color:#30aed6;
-                    border:#30aed6 solid 3px;
-                }
-
-                .name, .name:focus {
-                    background-image: url('name.svg');
-                }
-
-                .email, .email:focus {
-                    background-image: url('email.svg');
-                }
-
-                .comment, .comment:focus {
-                    background-image: url('comment.svg');
-                    resize: vertical;
-                }
-
-                .name, .name:focus, .email, .email:focus, .comment, .comment:focus{
-                    background-size: 30px 30px;
-                    background-position: 11px 8px;
-                    background-repeat: no-repeat;
-                }
-
-                textarea {
-                    height: 125px;
-                }
-
-                .send-button{
-                    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-                    float:left;
-                    width: 50%;
-                    border: #fbfbfb solid 4px;
-                    cursor:pointer;
-                    background-color: #E99924;
-                    color:white;
-                    font-size:24px;
-                    padding-top:22px;
-                    padding-bottom:22px;
-                    transition: all 0.3s;
-                    margin-top:-4px;
-                    font-weight:700;
-                }
-
-                .send-button:hover{
-                    background-color: rgba(48, 35, 21, .8);
-                    color: #E99924;
-                }
-
-                .submit:hover {
-                    color: #3498db;
-                }
-
-                .ease {
-                    width: 0px;
-                    height: 74px;
-                    background-color: #fbfbfb;
-                    transition: .3s ease;
-                }
-
-                .submit:hover .ease{
-                      width:100%;
-                      background-color:white;
-                }
+            &:focus{
+                color: #3498db;
+                outline: none;
+                background-color: #fbfbdb;
+                border: 2px solid #e99924;
+                padding: 10px 5px 10px 42px;
+                box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
             }
+        }
+
+        textarea {
+            height: 125px;
+            resize: vertical;
+        }
+        
+        .name, .email, .message {
+            position: relative;
+            
+            &:before {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 20px;
+                height: 20px;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+
+        .send-button{
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+            float: left;
+            width: 50%;
+            border: #fbfbfb solid 4px;
+            cursor: pointer;
+            background-color: #E99924;
+            color: #fff;
+            font-size: 24px;
+            padding-top: 22px;
+            padding-bottom: 22px;
+            transition: all 0.3s;
+            margin-top: -4px;
+            font-weight: 700;
+
+            &:hover{
+                background-color: rgba(48, 35, 21, .8);
+                color: #E99924;
+            }
+        }
+
+        .submit:hover {
+            color: #3498db;
+        }
+
+        .ease {
+            width: 0px;
+            height: 74px;
+            background-color: #fbfbfb;
+            transition: .3s ease;
+        }
+
+        .submit:hover .ease{
+              width:100%;
+              background-color:white;
         }
     }
 }

@@ -9,9 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  * 
  *= require_self
+ * 
  *= require bootstrap
  *= require font-awesome
+ * 
  *= require fancybox
- *= require_tree ../../../vendor/assets/stylesheets
+ * 
+ * WARNING! Each CSS or SCSS file inside vendor/assets/stylesheets now has to be manually required
+ * as shown below (do NOT use require_tree for that directory).
+ *= require jquery.mCustomScrollbar
+ * 
  *= require_tree .
  */

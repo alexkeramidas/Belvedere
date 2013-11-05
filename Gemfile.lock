@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 4a1516d7a6026f55c1e60573a1e9f7d5ff6e60b7
+  revision: a6f6794c0fbac3b481afe3bd0acbb36d792b0300
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -100,7 +100,7 @@ GEM
     execjs (2.0.2)
     fancybox-rails (0.2.1)
       railties (>= 3.1.0)
-    font-awesome-sass (4.0.1)
+    font-awesome-sass (4.0.2)
       sass-rails (>= 3.1.1)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
