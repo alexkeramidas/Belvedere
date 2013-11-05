@@ -67,6 +67,7 @@ if Object.const_defined?("Rich")
 	#
 	# Default:
 	# config.allow_document_uploads = false
+    config.editor[:toolbar] = 'Easy';
 
 	# == Set allowed filetypes for non-image files
 	#

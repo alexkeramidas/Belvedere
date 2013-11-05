@@ -12,6 +12,8 @@ BelvedereGit::Application.configure do
             }
     }
 
+    config.assets.paths << Rails.root.join('lib', 'assets', 'stylesheets', 'rich')
+
     # Code is not reloaded between requests.
     config.cache_classes = true
 
