@@ -12,8 +12,10 @@ BelvedereGit::Application.routes.draw do
 
     get 'about' => 'pages#about'
     get 'location' => 'pages#location'
-    get 'contact' => 'pages#contact'
     get 'photo_gallery' => 'pages#photo_gallery'
+    
+    get 'contact' => 'pages#contact'
+    post 'send_mail' => 'pages#send_mail'
 
     get 'accommodation' => 'suites#index'
 

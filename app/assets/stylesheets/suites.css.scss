@@ -145,10 +145,12 @@
                 
                 &:hover {
                     border: 1px solid #453530;
+                    background-color: #3c2b26;
                     background-color: rgba(53, 37, 32, .9);
                 }
                 
                 &.active {
+                    background-color: #3c2b26;
                     background-color: rgba(53, 37, 32, .9);
                 }
             }

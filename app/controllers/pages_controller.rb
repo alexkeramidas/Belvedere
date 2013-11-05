@@ -22,6 +22,11 @@ class PagesController < ApplicationController
     def contact
 
     end
+    
+    def send_mail
+        ContactMailer.contact_email(params[:name], params[:email], params[:message]).deliver
+        redirect_to contact_url(:status => :success) and return
+    end
 
     def photo_gallery
         @gallery = PhotoGallery.latest
