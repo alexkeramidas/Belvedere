@@ -21,10 +21,10 @@ class BelvedereGit.suites extends BelvedereGit.Base
         # Initializes gallery animation and attaches fancybox-related events
         galleryCarouselInit = (gal) ->
             if gal.find('.item').length > 1
-                gal.addClass('carousel').addClass('slide').carousel({interval: 10000}).on('slide', (e) ->
+                gal.addClass('carousel').addClass('slide').carousel({interval: 10000}).on('slide.bs.carousel', (e) ->
                     $img = gal.find('.item.active img')
                     $img.width(gal.width())
-                ).on('slid', (e) ->
+                ).on('slid.bs.carousel', (e) ->
                     if window.fancyClick == false
                         current_pos = gal.find('.carousel-inner .active').index()
                         $.fancybox.pos(current_pos)
@@ -68,7 +68,8 @@ class BelvedereGit.suites extends BelvedereGit.Base
         
         link_offs = {}
         $('.collapse-link').each ->
-            link_offs[$(this).attr('id')] = - $("##{$(this).attr('id')}")[0].offsetTop
+            $parent = $(this).parent()
+            link_offs["link_#{$parent.index()}"] = - ($parent.index() * ($parent.height() + parseInt($parent.css('margin-top')) + parseInt($parent.css('margin-bottom'))))
         
         # Identifies whether somebody clicked on the 'next' or 'previous' fancybox arrows
         window.fancyClick = false

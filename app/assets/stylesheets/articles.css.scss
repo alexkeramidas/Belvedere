@@ -6,12 +6,14 @@
 
     h1 {
         color: #e99924;
-        background: #8f0017;
-        background-color: rgba(143, 0, 23, 0.9);
+        background: #3a0e15;
+        background-color: rgba(58, 14, 21, 0.9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border: 1px solid #864a4c;
+        border: 1px solid rgba(255, 155, 155, .45);
         border-radius: 6px;
         margin-top: 0;
-        padding: 15px 48px;
+        padding: 15px 28px;
     }
 
     .wrapper {
@@ -31,7 +33,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        margin: 35px 40px;
+        margin: 35px 30px;
         word-wrap: break-word;
         overflow: hidden;
 
@@ -40,45 +42,30 @@
             overflow: auto;
         }
 
-        h2 {
+        a.title {
+            display: block;
             background: #554540;
             background-color: rgba(0, 0, 0, .4);
-            margin: 10px;
+            margin-bottom: 10px;
             padding: 10px;
-            color: #e99924;
             
-            &:first-child {
-                margin-top: 0;
+            h2, h3 {
+                margin: 0;
+                line-height: 23px;
+                color: #e99924;
+                text-decoration: none;
+            
+                &:before {
+                    padding-right: 10px;
+                }
             }
         }
 
         .post {
             padding-left: 10px;
-        }
-
-        .date {
-            padding-left: 10px;
-            padding-top: 10px;
-        }
-
-        .show-article {
-            margin: 10px;
-            padding: 10px;
-            border-radius: 9999px;
-            background: #8f0017;
-            background-color: rgba(143, 0, 23, 0.9);
-            display: inline-block;
-            text-transform: uppercase;
-            font-weight: bolder;
-
-            a {
-                text-decoration: none;
-                color: #e99924;
-            }
-
-            a:visited {
-                color: #e99924;
-            }
+            padding-right: 10px;
+            margin-bottom: 15px;
+            text-align: justify;
         }
     }
 }
