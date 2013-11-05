@@ -14,7 +14,7 @@ ActiveAdmin.register Article, :as => 'News' do
     form do |f|
         f.inputs do
             f.input :title
-            f.input :description
+            f.input :description, :as => :rich, :config => { :width => '76%', :height => '400px' }
             f.input :visible
         end
         f.actions
