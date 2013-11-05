@@ -4,6 +4,6 @@
 $(document).ready ->
     tinyMCE.init
         plugins: 'code image'
-        mode: 'textareas'
+        editor_selector : 'myTextEditor'
         theme : 'modern'
         width: '78%'

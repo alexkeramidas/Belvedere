@@ -1,0 +1,111 @@
+.contact {
+    background-color: rgba(245, 226, 146, .2);
+    background-image: image-url('striped_bg.png');
+    background-repeat: repeat;
+    background-size: 6px 6px;
+
+    .formwrapper {
+        position: relative;
+        width: 500px;
+        height: 100%;
+        min-height: 415px;
+        max-height: 500px;
+        background: #927f6d;
+        background-color: rgba(146, 127, 109, .9);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border-radius: 6px;
+    }
+
+    .contactform {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 35px 45px;
+        word-wrap: break-word;
+        overflow: hidden;
+
+        .scrollable {
+            height: 100%;
+            overflow: auto;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: #5f0015;
+            line-height: 25px;
+            text-shadow: 2px 2px rgba(119, 68, 51, .7);
+            margin: 0;
+            padding-bottom: 25px;
+        }
+
+        input[type=text],
+        input[type=email],
+        textarea {
+            width: 99%;
+            color: #3c3c3c;
+            background-color: #fff;
+            border: 2px solid #fff;
+            border-radius: 0;
+            padding: 10px 5px 10px 42px;
+            margin-bottom: 10px;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
+
+            &:focus{
+                color: #3498db;
+                outline: none;
+                background-color: #fbfbdb;
+                border: 2px solid #e99924;
+                padding: 10px 5px 10px 42px;
+                box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
+            }
+        
+            &.has-success {
+                border: 2px solid #468847;
+            }
+            
+            &.has-error {
+                border: 2px solid #b94a48;
+            }
+        }
+
+        textarea {
+            height: 125px;
+            resize: vertical;
+        }
+        
+        .name, .email, .message {
+            position: relative;
+            
+            &:before {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 20px;
+                height: 20px;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+
+        input[type=submit]{
+            color: #fff;
+            font-size: 18px;
+            background-color: #e99924;
+            border: 1px solid #fbfbfb;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
+
+            &:hover{
+                background-color: #3c2b26;
+                background-color: rgba(48, 35, 21, .8);
+                border-color: #f9d9a4;
+                color: #e99924;
+            }
+        }
+    }
+}
