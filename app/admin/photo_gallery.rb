@@ -1,6 +1,6 @@
 ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
     config.per_page = 10
-    
+
     filter :photos, collection: proc {Photo.all.map { |photo| [photo.image_file_name, photo.id] }}
     filter :title
     filter :description
@@ -38,7 +38,7 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
     form :html => { :multipart => true} do |f|
         f.inputs "Gallery" do
             f.input :title
-            f.input :description, :input_html => { :class => "tinymce-jquery" }
+            f.input :description
             f.input :visible
         end
         f.inputs "Photos" do
