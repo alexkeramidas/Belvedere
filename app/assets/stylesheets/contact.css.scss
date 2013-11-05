@@ -8,7 +8,7 @@
         position: relative;
         width: 500px;
         height: 100%;
-        min-height: 460px;
+        min-height: 415px;
         max-height: 500px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .9);
@@ -81,41 +81,21 @@
             }
         }
 
-        .send-button{
-            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-            float: left;
-            width: 50%;
-            border: #fbfbfb solid 4px;
-            cursor: pointer;
-            background-color: #E99924;
+        input[type=submit]{
             color: #fff;
-            font-size: 24px;
-            padding-top: 22px;
-            padding-bottom: 22px;
-            transition: all 0.3s;
-            margin-top: -4px;
-            font-weight: 700;
+            font-size: 18px;
+            background-color: #E99924;
+            border: 1px solid #fbfbfb;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
 
             &:hover{
                 background-color: rgba(48, 35, 21, .8);
                 color: #E99924;
             }
-        }
-
-        .submit:hover {
-            color: #3498db;
-        }
-
-        .ease {
-            width: 0px;
-            height: 74px;
-            background-color: #fbfbfb;
-            transition: .3s ease;
-        }
-
-        .submit:hover .ease{
-              width:100%;
-              background-color:white;
         }
     }
 }

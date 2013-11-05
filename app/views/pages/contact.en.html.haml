@@ -6,6 +6,4 @@
                 .name.fa-user= text_field_tag :name, nil, :class => "validate[required,custom[onlyLetter],length[0,100]]", :placeholder => "Name"
                 .email.fa-envelope= email_field_tag :email, nil, :placeholder => "Email"
                 .message.fa-pencil= text_area_tag :comment, nil, :class => "validate[required,length[6,300]]", :placeholder => "Send us your message"
-                = submit_tag "SEND", :class => "btn pull-right"
-                .ease
-
+                = submit_tag "Send us your message", :class => "btn btn-warning btn-lg pull-right"
