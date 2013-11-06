@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     end
     
     def send_mail
-        ContactMailer.contact_email(params[:name], params[:email], params[:message]).deliver
+        ContactMailer.contact_email(params[:name], params[:email], params[:comment]).deliver
         redirect_to contact_url(:status => :success) and return
     end
 
