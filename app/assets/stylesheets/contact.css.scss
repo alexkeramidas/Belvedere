@@ -60,13 +60,32 @@
                 padding: 10px 5px 10px 42px;
                 box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
             }
-        
+            
+            &.is-required {
+                background-image: image-url('exclamation-sign.svg') !important;
+                background-repeat: no-repeat;
+                background-position: calc(100% - 10px) 10px;
+                background-size: 20px;
+                border: 2px solid #e99924 !important;
+                padding-right: 42px;
+            }
+            
             &.has-success {
-                border: 2px solid #468847;
+                background-image: image-url('ok.svg') !important;
+                background-repeat: no-repeat;
+                background-position: calc(100% - 10px) 10px;
+                background-size: 20px;
+                border: 2px solid #468847 !important;
+                padding-right: 42px;
             }
             
             &.has-error {
-                border: 2px solid #b94a48;
+                background-image: image-url('remove.svg') !important;
+                background-repeat: no-repeat;
+                background-position: calc(100% - 10px) 10px;
+                background-size: 20px;
+                border: 2px solid #b94a48 !important;
+                padding-right: 42px;
             }
         }
 
@@ -105,6 +124,10 @@
                 background-color: rgba(48, 35, 21, .8);
                 border-color: #f9d9a4;
                 color: #e99924;
+            }
+            
+            &:focus {
+                outline: none;
             }
         }
         
