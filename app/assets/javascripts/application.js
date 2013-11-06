@@ -16,6 +16,7 @@
 //= require bootstrap
 //
 //= require fancybox
+//
 //= require turbolinks
 //
 //= require_tree ../../../vendor/assets/javascripts
