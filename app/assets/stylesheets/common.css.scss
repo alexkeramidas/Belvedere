@@ -73,6 +73,14 @@ p, ol, ul, td {
     line-height: 18px;
 }
 
+form {
+    input, textarea {
+        font-family: 'Century Gothic', verdana, arial, helvetica, sans-serif;
+        font-size: 13px;
+        line-height: 18px;
+    }
+}
+
 a {
     color: #f5f4e6;
     text-decoration: none;
