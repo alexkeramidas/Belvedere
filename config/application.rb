@@ -25,9 +25,9 @@ module BelvedereGit
         config.action_mailer.smtp_settings = {
           :address              => "smtp.gmail.com",
           :port                 => 587,
-          :domain               => "google.com",
+          :domain               => "belvedere-hotel.herokuapp.com:80",
           :user_name            => "dev.alexkeramidas@gmail.com",
-          :password             => "burlbed337",
+          :password             => "belvedere!@12",
           :authentication       => :plain,
           :enable_starttls_auto => true
         }
