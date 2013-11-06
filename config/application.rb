@@ -23,11 +23,11 @@ module BelvedereGit
         config.action_mailer.default_url_options = { :host => 'belvedere-hotel.herokuapp.com' }
         config.action_mailer.delivery_method = :smtp
         config.action_mailer.smtp_settings = {
-          :address              => "smtp.gmail.com",
+          :address              => 'smtp.gmail.com',
           :port                 => 587,
-          :domain               => "belvedere-hotel.herokuapp.com:80",
-          :user_name            => "dev.alexkeramidas@gmail.com",
-          :password             => "belvedere!@12",
+          :domain               => 'belvedere-hotel.herokuapp.com:80',
+          :user_name            => 'contact.belvederehotel@gmail.com',
+          :password             => 'SW=7e&reCE#ruMuS',
           :authentication       => :plain,
           :enable_starttls_auto => true
         }

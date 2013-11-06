@@ -107,5 +107,60 @@
                 color: #e99924;
             }
         }
+        
+        
+        // Override default CSS3 validation styles
+        
+        input[type=text],
+        input[type=email],
+        textarea {
+            &:required {
+                background-image: image-url('exclamation-sign.svg');
+                
+                &:valid, &:invalid {
+                    background-repeat: no-repeat;
+                    background-position: calc(100% - 10px) 10px;
+                    background-size: 20px;
+                    border-color: #fff;
+                    padding-right: 42px;
+                }
+                
+                &:focus, &:valid:focus, &:invalid:focus {
+                    padding-right: 42px;
+                }
+            
+                &:valid {
+                    background-image: image-url('ok.svg');
+                    
+                    &:focus {
+                        border-color: #468847;
+                    }
+                }
+                
+                &:invalid {
+                    background-image: image-url('remove.svg');
+                    
+                    &:focus {
+                        border-color: #b94a48;
+                    }
+                }
+            }
+        
+            &::-webkit-validation-bubble-message {
+                background-color: #fbfbdb;
+                
+                & > div > div + * {
+                    color: #3c3c3c;
+                }
+            }
+            
+            &::-webkit-validation-bubble-icon {
+                display: none;
+            }
+            
+            &::-webkit-validation-bubble-arrow {
+                background-color: #fbfbdb;
+            }
+        }
     }
 }

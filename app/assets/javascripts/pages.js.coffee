@@ -66,3 +66,6 @@ class BelvedereGit.pages extends BelvedereGit.Base
                 map.setCenter(belvedereLocation)
         
         initialize()
+        
+    contact: () ->
+        

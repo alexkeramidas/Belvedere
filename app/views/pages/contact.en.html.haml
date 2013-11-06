@@ -3,7 +3,7 @@
         = form_tag send_mail_path, method: 'POST', :class => 'contactform clearfix' do
             .scrollable
                 %h1 Contact Us
-                .name.fa-user= text_field_tag :name, nil, required: true, maxlength: 100, :placeholder => 'Name'
-                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})', :placeholder => 'Email'
-                .message.fa-pencil= text_area_tag :comment, nil, required: true, minlength: 6, maxlength: 300, :placeholder => 'Send us your message'
+                .name.fa-user= text_field_tag :name, nil, required: true, maxlength: 100, placeholder: 'Name', title: 'Your name must not be blank.', 'x-moz-errormessage' => 'Your name must not be blank.'
+                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})', placeholder: 'Email', title: 'name@domain.com (correct e-mail structure)', 'x-moz-errormessage' => 'name@domain.com (correct e-mail structure)'
+                .message.fa-pencil= text_area_tag :comment, nil, required: true, minlength: 6, maxlength: 300, placeholder: 'Send us your message', title: 'Your message cannot be blank.', 'x-moz-errormessage' => 'Your message cannot be blank.'
                 = submit_tag 'Send us your message', :class => 'btn btn-warning btn-lg pull-right'
