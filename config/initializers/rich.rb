@@ -67,7 +67,19 @@ if Object.const_defined?("Rich")
 	#
 	# Default:
 	# config.allow_document_uploads = false
-    config.editor[:toolbar] = 'easy';
+
+    config.editor[:toolbar] =  [
+      ['Source','-','showblocks', 'ServerPreview', 'Preview'],
+      ['Cut','Copy','Paste','PasteText','PasteFromWord'],
+      ['Undo','Redo','-','SelectAll','RemoveFormat'],
+      ['Templates'],
+      ['Format', 'FontSize', 'TextColor', 'Font'], '/',
+      ['Bold','Italic','Underline','Strike'], ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+      ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+      ['Link','Unlink','Anchor'],
+      ['Table','HorizontalRule','Smiley','SpecialChar'],
+      ['richFile']
+    ];
 
 	# == Set allowed filetypes for non-image files
 	#
