@@ -16,6 +16,18 @@ if Object.const_defined?("Rich")
     # you are editing. To disable this:
     config.editor[:startupOutlineBlocks] = false
 
+    config.editor[:toolbar] =  [
+      ['Source','-','showblocks'],
+      ['Cut','Copy','PasteText'],
+      ['Undo','Redo','-','SelectAll','RemoveFormat'],
+      ['Templates'],
+      ['Format', 'FontSize', 'TextColor', 'Font'], '/',
+      ['Bold','Italic','Underline','Strike'], ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+      ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+      ['Link','Unlink'],
+      ['Table','HorizontalRule','SpecialChar'],
+      ['richImage']
+    ]
 
     # == Image styles
     #
@@ -28,7 +40,8 @@ if Object.const_defined?("Rich")
     # remember to re-generate your styles by running:
     #   rake rich:refresh_assets
     config.image_styles = {
-      :thumb => "200x200#"
+      :thumb => "200x200#",
+      :medium => "500x500#"
     }
 
     # == Convert options
@@ -51,13 +64,14 @@ if Object.const_defined?("Rich")
     #
     # Default:
     # config.allowed_styles = :all
+    config.allowed_styles = [:thumb, :medium]
 
     # == Default Style
     #
     # The style to insert by default. In addition to the
     # styles defined above you can also use :original to get
     # the unprocessed file. Make sure this style exists.
-    config.default_style = :large
+    config.default_style = :medium
 
 	# == Upload non-image files
 	#
@@ -67,19 +81,6 @@ if Object.const_defined?("Rich")
 	#
 	# Default:
 	# config.allow_document_uploads = false
-
-    config.editor[:toolbar] =  [
-      ['Source','-','showblocks'],
-      ['Cut','Copy','Paste','PasteText','PasteFromWord'],
-      ['Undo','Redo','-','SelectAll','RemoveFormat'],
-      ['Templates'],
-      ['Format', 'FontSize', 'TextColor', 'Font'], '/',
-      ['Bold','Italic','Underline','Strike'], ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
-      ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-      ['Link','Unlink'],
-      ['Table','HorizontalRule','Smiley','SpecialChar'],
-      ['richImage']
-    ];
 
 	# == Set allowed filetypes for non-image files
 	#

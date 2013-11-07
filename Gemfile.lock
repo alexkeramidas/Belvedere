@@ -1,6 +1,19 @@
 GIT
+  remote: git://github.com/bastiaanterhorst/rich.git
+  revision: e5a337004817314474abc60594aa1b914792d10d
+  specs:
+    rich (1.4.7)
+      jquery-rails
+      kaminari
+      mime-types
+      paperclip
+      rack-raw-upload
+      rails (>= 3.2.0)
+      sass-rails
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: a6f6794c0fbac3b481afe3bd0acbb36d792b0300
+  revision: 7877c8dbf6e7e74787c7294714c655fc60d4a7e3
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -31,19 +44,6 @@ GIT
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-
-GIT
-  remote: https://github.com/bastiaanterhorst/rich.git
-  revision: e5a337004817314474abc60594aa1b914792d10d
-  specs:
-    rich (1.4.7)
-      jquery-rails
-      kaminari
-      mime-types
-      paperclip
-      rack-raw-upload
-      rails (>= 3.2.0)
-      sass-rails
 
 GEM
   remote: https://rubygems.org/
@@ -98,7 +98,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    devise (3.1.1)
+    devise (3.2.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
