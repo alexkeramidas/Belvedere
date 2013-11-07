@@ -35,7 +35,7 @@ gem 'draper', '~> 1.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use Rich as Editor
-gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
+gem 'rich', github: 'bastiaanterhorst/rich'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

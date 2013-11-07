@@ -12,7 +12,7 @@ BelvedereGit::Application.configure do
             }
     }
 
-    config.assets.paths << Rails.root.join('lib', 'assets', 'stylesheets', 'rich')
+    # config.assets.paths << Rails.root.join('lib', 'assets', 'stylesheets', 'rich')
 
     # Code is not reloaded between requests.
     config.cache_classes = true
@@ -73,7 +73,7 @@ BelvedereGit::Application.configure do
     # Precompile additional assets.
     # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
     # config.assets.precompile += %w( search.js )
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
 
     # Ignore bad email addresses and do not raise email delivery errors.
     # Set this to true and configure the email server for immediate delivery to raise delivery errors.
