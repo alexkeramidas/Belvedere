@@ -33,8 +33,7 @@ gem 'draper', '~> 1.0'
 
 # Use ActiveAdmin for the site's administration
 gem 'activeadmin', github: 'gregbell/active_admin'
-
-# Use Rich as Editor
+# Use Rich as WYSIWYG Editor for ActiveAdmin
 gem 'rich', github: 'bastiaanterhorst/rich'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
