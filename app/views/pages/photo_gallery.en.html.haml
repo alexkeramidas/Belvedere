@@ -1,7 +1,7 @@
 .photo-gallery
     .title
-        %h1= @gallery.title
+        %h1= !@gallery.blank? ? @gallery.title : 'Photo Gallery'
     .wrapper
         .content
             .scrollable
-                .desc= sanitize(@gallery.description)
+                .desc= sanitize(@gallery.description) if !@gallery.blank?
