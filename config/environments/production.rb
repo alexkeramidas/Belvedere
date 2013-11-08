@@ -3,6 +3,8 @@ BelvedereGit::Application.configure do
 
     ENV["DATABASE_URL"] = 'postgres://qitjibqjzsedhf:nqKQx7TbBC2uLpAeFnM_u_BuH0@ec2-54-228-235-149.eu-west-1.compute.amazonaws.com:5432/dfpf5kmq39mr72'
 
+    #Correct Paperclip configuration to force Rich Editor to upload to the same path as Paperclip in S3
+
     config.paperclip_defaults = {
         :storage => :s3,
         :s3_host_name => 's3-eu-west-1.amazonaws.com',
