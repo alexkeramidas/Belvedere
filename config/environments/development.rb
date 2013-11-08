@@ -2,8 +2,8 @@ BelvedereGit::Application.configure do
     # Settings specified here will take precedence over those in config/application.rb.
     
     config.paperclip_defaults = {
-        :url => '/photos/rich_editor/:style/:basename_:token.:extension',
-        :path => ':rails_root/public/photos/rich_editor/:style/:basename_:token.:extension'
+        :url => '/photos/user_files/:style/:basename_:token.:extension',
+        :path => ':rails_root/public/photos/user_files/:style/:basename_:token.:extension'
     }
     
     # In the development environment your application's code is reloaded on

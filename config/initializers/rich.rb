@@ -130,6 +130,13 @@ end
 
 module Rich
     RichFile.class_eval do
+        has_attached_file :rich_file,
+                          :styles => Proc.new {|a| a.instance.set_styles },
+                          :convert_options => Proc.new { |a| Rich.convert_options[a] },
+                          :url => "/photos/rich_editor/:style/:basename_:token.:extension",
+                          :path => ":rails_root/public/photos/rich_editor/:style/:basename_:token.:extension",
+                          :default_url => Photo::MISSING_URL
+        
         def get_token
             Digest::SHA1.hexdigest(created_at.to_i.to_s)
         end
