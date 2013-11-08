@@ -124,8 +124,12 @@ if Object.const_defined?("Rich")
   Rich.insert
 end
 
+
+# This is needed in order to make certain that Rich Editor uses the same token structure
+# that we use in our Photo model.
+
 module Rich
-    class RichFile < ActiveRecord::Base
+    RichFile.class_eval do
         def get_token
             Digest::SHA1.hexdigest(created_at.to_i.to_s)
         end
