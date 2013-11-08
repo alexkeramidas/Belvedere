@@ -5,6 +5,9 @@ BelvedereGit::Application.configure do
 
     config.paperclip_defaults = {
         :storage => :s3,
+        :s3_host_name => 's3-eu-west-1.amazonaws.com',
+        :url => 'belvedere-assets.s3-website-eu-west-1.amazonaws.com',
+        :path => 'app/public/photos/:style/:filename',
         :s3_credentials => {
                 :bucket => ENV['S3_BUCKET_NAME'],
                 :access_key_id => ENV['AWSAccessKeyId'],
