@@ -123,3 +123,11 @@ if Object.const_defined?("Rich")
 
   Rich.insert
 end
+
+module Rich
+    class RichFile < ActiveRecord::Base
+        def get_token
+            Digest::SHA1.hexdigest(created_at.to_i.to_s)
+        end
+    end
+end
