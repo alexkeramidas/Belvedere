@@ -16,7 +16,7 @@
  *= require fancybox
  * 
  * WARNING! Each CSS or SCSS file inside vendor/assets/stylesheets now has to be manually required
- * as shown below (do NOT use require_tree for that directory).
+ * as shown below (do NOT use require_tree for that directory and do NOT add stuff needed for admin only).
  * 
  *= require jquery.mCustomScrollbar
  * 

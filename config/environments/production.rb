@@ -3,14 +3,21 @@ BelvedereGit::Application.configure do
 
     ENV["DATABASE_URL"] = 'postgres://qitjibqjzsedhf:nqKQx7TbBC2uLpAeFnM_u_BuH0@ec2-54-228-235-149.eu-west-1.compute.amazonaws.com:5432/dfpf5kmq39mr72'
 
+    #Correct Paperclip configuration to force Rich Editor to upload to the same path as Paperclip in S3
+
     config.paperclip_defaults = {
         :storage => :s3,
+        :s3_host_name => 's3-eu-west-1.amazonaws.com',
+        :url => '/photos/user_files/:style/:basename_:token.:extension',
+        :path => 'app/public/photos/user_files/:style/:basename_:token.:extension',
         :s3_credentials => {
-                :bucket => ENV['S3_BUCKET_NAME'],
-                :access_key_id => ENV['AWSAccessKeyId'],
-                :secret_access_key => ENV['AWSSecretKey']
-            }
+            :bucket => ENV['S3_BUCKET_NAME'],
+            :access_key_id => ENV['AWSAccessKeyId'],
+            :secret_access_key => ENV['AWSSecretKey']
+        }
     }
+
+    # config.assets.paths << Rails.root.join('lib', 'assets', 'stylesheets', 'rich')
 
     # Code is not reloaded between requests.
     config.cache_classes = true
@@ -71,7 +78,7 @@ BelvedereGit::Application.configure do
     # Precompile additional assets.
     # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
     # config.assets.precompile += %w( search.js )
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
 
     # Ignore bad email addresses and do not raise email delivery errors.
     # Set this to true and configure the email server for immediate delivery to raise delivery errors.

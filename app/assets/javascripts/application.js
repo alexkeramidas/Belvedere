@@ -17,9 +17,12 @@
 //
 //= require fancybox
 //
-//= require tinymce-jquery
-//
 //= require turbolinks
 //
-//= require_tree ../../../vendor/assets/javascripts
+// WARNING! Each Javascript or Coffescript file inside vendor/assets/javascripts now has to be manually required
+// as shown below (do NOT use require_tree for that directory and do NOT add stuff needed for admin only).
+//
+//= require jquery.mCustomScrollbar.concat.min.js
+//
+//= require vendor_plugins
 //= require_tree .

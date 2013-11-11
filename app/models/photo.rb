@@ -1,11 +1,11 @@
 class Photo < ActiveRecord::Base
     MISSING_URL = '/assets/missing.png'
     
-    belongs_to :suite, :foreign_key => 'article_id'
+    belongs_to :article, :foreign_key => 'article_id'
 
     has_attached_file :image,
-                      :url => "/photos/:style/:filename",
-                      :path => ":rails_root/public/photos/:style/:filename",
+                      :url => "/photos/:parent_name/:style/:basename_:token.:extension",
+                      :path => ":rails_root/public/photos/:parent_name/:style/:basename_:token.:extension",
                       :styles => { :medium => "300x300>", :thumb => "100x100>" },
                       :default_url => Photo::MISSING_URL
     
@@ -26,6 +26,12 @@ class Photo < ActiveRecord::Base
 
     def generate_path(style = :original)
         image.path(style, timestamp: false)
+    end
+    
+    # Object methods
+    
+    def get_token
+        Digest::SHA1.hexdigest(created_at.to_i.to_s)
     end
     
     # Class methods

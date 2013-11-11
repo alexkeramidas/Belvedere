@@ -1,6 +1,21 @@
 class Article < ActiveRecord::Base
     validates_acceptance_of :article_type, :accept => 1
     
+    # Object methods
+    
+    def article_type_name
+        case article_type
+        when 1
+            return 'News'
+        when 2
+            return 'Suites'
+        when 3
+            return 'Photo Gallery'
+        else
+            return ''
+        end
+    end
+    
     # Class methods
     
     def self.valid

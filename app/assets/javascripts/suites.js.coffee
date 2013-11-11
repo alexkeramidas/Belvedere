@@ -54,6 +54,11 @@ class BelvedereGit.suites extends BelvedereGit.Base
         
         galleryPrepare()
         
+        # Make certain that the image gallery gets initialized properly when a turbolinks
+        # page change occurs.
+        $(document).bind 'page:change', ->
+            galleryPrepare()
+        
         $(window).load ->
             galleryPrepare()
         
