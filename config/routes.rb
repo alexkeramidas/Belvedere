@@ -9,14 +9,14 @@ BelvedereGit::Application.routes.draw do
     # You can have the root of your site routed with "root"
     root 'pages#home'
 
-    resources :articles
-
     get 'about' => 'pages#about'
     get 'location' => 'pages#location'
     get 'photo_gallery' => 'pages#photo_gallery'
     
     get 'contact' => 'pages#contact'
     post 'send_mail' => 'pages#send_mail'
+
+    resources :articles
 
     get 'accommodation' => 'suites#index'
 
