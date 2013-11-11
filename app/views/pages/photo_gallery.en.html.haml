@@ -4,4 +4,4 @@
     .wrapper
         .content
             .scrollable
-                .desc= sanitize(@gallery.description) if !@gallery.blank?
+                .desc= simple_format(@gallery.description).html_safe if !@gallery.blank?

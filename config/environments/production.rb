@@ -8,7 +8,7 @@ BelvedereGit::Application.configure do
     config.paperclip_defaults = {
         :storage => :s3,
         :s3_host_name => 's3-eu-west-1.amazonaws.com',
-        :url => 'belvedere-assets.s3-website-eu-west-1.amazonaws.com',
+        :url => '/photos/user_files/:style/:basename_:token.:extension',
         :path => 'app/public/photos/user_files/:style/:basename_:token.:extension',
         :s3_credentials => {
             :bucket => ENV['S3_BUCKET_NAME'],

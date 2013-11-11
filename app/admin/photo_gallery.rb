@@ -43,7 +43,7 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
         end
         f.has_many :photos do |p|
             unless p.object.new_record?
-                p.input :_destroy, :as=>:boolean, :label => "Delete Image?", :required => false
+                p.input :_destroy, :as => :boolean, :label => "Delete Image?", :required => false
             end
             p.input :description, :label => "Image Title"
             p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.decorate.photo_path(:thumb)), :label => p.object.image_file_name

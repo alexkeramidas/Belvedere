@@ -8,7 +8,7 @@
                         - @rooms.each_with_index do |room, i|
                             %li
                                 = link_to room.title, "#descr_#{i}", class: "collapse-link#{' active' if i == 0}", id: "link_#{i}", data: {gal: "#gallery#{i}"}
-                                .collapsible{id: "descr_#{i}"}= room.description.html_safe
+                                .collapsible{id: "descr_#{i}"}= simple_format(room.description).html_safe
     .image-gallery.pull-right.clearfix
         - @rooms.each_with_index do |room, i|
             .gallery.pull-left{id: "gallery#{i}", class: "#{'visible' if i == 0} #{'carousel' if i == 0 && room.photos.length > 1}"}
