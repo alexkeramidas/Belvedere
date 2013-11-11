@@ -48,13 +48,13 @@
             background-color: rgba(0, 0, 0, .4);
             margin-bottom: 10px;
             padding: 10px;
-            
+
             h2, h3 {
                 margin: 0;
                 line-height: 23px;
                 color: #e99924;
                 text-decoration: none;
-            
+
                 &:before {
                     padding-right: 10px;
                 }
@@ -66,11 +66,64 @@
             padding-right: 10px;
             margin-bottom: 15px;
             text-align: justify;
-            
+
             img {
                 border: 4px solid #fff;
                 border-radius: 4px;
             }
         }
     }
+
+    .pagination{
+        background: #3a0e15;
+        background-color: rgba(58, 14, 21, 0.9);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, 0.8);
+        border: 1px solid #864a4c;
+        border: 1px solid rgba(255, 155, 155, 0.45);
+        padding: 5px;
+        margin: 0;
+    }
+
+    .page {
+        display: inline-block;
+        padding: 0px 9px;
+        margin-right: 4px;
+        border-radius: 3px;
+        border: solid 1px #86001d;
+        background: #5f0015;
+        box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.4), 0px -10px 15px rgba(0, 0, 0, 0.1);
+        font-size: 0.9em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #717171;
+        font-family: 'DellaRespira-Regular';
+    }
+
+    .pagination > span > a{
+        color: #e99924;
+        text-decoration: none;
+        text-transform: lowercase;
+    }
+
+    .page:hover{
+        border: none;
+        background: #3a0e15;
+        box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(218, 69, 69, 1);
+    }
+
+    .pagination > span > a:hover{
+        font-weight: bolder;
+        text-transform: capitalize;
+    }
+
+
+    .page.current {
+        border: none;
+        background: #3a0e15;
+        box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(218, 69, 69, 1);
+        color: #e99924;
+        text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+    }
+
 }
+
