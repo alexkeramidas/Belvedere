@@ -1,0 +1,6 @@
+- if params[:controller]=='pages' && params[:action]=='photo_gallery'
+    - if !@bg_list.blank?
+        #bg-gal-title
+            .title-container
+                .title
+                    = @bg_list[0][:title]

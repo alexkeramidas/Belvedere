@@ -2,6 +2,7 @@
     $.fn.extend bgCarousel: (options) ->
         defaults =
             backgroundElem: '.bg-img'
+            titleElem: '#bg-gal-title'
             controlsContainer: '#bg-slider-controls'
             backgroundPrefix: '#bg'
             controlsPrefix: '#bg-link-'
@@ -35,6 +36,10 @@
                 $("#{o.controlsPrefix}#{id_next}").addClass('active')
                 
                 $items.filter("#{o.backgroundPrefix}#{id_next}").addClass('active')
+                
+                setTimeout (->
+                    $("#{o.titleElem} .title").text($("#{o.backgroundPrefix}#{id_next}").attr('data-title'))
+                ), (ms/2)
                 
                 $.when($prevElem.fadeOut ms).done (->
                     $prevElem.css('opacity', 0)

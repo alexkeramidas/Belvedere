@@ -112,9 +112,10 @@ a {
 
 #bg-slider-controls {
     position: absolute;
-    bottom: 95px;
+    bottom: 90px;
     right: 35px;
     font-size: 0px;
+    z-index: 13;
     
     a {
         display: inline-block;
