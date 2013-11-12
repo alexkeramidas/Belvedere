@@ -37,7 +37,7 @@ class PagesController < ApplicationController
             if @gallery.photos.length > 0
                 @gallery.photos.each_with_index do |photo, i|
                     i == 0 ? def_flag = true : false
-                    @bg_list << { filename: photo.decorate.photo_path(:original), default: def_flag }
+                    @bg_list << { filename: photo.decorate.photo_path(:original), title: photo.description, default: def_flag }
                 end
             end
         end

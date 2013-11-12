@@ -1,5 +1,8 @@
+@import "bootstrap/_mixins.scss";
+
 #page-body .photo-gallery {
     background-color: transparent;
+    padding-bottom: 78px;
     
     .title {
         width: 370px;
@@ -53,3 +56,27 @@
     }
 }
 
+#bg-gal-title {
+    position: absolute;
+    top: -68px;
+    left: 0;
+    width:100%;
+    height: 68px;
+    @include gradient-horizontal(rgba(15, 2, 0, .9), rgba(15, 2, 0, .1), 30%, 100%);
+    
+    .title-container {
+        display: table;
+        width: 100%;
+        height: 68px;
+    }
+    
+    .title {
+        display: table-cell;
+        color: #fff;
+        font-weight: normal;
+        padding-left: 30px;
+        padding-right: 50%;
+        vertical-align: middle;
+        word-break: break-all;
+    }
+}
