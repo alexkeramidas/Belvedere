@@ -1,10 +1,10 @@
 en:
   views:
     pagination:
-      first: "&laquo; First"
-      last: "Final &raquo;"
-      previous: "&lsaquo; Prev Page"
-      next: "Next Page &rsaquo;"
+      first: "First"
+      last: "Final"
+      previous: "Prev Page"
+      next: "Next Page"
       truncate: "&hellip;"
   helpers:
     page_entries_info:
