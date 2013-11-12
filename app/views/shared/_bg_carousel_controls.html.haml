@@ -1,0 +1,5 @@
+- if !@bg_list.blank?
+    - if @bg_list.length > 1
+        #bg-slider-controls{style: 'display: none;'}
+            - @bg_list.each_with_index do |img, i|
+                = link_to "", "##{i+1}", id: "bg-link-#{i+1}", class: "#{img[:default] ? 'active' : ''}"
