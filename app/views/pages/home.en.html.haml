@@ -1,0 +1,9 @@
+.home
+    .formwrapper
+        = form_tag send_mail_path, method: 'POST', :class => 'reservationform clearfix' do
+            .scrollable
+                %h1 Request a room
+                .name.fa-user= text_field_tag :name, nil, required: true, pattern: '^(?!\s*$).{2,100}$', minlength: 2, maxlength: 100, placeholder: 'Name', title: 'Your name must not be blank.', 'x-moz-errormessage' => 'Your name must not be blank.'
+                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})', placeholder: 'Email', title: 'name@domain.com (correct e-mail structure)', 'x-moz-errormessage' => 'name@domain.com (correct e-mail structure)'
+                .message.fa-pencil= text_area_tag :message, nil, required: true, pattern: '^(?!\s*$).{6,300}$', minlength: 6, maxlength: 300, placeholder: 'Send us your message', title: 'You must provide a comprehensible message.', 'x-moz-errormessage' => 'You must provide a comprehensible message.'
+                = submit_tag 'Send your request', :class => 'btn btn-warning btn-lg pull-right'
