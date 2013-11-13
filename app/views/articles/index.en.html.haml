@@ -8,3 +8,5 @@
                         %h2.pull-left= article.title
                         %h3.pull-right.fa-calendar= article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
                     .post= sanitize(article.description, :tags => []).truncate(1000)
+    
+    = paginate @articles
