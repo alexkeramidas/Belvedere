@@ -1,4 +1,6 @@
 ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
+    menu :parent => "Modify Website"
+
     config.per_page = 10
 
     filter :photos, collection: proc {Photo.all.map { |photo| [photo.image_file_name, photo.id] }}
