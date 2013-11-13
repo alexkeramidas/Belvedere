@@ -3,5 +3,6 @@
         = link_to "CONTACT", contact_url, class: "#{params[:controller]=='pages' && params[:action]=='contact' ? 'active' : ''}"
         = link_to "PHOTO GALLERY", photo_gallery_url, class: "#{params[:controller]=='pages' && params[:action]=='photo_gallery' ? 'active' : ''}"
 
-        = render 'shared/bg_carousel_controls'
-        = render 'shared/photo_gallery_titles'
+        .wrapper
+            = render 'shared/bg_carousel_controls'
+            = render 'shared/photo_gallery_titles'
