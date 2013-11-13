@@ -1,3 +1,3 @@
 ActiveAdmin.register Reservation do
-    menu :label => "Manage Reservations"
+    menu :priority => 3, :label => "Manage Reservations"
 end

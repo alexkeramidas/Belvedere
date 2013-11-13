@@ -1,5 +1,5 @@
 ActiveAdmin.register Suite, :as => 'Rooms' do
-    menu :parent => "Modify Website"
+     menu :priority => 1, :parent => "Website"
 
     config.per_page = 10
 
