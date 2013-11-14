@@ -29,10 +29,10 @@ ActiveAdmin.register Reservation do
 
     form do |f|
         f.inputs do
-            f.input :email, :wrapper_html => { :style => "width:250px;" }
+            f.input :email, :wrapper_html => { :style => "width:250px;" }, :required => true, :pattern => '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})'
             f.input :name, :wrapper_html => { :style => "width:250px;" }
             f.input :arrival, :wrapper_html => { :style => "width:350px;" }
-            f.input :departure, :wrapper_html => { :style => "width:350px;" }
+            f.input :departure,  :wrapper_html => { :style => "width:350px;" }
             f.input :days,  :wrapper_html => { :style => "width:40px;" }
             f.input :adults, :wrapper_html => { :style => "width:40px;" }
             f.input :youngsters,  :wrapper_html => { :style => "width:40px;" }

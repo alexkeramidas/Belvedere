@@ -98,6 +98,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    date_validator (0.7.0)
+      activemodel (>= 3)
     devise (3.2.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -150,6 +152,7 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.2)
+    nokogiri (1.5.10)
     nokogiri (1.5.10-x86-mingw32)
     orm_adapter (0.4.0)
     pg (0.17.0-x86-mingw32)
@@ -231,6 +234,7 @@ DEPENDENCIES
   aws-sdk
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  date_validator
   draper (~> 1.0)
   fancybox-rails
   font-awesome-sass

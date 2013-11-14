@@ -58,6 +58,9 @@ gem 'rmagick', '2.13.2', :git => 'git://github.com/rmagick/rmagick.git'
 #Use amazon s3 to upload images
 gem 'aws-sdk'
 
+#Use simple dates validation
+gem 'date_validator'
+
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false
