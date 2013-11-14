@@ -1,5 +1,5 @@
 ActiveAdmin.register Reservation do
-    menu :priority => 3, :label => "Manage Reservations"
+    menu :priority => 3, :label => 'Manage Reservations'
 
     config.per_page = 20
 
@@ -28,23 +28,22 @@ ActiveAdmin.register Reservation do
     end
 
     form do |f|
-        f.inputs do
-            f.input :email, :wrapper_html => { :style => "width:250px;" }, :required => true, :pattern => '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})'
-            f.input :name, :wrapper_html => { :style => "width:250px;" }
-            f.input :arrival, :wrapper_html => { :style => "width:350px;" }
-            f.input :departure,  :wrapper_html => { :style => "width:350px;" }
-            f.input :days,  :wrapper_html => { :style => "width:40px;" }
-            f.input :adults, :wrapper_html => { :style => "width:40px;" }
-            f.input :youngsters,  :wrapper_html => { :style => "width:40px;" }
-            f.input :phone, :wrapper_html => { :style => "width:120px;" }
-            f.input :mobile, :wrapper_html => { :style => "width:120px;" }
+        f.inputs :style => 'display:inline-block;' do
+            f.input :email, :wrapper_html => { :style => 'display:table-cell;' }, :input_html => {required: true, pattern: '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})'}, :hint => 'Every reservation needs an email!'
+            f.input :name, :wrapper_html => { :style => 'display:table-cell;' }
+            f.input :arrival, :as => :date_picker, :hint => 'Every reservation needs an arrival date!', :input_html => {required: true}
+            f.input :departure, :as => :date_picker, :hint => 'Every reservation needs a departure date!', :input_html => {required: true}
+            f.input :adults, :wrapper_html => { :style => 'display:table-cell;' }, :input_html => {required: true, pattern: '(0*(?:[1-2][0-9]?|2))', min: '0', max: '19'}, :hint => 'Every reservation needs someone to pay!'
+            f.input :youngsters,  :wrapper_html => { :style => 'display:table-cell;' }, :input_html => { pattern: '(0*(?:[1-2][0-9]?|2))', min: '0', max: '19'}
+            f.input :phone, :wrapper_html => { :style => 'display:table-cell;' }
+            f.input :mobile, :wrapper_html => { :style => 'display:table-cell;' }
         end
         f.actions
     end
 
     controller do
         def permitted_params
-            params.permit reservation: [:email, :name, :arrival, :departure, :days, :adults, :youngsters, :phone, :mobile]
+            params.permit reservation: [:email, :name, :arrival, :departure, :days , :adults, :youngsters, :phone, :mobile]
         end
     end
 end
