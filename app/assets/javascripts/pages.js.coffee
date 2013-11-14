@@ -11,7 +11,7 @@ class BelvedereGit.pages extends BelvedereGit.Base
         $('body').bgCarousel()
         
         $('.reservationform').formValidator
-            validatedFields: ['name', 'email', 'message']
+            validatedFields: ['name', 'email', 'phone', 'mobile', 'arrival', 'departure', 'adults', 'children', 'message']
         
     photo_gallery: () ->
         $('body').bgCarousel()

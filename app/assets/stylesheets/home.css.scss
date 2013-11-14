@@ -39,13 +39,15 @@
 
         input[type=text],
         input[type=email],
+        input[type=tel],
+        input[type=number],
         textarea {
             width: 99%;
             color: #3c3c3c;
             background-color: #fff;
             border: 2px solid #fff;
             border-radius: 0;
-            padding: 10px 5px 10px 42px;
+            padding: 10px 5px 10px 38px;
             margin-bottom: 10px;
             box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
 
@@ -54,7 +56,7 @@
                 outline: none;
                 background-color: #fbfbdb;
                 border: 2px solid #e99924;
-                padding: 10px 5px 10px 42px;
+                padding: 10px 5px 10px 38px;
                 box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
             }
             
@@ -64,7 +66,7 @@
                 background-position: calc(100% - 10px) 10px;
                 background-size: 20px;
                 border: 2px solid #e99924 !important;
-                padding-right: 42px;
+                padding-right: 38px;
             }
             
             &.has-success {
@@ -73,7 +75,7 @@
                 background-position: calc(100% - 10px) 10px;
                 background-size: 20px;
                 border: 2px solid #468847 !important;
-                padding-right: 42px;
+                padding-right: 38px;
             }
             
             &.has-error {
@@ -82,7 +84,7 @@
                 background-position: calc(100% - 10px) 10px;
                 background-size: 20px;
                 border: 2px solid #b94a48 !important;
-                padding-right: 42px;
+                padding-right: 38px;
             }
         }
 
@@ -91,8 +93,24 @@
             resize: vertical;
         }
         
-        .name, .email, .message {
+        .left, .right {
+            width: 49%;
+        }
+        
+        .left {
+            float: left;
+            clear: left !important;
+        }
+        
+        .right {
+            float: right;
+            clear: right !important;
+            margin-right: 2px;
+        }
+        
+        .name, .email, .message, .phone, .mobile, .arrival, .departure, .adults, .children {
             position: relative;
+            clear: both;
             
             &:before {
                 position: absolute;
@@ -103,6 +121,14 @@
                 font-size: 20px;
                 text-align: center;
             }
+        }
+        
+        .mobile:before {
+            font-size: 23px;
+        }
+        
+        .children:before {
+            font-size: 18px;
         }
 
         input[type=submit]{
@@ -133,6 +159,8 @@
         
         input[type=text],
         input[type=email],
+        input[type=tel],
+        input[type=number],
         textarea {
             &:required {
                 background-image: image-url('exclamation-sign.svg');
@@ -142,11 +170,11 @@
                     background-position: calc(100% - 10px) 10px;
                     background-size: 20px;
                     border-color: #fff;
-                    padding-right: 42px;
+                    padding-right: 38px;
                 }
                 
                 &:focus, &:valid:focus, &:invalid:focus {
-                    padding-right: 42px;
+                    padding-right: 38px;
                 }
             
                 &:valid {
