@@ -28,6 +28,57 @@
                     else
                         false
             
+            testAndReplaceNumeric = (el) ->
+                current_numeric = el.val().replace(/\D/g, '')
+                if current_numeric == ''
+                    el.val('')
+                    false
+                else if hasMin(el) && parseInt(current_numeric) < parseInt(el.attr('min'))
+                    el.val(el.attr('min'))
+                    true
+                else if hasMax(el) && parseInt(current_numeric) > parseInt(el.attr('max'))
+                    el.val(el.attr('max'))
+                    true
+                else
+                    el.val(current_numeric)
+                    true
+            
+            isPhone = (el) ->
+                if el.is('[type=tel]')
+                    true
+                else
+                    if el.is('[data-type]')
+                        if el.attr('data-type') == 'phone'
+                            true
+                        else
+                            false
+                    else
+                        false
+            
+            testPhone = (el) ->
+                if el.val().match(/^[\d\(\)\[\]\s\-\+\/\.]{5,}$/g) != null
+                    phone_num = parseInt($.grep(el.val().split(/(\d+)/), (num, index) ->
+                                    num  if RegExp("^[0-9]*$").test(num)
+                                ).join(""))
+                    if phone_num > 10000 && phone_num < 999999999999999
+                        if el.val().match(/^.+\+.*$/g) == null
+                            if el.val().match(/\(/g) != null && el.val().match(/\)/g) != null
+                                if el.val().match(/\(/g).length == el.val().match(/\)/g).length
+                                    if el.val().match(/\[/g) != null && el.val().match(/\]/g) != null
+                                        false
+                                    else
+                                        true
+                                else
+                                    false
+                            else
+                                true
+                        else
+                            false
+                    else
+                        false
+                else
+                    false
+            
             hasMin = (el) ->
                 el.is('[min]')
             
@@ -53,19 +104,9 @@
             
             validateField = (el) ->
                 if isNumeric(el)
-                    current_numeric = el.val().replace(/\D/g, '')
-                    if current_numeric == ''
-                        el.val('')
-                        false
-                    else if hasMin(el) && parseInt(current_numeric) < parseInt(el.attr('min'))
-                        el.val(el.attr('min'))
-                        true
-                    else if hasMax(el) && parseInt(current_numeric) > parseInt(el.attr('max'))
-                        el.val(el.attr('max'))
-                        true
-                    else
-                        el.val(current_numeric)
-                        true
+                    testAndReplaceNumeric(el)
+                else if isPhone(el)
+                    testPhone(el)
                 else if isRequired(el) && el.val() == ''
                     false
                 else if !isRequired(el) && el.val() == ''
