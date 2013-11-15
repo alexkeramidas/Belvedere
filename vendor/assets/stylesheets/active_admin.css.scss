@@ -19,3 +19,7 @@
 .cke_chrome {
     overflow: hidden;
 }
+
+form > fieldset > ol > li p.inline-hints, form > fieldset > ol > li p.inline-errors{
+    margin: 0 !important;
+}
