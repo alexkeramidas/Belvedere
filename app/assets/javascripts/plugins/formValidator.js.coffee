@@ -113,8 +113,6 @@
                     true
                 else if hasPattern(el) && el.val().match(new RegExp(el.attr('pattern'), 'g')) == null
                     false
-                else if hasPattern(el) && el.val() != el.val().match(new RegExp(el.attr('pattern'), 'g'))[0]
-                    false
                 else if hasMinLength(el) && parseInt(el.attr('minlength')) > el.val().length
                     false
                 else if hasMaxLength(el) && parseInt(el.attr('maxlength')) < el.val().length
@@ -148,14 +146,26 @@
             $(window).load ->
                 initializeFields()
             
-            obj.submit ->
+            obj.on('submit', (e) ->
+                all_is_empty = true
+                all_is_good = true
+                
                 for field_id in fields_list
+                    field_valid = validateField($("##{field_id}"))
                     switchFieldClasses($("##{field_id}"))
                 
-                if (fields_list.every (field_id)-> validateField($("##{field_id}")))
-                    $(this).submit()
-                
-                false
+                    if $("##{field_id}").val() != ''
+                        all_is_empty = false
+                        if !field_valid
+                            all_is_good = false
+                    else if isRequired($("##{field_id}")) && $("##{field_id}").val() == ''
+                        all_is_good = false
+                    
+                if all_is_good && !all_is_empty
+                    true
+                else
+                    false
+            )
             
             obj.find('input').on('input keyup keydown keypress change', (e) ->
                 switchFieldClasses($(this))

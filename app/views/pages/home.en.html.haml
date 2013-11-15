@@ -4,7 +4,7 @@
             .scrollable
                 %h1 Request a room
                 .name.fa-user= text_field_tag :name, nil, required: true, pattern: '^(?!\s*$).{2,100}$', minlength: 2, maxlength: 100, placeholder: 'Name', title: 'Your name must not be blank.', 'x-moz-errormessage' => 'Your name must not be blank.'
-                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})', placeholder: 'Email', title: 'name@domain.com (correct e-mail structure)', 'x-moz-errormessage' => 'name@domain.com (correct e-mail structure)'
+                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '^[A-Za-z0-9_\-\.]+\@[A-Za-z0-9_\-\.]+\.[A-Za-z]{2,4}$', placeholder: 'Email', title: 'name@domain.com (correct e-mail structure)', 'x-moz-errormessage' => 'name@domain.com (correct e-mail structure)'
                 .phone.fa-phone.left= telephone_field_tag :phone, nil, pattern: '^[\d\(\)\[\]\s\-\+\/\.]{5,}$', minlength: 5, maxlength: 20, data: {type: 'phone'}, placeholder: 'Phone Number', title: 'You can provide a phone number for direct contact.'
                 .mobile.fa-mobile.right= telephone_field_tag :mobile, nil, pattern: '^[\d\(\)\[\]\s\-\+\/\.]{5,}$', minlength: 5, maxlength: 20, data: {type: 'phone'}, placeholder: 'Mobile Phone', title: 'You can provide a mobile phone number for direct contact.'
                 .arrival.fa-calendar.left= text_field_tag :arrival, nil, required: true, data: {provide: 'datepicker'}, placeholder: 'Arrival', title: 'Please specify the date of your arrival.', 'x-moz-errormessage' => 'Please specify the date of your arrival.'
