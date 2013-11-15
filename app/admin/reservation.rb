@@ -43,7 +43,7 @@ ActiveAdmin.register Reservation do
 
     controller do
         def permitted_params
-            params.permit reservation: [:email, :name, :arrival, :departure, :days , :adults, :youngsters, :phone, :mobile]
+            params.permit reservation: [:email, :name, :arrival, :departure, :adults, :youngsters, :phone, :mobile, :days]
         end
     end
 end

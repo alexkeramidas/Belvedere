@@ -5,8 +5,8 @@ class Reservation < ActiveRecord::Base
     validates :arrival, :date => {:after => Proc.new { Time.now + 1.day}, :before => Proc.new { Time.now + 1.day + 6.month } , :message => 'Arrival date must be after current date'}
     validates :departure, :date => {:after => :arrival , :before => Proc.new { Time.now + 2.day + 6.month }, :message => 'Departure date must be after the arrival date and less than six months away'}
 
-    def days
-        days_to_stay = (departure - arrival).to_i
+    before_save do
+        self.days = (departure - arrival).to_i
     end
 
     validates_each :phone, :mobile do |model, attr, value|
