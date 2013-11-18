@@ -13,6 +13,13 @@ class BelvedereGit.pages extends BelvedereGit.Base
         $('.reservationform').formValidator
             validatedFields: ['name', 'email', 'phone', 'mobile', 'arrival', 'departure', 'adults', 'children', 'message']
         
+        $('#arrival').on('changeDate', (e) ->
+            this_day = new Date($('#arrival').val())
+            next_day_obj = new Date(this_day.getFullYear(), this_day.getMonth(), this_day.getDate() + 1)
+            next_day = "#{next_day_obj.getFullYear()}-#{('0' + (next_day_obj.getMonth() + 1)).slice(-2)}-#{('0' + next_day_obj.getDate()).slice(-2)}"
+            $('#departure').datepicker('setStartDate', next_day).datepicker('update', next_day)
+        )
+        
     photo_gallery: () ->
         $('body').bgCarousel()
 

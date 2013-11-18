@@ -10,7 +10,8 @@ class PagesController < ApplicationController
             { filename: "bg5.jpg", default: false }
         ]
         
-        @date_regex = now_to_regex
+        @arrival_regex = date_to_regex
+        @departure_regex = date_to_regex(1.day.from_now)
     end
 
     def about
@@ -45,8 +46,7 @@ class PagesController < ApplicationController
         end
     end
     
-    def now_to_regex
-        t = Time.new
+    def date_to_regex(t = Time.new)
         y = t.year.to_s
         m = t.strftime('%m')
         d = t.strftime('%d')
