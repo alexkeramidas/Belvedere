@@ -6,7 +6,7 @@
         = stylesheet_link_tag "application"
         = javascript_include_tag "application"
 
-    %body
+    %body{style: 'overflow: hidden;'}
         :javascript
             jQuery(function() {
                 window.$M = new (BelvedereGit.#{params[:controller]} || BelvedereGit.Base)(#{@bootstrap_data});
