@@ -25,8 +25,14 @@ class BelvedereGit.Base
             theme: 'dark',
             callbacks:
                 onScrollStart: ->
-                    $('[data-provide=datepicker]').datepicker('hide')
+                    $('[data-provide=datepicker]').datepicker('hide').blur()
         })
+        
+        # Makes certain that datepickers get hidden on page scroll,
+        # same as in the check for custom scrollbars scrolling, performed above
+        
+        $('#page-wrapper').scroll ->
+            $('[data-provide=datepicker]').datepicker('hide').blur()
         
         # Initialize carousel for elements with the 'carousel' class
         
