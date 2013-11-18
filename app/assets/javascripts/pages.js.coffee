@@ -17,9 +17,8 @@ class BelvedereGit.pages extends BelvedereGit.Base
             this_day = new Date($('#arrival').val())
             next_day_obj = new Date(this_day.getFullYear(), this_day.getMonth(), this_day.getDate() + 1)
             next_day = "#{next_day_obj.getFullYear()}-#{('0' + (next_day_obj.getMonth() + 1)).slice(-2)}-#{('0' + next_day_obj.getDate()).slice(-2)}"
-            $('#departure').datepicker('setStartDate', next_day).datepicker('update', next_day)
-            $('#arrival').datepicker('hide')
-            $('#departure').datepicker('show')
+            $('#arrival').datepicker('hide').blur()
+            $('#departure').datepicker('setStartDate', next_day).datepicker('update', next_day).focus()
         )
         
     photo_gallery: () ->
