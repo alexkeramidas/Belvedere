@@ -8,6 +8,9 @@ gem 'rails', '4.0.0'
 # Use Twitter Bootstrap for SASS
 gem 'bootstrap-sass'
 
+# Use Datepicker for form input fields
+gem 'bootstrap-datepicker-rails'
+
 # Use Font Awesome for icon fonts
 gem 'font-awesome-sass'
 

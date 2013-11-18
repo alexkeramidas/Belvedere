@@ -22,7 +22,10 @@ class BelvedereGit.Base
                 autoScrollOnFocus: false,
                 updateOnContentResize: true
             },
-            theme: 'dark'
+            theme: 'dark',
+            callbacks:
+                onScrollStart: ->
+                    $('[data-provide=datepicker]').datepicker('hide')
         })
         
         # Initialize carousel for elements with the 'carousel' class

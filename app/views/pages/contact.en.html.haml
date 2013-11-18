@@ -3,7 +3,7 @@
         = form_tag send_mail_path, method: 'POST', :class => 'contactform clearfix' do
             .scrollable
                 %h1 Contact Us
-                .name.fa-user= text_field_tag :name, nil, required: true, maxlength: 100, placeholder: 'Name', title: 'Your name must not be blank.', 'x-moz-errormessage' => 'Your name must not be blank.'
-                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})', placeholder: 'Email', title: 'name@domain.com (correct e-mail structure)', 'x-moz-errormessage' => 'name@domain.com (correct e-mail structure)'
-                .message.fa-pencil= text_area_tag :comment, nil, required: true, pattern: '.{6,300}', minlength: 6, maxlength: 300, placeholder: 'Send us your message', title: 'You must provide a comprehensible message.', 'x-moz-errormessage' => 'You must provide a comprehensible message.'
+                .name.fa-user= text_field_tag :name, nil, required: true, pattern: '^(?!\s*$).{2,100}$', minlength: 2, maxlength: 100, placeholder: 'Name', title: 'Name between 2 and 100 characters.', 'x-moz-errormessage' => 'Your name must not be blank.'
+                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '^[A-Za-z0-9_\-\.]+\@[A-Za-z0-9_\-\.]+\.[A-Za-z]{2,4}$', minlength: 6, maxlength: 100, placeholder: 'Email', title: 'name@domain.com (correct e-mail structure)', 'x-moz-errormessage' => 'You must provide a valid e-mail address.'
+                .message.fa-pencil= text_area_tag :comment, nil, required: true, pattern: '^(?!\s*$).{6,300}$', minlength: 6, maxlength: 300, placeholder: 'Send us your message', title: 'Message between 6 and 300 characters.', 'x-moz-errormessage' => 'Your message cannot be blank.'
                 = submit_tag 'Send us your message', :class => 'btn btn-warning btn-lg pull-right'

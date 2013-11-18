@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/bastiaanterhorst/rich.git
-  revision: 9a513f227d0cf280b7a140d7cc72bfcbaaa9b5e7
+  revision: a73c85ece00cf3c4aaec2e8bff55d1c8c17bb3b5
   specs:
     rich (1.4.7)
       jquery-rails
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 329dda82e58a71b8e87546b10e089366a79aa4ef
+  revision: 7ad6ec39d959c70f580d7eb74fd84b57143e56e7
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -81,6 +81,8 @@ GEM
       nokogiri (>= 1.4.4, < 1.6.0)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2-x86-mingw32)
+    bootstrap-datepicker-rails (1.1.1.9)
+      railties (>= 3.0)
     bootstrap-sass (3.0.2.1)
       sass (~> 3.2)
     bourbon (3.1.8)
@@ -154,7 +156,7 @@ GEM
     multi_json (1.8.2)
     nokogiri (1.5.10)
     nokogiri (1.5.10-x86-mingw32)
-    orm_adapter (0.4.0)
+    orm_adapter (0.5.0)
     pg (0.17.0-x86-mingw32)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
@@ -232,6 +234,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   aws-sdk
+  bootstrap-datepicker-rails
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   date_validator
