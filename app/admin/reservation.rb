@@ -1,5 +1,5 @@
 ActiveAdmin.register Reservation do
-    menu :priority => 3, :label => 'Manage Reservations'
+    menu :priority => 3, :label => 'Reservations'
 
     config.per_page = 20
 
