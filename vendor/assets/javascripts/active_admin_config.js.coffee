@@ -1,7 +1,10 @@
 #update days field on dates change
 
 $(document).ready ->
-    durationFormat()
+    if !($('#reservation_arrival').parent().hasClass('error') || $('#reservation_departure').parent().hasClass('error'))
+        durationFormat()
+    else
+        $('#reservation_days').val('')
 
     $('#reservation_arrival').on('change', (e) ->
         $arrival = $('#reservation_arrival').val()
@@ -14,7 +17,7 @@ $(document).ready ->
                 $('#reservation_arrival').parent().removeClass('error')
             
             if $departure != ''
-                if calculateDuration("#{(new Date()).getFullYear()}-#{(new Date()).getMonth() + 1}-#{(new Date()).getDate()}", $departure, '') >= 0
+                if calculateDuration("#{(new Date()).getFullYear()}-#{(new Date()).getMonth() + 1}-#{(new Date()).getDate()}", $departure, '') > 0
                     $('#reservation_departure').parent().removeClass('error')
                 
                 calculateDuration($arrival, $departure, '#reservation_days')
@@ -28,7 +31,7 @@ $(document).ready ->
         $departure = $('#reservation_departure').val()
         
         if $departure != ''
-            if calculateDuration("#{(new Date()).getFullYear()}-#{(new Date()).getMonth() + 1}-#{(new Date()).getDate()}", $departure, '') < 0
+            if calculateDuration("#{(new Date()).getFullYear()}-#{(new Date()).getMonth() + 1}-#{(new Date()).getDate()}", $departure, '') <= 0
                 $('#reservation_departure').parent().addClass('error')
             else
                 $('#reservation_departure').parent().removeClass('error')
@@ -60,5 +63,3 @@ durationFormat = ->
         $('#reservation_departure').parent().removeClass('error')
     else
         $('#reservation_days').parent().addClass('error')
-        $('#reservation_arrival').parent().addClass('error')
-        $('#reservation_departure').parent().addClass('error')
