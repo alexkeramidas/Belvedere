@@ -28,16 +28,16 @@ ActiveAdmin.register Reservation do
     end
 
     form do |f|
-        f.inputs :style => 'display:inline-block;' do
-            f.input :email, :wrapper_html => { :style => 'display:table-cell;' }, :input_html => {required: true, pattern: '([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})'}, :hint => 'Every reservation needs an email!'
-            f.input :name, :wrapper_html => { :style => 'display:table-cell;' }
-            f.input :arrival, :as => :date_picker, :hint => 'Every reservation needs an arrival date!', :input_html => {required: true, :min => Date.today + 1.day, :max => Date.today + 6.months + 1.day}
-            f.input :departure, :as => :date_picker, :hint => 'Every reservation needs a departure date!', :input_html => {required: true, :min => Date.today + 2.day, :max => Date.today + 6.months + 2.day}
-            f.input :days, :readonly => true, :as => :string, :wrapper_html => { :style => 'display:table-cell; width: 40px;' }, :label => "Duration", :input_html => { :readonly => true}
-            f.input :adults, :wrapper_html => { :style => 'display:table-cell;' }, :input_html => {required: true, pattern: '(0*(?:[1-2][0-9]?|2))', min: '0', max: '19'}, :hint => 'Every reservation needs someone to pay!'
-            f.input :youngsters,  :wrapper_html => { :style => 'display:table-cell;' }, :input_html => { pattern: '(0*(?:[1-2][0-9]?|2))', min: '0', max: '19'}
-            f.input :phone, :wrapper_html => { :style => 'display:table-cell;' }
-            f.input :mobile, :wrapper_html => { :style => 'display:table-cell;' }
+        f.inputs do
+            f.input :email, :wrapper_html => {:class => "inline_field first required"}, :input_html => {required: true, maxlength: 100, pattern: '^[A-Za-z0-9_\-\.]+\@[A-Za-z0-9_\-\.]+\.[A-Za-z]{2,4}$'}
+            f.input :name, :wrapper_html => {:class => "inline_field last required"}, :input_html => {required: true, maxlength: 100}
+            f.input :arrival, :wrapper_html => {:class => "inline_field first required"}, :as => :date_picker, :input_html => {required: true, :min => Date.today, :max => Date.today + 6.months}
+            f.input :departure, :wrapper_html => {:class => "inline_field required"}, :as => :date_picker, :input_html => {required: true, :min => Date.today + 1.day, :max => Date.today + 6.months + 1.day}
+            f.input :days, :as => :string, :label => "Duration", :wrapper_html => {:class => "inline_field last"}, :input_html => {:readonly => true}
+            f.input :adults, :wrapper_html => {:class => "inline_field first required"}, :input_html => {required: true, pattern: '^(1[0-9]|[1-9])$', min: 0, max: 19, maxlength: 2}
+            f.input :youngsters, :wrapper_html => {:class => "inline_field last"}, :input_html => {pattern: '^([0-1][0-9]|[0-9])$', min: 0, max: 19, maxlength: 2}
+            f.input :phone, :wrapper_html => {:class => "inline_field first"}, :input_html => {maxlength: 20}
+            f.input :mobile, :wrapper_html => {:class => "inline_field last"}, :input_html => {maxlength: 20}
         end
         f.actions
     end
