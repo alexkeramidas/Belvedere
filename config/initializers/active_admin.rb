@@ -184,6 +184,12 @@ ActiveAdmin.setup do |config|
     #     end
     #   end
 
+    config.namespace :admin do |admin|
+        admin.build_menu :default do |menu|
+            menu.add :label => "Website", :priority => 4
+        end
+    end
+
     # == Download Links
     #
     # You can disable download links on resource listing pages,

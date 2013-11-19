@@ -1,4 +1,6 @@
 ActiveAdmin.register Suite, :as => 'Rooms' do
+     menu :priority => 1, :parent => "Website"
+
     config.per_page = 10
 
     filter :photos, collection: proc {Photo.all.map { |photo| [photo.image_file_name, photo.id] }}

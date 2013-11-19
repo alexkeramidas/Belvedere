@@ -1,4 +1,6 @@
 ActiveAdmin.register Article, :as => 'News' do
+    menu :priority => 3
+
     config.per_page = 10
 
     index do

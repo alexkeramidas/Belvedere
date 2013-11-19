@@ -19,3 +19,67 @@
 .cke_chrome {
     overflow: hidden;
 }
+
+.inline_field {
+    float: left;
+    width: 300px;
+    
+    &.first {
+        clear: left;
+        margin-left: 30px;
+    }
+    
+    &.last {
+        clear: right;
+        margin-right: 30px;
+    }
+    
+    &.required {
+        label:after {
+            content: ' *';
+            color: #ff0000;
+        }
+    }
+    
+    &.error {
+        input[type=date] {
+            border: 1px solid #932419;
+        }
+    }
+    
+    label {
+        display: inline-block;
+        width: 70px;
+        margin: 0.5em 20px 0 0;
+    }
+    
+    input,
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=number],
+    input[type=url],
+    input[type=tel],
+    input[type=date]
+    textarea {
+        display: inline-block;
+        width: 150px;
+    }
+    
+    input[type=date] {
+        padding: 4px 9px 4px 8px;
+    }
+    
+    #reservation_days {
+        width: 60px;
+    }
+    
+    p.inline-hints, p.inline-errors {
+        float: left;
+        clear: both;
+        width: 175px;
+        min-width: 175px;
+        max-width: 175px;
+        margin-left: 90px;
+    }
+}
