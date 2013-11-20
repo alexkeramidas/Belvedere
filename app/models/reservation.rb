@@ -1,9 +1,12 @@
 class Reservation < ActiveRecord::Base
     validates :email, :with => :validate_email
+    
+    validates_format_of :name, :with => /\A#{ApplicationHelper.form_field_attr('name')[:regex]}\Z/i, :message => "#{ApplicationHelper.form_field_attr('name')[:generic]}"
     validates_format_of :adults, :with => /\A#{ApplicationHelper.form_field_attr('adults')[:regex]}\Z/i, :message => "#{ApplicationHelper.form_field_attr('adults')[:generic]}"
     validates_format_of :youngsters, :with => /\A#{ApplicationHelper.form_field_attr('children')[:regex]}\Z/i, :message => "#{ApplicationHelper.form_field_attr('children')[:generic]}"
-    validates :arrival, :date => {:after => Proc.new { Time.now }, :before => Proc.new { Time.now + 6.month } , :message => "#{ApplicationHelper.form_field_attr('arrival')[:generic]}"}
-    validates :departure, :date => {:after => :arrival , :before => Proc.new { Time.now + 1.day + 6.month }, :message => "#{ApplicationHelper.form_field_attr('departure')[:generic]}"}
+    
+    validates :arrival, :date => {:after => Proc.new { 1.day.ago }, :before => Proc.new { 6.months.from_now } , :message => "#{ApplicationHelper.form_field_attr('arrival')[:generic]}"}
+    validates :departure, :date => {:after => :arrival , :before => Proc.new { 1.day.since(6.months.from_now.to_date) }, :message => "#{ApplicationHelper.form_field_attr('departure')[:generic]}"}
 
     #Custom validations for phone numbers
     validates_each :phone, :mobile do |model, attr, value|

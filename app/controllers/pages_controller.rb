@@ -24,6 +24,9 @@ class PagesController < ApplicationController
     end
     
     def make_reservation
+        days = ((Date.parse(params[:departure]) - Date.parse(params[:arrival])).to_i / 60 / (24 * 60)) + 1
+        res = Reservation.new(name: params[:name], email: params[:email], phone: params[:phone], mobile: params[:mobile], arrival: params[:arrival], departure: params[:departure], days: days, adults: params[:adults], youngsters: params[:children])
+        res.save!
         ReservationMailer.request_email(params[:name], params[:email], params[:phone], params[:mobile], DateTime.parse(params[:arrival]), DateTime.parse(params[:departure]), params[:adults], params[:children], params[:message]).deliver
         redirect_to root_url(:status => :success) and return
     end
