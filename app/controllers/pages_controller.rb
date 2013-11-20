@@ -23,6 +23,11 @@ class PagesController < ApplicationController
 
     end
     
+    def make_reservation
+        ReservationMailer.request_email(params[:name], params[:email], params[:phone], params[:mobile], DateTime.parse(params[:arrival]), DateTime.parse(params[:departure]), params[:adults], params[:children], params[:message]).deliver
+        redirect_to root_url(:status => :success) and return
+    end
+    
     def send_mail
         ContactMailer.contact_email(params[:name], params[:email], params[:comment]).deliver
         redirect_to contact_url(:status => :success) and return

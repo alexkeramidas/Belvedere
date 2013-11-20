@@ -4,4 +4,4 @@
         %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
     %body
         %h2= "#{@name} (#{@email}) just sent you a message"
-        %p= @message
+        %p= sanitize(@message)

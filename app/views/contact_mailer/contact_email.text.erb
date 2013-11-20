@@ -1,4 +1,4 @@
 <%= @name %> (<%= @email %>) just sent you a message
 ===============================================
  
-<%= @message %>.
+<%= sanitize(@message) %>

@@ -5,6 +5,7 @@ class ContactMailer < ActionMailer::Base
         @name = name
         @email = email
         @message = message
+        
         mail(:to => ActionMailer::Base.smtp_settings[:user_name], :subject => "Belvedere Hotel - New message from Contact Form!")
     end
 end
