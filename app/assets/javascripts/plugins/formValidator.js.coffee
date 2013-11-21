@@ -55,23 +55,33 @@
                     else
                         false
             
+            checkPlusSign = (el) ->
+                el.val().match(/^[^\+]*\+?[^\+]*$/g) != null
+            
+            checkParens = (el) ->
+                if el.val().match(/\(/g) != null && el.val().match(/\)/g) != null
+                    el.val().match(/\(/g).length == el.val().match(/\)/g).length
+                else if el.val().match(/\(/g) == null && el.val().match(/\)/g) == null
+                    true
+                else
+                    false
+            
+            checkBracks = (el) ->
+                if el.val().match(/\[/g) != null && el.val().match(/\]/g) != null
+                    el.val().match(/\[/g).length == el.val().match(/\]/g).length
+                else if el.val().match(/\[/g) == null && el.val().match(/\]/g) == null
+                    true
+                else
+                    false
+            
             testPhone = (el) ->
-                if el.val().match(/^[\d\(\)\[\]\s\-\+\/\.]{5,}$/g) != null
+                if el.val().match(new RegExp(el.attr('pattern'), 'g')) != null
                     phone_num = parseInt($.grep(el.val().split(/(\d+)/), (num, index) ->
                                     num  if RegExp("^[0-9]*$").test(num)
                                 ).join(""))
                     if phone_num > 10000 && phone_num < 999999999999999
-                        if el.val().match(/^.+\+.*$/g) == null
-                            if el.val().match(/\(/g) != null && el.val().match(/\)/g) != null
-                                if el.val().match(/\(/g).length == el.val().match(/\)/g).length
-                                    if el.val().match(/\[/g) != null && el.val().match(/\]/g) != null
-                                        false
-                                    else
-                                        true
-                                else
-                                    false
-                            else
-                                true
+                        if checkPlusSign(el) && checkParens(el) && checkBracks(el)
+                            true
                         else
                             false
                     else

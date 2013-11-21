@@ -13,7 +13,6 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 590e6d2c30ac96a06137d992cee7799cee8a2a40
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -76,9 +75,9 @@ GEM
       activesupport (>= 3.0.0)
     arel (4.0.1)
     atomic (1.1.14)
-    aws-sdk (1.26.0)
+    aws-sdk (1.27.0)
       json (~> 1.4)
-      nokogiri (>= 1.4.4, < 1.6.0)
+      nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2-x86-mingw32)
     bootstrap-datepicker-rails (1.1.1.9)
@@ -152,9 +151,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25)
+    mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.2)
-    nokogiri (1.5.10-x86-mingw32)
+    nokogiri (1.6.0-x86-mingw32)
+      mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
     pg (0.17.0-x86-mingw32)
     polyamorous (0.6.4)

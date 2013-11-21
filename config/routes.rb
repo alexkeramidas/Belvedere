@@ -15,6 +15,7 @@ BelvedereGit::Application.routes.draw do
     
     get 'contact' => 'pages#contact'
     post 'send_mail' => 'pages#send_mail'
+    post 'make_reservation' => 'pages#make_reservation'
 
     resources :articles
 

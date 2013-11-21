@@ -1,0 +1,34 @@
+!!! html
+%html
+    %head
+        %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
+    %body
+        %h2= "New reservation request"
+        %p
+            %strong Name:
+            = @name
+        %p
+            %strong Email:
+            = @email
+        %p
+            %strong Phone:
+            = @phone
+        %p
+            %strong Mobile:
+            = @mobile
+        %p
+            %strong Arrival:
+            = @arrival.strftime('%A, %d %b %Y')
+        %p
+            %strong Departure:
+            = @departure.strftime('%A, %d %b %Y')
+        %p
+            %strong Adults:
+            = @adults
+        %p
+            %strong Children:
+            = @children
+        %p
+            %strong Additional Details:
+            %br
+            = sanitize(@message)

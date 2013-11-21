@@ -3,7 +3,26 @@
         = form_tag send_mail_path, method: 'POST', :class => 'contactform clearfix' do
             .scrollable
                 %h1 Contact Us
-                .name.fa-user= text_field_tag :name, nil, required: true, pattern: '^(?!\s*$).{2,100}$', minlength: 2, maxlength: 100, placeholder: 'Name', title: 'Name between 2 and 100 characters.', 'x-moz-errormessage' => 'Your name must not be blank.'
-                .email.fa-envelope= email_field_tag :email, nil, required: true, pattern: '^[A-Za-z0-9_\-\.]+\@[A-Za-z0-9_\-\.]+\.[A-Za-z]{2,4}$', minlength: 6, maxlength: 100, placeholder: 'Email', title: 'name@domain.com (correct e-mail structure)', 'x-moz-errormessage' => 'You must provide a valid e-mail address.'
-                .message.fa-pencil= text_area_tag :comment, nil, required: true, pattern: '^(?!\s*$).{6,300}$', minlength: 6, maxlength: 300, placeholder: 'Send us your message', title: 'Message between 6 and 300 characters.', 'x-moz-errormessage' => 'Your message cannot be blank.'
+                
+                .name.fa-user= text_field_tag :name, nil, required: true,
+                    pattern: "#{form_field_attr('name', 2, 100)[:regex]}",
+                    minlength: 2, maxlength: 100,
+                    placeholder: 'Name',
+                    title: "#{form_field_attr('name', 2, 100)[:title]}",
+                    'x-moz-errormessage' => "#{form_field_attr('name', 2, 100)[:moz_error]}"
+                    
+                .email.fa-envelope= email_field_tag :email, nil, required: true,
+                    pattern: "#{form_field_attr('email')[:regex]}",
+                    minlength: 6, maxlength: 100,
+                    placeholder: 'Email',
+                    title: "#{form_field_attr('email')[:title]}",
+                    'x-moz-errormessage' => "#{form_field_attr('email')[:moz_error]}"
+                    
+                .message.fa-pencil= text_area_tag :comment, nil, required: true,
+                    pattern: "#{form_field_attr('contact', 6, 300)[:regex]}",
+                    minlength: 6, maxlength: 300,
+                    placeholder: 'Send us your message',
+                    title: "#{form_field_attr('contact', 6, 300)[:title]}",
+                    'x-moz-errormessage' => "#{form_field_attr('contact', 6, 300)[:moz_error]}"
+                    
                 = submit_tag 'Send us your message', :class => 'btn btn-warning btn-lg pull-right'

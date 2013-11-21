@@ -1,0 +1,13 @@
+New reservation request
+=======================
+
+Name: <%= @name %>
+Email: <%= @email %>
+Phone: <%= @phone %>
+Mobile: <%= @mobile %>
+Arrival: <%= @arrival.strftime('%A, %d %b %Y') %>
+Departure: <%= @departure.strftime('%A, %d %b %Y') %>
+Adults: <%= @adults %>
+Children: <%= @children %>
+Additional Details:
+<%= sanitize(@message) %>
