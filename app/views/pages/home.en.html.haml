@@ -2,8 +2,6 @@
     .formwrapper
         = form_tag make_reservation_path, method: 'POST', :class => 'reservationform clearfix' do
             .scrollable
-                %h1 Request a room
-                
                 .name.fa-user= text_field_tag :name, nil, required: true,
                     pattern: "#{form_field_attr('name', 2, 100)[:regex]}",
                     minlength: 2, maxlength: 100,
