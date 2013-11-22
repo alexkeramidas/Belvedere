@@ -21,6 +21,25 @@ class BelvedereGit.pages extends BelvedereGit.Base
             $('#departure').datepicker('setStartDate', next_day).datepicker('update', next_day).focus()
         )
         
+        $('.form-link').on('click', (e) ->
+            $formwrapper = $('.formwrapper')
+            if $formwrapper.css('display') == 'none'
+                $formwrapper.find('form > .mCustomScrollbar').removeClass('scrollable')
+                $formwrapper.slideDown(1000, (->
+                        $formwrapper.find('form > .mCustomScrollbar').addClass('scrollable')
+                        $('.form-link').removeClass('form-closed')
+                    )
+                )
+                $('.form-link').removeClass('with-bg')
+                $('.external-link').css('display', 'none')
+            else
+                $formwrapper.slideUp(1000, (->
+                        $('.form-link').addClass('form-closed').addClass('with-bg')
+                        $('.external-link').css('display', 'block')
+                    )
+                )
+        )
+        
     photo_gallery: () ->
         $('body').bgCarousel()
 
