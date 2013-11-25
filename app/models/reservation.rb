@@ -31,8 +31,6 @@ class Reservation < ActiveRecord::Base
 
     #Change children value to zero if set to nil to be used before validation
     def children_to_zero
-        if self.youngsters == nil
-            self.youngsters = 0
-        end
+        self.youngsters ||= 0
     end
 end
