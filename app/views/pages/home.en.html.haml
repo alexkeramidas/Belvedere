@@ -1,8 +1,6 @@
 .home
     .wrapper
-        .form-link.form-closed.with-bg
-            .link-text Click here to request a room
-        .formwrapper
+        #reservationform.formwrapper
             = form_tag make_reservation_path, method: 'POST', :class => 'reservationform clearfix' do
                 .scrollable
                     .name.fa-user= text_field_tag :name, nil, required: true,
@@ -78,5 +76,8 @@
                         
                     = submit_tag 'Send your request', :class => 'btn btn-warning btn-lg pull-right'
         
-        .external-link
+        .form-link
+            .link-text Click here to request a room
+        
+        .external-link.initialized
             .link-text Or click here to proceed through booking.com

@@ -120,6 +120,16 @@
                 }
             }
             
+            &.initialized {
+                top: 383px;
+                width: 450px;
+                background: none;
+                
+                .link-text {
+                    display: block;
+                }
+            }
+            
             .link-text {
                 display: none;
             }
@@ -127,7 +137,6 @@
     }
 
     .formwrapper {
-        display: none;
         position: relative;
         width: 450px;
         height: 412px;
@@ -135,6 +144,10 @@
         background-color: rgba(146, 127, 109, .9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 6px;
+        
+        &:target {
+            display: block;
+        }
     }
 
     .reservationform {
