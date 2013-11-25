@@ -1,16 +1,153 @@
+@import "bootstrap/_mixins.scss";
+
 #page-body .home {
     background-color: transparent;
 
+    .wrapper {
+        position: relative;
+        
+        .form-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 450px;
+            height: 28px;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 2px 4px;
+            overflow: hidden;
+            z-index: 5;
+            
+            &:after {
+                font-family: FontAwesome;
+                content: '\f066';
+                position: absolute;
+                top: 3px;
+                right: 4px;
+                color: #ffc64d;
+                font-size: 16px;
+                line-height: 16px;
+                background: #927f6d;
+                background-color: rgba(146, 127, 109, .9);
+                border: 1px solid #ffc64d;
+                box-shadow: 1px 1px 0 rgba(48, 35, 21, .8);
+                text-shadow: 1px 1px rgba(48, 35, 21, .8);
+                border-radius: 3px;
+                padding: 2px 4px;
+            }
+            
+            &.form-closed {
+                &:after {
+                    content: '\f065';
+                }
+            }
+            
+            &.with-bg {
+                width: 55px;
+                background: #927f6d;
+                background-color: rgba(146, 127, 109, .9);
+                box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+                @include transition(width linear .4s);
+                
+                &:hover {
+                    width: 450px;
+                    
+                    .link-text {
+                        display: block;
+                    }
+                }
+                
+                .link-text {
+                    display: none;
+                }
+            }
+            
+            .link-text {
+                display: none;
+                font-family: 'Della Respira', 'DellaRespira-Regular', serif;
+                color: #ffc64d;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 24px;
+                text-shadow: 1px 1px rgba(48, 35, 21, .8);
+                padding-left: 10px;
+                padding-right: 26px;
+            }
+        }
+        
+        .external-link {
+            position: absolute;
+            top: 35px;
+            width: 55px;
+            height: 28px;
+            background: #927f6d;
+            background-color: rgba(146, 127, 109, .9);
+            box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+            font-family: 'Della Respira', 'DellaRespira-Regular', serif;
+            color: #ffc64d;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 24px;
+            text-shadow: 1px 1px rgba(48, 35, 21, .8);
+            border-radius: 6px;
+            padding: 2px 29px 0 13px;
+            overflow: hidden;
+            @include transition(width linear .4s);
+            
+            &:after {
+                font-family: FontAwesome;
+                content: '\f08e';
+                position: absolute;
+                top: 3px;
+                right: 4px;
+                color: #ffc64d;
+                font-size: 16px;
+                line-height: 16px;
+                background: #927f6d;
+                background-color: rgba(146, 127, 109, .9);
+                border: 1px solid #ffc64d;
+                box-shadow: 1px 1px 0 rgba(48, 35, 21, .8);
+                text-shadow: 1px 1px rgba(48, 35, 21, .8);
+                border-radius: 3px;
+                padding: 2px 2px 2px 3px;
+            }
+            
+            &:hover {
+                width: 450px;
+                
+                .link-text {
+                    display: block;
+                }
+            }
+            
+            &.initialized {
+                top: 383px;
+                width: 450px;
+                background: none;
+                
+                .link-text {
+                    display: block;
+                }
+            }
+            
+            .link-text {
+                display: none;
+            }
+        }
+    }
+
     .formwrapper {
         position: relative;
-        width: 500px;
-        height: 100%;
-        min-height: 415px;
-        max-height: 500px;
+        width: 450px;
+        height: 412px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .9);
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
         border-radius: 6px;
+        
+        &:target {
+            display: block;
+        }
     }
 
     .reservationform {
@@ -19,7 +156,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        margin: 35px 45px;
+        margin: 25px;
         word-wrap: break-word;
         overflow: hidden;
 
@@ -47,7 +184,7 @@
             background-color: #fff;
             border: 2px solid #fff;
             border-radius: 0;
-            padding: 10px 5px 10px 38px;
+            padding: 8px 5px 8px 38px;
             margin-bottom: 10px;
             box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
 
@@ -56,14 +193,14 @@
                 outline: none;
                 background-color: #fbfbdb;
                 border: 2px solid #e99924;
-                padding: 10px 5px 10px 38px;
+                padding: 8px 5px 8px 38px;
                 box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
             }
             
             &.is-required {
                 background-image: image-url('exclamation-sign.svg') !important;
                 background-repeat: no-repeat;
-                background-position: calc(100% - 10px) 10px;
+                background-position: calc(100% - 8px) 8px;
                 background-size: 20px;
                 border: 2px solid #e99924 !important;
                 padding-right: 38px;
@@ -72,7 +209,7 @@
             &.has-success {
                 background-image: image-url('ok.svg') !important;
                 background-repeat: no-repeat;
-                background-position: calc(100% - 10px) 10px;
+                background-position: calc(100% - 8px) 8px;
                 background-size: 20px;
                 border: 2px solid #468847 !important;
                 padding-right: 38px;
@@ -81,7 +218,7 @@
             &.has-error {
                 background-image: image-url('remove.svg') !important;
                 background-repeat: no-repeat;
-                background-position: calc(100% - 10px) 10px;
+                background-position: calc(100% - 8px) 8px;
                 background-size: 20px;
                 border: 2px solid #b94a48 !important;
                 padding-right: 38px;
@@ -89,7 +226,8 @@
         }
 
         textarea {
-            height: 125px;
+            height: 65px;
+            min-height: 50px;
             resize: vertical;
         }
         
@@ -167,7 +305,7 @@
                 
                 &:valid, &:invalid {
                     background-repeat: no-repeat;
-                    background-position: calc(100% - 10px) 10px;
+                    background-position: calc(100% - 8px) 8px;
                     background-size: 20px;
                     border-color: #fff;
                     padding-right: 38px;

@@ -1,78 +1,83 @@
 .home
-    .formwrapper
-        = form_tag make_reservation_path, method: 'POST', :class => 'reservationform clearfix' do
-            .scrollable
-                %h1 Request a room
-                
-                .name.fa-user= text_field_tag :name, nil, required: true,
-                    pattern: "#{form_field_attr('name', 2, 100)[:regex]}",
-                    minlength: 2, maxlength: 100,
-                    placeholder: 'Name',
-                    title: "#{form_field_attr('name', 2, 100)[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('name', 2, 100)[:moz_error]}"
-                    
-                .email.fa-envelope= email_field_tag :email, nil, required: true,
-                    pattern: "#{form_field_attr('email')[:regex]}",
-                    minlength: 6, maxlength: 100,
-                    placeholder: 'Email',
-                    title: "#{form_field_attr('email')[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('email')[:moz_error]}"
-                    
-                .phone.fa-phone.left= telephone_field_tag :phone, nil,
-                    data: {type: 'phone'},
-                    pattern: "#{form_field_attr('phone', 5, 20)[:regex]}",
-                    minlength: 5, maxlength: 20,
-                    placeholder: 'Phone Number',
-                    title: "#{form_field_attr('phone', 5, 20)[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('phone', 5, 20)[:moz_error]}"
-                    
-                .mobile.fa-mobile.right= telephone_field_tag :mobile, nil,
-                    data: {type: 'phone'},
-                    pattern: "#{form_field_attr('mobile', 8, 20)[:regex]}",
-                    minlength: 8, maxlength: 20,
-                    placeholder: 'Mobile Phone',
-                    title: "#{form_field_attr('mobile', 8, 20)[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('mobile', 8, 20)[:moz_error]}"
-                    
-                .arrival.fa-calendar.left= text_field_tag :arrival, nil, required: true,
-                    data: {provide: 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-start-date' => '+0d'},
-                    pattern: "#{form_field_attr('arrival')[:regex]}",
-                    minlength: 10, maxlength: 10,
-                    placeholder: 'Arrival',
-                    title: "#{form_field_attr('arrival')[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('arrival')[:moz_error]}"
-                    
-                .departure.fa-calendar.right= text_field_tag :departure, nil, required: true,
-                    data: {provide: 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-start-date' => '+1d'},
-                    pattern: "#{form_field_attr('departure')[:regex]}",
-                    minlength: 10, maxlength: 10,
-                    placeholder: 'Departure',
-                    title: "#{form_field_attr('departure')[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('departure')[:moz_error]}"
-                    
-                .adults.fa-male.left= number_field_tag :adults, nil, required: true,
-                    min: 1, max: 19,
-                    data: {type: 'numeric'},
-                    pattern: "#{form_field_attr('adults')[:regex]}",
-                    maxlength: 2,
-                    placeholder: 'Adults',
-                    title: "#{form_field_attr('adults')[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('adults')[:moz_error]}"
-                    
-                .children.fa-users.right= number_field_tag :children, nil,
-                    min: 0, max: 19,
-                    data: {type: 'numeric'},
-                    pattern: "#{form_field_attr('children')[:regex]}",
-                    maxlength: 2,
-                    placeholder: 'Children',
-                    title: "#{form_field_attr('children')[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('children')[:moz_error]}"
-                    
-                .message.fa-pencil= text_area_tag :message, nil,
-                    pattern: "#{form_field_attr('message', 6, 300)[:regex]}",
-                    minlength: 6, maxlength: 300,
-                    placeholder: 'Additional Details',
-                    title: "#{form_field_attr('message', 6, 300)[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('message', 6, 300)[:moz_error]}"
-                    
-                = submit_tag 'Send your request', :class => 'btn btn-warning btn-lg pull-right'
+    .wrapper
+        #reservationform.formwrapper
+            = form_tag make_reservation_path, method: 'POST', :class => 'reservationform clearfix' do
+                .scrollable
+                    .name.fa-user= text_field_tag :name, nil, required: true,
+                        pattern: "#{form_field_attr('name', 2, 100)[:regex]}",
+                        minlength: 2, maxlength: 100,
+                        placeholder: 'Name',
+                        title: "#{form_field_attr('name', 2, 100)[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('name', 2, 100)[:moz_error]}"
+                        
+                    .email.fa-envelope= email_field_tag :email, nil, required: true,
+                        pattern: "#{form_field_attr('email')[:regex]}",
+                        minlength: 6, maxlength: 100,
+                        placeholder: 'Email',
+                        title: "#{form_field_attr('email')[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('email')[:moz_error]}"
+                        
+                    .phone.fa-phone.left= telephone_field_tag :phone, nil,
+                        data: {type: 'phone'},
+                        pattern: "#{form_field_attr('phone', 5, 20)[:regex]}",
+                        minlength: 5, maxlength: 20,
+                        placeholder: 'Phone Number',
+                        title: "#{form_field_attr('phone', 5, 20)[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('phone', 5, 20)[:moz_error]}"
+                        
+                    .mobile.fa-mobile.right= telephone_field_tag :mobile, nil,
+                        data: {type: 'phone'},
+                        pattern: "#{form_field_attr('mobile', 8, 20)[:regex]}",
+                        minlength: 8, maxlength: 20,
+                        placeholder: 'Mobile Phone',
+                        title: "#{form_field_attr('mobile', 8, 20)[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('mobile', 8, 20)[:moz_error]}"
+                        
+                    .arrival.fa-calendar.left= text_field_tag :arrival, nil, required: true,
+                        data: {provide: 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-start-date' => '+0d'},
+                        pattern: "#{form_field_attr('arrival')[:regex]}",
+                        minlength: 10, maxlength: 10,
+                        placeholder: 'Arrival',
+                        title: "#{form_field_attr('arrival')[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('arrival')[:moz_error]}"
+                        
+                    .departure.fa-calendar.right= text_field_tag :departure, nil, required: true,
+                        data: {provide: 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-start-date' => '+1d'},
+                        pattern: "#{form_field_attr('departure')[:regex]}",
+                        minlength: 10, maxlength: 10,
+                        placeholder: 'Departure',
+                        title: "#{form_field_attr('departure')[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('departure')[:moz_error]}"
+                        
+                    .adults.fa-male.left= number_field_tag :adults, nil, required: true,
+                        min: 1, max: 19,
+                        data: {type: 'numeric'},
+                        pattern: "#{form_field_attr('adults')[:regex]}",
+                        maxlength: 2,
+                        placeholder: 'Adults',
+                        title: "#{form_field_attr('adults')[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('adults')[:moz_error]}"
+                        
+                    .children.fa-users.right= number_field_tag :children, nil,
+                        min: 0, max: 19,
+                        data: {type: 'numeric'},
+                        pattern: "#{form_field_attr('children')[:regex]}",
+                        maxlength: 2,
+                        placeholder: 'Children',
+                        title: "#{form_field_attr('children')[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('children')[:moz_error]}"
+                        
+                    .message.fa-pencil= text_area_tag :message, nil,
+                        pattern: "#{form_field_attr('message', 6, 300)[:regex]}",
+                        minlength: 6, maxlength: 300,
+                        placeholder: 'Additional Details',
+                        title: "#{form_field_attr('message', 6, 300)[:title]}",
+                        'x-moz-errormessage' => "#{form_field_attr('message', 6, 300)[:moz_error]}"
+                        
+                    = submit_tag 'Send your request', :class => 'btn btn-warning btn-lg pull-right'
+        
+        .form-link
+            .link-text Click here to request a room
+        
+        .external-link.initialized
+            .link-text Or click here to proceed through booking.com
