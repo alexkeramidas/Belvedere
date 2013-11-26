@@ -29,7 +29,7 @@ class BelvedereGit.pages extends BelvedereGit.Base
             $formwrapper.css('display', 'none')
         
         $('.form-link').on('click', (e) ->
-            if window.location.hash == '#reservationform'
+            if window.location.hash == '#reservation'
                 $('.external-link').removeClass('initialized').css('display', 'none')
             
             if $formwrapper.css('display') == 'none'
@@ -41,12 +41,14 @@ class BelvedereGit.pages extends BelvedereGit.Base
                 )
                 $('.form-link').removeClass('with-bg')
                 $('.external-link').css('display', 'none')
+                window.location.hash = '#reservation'
             else
                 $formwrapper.slideUp(1000, (->
                         $('.form-link').addClass('form-closed').addClass('with-bg')
                         $('.external-link').css('display', 'block')
                     )
                 )
+                history.pushState('', document.title, "#{window.location.pathname}#{window.location.search}")
         )
         
     photo_gallery: () ->
