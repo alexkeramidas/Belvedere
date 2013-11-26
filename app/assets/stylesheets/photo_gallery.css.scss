@@ -5,8 +5,21 @@
     padding-bottom: 78px;
     
     .title {
+        position: relative;
         width: 370px;
         margin-bottom: 10px;
+        cursor: pointer;
+        
+        &:after {
+            position: absolute;
+            top: 23px;
+            right: 20px;
+            font-family: FontAwesome;
+            content: '\f13a';
+            color: #6d0c21;
+            font-size: 26px;
+            text-shadow: 1px 1px #1b0704, -1px -1px #97273f;
+        }
         
         h1 {
             color: #e99924;
@@ -25,12 +38,13 @@
         position: relative;
         width: 370px;
         height: auto;
-        min-height: 210px;
+        min-height: 170px;
         max-height: 470px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .85);
         background-image: image-url('photo_gal_bg.gif');
         box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        border: 1px solid #f8d2c9;
         border-radius: 6px;
     }
 

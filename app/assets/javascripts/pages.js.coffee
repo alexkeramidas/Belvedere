@@ -53,6 +53,16 @@ class BelvedereGit.pages extends BelvedereGit.Base
         
     photo_gallery: () ->
         $('body').bgCarousel()
+        
+        $gallery_description = $('.photo-gallery .wrapper')
+        
+        if $gallery_description.length
+            $('.photo-gallery .title').on('click', (e) ->
+                if $gallery_description.css('display') == 'block'
+                    $gallery_description.slideUp(1000)
+                else
+                    $gallery_description.slideDown(1000)
+            )
 
     location: () ->
         MyPositioningControl = (controlDiv, map) ->
