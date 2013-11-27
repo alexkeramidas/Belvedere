@@ -64,6 +64,9 @@ gem 'aws-sdk'
 #Use simple dates validation
 gem 'date_validator'
 
+#Multilanguage Support
+gem 'globalize', '~> 4.0.0.alpha.2'
+
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false

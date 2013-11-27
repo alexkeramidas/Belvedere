@@ -1,14 +1,15 @@
 class CreateArticles < ActiveRecord::Migration
-    def change
+    def up
         create_table :articles do |t|
             t.string :title
             t.text :description
             t.boolean :visible
-            t.datetime :created_at
-            t.datetime :last_edit
             t.integer :article_type
 
             t.timestamps
         end
+    end
+    def down
+        drop_table :articles
     end
 end
