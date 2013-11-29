@@ -64,15 +64,21 @@ class BelvedereGit.pages extends BelvedereGit.Base
             gallery_text = $gallery_title.find('h1').text()
             
             $gallery_title.addClass('has-description').css('cursor', 'pointer')
+            $gallery_description.css('height', $gallery_description.css('min-height'))
             
             $('.photo-gallery .title').on('click', (e) ->
                 if $gallery_description.css('display') == 'block'
                     $gallery_description.slideUp(1000, (->
                             $gallery_title.addClass('closed')
+                            $gallery_description.css('min-height', '0')
                         )
                     )
                 else
-                    $gallery_description.slideDown(1000)
+                    $gallery_description.find('.mCustomScrollbar').removeClass('scrollable')
+                    $gallery_description.slideDown(1000, (->
+                            $gallery_description.find('.mCustomScrollbar').addClass('scrollable')
+                        )
+                    )
                     $gallery_title.removeClass('closed')
             )
             
