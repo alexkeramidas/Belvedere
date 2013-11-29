@@ -54,16 +54,49 @@ class BelvedereGit.pages extends BelvedereGit.Base
     photo_gallery: () ->
         $('body').bgCarousel()
         
+        $gallery_title = $('.photo-gallery .title')
         $gallery_description = $('.photo-gallery .wrapper')
         
+        contentSliding = (el) ->
+            el.css('display') == 'block' && window.css(el).height != 'auto'
+        
         if $gallery_description.length
+            gallery_text = $gallery_title.find('h1').text()
+            
+            $gallery_title.addClass('has-description').css('cursor', 'pointer')
+            
             $('.photo-gallery .title').on('click', (e) ->
                 if $gallery_description.css('display') == 'block'
-                    $gallery_description.slideUp(1000)
+                    $gallery_description.slideUp(1000, (->
+                            $gallery_title.addClass('closed')
+                        )
+                    )
                 else
                     $gallery_description.slideDown(1000)
+                    $gallery_title.removeClass('closed')
             )
-
+            
+            $('.photo-gallery .title h1').on('mouseenter', ->
+                window.clicked = false
+                
+                window.initial_display = $('.photo-gallery .wrapper').css('display')
+                window.initial_content = $('.photo-gallery .title').find('h1').text()
+                
+                if $gallery_description.css('display') == 'none' || contentSliding($gallery_description)
+                    $(this).css('margin-right', '0').css('width', '99%').text(gallery_text).parent().removeClass('hidden-text')
+                
+                $('.photo-gallery .title').on('click', ->
+                    window.clicked = true
+                )
+                
+                $('.photo-gallery .title h1').on('mouseleave', (e) ->
+                    e.stopImmediatePropagation()
+                    if (window.clicked == false && window.initial_display == 'none') || (window.clicked == true && (window.initial_content != ''))
+                        $(this).css('margin-right', '30px').css('width', 'auto').text('').parent().addClass('hidden-text')
+                    false
+                )
+            )
+                
     location: () ->
         MyPositioningControl = (controlDiv, map) ->
             controlDiv.style.padding = '5px'

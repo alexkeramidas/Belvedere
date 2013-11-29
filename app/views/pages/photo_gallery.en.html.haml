@@ -1,8 +1,8 @@
 .photo-gallery
-    .title
-        %h1= !@gallery.blank? ? @gallery.title : 'Photo Gallery'
     - if !@gallery.description.blank?
+        .title
+            %h1= !@gallery.blank? ? @gallery.title : 'Photo Gallery'
         .wrapper
             .content
                 .scrollable
-                    .desc= simple_format(@gallery.description).html_safe if !@gallery.blank?
+                    .desc= simple_format(@gallery.description).html_safe

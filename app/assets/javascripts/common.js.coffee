@@ -101,6 +101,33 @@ class BelvedereGit.Base
         
         $(window).resize ->
             fancyboxResize()
+        
+        
+        # Returns a javascript object containing the actual CSS values of the given element
+        # instead of its calculated ones
+        # (e.g. css(element).height may return 'auto' instead of '100px')
+        
+        window.css = (a) ->
+            sheets = document.styleSheets
+            o = {}
+            for i of sheets
+                rules = sheets[i].rules or sheets[i].cssRules
+                for r of rules
+                    o = $.extend(o, css2js(rules[r].style), css2js(a.attr("style")))  if a.is(rules[r].selectorText)
+            o
+        
+        css2js = (css) ->
+            s = {}
+            return s  unless css
+            if css instanceof CSSStyleDeclaration
+                for i of css
+                    s[(css[i]).toLowerCase()] = (css[css[i]])  if (css[i]).toLowerCase
+            else if typeof css is "string"
+                css = css.split("; ")
+                for i of css
+                    l = css[i].split(": ")
+                    s[l[0].toLowerCase()] = (l[1])
+            s
 
 
         # MAKE SURE YOU RETURN this

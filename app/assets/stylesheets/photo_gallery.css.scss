@@ -6,22 +6,48 @@
     
     .title {
         position: relative;
-        width: 370px;
+        width: 374px;
+        height: 68px;
+        border-radius: 6px;
         margin-bottom: 10px;
-        cursor: pointer;
+        overflow: hidden;
         
-        &:after {
-            position: absolute;
-            top: 23px;
-            right: 20px;
-            font-family: FontAwesome;
-            content: '\f13a';
-            color: #6d0c21;
-            font-size: 26px;
-            text-shadow: 1px 1px #1b0704, -1px -1px #97273f;
+        &.has-description {
+            &:after {
+                position: absolute;
+                top: 23px;
+                right: 20px;
+                font-family: FontAwesome;
+                content: '\f139';
+                color: #6d0c21;
+                font-size: 26px;
+                text-shadow: 1px 1px #1b0704, -1px -1px #97273f;
+            }
+            
+            &.closed {
+                width: 135px;
+                @include transition(width linear .4s);
+                
+                &:after {
+                    content: '\f13a';
+                }
+                
+                &:hover {
+                    width: 370px;
+                }
+            }
+            
+            &.hidden-text {
+                &:after {
+                    content: '\f0a9';
+                    border-radius: 9999px;
+                    background: #3a0e15;
+                }
+            }
         }
         
         h1 {
+            width: 99%;
             color: #e99924;
             background: #3a0e15;
             background-color: rgba(58, 14, 21, 0.85);
@@ -31,6 +57,14 @@
             border-radius: 6px;
             padding: 15px 28px;
             margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+        
+            &:before {
+                font-family: FontAwesome;
+                content: '\f083';
+                padding-right: 10px;
+            }
         }
     }
 
