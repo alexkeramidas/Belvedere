@@ -64,41 +64,48 @@ class BelvedereGit.pages extends BelvedereGit.Base
             gallery_text = $gallery_title.find('h1').text()
             
             $gallery_title.addClass('has-description').css('cursor', 'pointer')
-            $gallery_description.css('height', $gallery_description.css('min-height'))
+            $gallery_description.css('height', $gallery_description.css('min-height')).css('min-height', '0')
+            
+            window.sliding_up = false
+            window.sliding_down = false
+            
+            window.slide_up_requested = false
             
             $('.photo-gallery .title').on('click', (e) ->
                 if $gallery_description.css('display') == 'block'
                     $gallery_description.slideUp(1000, (->
                             $gallery_title.addClass('closed')
-                            $gallery_description.css('min-height', '0')
+                            window.sliding_up = false
+                            $(this).addClass('hidden-text').find('h1').css('margin-right', '30px').css('width', 'auto').text('')
                         )
                     )
+                    window.sliding_up = true
+                    window.slide_up_requested = true
                 else
                     $gallery_description.find('.mCustomScrollbar').removeClass('scrollable')
                     $gallery_description.slideDown(1000, (->
                             $gallery_description.find('.mCustomScrollbar').addClass('scrollable')
+                            window.sliding_down = false
+                            $(this).removeClass('hidden-text').find('h1').css('margin-right', '0').css('width', '99%').text(gallery_text)
                         )
                     )
+                    window.sliding_down = true
+                    window.slide_up_requested = false
                     $gallery_title.removeClass('closed')
             )
             
             $('.photo-gallery .title h1').on('mouseenter', ->
-                window.clicked = false
-                
                 window.initial_display = $('.photo-gallery .wrapper').css('display')
                 window.initial_content = $('.photo-gallery .title').find('h1').text()
                 
                 if $gallery_description.css('display') == 'none' || contentSliding($gallery_description)
                     $(this).css('margin-right', '0').css('width', '99%').text(gallery_text).parent().removeClass('hidden-text')
                 
-                $('.photo-gallery .title').on('click', ->
-                    window.clicked = true
-                )
-                
                 $('.photo-gallery .title h1').on('mouseleave', (e) ->
                     e.stopImmediatePropagation()
-                    if (window.clicked == false && window.initial_display == 'none') || (window.clicked == true && (window.initial_content != ''))
-                        $(this).css('margin-right', '30px').css('width', 'auto').text('').parent().addClass('hidden-text')
+                    if !($('.photo-gallery .wrapper').css('display') == 'block' && $('.photo-gallery .title').find('h1').text() != '' && !window.sliding_up && !window.sliding_down)
+                        if window.sliding_up || (!window.sliding_up && !window.sliding_down && window.initial_display == 'none' && window.initial_content == '') || ($('.photo-gallery .wrapper').css('display') == 'none' && !window.sliding_up && !window.sliding_down && window.slide_up_requested && window.initial_display == 'block' && window.initial_display != '')
+                            $(this).css('margin-right', '30px').css('width', 'auto').text('').parent().addClass('hidden-text')
                     false
                 )
             )
