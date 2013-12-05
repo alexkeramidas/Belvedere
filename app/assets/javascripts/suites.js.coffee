@@ -33,18 +33,23 @@ class BelvedereGit.suites extends BelvedereGit.Base
                         window.fancyClick = false
                 )
         
-        # Image gallery height is set to the minimum height of its contained images
-        # Contained elements are also repositioned accordingly
+        # Image gallery height is set to the minimum height of its contained images.
+        # Contained elements are also repositioned accordingly.
+        # Before the height is set and repositioning occurs, we wait for the contained
+        # images to finish loading.
         setGalleryHeight = ->
-            min = parseInt($('.image-gallery').css('max-height'))
-            $('.gallery.visible .item').each ->
-                new_height = window.calculateNewImageHeight($(this).find('img'), $('.gallery.visible').width())
-                if new_height < min
-                    min = new_height
-            $('.image-gallery').css('height', min)
-            
-            missingImgReposition()
-            galleryControlsReposition()
+            $('.gallery.visible').waitForImages
+                finished: ->
+                    min = parseInt($('.image-gallery').css('max-height'))
+                    $('.gallery.visible .item').each ->
+                        new_height = window.calculateNewImageHeight($(this).find('img'), $('.gallery.visible').width())
+                        if new_height < min
+                            min = new_height
+                    $('.image-gallery').css('height', min)
+                    
+                    missingImgReposition()
+                    galleryControlsReposition()
+                waitForAll: true
         
         # Prepares gallery for display
         galleryPrepare = ->
