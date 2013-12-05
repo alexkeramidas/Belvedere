@@ -10,6 +10,11 @@ class BelvedereGit.pages extends BelvedereGit.Base
     home: () ->
         $('body').bgCarousel()
         
+        $('#arrival').datepicker 'option',
+            startDate: '+0d'
+        $('#departure').datepicker 'option',
+            startDate: '+1d'
+        
         $('.reservationform').formValidator
             validatedFields: ['name', 'email', 'phone', 'mobile', 'arrival', 'departure', 'adults', 'children', 'message']
         
