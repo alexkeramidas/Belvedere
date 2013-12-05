@@ -10,6 +10,8 @@
          url(asset_path('DellaRespira-Regular.svg#DellaRespira-Regular')) format('svg');
 }
 
+@import "bootstrap/_mixins.scss";
+
 ::selection {
     background: #efb7a7;
     color: #fff;
@@ -129,6 +131,68 @@ a {
         &.active {
             background: #8f0017;
         }
+    }
+}
+
+#share-links {
+    font-size: 18px;
+    color: #ddd;
+    z-index: 40;
+    
+    &.affix {
+        top: 150px;
+        right: 30px;
+    }
+    
+    .social-media {
+        width: 30px;
+        height: 30px;
+        text-shadow: 1px 1px rgba(0, 0, 0, .4);
+        background: #a28f7d;
+        border-radius: 3px;
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, 0.8);
+        padding: 6px 8px;
+        margin-bottom: 6px;
+        overflow: hidden;
+        clear: both;
+        @include transition(all linear .3s);
+        
+        &:before {
+            color: #fff;
+            padding-right: 6px;
+        }
+        
+        &:hover, &:active, &:focus {
+            color: #d5d5d5;
+            text-decoration: none;
+        }
+        
+        &:hover {
+            width: auto;
+        }
+    }
+    
+    .fa-facebook {
+        &:before {
+            padding-left: 3px;
+            padding-right: 10px;
+        }
+        
+        &:hover {
+            background: #415a8d;
+        }
+    }
+    
+    .fa-twitter:hover {
+        background: #00bbff;
+    }
+    
+    .fa-google-plus:hover {
+        background: #f00000;
+    }
+    
+    .fa-linkedin:hover {
+        background: #069;
     }
 }
 
