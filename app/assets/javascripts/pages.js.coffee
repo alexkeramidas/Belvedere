@@ -41,6 +41,7 @@ class BelvedereGit.pages extends BelvedereGit.Base
                 )
                 $('.form-link').removeClass('with-bg')
                 $('.external-link').css('display', 'none')
+                
                 window.location.hash = '#reservation'
             else
                 $formwrapper.slideUp(1000, (->
@@ -48,7 +49,13 @@ class BelvedereGit.pages extends BelvedereGit.Base
                         $('.external-link').css('display', 'block')
                     )
                 )
-                history.pushState('', document.title, "#{window.location.pathname}#{window.location.search}")
+                
+                if history.pushState
+                    history.pushState('', document.title, "#{window.location.pathname}#{window.location.search}")
+                else
+                    window.location.hash = '#'
+            
+            false
         )
         
     photo_gallery: () ->
