@@ -1,5 +1,6 @@
 module ApplicationHelper
     def title(page_title=nil)
+        @title = page_title
         content_for :title, "Belvedere Hotel#{' - ' if !page_title.blank?}#{page_title.to_s}"
     end
     

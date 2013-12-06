@@ -1,6 +1,7 @@
 !!! html
 %html
     %head
+        = render 'shared/meta_tags'
         %title= content_for(:title) || 'Belvedere Hotel'
         = stylesheet_link_tag "application"
         = javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false", "data-turbolinks-track" => true
@@ -14,6 +15,8 @@
                     return $M['#{params[:action]}'].call();
                 }
             });
+        
+        = render 'shared/breadcrumbs'
         
         .location-container
         

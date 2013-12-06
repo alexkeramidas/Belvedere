@@ -1,0 +1,17 @@
+%div{style: 'display: none;',  'xmlns:v' => 'http://rdf.data-vocabulary.org/#'}
+    %span{typeof: 'v:Breadcrumb'}
+        %a{href: root_url,  rel: 'v:url', property: 'v:title'}
+            Home
+        = '>' if !@title.blank? || params[:controller] == 'articles'
+    - if !@title.blank? && !(params[:controller] == 'articles' && params[:action] == 'show')
+        %span{typeof: 'v:Breadcrumb'}
+            %a{href: request.url,  rel: 'v:url', property: 'v:title'}
+                = @title
+    - elsif params[:controller] == 'articles' && params[:action] == 'show'
+        %span{typeof: 'v:Breadcrumb'}
+            %a{href: articles_url,  rel: 'v:url', property: 'v:title'}
+                = 'News & Offers'
+            = '>'
+        %span{typeof: 'v:Breadcrumb'}
+            %a{href: request.url,  rel: 'v:url', property: 'v:title'}
+                = @article.title

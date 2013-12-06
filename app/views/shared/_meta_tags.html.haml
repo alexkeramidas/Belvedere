@@ -1,0 +1,46 @@
+%meta{name: 'description', content: 'Belvedere is a 4 Star, Luxury, Family Hotel located in Achladies, on the island of Skiathos in Greece.'}
+%meta{name: 'keywords', content: 'Hotel, Luxury, 4 Star, Skiathos, Family Hotel, Rooms, Suites, Bungalows, Greece, Greek Island, Achladies, Vacation'}
+%meta{name: 'distribution', content: 'global'}
+
+%meta{name: 'robots', content: 'noarchive'}
+
+%link{rel: 'author', href: ''}
+%link{rel: 'publisher', href: ''}
+
+%meta{property: 'og:title', content: "#{content_for(:title) || 'Belvedere Hotel'}"}
+%meta{property: 'og:description', content: 'Belvedere is a 4 Star, Luxury, Family Hotel located in Achladies, on the island of Skiathos in Greece.'}
+%meta{property: 'og:url', content: request.url}
+%meta{property: 'og:image', content: image_url('logo.png')}
+
+- if !(params[:controller] == 'articles' && params[:action] == 'show') && !(params[:controller] == 'pages' && params[:action] == 'location')
+    %meta{property: 'og:type', content: 'business.business'}
+    %meta{property: 'business:contact_data:street_address', content: 'Eparchiaki Odos Koukounarion-Skiathou, Axladies Beach, Skiathos'}
+    %meta{property: 'business:contact_data:locality', content: 'Skiathos'}
+    %meta{property: 'business:contact_data:postal_code', content: '370 02'}
+    %meta{property: 'business:contact_data:country_name', content: 'Greece'}
+    %meta{property: 'business:contact_data:email', content: 'info@hotelbelvedere.gr'}
+    %meta{property: 'business:contact_data:phone_number', content: '(+30)2427021490'}
+    %meta{property: 'business:contact_data:fax_number', content: '(+30)2427021409'}
+    %meta{property: 'place:location:latitude', content: '39.147625'}
+    %meta{property: 'place:location:longitude', content: '23.460580'}
+- elsif params[:controller] == 'articles' && params[:action] == 'show'
+    %meta{property: 'og:type', content: 'article'}
+    %meta{property: 'article:published_time', content: @article.created_at}
+    %meta{property: 'article:modified_time', content: @article.updated_at}
+    %meta{property: 'article:author', content: 'http://www.facebook.com/belvedere.skiathos/'}
+    %meta{property: 'article:publisher', content: ''}
+- elsif params[:controller] == 'pages' && params[:action] == 'location'
+    %meta{property: 'og:type', content: 'place'}
+    %meta{property: 'place:location:latitude', content: '39.147625'}
+    %meta{property: 'place:location:longitude', content: '23.460580'}
+
+%meta{name: 'twitter:card', content: 'summary'}
+%meta{name: 'twitter:url', content: request.url}
+%meta{name: 'twitter:title', content: "#{content_for(:title) || 'Belvedere Hotel'}"}
+%meta{name: 'twitter:description', content: 'Belvedere is a 4 Star, Luxury, Family Hotel located in Achladies, on the island of Skiathos in Greece.'}
+%meta{name: 'twitter:image', content: image_url('logo.png')}
+
+- !(params[:controller] == 'articles' && params[:action] == 'show') ? scope = 'LocalBusiness' : scope = 'Article'
+%meta{itemscope: scope, itemprop: 'name', content: "#{content_for(:title) || 'Belvedere Hotel'}"}
+%meta{itemscope: scope, itemprop: 'description', content: 'Belvedere is a 4 Star, Luxury, Family Hotel located in Achladies, on the island of Skiathos in Greece.'}
+%meta{itemscope: scope, itemprop: 'image', content: image_url('logo.png')}
