@@ -1,3 +1,4 @@
+- title "News & Offers#{' - ' if !@article.title.blank?}#{@article.title}"
 .articles
     %h1= @article.title
     .wrapper
