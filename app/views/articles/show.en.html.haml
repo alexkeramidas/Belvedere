@@ -6,4 +6,4 @@
                 = link_to articles_path, class: 'title clearfix' do
                     %h3.pull-left.fa-long-arrow-left Go Back to News &amp; Offers
                     %h3.pull-right.fa-calendar= @article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
-                .post= sanitize(@article.description)
+                .post= sanitize(@article.description).gsub(/img alt\=\"([^\"]*)\"/) { |m| m.gsub(/\"([^\"]*)\"/, "'Hotel Belvedere - News & Offers - #{@article.title}'") }.html_safe
