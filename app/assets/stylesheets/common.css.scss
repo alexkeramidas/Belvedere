@@ -140,7 +140,7 @@ a {
     z-index: 40;
     
     &.affix {
-        top: 150px;
+        top: 154px;
         right: 30px;
     }
     
@@ -155,7 +155,7 @@ a {
         margin-bottom: 6px;
         overflow: hidden;
         clear: both;
-        @include transition(all linear .3s);
+        @include transition(width .3s ease, color .3s ease);
         
         &:before {
             color: #fff;
@@ -163,7 +163,7 @@ a {
         }
         
         &:hover, &:active, &:focus {
-            color: #d5d5d5;
+            color: #fafafa;
             text-decoration: none;
         }
         
