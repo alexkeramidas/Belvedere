@@ -67,6 +67,10 @@ gem 'date_validator'
 #Gem used for redirecting trailing-slash URLs
 gem 'rack-rewrite'
 
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+gem 'rails-observers'
+
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false

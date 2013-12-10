@@ -21,6 +21,8 @@ BelvedereGit::Application.routes.draw do
 
     get 'accommodation' => 'suites#index', :trailing_slash => false
 
+    get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
+
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'
 
