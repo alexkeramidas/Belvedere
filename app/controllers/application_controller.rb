@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
     
     before_filter :assign_variables
     
+    private
+    
     def assign_variables
         @bg_list = [ { filename: 'bg1.jpg', default: true } ]
     end

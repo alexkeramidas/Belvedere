@@ -64,6 +64,9 @@ gem 'aws-sdk'
 #Use simple dates validation
 gem 'date_validator'
 
+#Gem used for redirecting trailing-slash URLs
+gem 'rack-rewrite'
+
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false

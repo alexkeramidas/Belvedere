@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/bastiaanterhorst/rich.git
-  revision: 0773c8f1f30ef15fcabe13cbb555b8e338deb323
+  revision: 193a1e8b71d488ce78618783e047ca866f05534a
   specs:
     rich (1.4.7)
       jquery-rails
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 388ed07e477af5f5644d0c30cd45b4377c886dd7
+  revision: e7ef9a8f3e0eaa3198ea96eb16a75879b75bed97
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -76,14 +76,14 @@ GEM
       activesupport (>= 3.0.0)
     arel (4.0.1)
     atomic (1.1.14)
-    aws-sdk (1.29.0)
+    aws-sdk (1.29.1)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2-x86-mingw32)
     bootstrap-datepicker-rails (1.1.1.10)
       railties (>= 3.0)
-    bootstrap-sass (3.0.2.1)
+    bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
@@ -165,6 +165,7 @@ GEM
     rack (1.5.2)
     rack-raw-upload (1.1.1)
       multi_json
+    rack-rewrite (1.4.01)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -248,6 +249,7 @@ DEPENDENCIES
   jquery-rails
   paperclip!
   pg
+  rack-rewrite
   rails (= 4.0.0)
   rails_12factor
   rich!
