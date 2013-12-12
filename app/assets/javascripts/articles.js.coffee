@@ -11,4 +11,3 @@ class BelvedereGit.articles extends BelvedereGit.Base
         
     show: () ->
         
-
