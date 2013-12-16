@@ -1,10 +1,11 @@
 - title "News & Offers#{' - ' if !@article.title.blank?}#{@article.title}"
 .articles
     %h1= @article.title
-    .wrapper
-        = link_to articles_path, class: 'title clearfix' do
-            %h3.pull-left.fa-long-arrow-left Go Back to News &amp; Offers
-            %h3.pull-right.fa-calendar= @article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
-        .post.large-content
-            .scroll-wrap
-                .scrollable= sanitize(@article.description).gsub(/img alt\=\"([^\"]*)\"/) { |m| m.gsub(/\"([^\"]*)\"/, "'Hotel Belvedere - News & Offers - #{@article.title}'") }.html_safe
+    .wrapper.clearfix
+        .article
+            = link_to articles_path(page: @article.page_at), class: 'title clearfix' do
+                %h3.pull-left.fa-long-arrow-left Go Back to News &amp; Offers
+                %h3.pull-right.fa-calendar= @article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
+            .content.large
+                .scroll-wrap
+                    .scrollable= sanitize(@article.description).gsub(/img alt\=\"([^\"]*)\"/) { |m| m.gsub(/\"([^\"]*)\"/, "'Hotel Belvedere - News & Offers - #{@article.title}'") }.html_safe

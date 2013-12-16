@@ -1,12 +1,13 @@
 - title 'News & Offers'
-.articles
+.articles{class: "#{'paginated' if @articles.total_pages > 1}"}
     %h1 Belvedere Hotel - News
-    .wrapper
+    .wrapper.clearfix
         - @articles.each do |article|
-            = link_to article, class: 'title clearfix' do
-                %h2.pull-left= article.title
-                %h3.pull-right.fa-calendar= article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
-            .post
-                = sanitize(article.description, :tags => []).truncate(1000)
+            .article
+                = link_to article, class: 'title clearfix' do
+                    %h2.pull-left= article.title
+                    %h3.pull-right.fa-calendar= article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
+                .content
+                    = sanitize(article.description, :tags => []).truncate(1000)
     
     = paginate @articles
