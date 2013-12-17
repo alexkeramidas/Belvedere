@@ -42,7 +42,8 @@
         min-height: 310px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .9);
-        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8), inset 0 0 20px rgba(48, 35, 21, .8);
+        border: 1px solid #c5b09d;
         border-radius: 6px;
         word-wrap: break-word;
         overflow: hidden;
