@@ -4,6 +4,22 @@
     background-repeat: repeat;
     background-size: 6px 6px;
     
+    &.single {
+        .wrapper {
+            height: 83%;
+            
+            .article {
+                height: 100%;
+            }
+            
+            .content {
+                height: 93%;
+                margin-right: 15px;
+                min-height: 280px;
+            }
+        }
+    }
+    
     &.paginated {
         .wrapper {
             height: auto;
@@ -23,7 +39,6 @@
     }
 
     .wrapper {
-        height: 83%;
         min-height: 310px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .9);
@@ -33,7 +48,22 @@
         overflow: hidden;
         
         .article {
-            position: relative;
+            display: table;
+            width: 100%;
+        }
+        
+        .article-section {
+            display: table-row;
+            
+            &:first-child {
+                .article-section-wrap {
+                    height: 44px;
+                }
+            }
+        }
+        
+        .article-section-wrap {
+            display: table-cell;
         }
 
         a.title {
@@ -59,13 +89,6 @@
             text-align: justify;
             margin: 10px 20px 15px 20px;
             
-            &.large {
-                height: auto;
-                margin-right: 15px;
-                min-height: 280px;
-                max-height: 400px;
-            }
-
             img {
                 border: 4px solid #fff;
                 border-radius: 4px;
