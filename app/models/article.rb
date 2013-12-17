@@ -24,13 +24,14 @@ class Article < ActiveRecord::Base
         end
     end
     
-    def page_at
+    def page_at(per_page = nil)
         column = Article::ORDER_BY[:column]
         order = Article::ORDER_BY[:order]
-        per = Article::PER_PAGE
+        per = per_page || Article::PER_PAGE
     
-        operator = (order == :asc ? "<=" : ">=")
-        (self.class.where("#{column} #{operator} ?", read_attribute(column)).order("#{column} #{order}").count.to_f / per).ceil
+        operator = (order == :asc ? '<=' : '>=')
+        
+        (Article.valid.visible.where("#{column} #{operator} ?", read_attribute(column)).order("#{column} #{order}").count.to_f / per).ceil
     end
 
     # Class methods
