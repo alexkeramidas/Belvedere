@@ -17,21 +17,26 @@ class BelvedereGit.suites extends BelvedereGit.Base
         galleryControlsReposition = ->
             $('.gallery.visible .carousel-control').each ->
                 $(this).css('top', parseInt($('.image-gallery').height() / 2))
+                if $(this).css('display') == 'none'
+                    $(this).css('display', 'block')
         
         # Initializes gallery animation and attaches fancybox-related events
         galleryCarouselInit = (gal) ->
-            if gal.find('.item').length > 1
-                gal.addClass('carousel').addClass('slide').carousel({interval: 10000}).on('slide.bs.carousel', (e) ->
-                    $img = gal.find('.item.active img')
-                    $img.width(gal.width())
-                ).on('slid.bs.carousel', (e) ->
-                    if window.fancyClick == false
-                        current_pos = gal.find('.carousel-inner .active').index()
-                        $.fancybox.pos(current_pos)
-                    else
-                        e.stopImmediatePropagation()
-                        window.fancyClick = false
-                )
+            $('.gallery.visible').waitForImages
+                finished: ->
+                    if gal.find('.item').length > 1
+                        gal.addClass('carousel').addClass('slide').carousel({interval: 10000}).on('slide.bs.carousel', (e) ->
+                            $img = gal.find('.item.active img')
+                            $img.width(gal.width())
+                        ).on('slid.bs.carousel', (e) ->
+                            if window.fancyClick == false
+                                current_pos = gal.find('.carousel-inner .active').index()
+                                $.fancybox.pos(current_pos)
+                            else
+                                e.stopImmediatePropagation()
+                                window.fancyClick = false
+                        )
+                waitForAll: true
         
         # Image gallery height is set to the minimum height of its contained images.
         # Contained elements are also repositioned accordingly.

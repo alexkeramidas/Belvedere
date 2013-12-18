@@ -1,6 +1,6 @@
 - title 'News & Offers'
 .articles{class: "#{'paginated' if @articles.total_pages > 1}"}
-    %h1 Belvedere Hotel - News
+    %h1 Belvedere Hotel - News &amp; Offers
     .wrapper.clearfix
         - @articles.each do |article|
             .article
