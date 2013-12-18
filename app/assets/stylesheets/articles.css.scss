@@ -6,14 +6,14 @@
     
     &.single {
         .wrapper {
-            height: 83%;
+            height: 400px;
             
             .article {
                 height: 100%;
             }
             
             .content {
-                height: 93%;
+                height: 330px;
                 margin-right: 15px;
                 min-height: 280px;
             }
@@ -48,25 +48,6 @@
         word-wrap: break-word;
         overflow: hidden;
         
-        .article {
-            display: table;
-            width: 100%;
-        }
-        
-        .article-section {
-            display: table-row;
-            
-            &:first-child {
-                .article-section-wrap {
-                    height: 44px;
-                }
-            }
-        }
-        
-        .article-section-wrap {
-            display: table-cell;
-        }
-
         a.title {
             display: block;
             background: #554540;
@@ -91,8 +72,10 @@
             margin: 10px 20px 15px 20px;
             
             img {
-                border: 4px solid #fff;
+                border: 4px solid #c7b7a6;
                 border-radius: 4px;
+                box-shadow: 0 0 8px rgba(48, 35, 21, .8);
+                margin: 10px;
             }
 
             .scroll-wrap {
