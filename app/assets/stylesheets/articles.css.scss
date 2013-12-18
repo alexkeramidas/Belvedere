@@ -1,3 +1,5 @@
+@import "bootstrap/_mixins.scss";
+
 .articles {
     background-color: rgba(245, 226, 146, .2);
     background-image: image-url('striped_bg.png');
@@ -16,6 +18,32 @@
                 height: 330px;
                 margin-right: 15px;
                 min-height: 280px;
+                
+                .scroll-wrap {
+                    &:before, &:after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 30px;
+                        height: 20px;
+                        z-index: 1;
+                    }
+                    
+                    &:before {
+                        top: 0;
+                        @include gradient-vertical(rgba(146, 127, 109, .99), rgba(146, 127, 109, .05), 0%, 100%);
+                    }
+                    
+                    &:after {
+                        bottom: 0;
+                        @include gradient-vertical(rgba(146, 127, 109, .05), rgba(146, 127, 109, .99), 0%, 100%);
+                    }
+                }
+                
+                .scrollable .mCSB_container {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
             }
         }
     }
