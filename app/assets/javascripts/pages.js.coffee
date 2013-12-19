@@ -74,6 +74,9 @@ class BelvedereGit.pages extends BelvedereGit.Base
         contentSliding = (el) ->
             el.css('display') == 'block' && window.css(el).height != 'auto'
         
+        # Opening and closing the photo gallery details is not allowed on IE8 and lower
+        # because when translating css values to a readable object, many of these
+        # are not supported and we get an error.
         if jQuery.support.opacity == true
             if $gallery_description.length
                 gallery_text = $gallery_title.find('h1').text()

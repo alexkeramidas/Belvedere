@@ -75,7 +75,14 @@
                     false
             
             testPhone = (el) ->
-                if el.val().match(new RegExp(el.attr('pattern'), 'g')) != null
+                # Make certain validation doesn't fail on IE8.
+                if jQuery.support.opacity == false
+                    current_numeric = el.val().replace(/\D/g, '')
+                    if current_numeric.length == el.val().length && current_numeric.length >= 5 && current_numeric.length <= 13
+                        true
+                    else
+                        false
+                else if el.val().match(new RegExp(el.attr('pattern'), 'g')) != null
                     phone_num = parseInt($.grep(el.val().split(/(\d+)/), (num, index) ->
                                     num  if RegExp("^[0-9]*$").test(num)
                                 ).join(""))
