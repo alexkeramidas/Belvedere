@@ -1,5 +1,5 @@
-ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
-    menu :priority => 3, :parent => "Website"
+ActiveAdmin.register Service, :as => 'Services' do
+    menu :priority => 2, :parent => "Website"
 
     config.per_page = 10
 
@@ -38,7 +38,7 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
     end
 
     form :html => { :multipart => true} do |f|
-        f.inputs "Gallery" do
+        f.inputs "Service" do
             f.input :title
             f.input :description
             f.input :visible
@@ -55,11 +55,11 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
 
     controller do
         def permitted_params
-            params.permit galleries: [:title, :description, :visible, :article_type => 3,  photos_attributes: [:id, :article_id, :description, :image, :_destroy]]
+            params.permit services: [:title, :description, :visible, :article_type => 4,  photos_attributes: [:id, :article_id, :description, :image, :_destroy]]
         end
 
         def scoped_collection
-            PhotoGallery.valid
+            Service.valid
         end
     end
 end
