@@ -1,0 +1,28 @@
+- title 'Services'
+.rooms.clearfix
+    .rooms-list.pull-left
+        %h1 Belvedere Hotel - Services
+        .wrapper
+            .content
+                .scrollable
+                    %ul.nav.nav-tabs.nav-stacked
+                        - @services.each_with_index do |service, i|
+                            %li
+                                = link_to service.title, "#descr_#{i}", class: "collapse-link#{' active' if i == 0}", id: "link_#{i}", data: {gal: "#gallery#{i}"}
+                                .collapsible{id: "descr_#{i}"}= simple_format(service.description).html_safe
+    .image-gallery.pull-right.clearfix
+        - @services.each_with_index do |service, i|
+            .gallery.pull-left{id: "gallery#{i}", class: "#{'visible' if i == 0} #{'carousel' if i == 0 && service.photos.length > 1}"}
+                .carousel-inner
+                    - if service.photos.blank?
+                        .item.active
+                            = image_tag 'missing.png', size: '600x380', alt: 'Hotel Belvedere - Missing Image'
+                    - else
+                        - service.photos.each_with_index do |photo, j|
+                            - photo = photo.decorate
+                            .item{class: "#{'active' if j==0}"}
+                                = link_to photo.photo_path(:original), class: 'fancybox', rel: "gallery#{i}" do
+                                    = image_tag photo.photo_path(:medium), size: '640x480', alt: "Hotel Belvedere - #{photo.description}", data: {width: photo.photo_geometry(:original).width, height: photo.decorate.photo_geometry(:original).height}
+                - if service.photos.length > 1
+                    = link_to '', "#gallery#{i}", data: {slide: 'prev'}, class: 'carousel-control left fa-chevron-left', style: 'display: none;'
+                    = link_to '', "#gallery#{i}", data: {slide: 'next'}, class: 'carousel-control right fa-chevron-right', style: 'display: none;'

@@ -20,6 +20,7 @@ BelvedereGit::Application.routes.draw do
     resources :articles, :only => [:index, :show], :trailing_slash => false
 
     get 'accommodation' => 'suites#index', :trailing_slash => false
+    get 'services' => 'services#index', :trailing_slash => false
 
     get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
 
