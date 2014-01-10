@@ -29,11 +29,16 @@ class BelvedereGit.pages extends BelvedereGit.Base
         )
         
         $formwrapper = $('.formwrapper')
+        $errors = $('#reservation-errors')
         
         if window.location.hash == ''
             $('.form-link').addClass('form-closed').addClass('with-bg')
             $('.external-link').removeClass('initialized')
             $formwrapper.css('display', 'none')
+            $errors.css('display', 'none')
+        else if window.location.hash == '#reservation'
+            if !$('.formwrapper .has-error').length
+                $errors.css('display', 'none')
         
         $('.form-link').on('click', (e) ->
             if window.location.hash == '#reservation'
@@ -44,6 +49,8 @@ class BelvedereGit.pages extends BelvedereGit.Base
                 $formwrapper.slideDown(1000, (->
                         $formwrapper.find('form > .mCustomScrollbar').addClass('scrollable')
                         $('.form-link').removeClass('form-closed')
+                        if $('.formwrapper .has-error').length
+                            $errors.css('display', 'block')
                     )
                 )
                 $('.form-link').removeClass('with-bg')
@@ -56,6 +63,7 @@ class BelvedereGit.pages extends BelvedereGit.Base
                         $('.external-link').css('display', 'block')
                     )
                 )
+                $errors.css('display', 'none')
                 
                 if history.pushState
                     history.pushState('', document.title, "#{window.location.pathname}#{window.location.search}")

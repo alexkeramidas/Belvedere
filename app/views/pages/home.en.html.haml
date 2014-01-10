@@ -1,6 +1,6 @@
 .home
     .wrapper
-        #reservation.formwrapper
+        #reservation.formwrapper.pull-left
             = form_tag make_reservation_path, method: 'POST', :class => 'reservationform clearfix' do
                 .scrollable
                     .name.fa-user= text_field_tag :name, nil, required: true,
@@ -75,6 +75,20 @@
                         'x-moz-errormessage' => "#{form_field_attr('message', 6, 300)[:moz_error]}"
                         
                     = submit_tag 'Send your request', :class => 'btn btn-warning btn-lg pull-right'
+        
+        #reservation-errors.alert.alert-danger.pull-left{style: 'display: none;'}
+            Before you try to request your reservation, please make certain that the
+            following errors are corrected:
+            %ul
+                %li{id: 'name-error', style: 'display: none;'}= form_field_attr('name', 2, 100)[:generic]
+                %li{id: 'email-error', style: 'display: none;'}= form_field_attr('email')[:generic]
+                %li{id: 'phone-error', style: 'display: none;'}= form_field_attr('phone', 5, 20)[:generic]
+                %li{id: 'mobile-error', style: 'display: none;'}= form_field_attr('mobile', 8, 20)[:generic]
+                %li{id: 'arrival-error', style: 'display: none;'}= form_field_attr('arrival')[:generic]
+                %li{id: 'departure-error', style: 'display: none;'}= form_field_attr('departure')[:generic]
+                %li{id: 'adults-error', style: 'display: none;'}= form_field_attr('adults')[:generic]
+                %li{id: 'children-error', style: 'display: none;'}= form_field_attr('children')[:generic]
+                %li{id: 'message-error', style: 'display: none;'}= form_field_attr('message', 6, 300)[:generic]
         
         .form-link
             .link-text Click here to request a room

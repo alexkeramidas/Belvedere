@@ -140,11 +140,20 @@
             switchFieldClasses = (el) ->
                 if validateField(el)
                     el.removeClass('is-required').removeClass('has-error').addClass('has-success')
+                    $("##{el.attr('id')}-error").css('display', 'none')
+                    if !obj.find('.has-error').length
+                        $('.alert.alert-danger').css('display', 'none')
                 else
                     el.removeClass('is-required').removeClass('has-success').addClass('has-error')
+                    $("##{el.attr('id')}-error").css('display', 'list-item')
+                    if obj.find('.has-error').length
+                        $('.alert.alert-danger').css('display', 'block')
                 
                 if !isRequired(el) && el.val() == ''
                     el.removeClass('has-error').removeClass('has-success').removeClass('is-required')
+                    $("##{el.attr('id')}-error").css('display', 'none')
+                    if !obj.find('.has-error').length
+                        $('.alert.alert-danger').css('display', 'none')
             
             
             # Validates the form
