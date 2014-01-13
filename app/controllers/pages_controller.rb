@@ -9,14 +9,24 @@ class PagesController < ApplicationController
             { filename: "bg4.jpg", default: false },
             { filename: "bg5.jpg", default: false }
         ]
+        
+        @res = session[:res]
+        session.delete(:res)
     end
 
     def make_reservation
         days = ((Date.parse(params[:departure]) - Date.parse(params[:arrival])).to_i / 60 / (24 * 60)) + 1
+        
         res = Reservation.new(name: params[:name], email: params[:email], phone: params[:phone], mobile: params[:mobile], arrival: params[:arrival], departure: params[:departure], days: days, adults: params[:adults], youngsters: params[:children])
-        res.save!
+        begin
+            res.save!
+        rescue
+        end
+        
         ReservationMailer.request_email(params[:name], params[:email], params[:phone], params[:mobile], DateTime.parse(params[:arrival]), DateTime.parse(params[:departure]), params[:adults], params[:children], params[:message]).deliver
-        redirect_to root_url(:status => :success) and return
+        
+        session[:res] = {name: params[:name], email: params[:email], phone: params[:phone], mobile: params[:mobile], arrival: params[:arrival], departure: params[:departure], adults: params[:adults], children: params[:children], message: params[:message], errors: res.errors.keys}
+        redirect_to root_url and return
     end
     
     def about
@@ -33,7 +43,7 @@ class PagesController < ApplicationController
     
     def send_mail
         ContactMailer.contact_email(params[:name], params[:email], params[:comment]).deliver
-        redirect_to contact_url(:status => :success) and return
+        redirect_to contact_url and return
     end
 
     def photo_gallery
