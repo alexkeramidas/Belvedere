@@ -30,6 +30,7 @@ class BelvedereGit.pages extends BelvedereGit.Base
         
         $formwrapper = $('.formwrapper')
         $errors = $('#reservation-errors')
+        $success = $('.alert.alert-success')
         
         if window.location.hash == ''
             $('.form-link').addClass('form-closed').addClass('with-bg')
@@ -64,6 +65,7 @@ class BelvedereGit.pages extends BelvedereGit.Base
                     )
                 )
                 $errors.css('display', 'none')
+                $success.css('display', 'none')
                 
                 if history.pushState
                     history.pushState('', document.title, "#{window.location.pathname}#{window.location.search}")

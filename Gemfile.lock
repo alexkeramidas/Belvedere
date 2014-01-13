@@ -1,12 +1,11 @@
 GIT
   remote: git://github.com/bastiaanterhorst/rich.git
-  revision: 193a1e8b71d488ce78618783e047ca866f05534a
+  revision: 57b2284d9a4ae149a29b645fed433a6f44582024
   specs:
     rich (1.4.7)
       jquery-rails
       kaminari
       mime-types
-      paperclip
       rack-raw-upload
       rails (>= 3.2.0)
       sass-rails

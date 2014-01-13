@@ -107,6 +107,14 @@
                 %li{id: 'message-error', style: "display: #{!@res.blank? ? "#{@res[:errors].include?(:message) ? 'list-item' : 'none'}" : 'none'};"}
                     = form_field_attr('message', 6, 300)[:generic]
         
+        - if !@res.blank? && @res[:errors].blank?
+            .alert.alert-success.pull-left
+                Congratulations!
+                %br
+                %br
+                Your reservation request has been successfully submitted and we will contact you for
+                further details as soon as possible.
+        
         .form-link
             .link-text Click here to request a room
         

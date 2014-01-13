@@ -26,7 +26,7 @@ class PagesController < ApplicationController
         ReservationMailer.request_email(params[:name], params[:email], params[:phone], params[:mobile], DateTime.parse(params[:arrival]), DateTime.parse(params[:departure]), params[:adults], params[:children], params[:message]).deliver
         
         session[:res] = {name: params[:name], email: params[:email], phone: params[:phone], mobile: params[:mobile], arrival: params[:arrival], departure: params[:departure], adults: params[:adults], children: params[:children], message: params[:message], errors: res.errors.keys}
-        redirect_to root_url and return
+        redirect_to root_url(anchor: 'reservation') and return
     end
     
     def about

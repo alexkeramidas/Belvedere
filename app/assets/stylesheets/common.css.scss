@@ -103,6 +103,10 @@ a {
         margin-left: 15px;
     }
     
+    &.alert-success {
+        background-color: rgba(223, 240, 216, .88);
+    }
+    
     &.alert-danger {
         background-color: rgba(242, 222, 222, .88);
     }
