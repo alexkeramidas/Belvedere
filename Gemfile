@@ -38,6 +38,9 @@ gem 'draper', '~> 1.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use Rich as WYSIWYG Editor for ActiveAdmin
 gem 'rich', github: 'bastiaanterhorst/rich'
+# Rich editor now requires carrierwave & mini_magick
+gem 'carrierwave'
+gem 'mini_magick'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
