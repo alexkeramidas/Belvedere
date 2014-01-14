@@ -7,19 +7,28 @@ BelvedereGit::Application.routes.draw do
     # See how all your routes lay out with "rake routes".
 
     # You can have the root of your site routed with "root"
-    root 'pages#home'
+    scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/  do
+        # handles /valid-locale
+        root to: 'pages#home'
+        resources :articles
+        get 'location' => 'pages#location'
+        get 'about' => 'pages#about'
+        get 'photo_gallery' => 'pages#photo_gallery'
+        get 'accommodation' => 'suites#index'
+        get 'contact' => 'pages#contact'
+    end
 
-    get 'about' => 'pages#about'
-    get 'location' => 'pages#location'
-    get 'photo_gallery' => 'pages#photo_gallery'
-    
-    get 'contact' => 'pages#contact'
+    # handles /bad-locale|anything/valid-path
+    get '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")
+
+    # handles /anything|valid-path-but-no-locale
+    get '/*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+
+    # handles /
+    get '', to: redirect("/#{I18n.locale}")
+
     post 'send_mail' => 'pages#send_mail'
     post 'make_reservation' => 'pages#make_reservation'
-
-    resources :articles
-
-    get 'accommodation' => 'suites#index'
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'

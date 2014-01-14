@@ -1,0 +1,227 @@
+es:
+    date:
+        abbr_day_names:
+        - dom
+        - lun
+        - mar
+        - miΓ©
+        - jue
+        - vie
+        - sΓ΅b
+        abbr_month_names:
+        -
+        - ene
+        - feb
+        - mar
+        - abr
+        - may
+        - jun
+        - jul
+        - ago
+        - sep
+        - oct
+        - nov
+        - dic
+        day_names:
+        - domingo
+        - lunes
+        - martes
+        - miΓ©rcoles
+        - jueves
+        - viernes
+        - sΓ΅bado
+        formats:
+            default: ! '%d/%m/%Y'
+            long: ! '%d de %B de %Y'
+            short: ! '%d de %b'
+        month_names:
+        -
+        - enero
+        - febrero
+        - marzo
+        - abril
+        - mayo
+        - junio
+        - julio
+        - agosto
+        - septiembre
+        - octubre
+        - noviembre
+        - diciembre
+        order:
+        - :day
+        - :month
+        - :year
+    datetime:
+        distance_in_words:
+            about_x_hours:
+                one: alrededor de 1 hora
+                other: alrededor de %{count} horas
+            about_x_months:
+                one: alrededor de 1 mes
+                other: alrededor de %{count} meses
+            about_x_years:
+                one: alrededor de 1 aΓ±o
+                other: alrededor de %{count} aΓ±os
+            almost_x_years:
+                one: casi 1 aΓ±o
+                other: casi %{count} aΓ±os
+            half_a_minute: medio minuto
+            less_than_x_minutes:
+                one: menos de 1 minuto
+                other: menos de %{count} minutos
+            less_than_x_seconds:
+                one: menos de 1 segundo
+                other: menos de %{count} segundos
+            over_x_years:
+                one: mΓ΅s de 1 aΓ±o
+                other: mΓ΅s de %{count} aΓ±os
+            x_days:
+                one: 1 dΓ­a
+                other: ! '%{count} dΓ­as'
+            x_minutes:
+                one: 1 minuto
+                other: ! '%{count} minutos'
+            x_months:
+                one: 1 mes
+                other: ! '%{count} meses'
+            x_seconds:
+                one: 1 segundo
+                other: ! '%{count} segundos'
+        prompts:
+            day: DΓ­a
+            hour: Hora
+            minute: Minutos
+            month: Mes
+            second: Segundos
+            year: AΓ±o
+    errors: &errors
+        format: ! '%{attribute} %{message}'
+        messages:
+            accepted: debe ser aceptado
+            blank: no puede estar en blanco
+            confirmation: no coincide con la confirmaciΓ³n
+            empty: no puede estar vacΓ­o
+            equal_to: debe ser igual a %{count}
+            even: debe ser par
+            exclusion: estΓ΅ reservado
+            greater_than: debe ser mayor que %{count}
+            greater_than_or_equal_to: debe ser mayor que o igual a %{count}
+            inclusion: no estΓ΅ incluido en la lista
+            invalid: no es vΓ΅lido
+            less_than: debe ser menor que %{count}
+            less_than_or_equal_to: debe ser menor que o igual a %{count}
+            not_a_number: no es un nΓΊmero
+            not_an_integer: debe ser un entero
+            odd: debe ser impar
+            record_invalid: ! 'La validaciΓ³n fallΓ³: %{errors}'
+            taken: ya estΓ΅ en uso
+            too_long: es demasiado largo (%{count} caracteres mΓ΅ximo)
+            too_short: es demasiado corto (%{count} caracteres mΓ­nimo)
+            wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+        template:
+            body: ! 'Se encontraron problemas con los siguientes campos:'
+            header:
+                one: No se pudo guardar este/a %{model} porque se encontrΓ³ 1 error
+                other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+    helpers:
+        select:
+            prompt: Por favor seleccione
+        submit:
+            create: Crear %{model}
+            submit: Guardar %{model}
+            update: Actualizar %{model}
+    number:
+        currency:
+            format:
+                delimiter: .
+                format: ! '%n %u'
+                precision: 2
+                separator: ! ','
+                significant: false
+                strip_insignificant_zeros: false
+                unit: β‚¬
+        format:
+            delimiter: .
+            precision: 3
+            separator: ! ','
+            significant: false
+            strip_insignificant_zeros: false
+        human:
+            decimal_units:
+                format: ! '%n %u'
+                units:
+                    billion: mil millones
+                    million: millΓ³n
+                    quadrillion: mil billones
+                    thousand: mil
+                    trillion: billΓ³n
+                    unit: ''
+            format:
+                delimiter: ''
+                precision: 1
+                significant: true
+                strip_insignificant_zeros: true
+            storage_units:
+                format: ! '%n %u'
+                units:
+                    byte:
+                        one: Byte
+                        other: Bytes
+                    gb: GB
+                    kb: KB
+                    mb: MB
+                    tb: TB
+        percentage:
+            format:
+                delimiter: ''
+        precision:
+            format:
+                delimiter: ''
+    support:
+        array:
+            last_word_connector: ! ', y '
+            two_words_connector: ! ' y '
+            words_connector: ! ', '
+    time:
+        am: am
+        formats:
+            default: ! '%A, %d de %B de %Y %H:%M:%S %z'
+            long: ! '%d de %B de %Y %H:%M'
+            short: ! '%d de %b %H:%M'
+        pm: pm
+    # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+    activemodel:
+        errors:
+            <<: *errors
+    activerecord:
+        errors:
+            <<: *errors
+#Custom Text
+    articles:
+        h1: Hotel Belvedere - Noticias
+    shared:
+        contact: Contacto
+        gallery: Galería de fotos
+        hotel: El hotel
+        accomodation: Alojamiento
+        services: Servicios
+        location: Ubicación
+        news: Noticias - Ofertas
+    about:
+        name: Hotel Belvedere
+        address: Dirección
+        addressdetail: Axladies Playa, Skiathos
+        postal: Código Postal
+        phone: Teléfono
+        phoneoff: Temporada Teléfono Apagado
+        fax: Fax
+    contact:
+        contactus: Contáctenos
+        send: Envíenos su mensaje
+    main:
+        request: Envíe su petición
+        room: Haga clic aquí para solicitar una habitación
+        booking: O haga clic aquí para proceder a través de booking.com
+    rooms:
+        title: Belvedere Hotel - Habitaciones y Suites

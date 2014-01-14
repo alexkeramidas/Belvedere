@@ -1,0 +1,10 @@
+#top-menu{class: "#{'location' if params[:controller]=='pages' && params[:action]=='location'}"}
+    .content.clearfix
+        = link_to root_url do
+            = image_tag "logo.png"
+        %div
+            = link_to (t 'shared.hotel'), about_url, class: "#{params[:controller]=='pages' && params[:action]=='about' ? 'active' : ''}"
+            = link_to (t 'shared.accomodation'), accommodation_url, class: "#{params[:controller]=='suites' ? 'active' : ''}"
+            = link_to (t 'shared.services'), root_url
+            = link_to (t 'shared.location'), location_url, class: "#{params[:controller]=='pages' && params[:action]=='location' ? 'active' : ''}"
+            = link_to (t 'shared.news'), articles_url, class: "#{params[:controller]=='articles' ? 'active' : ''}"

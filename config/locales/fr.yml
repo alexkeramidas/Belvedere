@@ -1,0 +1,246 @@
+# French translations for Ruby on Rails
+# by Christian Lescuyer (christian@flyingcoders.com)
+# contributors:
+#    - Sebastien Grosjean - ZenCocoon.com
+#    - Bruno Michel - http://github.com/nono
+#    - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
+# Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
+
+fr:
+    date:
+        abbr_day_names:
+            - dim
+            - lun
+            - mar
+            - mer
+            - jeu
+            - ven
+            - sam
+        abbr_month_names:
+            - ~
+            - jan.
+            - fΓ©v.
+            - mar.
+            - avr.
+            - mai
+            - juin
+            - juil.
+            - aoΓ»t
+            - sept.
+            - oct.
+            - nov.
+            - dΓ©c.
+        day_names:
+            - dimanche
+            - lundi
+            - mardi
+            - mercredi
+            - jeudi
+            - vendredi
+            - samedi
+        formats:
+            default: "%d/%m/%Y"
+            short: "%e %b"
+            long: "%e %B %Y"
+        month_names:
+            - ~
+            - janvier
+            - fΓ©vrier
+            - mars
+            - avril
+            - mai
+            - juin
+            - juillet
+            - aoΓ»t
+            - septembre
+            - octobre
+            - novembre
+            - dΓ©cembre
+        order:
+            - :day
+            - :month
+            - :year
+    datetime:
+        distance_in_words:
+            about_x_hours:
+                one:     "environ une heure"
+                other: "environ %{count} heures"
+            about_x_months:
+                one:     "environ un mois"
+                other: "environ %{count} mois"
+            about_x_years:
+                one:     "environ un an"
+                other: "environ %{count} ans"
+            almost_x_years:
+                one:     "presqu'un an"
+                other: "presque %{count} ans"
+            half_a_minute: "une demi-minute"
+            less_than_x_minutes:
+                zero:    "moins d'une minute"
+                one:     "moins d'une minute"
+                other: "moins de %{count} minutes"
+            less_than_x_seconds:
+                zero:    "moins d'une seconde"
+                one:     "moins d'une seconde"
+                other: "moins de %{count} secondes"
+            over_x_years:
+                one:     "plus d'un an"
+                other: "plus de %{count} ans"
+            x_days:
+                one:     "1 jour"
+                other: "%{count} jours"
+            x_minutes:
+                one:     "1 minute"
+                other: "%{count} minutes"
+            x_months:
+                one:     "1 mois"
+                other: "%{count} mois"
+            x_seconds:
+                one:     "1 seconde"
+                other: "%{count} secondes"
+        prompts:
+            day:        "Jour"
+            hour:     "Heure"
+            minute: "Minute"
+            month:    "Mois"
+            second: "Seconde"
+            year:     "AnnΓ©e"
+    errors: &errors
+        format: "%{attribute} %{message}"
+        messages: &errors_messages
+            accepted: "doit Γ�tre acceptΓ©(e)"
+            blank: "doit Γ�tre rempli(e)"
+            confirmation: "ne concorde pas avec la confirmation"
+            empty: "doit Γ�tre rempli(e)"
+            equal_to: "doit Γ�tre Γ©gal Γ  %{count}"
+            even: "doit Γ�tre pair"
+            exclusion: "n'est pas disponible"
+            greater_than: "doit Γ�tre supΓ©rieur Γ  %{count}"
+            greater_than_or_equal_to: "doit Γ�tre supΓ©rieur ou Γ©gal Γ  %{count}"
+            inclusion: "n'est pas inclus(e) dans la liste"
+            invalid: "n'est pas valide"
+            less_than: "doit Γ�tre infΓ©rieur Γ  %{count}"
+            less_than_or_equal_to: "doit Γ�tre infΓ©rieur ou Γ©gal Γ  %{count}"
+            not_a_number: "n'est pas un nombre"
+            not_an_integer: "doit Γ�tre un nombre entier"
+            odd: "doit Γ�tre impair"
+            record_invalid: "La validation a Γ©chouΓ© : %{errors}"
+            restrict_dependent_destroy:
+                one: "Suppression impossible: un autre enregistrement est liΓ©"
+                many: "Suppression impossible: d'autres enregistrements sont liΓ©s"
+            taken: "n'est pas disponible"
+            too_long:
+                one: "est trop long (pas plus d'un caractΓ¨re)"
+                other: "est trop long (pas plus de %{count} caractΓ¨res)"
+            too_short:
+                one: "est trop court (au moins un caractΓ¨re)"
+                other: "est trop court (au moins %{count} caractΓ¨res)"
+            wrong_length:
+                one: "ne fait pas la bonne longueur (doit comporter un seul caractΓ¨re)"
+                other: "ne fait pas la bonne longueur (doit comporter %{count} caractΓ¨res)"
+        template: &errors_template
+            body: "Veuillez vΓ©rifier les champs suivants : "
+            header:
+                one:     "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
+                other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+    helpers:
+        select:
+            prompt: "Veuillez sΓ©lectionner"
+        submit:
+            create: "CrΓ©er un(e) %{model}"
+            submit: "Enregistrer ce(tte) %{model}"
+            update: "Modifier ce(tte) %{model}"
+    number:
+        currency:
+            format:
+                delimiter: " "
+                format: "%n %u"
+                precision: 2
+                separator: ","
+                significant: false
+                strip_insignificant_zeros: false
+                unit: "β‚¬"
+        format:
+            delimiter: " "
+            precision: 3
+            separator: ","
+            significant: false
+            strip_insignificant_zeros: false
+        human:
+            decimal_units:
+                format: "%n %u"
+                units:
+                    billion: "milliard"
+                    million: "million"
+                    quadrillion: "million de milliards"
+                    thousand: "millier"
+                    trillion: "billion"
+                    unit: ""
+            format:
+                delimiter: ""
+                precision: 2
+                significant: true
+                strip_insignificant_zeros: true
+            storage_units:
+                format: "%n %u"
+                units:
+                    byte:
+                        one:     "octet"
+                        other: "octets"
+                    gb: "Go"
+                    kb: "ko"
+                    mb: "Mo"
+                    tb: "To"
+        percentage:
+            format:
+                delimiter: ""
+        precision:
+            format:
+                delimiter: ""
+    support:
+        array:
+            last_word_connector: " et "
+            two_words_connector: " et "
+            words_connector: ", "
+    time:
+        am: 'am'
+        formats:
+            default: "%d %B %Y %H:%M:%S"
+            long: "%A %d %B %Y %H:%M"
+            short: "%d %b %H:%M"
+        pm: 'pm'
+    # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+    activemodel:
+        errors:
+            <<: *errors
+    activerecord:
+        errors:
+            <<: *errors
+#Custom Text
+    articles:
+        h1: Hotel Belvedere - Nouvelles
+    shared:
+        contact: Contacter
+        gallery: Galerie de photos
+        hotel: l'Hôtel
+        accomodation: Hébergement
+        services: Services
+        location: Emplacement
+        news: Actualités - Offres
+    about:
+        name: Hotel Belvedere
+        address: Αdresse
+        addressdetail: Axladies Plage, Skiathos
+        phone: Téléphone
+        postal: Code Postal
+        phoneoff: Téléphone Hors Saison
+        fax: Fax
+    contact:
+        contactus: Contactez-nous
+        send: Envoyez-nous votre message
+    main:
+        request: Envoyez votre demande
+        room: Cliquez ici pour demander une chambre
+        booking: Ou cliquez ici pour passer par booking.com
+    rooms:
+        title: Belvedere Hotel - Chambres et Suites

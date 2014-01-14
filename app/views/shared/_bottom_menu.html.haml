@@ -1,0 +1,8 @@
+#bottom-menu{class: "#{'location' if params[:controller]=='pages' && params[:action]=='location'}"}
+    .content.clearfix
+        = link_to (t 'shared.contact'), contact_url, class: "#{params[:controller]=='pages' && params[:action]=='contact' ? 'active' : ''}"
+        = link_to (t 'shared.gallery'), photo_gallery_url, class: "#{params[:controller]=='pages' && params[:action]=='photo_gallery' ? 'active' : ''}"
+
+        .wrapper
+            = render 'shared/bg_carousel_controls'
+            = render 'shared/photo_gallery_titles'

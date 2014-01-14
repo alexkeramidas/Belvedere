@@ -1,0 +1,233 @@
+el:
+    date:
+        abbr_day_names:
+        - Ξ�Ο…Ο�
+        - Ξ”ΞµΟ…
+        - Ξ¤Ο�Ξ―
+        - Ξ¤ΞµΟ„
+        - Ξ Ξ­ΞΌ
+        - Ξ Ξ±Ο�
+        - Ξ£Ξ¬Ξ²
+        abbr_month_names:
+        -
+        - Ξ™Ξ±Ξ½
+        - Ξ¦ΞµΞ²
+        - Ξ�Ξ±Ο�
+        - Ξ‘Ο€Ο�
+        - Ξ�Ξ±Ο�
+        - Ξ™ΞΏΟ…Ξ½
+        - Ξ™ΞΏΟ…Ξ»
+        - Ξ‘Ο…Ξ³
+        - Ξ£ΞµΟ€
+        - Ξ�ΞΊΟ„
+        - Ξ�ΞΏΞµ
+        - Ξ”ΞµΞΊ
+        day_names:
+        - Ξ�Ο…Ο�ΞΉΞ±ΞΊΞ®
+        - Ξ”ΞµΟ…Ο„Ξ­Ο�Ξ±
+        - Ξ¤Ο�Ξ―Ο„Ξ·
+        - Ξ¤ΞµΟ„Ξ¬Ο�Ο„Ξ·
+        - Ξ Ξ­ΞΌΟ€Ο„Ξ·
+        - Ξ Ξ±Ο�Ξ±ΟƒΞΊΞµΟ…Ξ®
+        - Ξ£Ξ¬Ξ²Ξ²Ξ±Ο„ΞΏ
+        formats:
+            default: ! '%d/%m/%Y'
+            long: ! '%e %B %Y'
+            short: ! '%d %b'
+        month_names:
+        -
+        - Ξ™Ξ±Ξ½ΞΏΟ…Ξ¬Ο�ΞΉΞΏΟ‚
+        - Ξ¦ΞµΞ²Ο�ΞΏΟ…Ξ¬Ο�ΞΉΞΏΟ‚
+        - Ξ�Ξ¬Ο�Ο„ΞΉΞΏΟ‚
+        - Ξ‘Ο€Ο�Ξ―Ξ»ΞΉΞΏΟ‚
+        - Ξ�Ξ¬ΞΉΞΏΟ‚
+        - Ξ™ΞΏΟ�Ξ½ΞΉΞΏΟ‚
+        - Ξ™ΞΏΟ�Ξ»ΞΉΞΏΟ‚
+        - Ξ‘Ο�Ξ³ΞΏΟ…ΟƒΟ„ΞΏΟ‚
+        - Ξ£ΞµΟ€Ο„Ξ­ΞΌΞ²Ο�ΞΉΞΏΟ‚
+        - Ξ�ΞΊΟ„Ο�Ξ²Ο�ΞΉΞΏΟ‚
+        - Ξ�ΞΏΞ­ΞΌΞ²Ο�ΞΉΞΏΟ‚
+        - Ξ”ΞµΞΊΞ­ΞΌΞ²Ο�ΞΉΞΏΟ‚
+        order:
+        - :day
+        - :month
+        - :year
+    datetime:
+        distance_in_words:
+            about_x_hours:
+                one: Ο€ΞµΟ�Ξ―Ο€ΞΏΟ… ΞΌΞ―Ξ± Ο�Ο�Ξ±
+                other: Ο€ΞµΟ�Ξ―Ο€ΞΏΟ… %{count} Ο�Ο�ΞµΟ‚
+            about_x_months:
+                one: Ο€ΞµΟ�Ξ―Ο€ΞΏΟ… Ξ­Ξ½Ξ± ΞΌΞ®Ξ½Ξ±
+                other: Ο€ΞµΟ�Ξ―Ο€ΞΏΟ… %{count} ΞΌΞ®Ξ½ΞµΟ‚
+            about_x_years:
+                one: Ο€ΞµΟ�Ξ―Ο€ΞΏΟ… Ξ­Ξ½Ξ± Ο‡Ο�Ο�Ξ½ΞΏ
+                other: Ο€ΞµΟ�Ξ―Ο€ΞΏΟ… %{count} Ο‡Ο�Ο�Ξ½ΞΉΞ±
+            almost_x_years:
+                one: ΟƒΟ‡ΞµΞ΄Ο�Ξ½ Ξ­Ξ½Ξ± Ο‡Ο�Ο�Ξ½ΞΏ
+                other: ΟƒΟ‡ΞµΞ΄Ο�Ξ½ %{count} Ο‡Ο�Ο�Ξ½ΞΉΞ±
+            half_a_minute: ΞΌΞΉΟƒΟ� Ξ»ΞµΟ€Ο„Ο�
+            less_than_x_minutes:
+                one: Ξ»ΞΉΞ³Ο�Ο„ΞµΟ�ΞΏ Ξ±Ο€Ο� Ξ­Ξ½Ξ± Ξ»ΞµΟ€Ο„Ο�
+                other: Ξ»ΞΉΞ³Ο�Ο„ΞµΟ�ΞΏ Ξ±Ο€Ο� %{count} Ξ»ΞµΟ€Ο„Ξ¬
+            less_than_x_seconds:
+                one: Ξ»ΞΉΞ³Ο�Ο„ΞµΟ�ΞΏ Ξ±Ο€Ο� Ξ­Ξ½Ξ± Ξ΄ΞµΟ…Ο„ΞµΟ�Ο�Ξ»ΞµΟ€Ο„ΞΏ
+                other: Ξ»ΞΉΞ³Ο�Ο„ΞµΟ�ΞΏ Ξ±Ο€Ο� %{count} Ξ΄ΞµΟ…Ο„ΞµΟ�Ο�Ξ»ΞµΟ€Ο„Ξ±
+            over_x_years:
+                one: Ο€Ξ¬Ξ½Ο‰ Ξ±Ο€Ο� Ξ­Ξ½Ξ± Ο‡Ο�Ο�Ξ½ΞΏ
+                other: Ο€Ξ¬Ξ½Ο‰ Ξ±Ο€Ο� %{count} Ο‡Ο�Ο�Ξ½ΞΉΞ±
+            x_days:
+                one: 1 ΞΌΞ­Ο�Ξ±
+                other: ! '%{count} ΞΌΞ­Ο�ΞµΟ‚'
+            x_minutes:
+                one: 1 Ξ»ΞµΟ€Ο„Ο�
+                other: ! '%{count} Ξ»ΞµΟ€Ο„Ξ¬'
+            x_months:
+                one: 1 ΞΌΞ®Ξ½Ξ±
+                other: ! '%{count} ΞΌΞ®Ξ½ΞµΟ‚'
+            x_seconds:
+                one: 1 Ξ΄ΞµΟ…Ο„ΞµΟ�Ο�Ξ»ΞµΟ€Ο„ΞΏ
+                other: ! '%{count} Ξ΄ΞµΟ…Ο„ΞµΟ�Ο�Ξ»ΞµΟ€Ο„Ξ±'
+        prompts:
+            day: Ξ—ΞΌΞ­Ο�Ξ±
+            hour: Ξ�Ο�Ξ±
+            minute: Ξ›ΞµΟ€Ο„Ο�
+            month: Ξ�Ξ®Ξ½Ξ±Ο‚
+            second: Ξ”ΞµΟ…Ο„ΞµΟ�Ο�Ξ»ΞµΟ€Ο„ΞΏ
+            year: Ξ�Ο„ΞΏΟ‚
+    errors: &errors
+        format: ! '%{attribute} %{message}'
+        messages:
+            accepted: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ±Ο€ΞΏΞ΄ΞµΞΊΟ„Ο�
+            blank: Ξ΄ΞµΞ½ Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ ΞΊΞµΞ½Ο�
+            confirmation: Ξ΄ΞµΞ½ Ο„Ξ±ΞΉΟ�ΞΉΞ¬Ξ¶ΞµΞΉ ΞΌΞµ Ο„Ξ·Ξ½ ΞµΟ€ΞΉΞΊΟ�Ο�Ο‰ΟƒΞ·
+            empty: Ξ΄ΞµΞ½ Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ¬Ξ΄ΞµΞΉΞΏ
+            equal_to: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ―ΟƒΞΏ ΞΌΞµ %{count}
+            even: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ¬Ο�Ο„ΞΉΞΏΟ‚
+            exclusion: ΞµΞ―Ξ½Ξ±ΞΉ Ξ΄ΞµΟƒΞΌΞµΟ…ΞΌΞ­Ξ½ΞΏ
+            greater_than: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ ΞΌΞµΞ³Ξ±Ξ»Ο�Ο„ΞµΟ�ΞΏ Ξ±Ο€Ο� %{count}
+            greater_than_or_equal_to: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ ΞΌΞµΞ³Ξ±Ξ»Ο�Ο„ΞµΟ�ΞΏ Ξ® Ξ―ΟƒΞΏ ΞΌΞµ %{count}
+            inclusion: Ξ΄ΞµΞ½ ΟƒΟ…ΞΌΟ€ΞµΟ�ΞΉΞ»Ξ±ΞΌΞ²Ξ¬Ξ½ΞµΟ„Ξ±ΞΉ ΟƒΟ„Ξ· Ξ»Ξ―ΟƒΟ„Ξ±
+            invalid: ΞµΞ―Ξ½Ξ±ΞΉ Ξ¬ΞΊΟ…Ο�ΞΏ
+            less_than: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ»ΞΉΞ³Ο�Ο„ΞµΟ�ΞΏ Ξ±Ο€Ο� %{count}
+            less_than_or_equal_to: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ»ΞΉΞ³Ο�Ο„ΞµΟ�ΞΏ Ξ® Ξ―ΟƒΞΏ ΞΌΞµ %{count}
+            not_a_number: Ξ΄ΞµΞ½ ΞµΞ―Ξ½Ξ±ΞΉ Ξ±Ο�ΞΉΞΈΞΌΟ�Ο‚
+            not_an_integer: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ξ±ΞΊΞ­Ο�Ξ±ΞΉΞΏΟ‚ Ξ±Ο�ΞΉΞΈΞΌΟ�Ο‚
+            odd: Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ Ο€ΞµΟ�ΞΉΟ„Ο„Ο�Ο‚
+            record_invalid: ! 'Ξ•Ο€ΞΉΞΊΟ�Ο�Ο‰ΟƒΞ· Ξ±Ο€Ξ­Ο„Ο…Ο‡Ξµ: %{errors}'
+            taken: Ο„ΞΏ Ξ­Ο‡ΞΏΟ…Ξ½ Ξ®Ξ΄Ξ· Ο‡Ο�Ξ·ΟƒΞΉΞΌΞΏΟ€ΞΏΞΉΞ®ΟƒΞµΞΉ
+            too_long:
+                one: ΞµΞ―Ξ½Ξ±ΞΉ Ο€ΞΏΞ»Ο� ΞΌΞµΞ³Ξ¬Ξ»ΞΏ (Ο„ΞΏ ΞΌΞ­Ξ³ΞΉΟƒΟ„ΞΏ ΞΌΞ®ΞΊΞΏΟ‚ ΞµΞ―Ξ½Ξ±ΞΉ 1 Ο‡Ξ±Ο�Ξ±ΞΊΟ„Ξ®Ο�Ξ±Ο‚)
+                other: ΞµΞ―Ξ½Ξ±ΞΉ Ο€ΞΏΞ»Ο� ΞΌΞµΞ³Ξ¬Ξ»ΞΏ (Ο„ΞΏ ΞΌΞ­Ξ³ΞΉΟƒΟ„ΞΏ ΞΌΞ®ΞΊΞΏΟ‚ ΞµΞ―Ξ½Ξ±ΞΉ %{count} Ο‡Ξ±Ο�Ξ±ΞΊΟ„Ξ®Ο�ΞµΟ‚)
+            too_short:
+                one: ΞµΞ―Ξ½Ξ±ΞΉ Ο€ΞΏΞ»Ο� ΞΌΞΉΞΊΟ�Ο� (Ο„ΞΏ ΞµΞ»Ξ¬Ο‡ΞΉΟƒΟ„ΞΏ ΞΌΞ®ΞΊΞΏΟ‚ ΞµΞ―Ξ½Ξ±ΞΉ 1 Ο‡Ξ±Ο�Ξ±ΞΊΟ„Ξ®Ο�Ξ±Ο‚)
+                other: ΞµΞ―Ξ½Ξ±ΞΉ Ο€ΞΏΞ»Ο� ΞΌΞΉΞΊΟ�Ο� (Ο„ΞΏ ΞµΞ»Ξ¬Ο‡ΞΉΟƒΟ„ΞΏ ΞΌΞ®ΞΊΞΏΟ‚ ΞµΞ―Ξ½Ξ±ΞΉ %{count} Ο‡Ξ±Ο�Ξ±ΞΊΟ„Ξ®Ο�ΞµΟ‚)
+            wrong_length:
+                one: Ξ­Ο‡ΞµΞΉ Ξ»Ξ±Ξ½ΞΈΞ±ΟƒΞΌΞ­Ξ½ΞΏ ΞΌΞ®ΞΊΞΏΟ‚ (Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ 1 Ο‡Ξ±Ο�Ξ±ΞΊΟ„Ξ®Ο�Ξ±Ο‚)
+                other: Ξ­Ο‡ΞµΞΉ Ξ»Ξ±Ξ½ΞΈΞ±ΟƒΞΌΞ­Ξ½ΞΏ ΞΌΞ®ΞΊΞΏΟ‚ (Ο€Ο�Ξ­Ο€ΞµΞΉ Ξ½Ξ± ΞµΞ―Ξ½Ξ±ΞΉ %{count} Ο‡Ξ±Ο�Ξ±ΞΊΟ„Ξ®Ο�ΞµΟ‚)
+        template:
+            body: ! 'Ξ¥Ο€Ξ®Ο�ΞΎΞ±Ξ½ Ο€Ο�ΞΏΞ²Ξ»Ξ®ΞΌΞ±Ο„Ξ± ΞΌΞµ Ο„Ξ± Ξ±ΞΊΟ�Ξ»ΞΏΟ…ΞΈΞ± Ο€ΞµΞ΄Ξ―Ξ±:'
+            header:
+                one: 1 Ξ»Ξ¬ΞΈΞΏΟ‚ ΞµΞΌΟ€Ο�Ξ΄ΞΉΟƒΞµ Ξ±Ο…Ο„Ο� Ο„ΞΏ %{model} Ξ½Ξ± Ξ±Ο€ΞΏΞΈΞ·ΞΊΞµΟ…Ο„ΞµΞ―.
+                other: ! '%{count} Ξ»Ξ¬ΞΈΞ· ΞµΞΌΟ€Ο�Ξ΄ΞΉΟƒΞ±Ξ½ Ξ±Ο…Ο„Ο� Ο„ΞΏ %{model} Ξ½Ξ± Ξ±Ο€ΞΏΞΈΞ·ΞΊΞµΟ…Ο„ΞµΞ―.'
+    helpers:
+        select:
+            prompt: Ξ Ξ±Ο�Ξ±ΞΊΞ±Ξ»Ο� ΞµΟ€ΞΉΞ»Ξ­ΞΎΟ„Ξµ
+        submit:
+            create: Ξ”Ξ·ΞΌΞΉΞΏΟ…Ο�Ξ³Ξ®ΟƒΟ„Ξµ %{model}
+            submit: Ξ‘Ο€ΞΏΞΈΞ·ΞΊΞµΟ�ΟƒΟ„Ξµ %{model}
+            update: Ξ•Ξ½Ξ·ΞΌΞµΟ�Ο�ΟƒΟ„Ξµ %{model}
+    number:
+        currency:
+            format:
+                delimiter: .
+                format: ! '%n %u'
+                precision: 2
+                separator: ! ','
+                significant: false
+                strip_insignificant_zeros: false
+                unit: β‚¬
+        format:
+            delimiter: .
+            precision: 3
+            separator: ! ','
+            significant: false
+            strip_insignificant_zeros: false
+        human:
+            decimal_units:
+                format: ! '%n %u'
+                units:
+                    billion: Ξ΄ΞΉΟƒΞµΞΊΞ±Ο„ΞΏΞΌΞΌΟ�Ο�ΞΉΞΏ
+                    million: ΞµΞΊΞ±Ο„ΞΏΞΌΞΌΟ�Ο�ΞΉΞΏ
+                    quadrillion: Ο„ΞµΟ„Ο�Ξ¬ΞΊΞΉΟ‚ ΞµΞΊΞ±Ο„ΞΏΞΌΞΌΟ�Ο�ΞΉΞΏ
+                    thousand: Ο‡Ξ―Ξ»ΞΉΞ±
+                    trillion: Ο„Ο�ΞΉΟƒΞµΞΊΞ±Ο„ΞΏΞΌΞΌΟ�Ο�ΞΉΞΏ
+                    unit: ''
+            format:
+                delimiter: ''
+                precision: 1
+                significant: true
+                strip_insignificant_zeros: true
+            storage_units:
+                format: ! '%n %u'
+                units:
+                    byte:
+                        one: byte
+                        other: bytes
+                    gb: GB
+                    kb: KB
+                    mb: MB
+                    tb: TB
+        percentage:
+            format:
+                delimiter: ''
+        precision:
+            format:
+                delimiter: ''
+    support:
+        array:
+            last_word_connector: ! ' ΞΊΞ±ΞΉ '
+            two_words_connector: ! ' ΞΊΞ±ΞΉ '
+            words_connector: ! ', '
+    time:
+        am: Ο€.ΞΌ.
+        formats:
+            default: ! '%d %B %Y %H:%M'
+            long: ! '%A %d %B %Y %H:%M:%S %Z'
+            short: ! '%d %b %H:%M'
+        pm: ΞΌ.ΞΌ.
+    # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+    activemodel:
+        errors:
+            <<: *errors
+    activerecord:
+        errors:
+            <<: *errors
+#Custom Text
+    articles:
+        h1: Belvedere Hotel - Τα νέα μας
+    shared:
+        contact: Επικοινωνία
+        gallery: Φωτογραφίες
+        hotel: Το Ξενοδοχείο
+        accomodation: Διαμονή
+        services: Υπηρεσίες
+        location: Τοποθεσία
+        news: Νέα - Προσφορές
+    about:
+        name: Ξενοδοχείο Belvedere
+        address: Διεύθυνση
+        addressdetail: Παραλία Αχλαδιές, Σκιάθος
+        postal: Ταχυδρομικός Κώδικας
+        phone: Τηλέφωνο
+        phoneoff: Τηλέφωνο (Εκτός σεζόν)
+        fax: Φαξ
+    contact:
+        contactus: Επικοινωνήστε μαζί μας
+        send: Αποστολή μηνύματος
+    main:
+        request: Αποστολή κράτησης
+        room: Πατήστε εδώ για κράτηση δωματίου
+        booking: Ή κάντε κλικ εδώ για κράτηση μέσω booking.com
+    rooms:
+        title: Belvedere Hotel - Δωμάτια & Σουίτες

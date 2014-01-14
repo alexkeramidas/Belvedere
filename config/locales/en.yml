@@ -20,4 +20,103 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-    hello: "Hello world"
+    greetings:
+        hello:
+            world: Hello World!
+            friend: Hello Friend!
+            user: Hello %{user}
+    inbox:
+        messages:
+            one: You have one message in your inbox.
+            other: You have %{count} messages in your inbox.
+    time:
+        am: a.m.
+        formats:
+            default: ! '%a, %d %b %Y %H:%M:%S %z'
+            long: ! '%B %d, %Y %H:%M'
+            short: ! '%d %b %H:%M'
+        pm: p.m.
+    date:
+        abbr_day_names:
+        - Sun
+        - Mon
+        - Tue
+        - Wed
+        - Thu
+        - Fri
+        - Sat
+        abbr_month_names:
+        -
+        - Jan
+        - Feb
+        - Mar
+        - Apr
+        - May
+        - Jun
+        - Jul
+        - Aug
+        - Sep
+        - Oct
+        - Nov
+        - Dec
+        day_names:
+        - Sunday
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        formats:
+        birth: ! '%d.%m.'
+        default: ! '%Y-%m-%d'
+        long: ! '%B %d, %Y'
+        month_and_year: ! '%b %Y'
+        short: ! '%b %d'
+    month_names:
+        -
+        - January
+        - February
+        - March
+        - April
+        - May
+        - June
+        - July
+        - August
+        - September
+        - October
+        - November
+        - December
+    order:
+        - year
+        - month
+        - day
+
+  #Custom Text
+    articles:
+        h1: Belvedere Hotel - News
+    shared:
+        contact: Contact
+        gallery: Photo Gallery
+        hotel: The Hotel
+        accomodation: Accomodation
+        services: Services
+        location: Location
+        news: News - Offers
+    about:
+        name: Hotel Belvedere
+        address: Address
+        addressdetail: Axladies Beach, Skiathos
+        postal: Post Code
+        phone: Telephone
+        phoneoff: Telephone (Off Season)
+        fax: Fax
+    contact:
+        contactus: Contact Us
+        send: Send Us Your Message
+    main:
+        request: Send your request
+        room: Click here to request a room
+        booking: Or click here to proceed through booking.com
+    rooms:
+        title: Belvedere Hotel - Rooms & Suites
