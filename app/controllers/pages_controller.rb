@@ -48,11 +48,30 @@ class PagesController < ApplicationController
     end
 
     def contact
-
+        @contact = session[:contact]
+        session.delete(:contact)
     end
     
     def send_mail
-        ContactMailer.contact_email(params[:name], params[:email], params[:comment]).deliver
+        errors = Array.new
+        
+        if !params[:name].match(/\A#{ApplicationHelper.form_field_attr('name', 2, 100)[:regex]}\Z/i)
+            errors << :name
+        end
+        
+        if !params[:email].match(/\A#{ApplicationHelper.form_field_attr('email')[:regex]}\Z/i)
+            errors << :email
+        end
+        
+        if !params[:comment].match(/\A#{ApplicationHelper.form_field_attr('contact', 6, 300)[:regex]}\Z/i)
+            errors << :comment
+        end
+        
+        if errors.blank?
+            ContactMailer.contact_email(params[:name], params[:email], params[:comment]).deliver
+        end
+        
+        session[:contact] = {name: params[:name], email: params[:email], comment: params[:comment],errors: errors}
         redirect_to contact_url and return
     end
 
