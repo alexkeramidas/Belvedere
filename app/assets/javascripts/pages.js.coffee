@@ -37,41 +37,57 @@ class BelvedereGit.pages extends BelvedereGit.Base
             $('.external-link').removeClass('initialized')
             $formwrapper.css('display', 'none')
             $errors.css('display', 'none')
+            $('.reservation-link').removeClass('active')
         else if window.location.hash == '#reservation'
             if !$('.formwrapper .has-error').length
                 $errors.css('display', 'none')
+            $('.reservation-link').addClass('active')
+        
+        reservationFormOpen = ->
+            $formwrapper.find('form > .mCustomScrollbar').removeClass('scrollable')
+            $formwrapper.slideDown(1000, (->
+                    $formwrapper.find('form > .mCustomScrollbar').addClass('scrollable')
+                    $('.form-link').removeClass('form-closed')
+                    if $('.formwrapper .has-error').length
+                        $errors.css('display', 'block')
+                )
+            )
+            $('.form-link').removeClass('with-bg')
+            $('.external-link').css('display', 'none')
+            
+            window.location.hash = '#reservation'
+            $('.reservation-link').addClass('active')
+        
+        reservationFormClose = ->
+            $formwrapper.slideUp(1000, (->
+                    $('.form-link').addClass('form-closed').addClass('with-bg')
+                    $('.external-link').css('display', 'block')
+                )
+            )
+            $errors.css('display', 'none')
+            $success.css('display', 'none')
+            
+            if history.pushState
+                history.pushState('', document.title, "#{window.location.pathname}#{window.location.search}")
+            else
+                window.location.hash = '#'
+            $('.reservation-link').removeClass('active')
         
         $('.form-link').on('click', (e) ->
             if window.location.hash == '#reservation'
                 $('.external-link').removeClass('initialized').css('display', 'none')
             
             if $formwrapper.css('display') == 'none'
-                $formwrapper.find('form > .mCustomScrollbar').removeClass('scrollable')
-                $formwrapper.slideDown(1000, (->
-                        $formwrapper.find('form > .mCustomScrollbar').addClass('scrollable')
-                        $('.form-link').removeClass('form-closed')
-                        if $('.formwrapper .has-error').length
-                            $errors.css('display', 'block')
-                    )
-                )
-                $('.form-link').removeClass('with-bg')
-                $('.external-link').css('display', 'none')
-                
-                window.location.hash = '#reservation'
+                reservationFormOpen()
             else
-                $formwrapper.slideUp(1000, (->
-                        $('.form-link').addClass('form-closed').addClass('with-bg')
-                        $('.external-link').css('display', 'block')
-                    )
-                )
-                $errors.css('display', 'none')
-                $success.css('display', 'none')
-                
-                if history.pushState
-                    history.pushState('', document.title, "#{window.location.pathname}#{window.location.search}")
-                else
-                    window.location.hash = '#'
+                reservationFormClose()
             
+            false
+        )
+        
+        $('.reservation-link').on('click', (e) ->
+            if $formwrapper.css('display') == 'none'
+                reservationFormOpen()
             false
         )
         
