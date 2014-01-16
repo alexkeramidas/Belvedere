@@ -8,6 +8,11 @@ class BelvedereGit.Base
         # code will only be called once the document is ready
         
         
+        # Javascript is supported, so we must disable all noscript elements
+        
+        $('#noscript').detach()
+        
+        
         # Custom scrollbars for elements with the 'scrollable' class
         
         $('.scrollable').mCustomScrollbar({

@@ -4,6 +4,10 @@
     background-color: transparent;
     padding-bottom: 78px;
     
+    .page-wrap #noscript {
+        bottom: -78px;
+    }
+    
     .title {
         position: relative;
         width: 374px;

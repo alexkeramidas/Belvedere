@@ -1,28 +1,38 @@
 - title 'Rooms & Suites'
 .rooms.clearfix
-    .rooms-list.pull-left
-        %h1 Belvedere Hotel - Rooms &amp; Suites
-        .wrapper
-            .content
-                .scrollable
-                    %ul.nav.nav-tabs.nav-stacked
-                        - @rooms.each_with_index do |room, i|
-                            %li
-                                = link_to room.title, "#descr_#{i}", class: "collapse-link#{' active' if i == 0}", id: "link_#{i}", data: {gal: "#gallery#{i}"}
-                                .collapsible{id: "descr_#{i}"}= simple_format(room.description).html_safe
-    .image-gallery.pull-right.clearfix
-        - @rooms.each_with_index do |room, i|
-            .gallery.pull-left{id: "gallery#{i}", class: "#{'visible' if i == 0} #{'carousel' if i == 0 && room.photos.length > 1}"}
-                .carousel-inner
-                    - if room.photos.blank?
-                        .item.active
-                            = image_tag 'missing.png', size: '600x380', alt: 'Hotel Belvedere - Missing Image'
-                    - else
-                        - room.photos.each_with_index do |photo, j|
-                            - photo = photo.decorate
-                            .item{class: "#{'active' if j==0}"}
-                                = link_to photo.photo_path(:original), class: 'fancybox', rel: "gallery#{i}" do
-                                    = image_tag photo.photo_path(:medium), size: '640x480', alt: "Hotel Belvedere - #{photo.description}", data: {width: photo.photo_geometry(:original).width, height: photo.decorate.photo_geometry(:original).height}
-                - if room.photos.length > 1
-                    = link_to '', "#gallery#{i}", data: {slide: 'prev'}, class: 'carousel-control left fa-chevron-left', style: 'display: none;'
-                    = link_to '', "#gallery#{i}", data: {slide: 'next'}, class: 'carousel-control right fa-chevron-right', style: 'display: none;'
+    .page-wrap.pull-left
+        #noscript
+            .text-wrap
+                %p
+                    In order for this section of the site to operate smoothly, it is necessary
+                    that you enable JavaScript.
+                %p
+                    Here are the
+                    = link_to 'instructions on how to enable Javascript on your browser', 'http://www.enable-javascript.com/', target: '_blank'
+                    &#46;
+        .rooms-list.pull-left
+            %h1 Belvedere Hotel - Rooms &amp; Suites
+            .wrapper
+                .content
+                    .scrollable
+                        %ul.nav.nav-tabs.nav-stacked
+                            - @rooms.each_with_index do |room, i|
+                                %li
+                                    = link_to room.title, "#descr_#{i}", class: "collapse-link#{' active' if i == 0}", id: "link_#{i}", data: {gal: "#gallery#{i}"}
+                                    .collapsible{id: "descr_#{i}"}= simple_format(room.description).html_safe
+        .image-gallery.pull-right.clearfix
+            - @rooms.each_with_index do |room, i|
+                .gallery.pull-left{id: "gallery#{i}", class: "#{'visible' if i == 0} #{'carousel' if i == 0 && room.photos.length > 1}"}
+                    .carousel-inner
+                        - if room.photos.blank?
+                            .item.active
+                                = image_tag 'missing.png', size: '600x380', alt: 'Hotel Belvedere - Missing Image'
+                        - else
+                            - room.photos.each_with_index do |photo, j|
+                                - photo = photo.decorate
+                                .item{class: "#{'active' if j==0}"}
+                                    = link_to photo.photo_path(:original), class: 'fancybox', rel: "gallery#{i}" do
+                                        = image_tag photo.photo_path(:medium), size: '640x480', alt: "Hotel Belvedere - #{photo.description}", data: {width: photo.photo_geometry(:original).width, height: photo.decorate.photo_geometry(:original).height}
+                    - if room.photos.length > 1
+                        = link_to '', "#gallery#{i}", data: {slide: 'prev'}, class: 'carousel-control left fa-chevron-left', style: 'display: none;'
+                        = link_to '', "#gallery#{i}", data: {slide: 'next'}, class: 'carousel-control right fa-chevron-right', style: 'display: none;'

@@ -1,9 +1,19 @@
 - title 'Photo Gallery'
 .photo-gallery
-    - if !@gallery.description.blank?
-        .title
-            %h1= !@gallery.blank? ? @gallery.title : 'Photo Gallery'
-        .wrapper
-            .content
-                .scrollable
-                    .desc= simple_format(@gallery.description).html_safe
+    .page-wrap.pull-left
+        #noscript
+            .text-wrap
+                %p
+                    In order for this section of the site to operate smoothly, it is necessary
+                    that you enable JavaScript.
+                %p
+                    Here are the
+                    = link_to 'instructions on how to enable Javascript on your browser', 'http://www.enable-javascript.com/', target: '_blank'
+                    &#46;
+        - if !@gallery.description.blank?
+            .title
+                %h1= !@gallery.blank? ? @gallery.title : 'Photo Gallery'
+            .wrapper
+                .content
+                    .scrollable
+                        .desc= simple_format(@gallery.description).html_safe
