@@ -65,7 +65,7 @@ gem 'aws-sdk'
 gem 'date_validator'
 
 #Multilanguage Support
-gem 'globalize', '~> 4.0.0.alpha.2'
+gem 'globalize', '~> 4.0.0'
 
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.

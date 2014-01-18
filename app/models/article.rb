@@ -9,8 +9,9 @@ class Article < ActiveRecord::Base
     scope :paginated, ->(page_num = 1, per_page = Article::PER_PAGE) { page(page_num).per(per_page) }
 
     #Object translations
-
+    has_many :article_translations
     translates :title, :description
+    accepts_nested_attributes_for :article_translations, :allow_destroy => true
 
     # Object methods
 
