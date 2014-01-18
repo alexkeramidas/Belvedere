@@ -5,5 +5,5 @@
             .scrollable
                 = link_to articles_path, class: 'title clearfix' do
                     %h3.pull-left.fa-long-arrow-left Go Back to News &amp; Offers
-                    %h3.pull-right.fa-calendar= @article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
+                    %h3.pull-right.fa-calendar=l @article.created_at, :format => :default
                 .post= sanitize(@article.description)

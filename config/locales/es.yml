@@ -1,13 +1,13 @@
-es:
+﻿es:
     date:
         abbr_day_names:
         - dom
         - lun
         - mar
-        - miΓ©
+        - mié
         - jue
         - vie
-        - sΓ΅b
+        - sáb
         abbr_month_names:
         -
         - ene
@@ -26,10 +26,10 @@ es:
         - domingo
         - lunes
         - martes
-        - miΓ©rcoles
+        - miércoles
         - jueves
         - viernes
-        - sΓ΅bado
+        - sábado
         formats:
             default: ! '%d/%m/%Y'
             long: ! '%d de %B de %Y'
@@ -61,11 +61,11 @@ es:
                 one: alrededor de 1 mes
                 other: alrededor de %{count} meses
             about_x_years:
-                one: alrededor de 1 aΓ±o
-                other: alrededor de %{count} aΓ±os
+                one: alrededor de 1 año
+                other: alrededor de %{count} años
             almost_x_years:
-                one: casi 1 aΓ±o
-                other: casi %{count} aΓ±os
+                one: casi 1 año
+                other: casi %{count} años
             half_a_minute: medio minuto
             less_than_x_minutes:
                 one: menos de 1 minuto
@@ -74,11 +74,11 @@ es:
                 one: menos de 1 segundo
                 other: menos de %{count} segundos
             over_x_years:
-                one: mΓ΅s de 1 aΓ±o
-                other: mΓ΅s de %{count} aΓ±os
+                one: más de 1 año
+                other: más de %{count} años
             x_days:
-                one: 1 dΓ­a
-                other: ! '%{count} dΓ­as'
+                one: 1 día
+                other: ! '%{count} días'
             x_minutes:
                 one: 1 minuto
                 other: ! '%{count} minutos'
@@ -89,40 +89,40 @@ es:
                 one: 1 segundo
                 other: ! '%{count} segundos'
         prompts:
-            day: DΓ­a
+            day: Día
             hour: Hora
             minute: Minutos
             month: Mes
             second: Segundos
-            year: AΓ±o
+            year: Año
     errors: &errors
         format: ! '%{attribute} %{message}'
         messages:
             accepted: debe ser aceptado
             blank: no puede estar en blanco
-            confirmation: no coincide con la confirmaciΓ³n
-            empty: no puede estar vacΓ­o
+            confirmation: no coincide con la confirmación
+            empty: no puede estar vacío
             equal_to: debe ser igual a %{count}
             even: debe ser par
-            exclusion: estΓ΅ reservado
+            exclusion: está reservado
             greater_than: debe ser mayor que %{count}
             greater_than_or_equal_to: debe ser mayor que o igual a %{count}
-            inclusion: no estΓ΅ incluido en la lista
-            invalid: no es vΓ΅lido
+            inclusion: no está incluido en la lista
+            invalid: no es válido
             less_than: debe ser menor que %{count}
             less_than_or_equal_to: debe ser menor que o igual a %{count}
-            not_a_number: no es un nΓΊmero
+            not_a_number: no es un número
             not_an_integer: debe ser un entero
             odd: debe ser impar
-            record_invalid: ! 'La validaciΓ³n fallΓ³: %{errors}'
-            taken: ya estΓ΅ en uso
-            too_long: es demasiado largo (%{count} caracteres mΓ΅ximo)
-            too_short: es demasiado corto (%{count} caracteres mΓ­nimo)
+            record_invalid: ! 'La validación falló: %{errors}'
+            taken: ya está en uso
+            too_long: es demasiado largo (%{count} caracteres máximo)
+            too_short: es demasiado corto (%{count} caracteres mínimo)
             wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
         template:
             body: ! 'Se encontraron problemas con los siguientes campos:'
             header:
-                one: No se pudo guardar este/a %{model} porque se encontrΓ³ 1 error
+                one: No se pudo guardar este/a %{model} porque se encontró 1 error
                 other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
     helpers:
         select:
@@ -140,7 +140,7 @@ es:
                 separator: ! ','
                 significant: false
                 strip_insignificant_zeros: false
-                unit: β‚¬
+                unit: €
         format:
             delimiter: .
             precision: 3
@@ -152,10 +152,10 @@ es:
                 format: ! '%n %u'
                 units:
                     billion: mil millones
-                    million: millΓ³n
+                    million: millón
                     quadrillion: mil billones
                     thousand: mil
-                    trillion: billΓ³n
+                    trillion: billón
                     unit: ''
             format:
                 delimiter: ''

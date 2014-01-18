@@ -1,4 +1,4 @@
-it:
+﻿it:
     date:
         abbr_day_names:
         - dom
@@ -24,11 +24,11 @@ it:
         - dic
         day_names:
         - domenica
-        - lunedΓ¬
-        - martedΓ¬
-        - mercoledΓ¬
-        - giovedΓ¬
-        - venerdΓ¬
+        - lunedì
+        - martedì
+        - mercoledì
+        - giovedì
+        - venerdì
         - sabato
         formats:
             default: ! '%d/%m/%Y'
@@ -99,32 +99,32 @@ it:
         format: ! '%{attribute} %{message}'
         messages:
             accepted: deve essere accettata
-            blank: non puΓ² essere lasciato in bianco
+            blank: non può essere lasciato in bianco
             confirmation: non coincide con la conferma
-            empty: non puΓ² essere vuoto
+            empty: non può essere vuoto
             equal_to: deve essere uguale a %{count}
             even: deve essere pari
-            exclusion: Γ¨ riservato
+            exclusion: è riservato
             greater_than: deve essere superiore a %{count}
             greater_than_or_equal_to: deve essere superiore o uguale a %{count}
-            inclusion: non Γ¨ incluso nella lista
-            invalid: non Γ¨ valido
+            inclusion: non è incluso nella lista
+            invalid: non è valido
             less_than: deve essere meno di %{count}
             less_than_or_equal_to: deve essere meno o uguale a %{count}
-            not_a_number: non Γ¨ un numero
-            not_an_integer: non Γ¨ un intero
+            not_a_number: non è un numero
+            not_an_integer: non è un intero
             odd: deve essere dispari
             record_invalid: ! 'Validazione fallita: %{errors}'
-            taken: Γ¨ giΓ  in uso
+            taken: è già in uso
             too_long:
-                one: Γ¨ troppo lungo (il massimo Γ¨ 1 carattere)
-                other: Γ¨ troppo lungo (il massimo Γ¨ %{count} caratteri)
+                one: è troppo lungo (il massimo è 1 carattere)
+                other: è troppo lungo (il massimo è %{count} caratteri)
             too_short:
-                one: Γ¨ troppo corto (il minimo Γ¨ 1 carattere)
-                other: Γ¨ troppo corto (il minimo Γ¨ %{count} caratteri)
+                one: è troppo corto (il minimo è 1 carattere)
+                other: è troppo corto (il minimo è %{count} caratteri)
             wrong_length:
-                one: Γ¨ della lunghezza sbagliata (deve essere di 1 carattere)
-                other: Γ¨ della lunghezza sbagliata (deve essere di %{count} caratteri)
+                one: è della lunghezza sbagliata (deve essere di 1 carattere)
+                other: è della lunghezza sbagliata (deve essere di %{count} caratteri)
         template:
             body: ! 'Per favore ricontrolla i seguenti campi:'
             header:
@@ -146,7 +146,7 @@ it:
                 separator: ! ','
                 significant: false
                 strip_insignificant_zeros: false
-                unit: β‚¬
+                unit: €
         format:
             delimiter: .
             precision: 2
@@ -205,29 +205,29 @@ it:
             <<: *errors
 #Custom Text
     articles:
-        h1: Hotel Belvedere - Notizie
+            h1: Hotel Belvedere - Notizie
     shared:
-        contact: Contatto
-        gallery: Galleria fotografica
-        hotel: l'Hotel
-        accomodation: Alloggio
-        services: Servizi
-        location: Posizione
-        news: Novità - Offerte
+            contact: Contatto
+            gallery: Galleria fotografica
+            hotel: l'Hotel
+            accomodation: Alloggio
+            services: Servizi
+            location: Posizione
+            news: Novità - Offerte
     about:
-        name: Hotel Belvedere
-        address: Indirizzo
-        addressdetail: Axladies Spiaggia, Skiathos
-        postal: CAP
-        phone: Telefono
-        phoneoff: Stagione Telefono Spento
-        fax: Fax
+            name: Hotel Belvedere
+            address: Indirizzo
+            addressdetail: Axladies Spiaggia, Skiathos
+            postal: CAP
+            phone: Telefono
+            phoneoff: Stagione Telefono Spento
+            fax: Fax
     contact:
-        contactus: Contattaci
-        send: Inviaci il tuo messaggio
+            contactus: Contattaci
+            send: Inviaci il tuo messaggio
     main:
-        request: Invia la tua richiesta
-        room: Clicca qui per richiedere una camera
-        booking: Oppure clicca qui per procedere attraverso booking.com
+            request: Invia la tua richiesta
+            room: Clicca qui per richiedere una camera
+            booking: Oppure clicca qui per procedere attraverso booking.com
     rooms:
-        title: Belvedere Hotel - Camere e Suite
+            title: Belvedere Hotel - Camere e Suite

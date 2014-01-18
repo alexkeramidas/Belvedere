@@ -6,7 +6,7 @@
                 - @articles.each do |article|
                     = link_to article, class: 'title clearfix' do
                         %h2.pull-left= article.title
-                        %h3.pull-right.fa-calendar= article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
+                        %h3.pull-right.fa-calendar= l article.created_at, :format => :short
                     .post= sanitize(article.description, :tags => []).truncate(1000)
 
     = paginate @articles
