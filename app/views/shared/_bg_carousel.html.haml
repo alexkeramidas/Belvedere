@@ -1,3 +1,3 @@
 - if !@bg_list.blank?
     - @bg_list.each_with_index do |img, i|
-        .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", data: {title: "#{img[:title]}"}, style: "background-image: url('#{image_url(img[:filename])}'); filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{image_url(img[:filename])}',sizingMethod='scale'); -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_url(img[:filename])},sizingMethod=scale)';"}
+        .bg-img{id: "bg#{i+1}", class: "#{img[:default] ? 'active' : ''}", title: "Hotel Belvedere#{' - ' if !img[:title].blank?}#{img[:title]}", data: {title: "#{img[:title]}"}, style: "background-image: url('#{image_url(img[:filename])}'); filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{image_url(img[:filename])}',sizingMethod='scale'); -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src=#{image_url(img[:filename])},sizingMethod=scale)';"}

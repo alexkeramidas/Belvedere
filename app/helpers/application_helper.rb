@@ -1,4 +1,9 @@
 module ApplicationHelper
+    def title(page_title=nil)
+        @title = page_title
+        content_for :title, "Belvedere Hotel#{' - ' if !page_title.blank?}#{page_title.to_s}"
+    end
+    
     def form_field_attr(field, min=2, max=300)
         ApplicationHelper.form_field_attr(field, min, max)
     end

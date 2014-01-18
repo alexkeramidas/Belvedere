@@ -1,5 +1,6 @@
+- title 'Contact Us'
 .contact
-    .formwrapper
+    .formwrapper.pull-left
         = form_tag send_mail_path, method: 'POST', :class => 'contactform clearfix' do
             .scrollable
                 %h1= t 'contact.contactus'
@@ -9,20 +10,37 @@
                     minlength: 2, maxlength: 100,
                     placeholder: 'Name',
                     title: "#{form_field_attr('name', 2, 100)[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('name', 2, 100)[:moz_error]}"
-
+                    'x-moz-errormessage' => "#{form_field_attr('name', 2, 100)[:moz_error]}",
+                    value: "#{@contact[:name] if (!@contact.blank? && !@contact[:errors].blank?)}"
                 .email.fa-envelope= email_field_tag :email, nil, required: true,
                     pattern: "#{form_field_attr('email')[:regex]}",
                     minlength: 6, maxlength: 100,
                     placeholder: 'Email',
                     title: "#{form_field_attr('email')[:title]}",
-                    'x-moz-errormessage' => "#{form_field_attr('email')[:moz_error]}"
+                    'x-moz-errormessage' => "#{form_field_attr('email')[:moz_error]}",
+                    value: "#{@contact[:email] if (!@contact.blank? && !@contact[:errors].blank?)}"
 
-                .message.fa-pencil= text_area_tag :comment, nil, required: true,
+                .message.fa-pencil= text_area_tag :comment, "#{@contact[:comment] if (!@contact.blank? && !@contact[:errors].blank?)}", required: true,
                     pattern: "#{form_field_attr('contact', 6, 300)[:regex]}",
                     minlength: 6, maxlength: 300,
                     placeholder: 'Send us your message',
                     title: "#{form_field_attr('contact', 6, 300)[:title]}",
                     'x-moz-errormessage' => "#{form_field_attr('contact', 6, 300)[:moz_error]}"
+                = submit_tag 'Send us your message', :class => 'btn btn-warning btn-lg pull-right'
 
-                = submit_tag t('contact.send'), :class => 'btn btn-warning btn-lg pull-right'
+    #contact-errors.alert.alert-danger.pull-left{style: "display: #{!@contact.blank? ? "#{!@contact[:errors].blank? ? 'block' : 'none'}" : 'none'};"}
+        Before you submit your message, please see that the following errors are corrected:
+        %ul
+            %li{id: 'name-error', style: "display: #{!@contact.blank? ? "#{@contact[:errors].include?(:name) ? 'list-item' : 'none'}" : 'none'};"}
+                = form_field_attr('name', 2, 100)[:generic]
+            %li{id: 'email-error', style: "display: #{!@contact.blank? ? "#{@contact[:errors].include?(:email) ? 'list-item' : 'none'}" : 'none'};"}
+                = form_field_attr('email')[:generic]
+            %li{id: 'comment-error', style: "display: #{!@contact.blank? ? "#{@contact[:errors].include?(:comment) ? 'list-item' : 'none'}" : 'none'};"}
+                = form_field_attr('contact', 6, 300)[:generic]
+
+    - if !@contact.blank? && @contact[:errors].blank?
+        .alert.alert-success.pull-left
+            Your message has been sent!
+            %br
+            %br
+            Thank you for your feedback. We will contact you as soon as possible.

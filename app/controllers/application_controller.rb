@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
         {locale: I18n.locale}
     end
 
+    private
+
     def assign_variables
         @bg_list = [ { filename: 'bg1.jpg', default: true } ]
     end

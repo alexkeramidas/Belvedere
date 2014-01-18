@@ -12,7 +12,8 @@
         max-height: 570px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .9);
-        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8), inset 0 0 20px rgba(48, 35, 21, .8);
+        border: 1px solid #c5b09d;
         border-radius: 6px;
     }
 
@@ -33,7 +34,7 @@
 
         h1 {
             font-weight: bold;
-            color: #5f0015;
+            color: #550013;
             line-height: 25px;
             text-shadow: 2px 2px rgba(119, 68, 51, .7);
             margin: 0;

@@ -41,7 +41,7 @@ if Object.const_defined?("Rich")
     #   rake rich:refresh_assets
     config.image_styles = {
       :thumb => "200x200#",
-      :medium => "500x500#"
+      :medium => "640x480#"
     }
 
     # == Convert options

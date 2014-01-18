@@ -1,5 +1,5 @@
 ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
-    menu :priority => 2, :parent => "Website"
+    menu :priority => 3, :parent => "Website"
 
     languages = [['English - EN','en'],['Deutsch - DE','de'],['Greek - EL','el'],['Espanol - ES','es'],['Francais - FR','fr'],['Italiano - IT','it'],['Russian - RU','ru']]
 

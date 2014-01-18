@@ -6,7 +6,7 @@ class Photo < ActiveRecord::Base
     has_attached_file :image,
                       :url => "/photos/:parent_name/:style/:basename_:token.:extension",
                       :path => ":rails_root/public/photos/:parent_name/:style/:basename_:token.:extension",
-                      :styles => { :medium => "300x300>", :thumb => "100x100>" },
+                      :styles => { :medium => "640x480>", :thumb => "100x100>" },
                       :default_url => Photo::MISSING_URL
     
     validates_attachment_presence :image
