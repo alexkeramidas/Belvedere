@@ -1,5 +1,4 @@
 .rooms {
-    min-width: 700px;
     background-color: rgba(245, 226, 146, .2);
     background-image: image-url('striped_bg.png');
     background-repeat: repeat;
@@ -94,7 +93,8 @@
         max-height: 570px;
         background: #927f6d;
         background-color: rgba(146, 127, 109, .9);
-        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8);
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, .8), inset 0 0 20px rgba(48, 35, 21, .8);
+        border: 1px solid #c5b09d;
         border-radius: 6px;
     }
     
@@ -104,7 +104,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        margin: 30px 20px 30px 30px;
+        margin: 20px 10px 20px 20px;
         overflow: hidden;
 
         .scrollable {

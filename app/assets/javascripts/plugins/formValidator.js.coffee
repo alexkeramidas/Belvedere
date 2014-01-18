@@ -75,7 +75,14 @@
                     false
             
             testPhone = (el) ->
-                if el.val().match(new RegExp(el.attr('pattern'), 'g')) != null
+                # Make certain validation doesn't fail on IE8.
+                if jQuery.support.opacity == false
+                    current_numeric = el.val().replace(/\D/g, '')
+                    if current_numeric.length == el.val().length && current_numeric.length >= 5 && current_numeric.length <= 13
+                        true
+                    else
+                        false
+                else if el.val().match(new RegExp(el.attr('pattern'), 'g')) != null
                     phone_num = parseInt($.grep(el.val().split(/(\d+)/), (num, index) ->
                                     num  if RegExp("^[0-9]*$").test(num)
                                 ).join(""))
@@ -133,11 +140,20 @@
             switchFieldClasses = (el) ->
                 if validateField(el)
                     el.removeClass('is-required').removeClass('has-error').addClass('has-success')
+                    $("##{el.attr('id')}-error").css('display', 'none')
+                    if !obj.find('.has-error').length
+                        $('.alert.alert-danger').css('display', 'none')
                 else
                     el.removeClass('is-required').removeClass('has-success').addClass('has-error')
+                    $("##{el.attr('id')}-error").css('display', 'list-item')
+                    if obj.find('.has-error').length
+                        $('.alert.alert-danger').css('display', 'block')
                 
                 if !isRequired(el) && el.val() == ''
                     el.removeClass('has-error').removeClass('has-success').removeClass('is-required')
+                    $("##{el.attr('id')}-error").css('display', 'none')
+                    if !obj.find('.has-error').length
+                        $('.alert.alert-danger').css('display', 'none')
             
             
             # Validates the form

@@ -1,8 +1,9 @@
 !!! html
 %html
     %head
-        %meta{charset: "utf-8"}
-        %title BelvedereGit
+        %meta{charset: 'utf-8'}
+        = render 'shared/meta_tags'
+        %title= content_for(:title) || 'Belvedere Hotel'
         = stylesheet_link_tag "application"
         = javascript_include_tag "application"
 
@@ -14,6 +15,10 @@
                     return $M['#{params[:action]}'].call();
                 }
             });
+        
+        = render 'shared/breadcrumbs'
+        
+        = render 'shared/share_links'
         
         = render 'shared/bg_carousel'
         

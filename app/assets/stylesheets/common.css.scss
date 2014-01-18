@@ -10,6 +10,8 @@
          url(asset_path('DellaRespira-Regular.svg#DellaRespira-Regular')) format('svg');
 }
 
+@import "bootstrap/_mixins.scss";
+
 ::selection {
     background: #efb7a7;
     color: #fff;
@@ -94,6 +96,31 @@ a {
     }
 }
 
+.alert {
+    &.pull-left {
+        width: 30%;
+        min-width: 260px;
+        margin-left: 15px;
+    }
+    
+    &.alert-success {
+        background-color: rgba(223, 240, 216, .88);
+    }
+    
+    &.alert-danger {
+        background-color: rgba(242, 222, 222, .88);
+    }
+    
+    ul {
+        padding-left: 20px;
+        margin-top: 8px;
+    }
+    
+    li {
+        margin-top: 3px;
+    }
+}
+
 .bg-img {
     display: none;
     position: absolute;
@@ -132,6 +159,68 @@ a {
     }
 }
 
+#share-links {
+    font-size: 18px;
+    color: #ddd;
+    z-index: 40;
+    
+    &.affix {
+        top: 154px;
+        right: 30px;
+    }
+    
+    .social-media {
+        width: 30px;
+        height: 30px;
+        text-shadow: 1px 1px rgba(0, 0, 0, .4);
+        background: #a28f7d;
+        border-radius: 3px;
+        box-shadow: 3px 3px 0 rgba(48, 35, 21, 0.8);
+        padding: 6px 8px;
+        margin-bottom: 6px;
+        overflow: hidden;
+        clear: both;
+        @include transition(width .3s ease, color .3s ease);
+        
+        &:before {
+            color: #fff;
+            padding-right: 6px;
+        }
+        
+        &:hover, &:active, &:focus {
+            color: #fafafa;
+            text-decoration: none;
+        }
+        
+        &:hover {
+            width: auto;
+        }
+    }
+    
+    .fa-facebook {
+        &:before {
+            padding-left: 3px;
+            padding-right: 10px;
+        }
+        
+        &:hover {
+            background: #415a8d;
+        }
+    }
+    
+    .fa-twitter:hover {
+        background: #00bbff;
+    }
+    
+    .fa-google-plus:hover {
+        background: #f00000;
+    }
+    
+    .fa-linkedin:hover {
+        background: #069;
+    }
+}
+
 #page-wrapper {
     position: relative;
     width: 100%;
@@ -145,7 +234,7 @@ a {
 #page-content {
     width: 100%;
     height: 100%;
-    min-height: 100%;
+    min-height: 670px;
     display: table;
 }
 
@@ -227,6 +316,7 @@ a {
     overflow: hidden;
     
     & > div {
+        min-width: 855px;
         height: auto;
         min-height: 100%;
         max-height: 100%;
@@ -234,6 +324,34 @@ a {
         background-color: rgba(245, 226, 146, .2);
         padding: 50px;
         overflow: hidden;
+        
+        .page-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            
+            #noscript {
+                position: absolute;
+                top: -50px;
+                left: -50px;
+                right: -50px;
+                bottom: -50px;
+                background-color: rgba(0, 0, 0, .8);
+                color: #fff;
+                z-index: 50;
+                
+                .text-wrap {
+                    position: relative;
+                    padding-top: 200px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                
+                a {
+                    color: #e99924;
+                }
+            }
+        }
     }
 }
 
@@ -251,6 +369,12 @@ a {
         
         .wrapper {
             position: relative;
+        }
+        
+        span {
+            color: #e99924;
+            line-height: 38px;
+            padding-right: 15px;
         }
     }
 
@@ -299,30 +423,5 @@ pre {
 div {
     &.field, &.actions {
         margin-bottom: 10px;
-    }
-}
-
-#error_explanation {
-    width: 450px;
-    border: 2px solid red;
-    padding: 7px;
-    padding-bottom: 0;
-    margin-bottom: 20px;
-    background-color: #f0f0f0;
-
-    h2 {
-        text-align: left;
-        font-weight: bold;
-        padding: 5px 5px 5px 15px;
-        font-size: 12px;
-        margin: -7px;
-        margin-bottom: 0px;
-        background-color: #c00;
-        color: #fff;
-    }
-
-    ul li {
-        font-size: 12px;
-        list-style: square;
     }
 }

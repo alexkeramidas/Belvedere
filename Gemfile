@@ -15,7 +15,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'font-awesome-sass'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '0.17.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -38,6 +38,9 @@ gem 'draper', '~> 1.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use Rich as WYSIWYG Editor for ActiveAdmin
 gem 'rich', github: 'bastiaanterhorst/rich'
+# Rich editor now requires carrierwave & mini_magick
+gem 'carrierwave'
+gem 'mini_magick'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -63,6 +66,13 @@ gem 'aws-sdk'
 
 #Use simple dates validation
 gem 'date_validator'
+
+#Gem used for redirecting trailing-slash URLs
+gem 'rack-rewrite'
+
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+gem 'rails-observers'
 
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.

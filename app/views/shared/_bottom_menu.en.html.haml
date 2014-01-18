@@ -2,6 +2,11 @@
     .content.clearfix
         = link_to "CONTACT", contact_url, class: "#{params[:controller]=='pages' && params[:action]=='contact' ? 'active' : ''}"
         = link_to "PHOTO GALLERY", photo_gallery_url, class: "#{params[:controller]=='pages' && params[:action]=='photo_gallery' ? 'active' : ''}"
+        = link_to "RESERVATIONS", root_url(anchor: 'reservation'), class: "reservation-link #{params[:controller]=='pages' && params[:action]=='home' ? 'active' : ''}"
+
+        %span.pull-right
+            &copy;
+            = " Hotel Belvedere #{Time.now.year == 2013 ? 2013 : "2013 - #{Time.now.year}"}"
 
         .wrapper
             = render 'shared/bg_carousel_controls'
