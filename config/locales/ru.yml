@@ -266,6 +266,7 @@
         services: Услуги
         location: расположение
         news: Новости - Предложения
+        reservations: Бронирование
     about:
         name: Hotel Belvedere
         address: Aдрес
@@ -283,3 +284,5 @@
         booking: Или нажмите здесь, чтобы пройти через booking.com
     rooms:
         title: Belvedere Hotel - Номера и люкс
+    services:
+        title: Belvedere Hotel - услуги

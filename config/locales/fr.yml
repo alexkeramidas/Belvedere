@@ -223,6 +223,7 @@
         services: Services
         location: Emplacement
         news: Actualités - Offres
+        reservations: Réservations
     about:
         name: Hotel Belvedere
         address: Αdresse
@@ -240,3 +241,5 @@
         booking: Ou cliquez ici pour passer par booking.com
     rooms:
         title: Belvedere Hotel - Chambres et Suites
+    services:
+        title: Belvedere Hotel - Services
