@@ -15,15 +15,15 @@
                     return $M['#{params[:action]}'].call();
                 }
             });
-        
+
         = render 'shared/breadcrumbs'
-        
+
         .location-container
-        
+
             = render 'shared/top_menu'
-            
+
             = yield
-            
+
             = render 'shared/bottom_menu'
-        
+
         = render 'shared/share_links'

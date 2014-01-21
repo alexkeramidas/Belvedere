@@ -7,21 +7,35 @@ BelvedereGit::Application.routes.draw do
     # See how all your routes lay out with "rake routes".
 
     # You can have the root of your site routed with "root"
-    root 'pages#home', :trailing_slash => false
 
-    get 'about' => 'pages#about', :trailing_slash => false
-    get 'location' => 'pages#location', :trailing_slash => false
-    get 'photo_gallery' => 'pages#photo_gallery', :trailing_slash => false
-    
-    get 'contact' => 'pages#contact', :trailing_slash => false
+    # handles /valid-locale
+    scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/  do
+        root 'pages#home', :trailing_slash => false
+        
+        get 'about' => 'pages#about', :trailing_slash => false
+        get 'location' => 'pages#location', :trailing_slash => false
+        get 'photo_gallery' => 'pages#photo_gallery', :trailing_slash => false
+        
+        get 'contact' => 'pages#contact', :trailing_slash => false
+        
+        resources :articles, :only => [:index, :show], :trailing_slash => false
+        
+        get 'accommodation' => 'suites#index', :trailing_slash => false
+        get 'services' => 'services#index', :trailing_slash => false
+    end
+
+    # handles /bad-locale|anything/valid-path
+    get '/*locale/*path', to: redirect("/#{I18n.default_locale}/%{path}")
+
+    # handles /anything|valid-path-but-no-locale
+    get '/*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+
+    # handles /
+    get '', to: redirect("/#{I18n.locale}")
+
     post 'send_mail' => 'pages#send_mail', :trailing_slash => false
     post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
-
-    resources :articles, :only => [:index, :show], :trailing_slash => false
-
-    get 'accommodation' => 'suites#index', :trailing_slash => false
-    get 'services' => 'services#index', :trailing_slash => false
-
+    
     get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
 
     # Example of regular route:

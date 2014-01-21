@@ -1,2 +1,9 @@
 eclipse.preferences.version=1
+encoding//app/admin/article.rb=UTF-8
 encoding//config/initializers/active_admin.rb=UTF-8
+encoding//config/locales/de.yml=UTF-8
+encoding//config/locales/el.yml=UTF-8
+encoding//config/locales/es.yml=UTF-8
+encoding//config/locales/fr.yml=UTF-8
+encoding//config/locales/it.yml=UTF-8
+encoding//config/locales/ru.yml=UTF-8

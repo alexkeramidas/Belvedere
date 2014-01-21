@@ -67,6 +67,9 @@ gem 'aws-sdk'
 #Use simple dates validation
 gem 'date_validator'
 
+#Multilanguage Support
+gem 'globalize', '~> 4.0.0'
+
 #Gem used for redirecting trailing-slash URLs
 gem 'rack-rewrite'
 

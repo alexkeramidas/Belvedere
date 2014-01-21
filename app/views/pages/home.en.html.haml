@@ -10,7 +10,7 @@
                         title: "#{form_field_attr('name', 2, 100)[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('name', 2, 100)[:moz_error]}",
                         value: "#{@res[:name] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .email.fa-envelope= email_field_tag :email, nil, required: true,
                         pattern: "#{form_field_attr('email')[:regex]}",
                         minlength: 6, maxlength: 100,
@@ -18,7 +18,7 @@
                         title: "#{form_field_attr('email')[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('email')[:moz_error]}",
                         value: "#{@res[:email] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .phone.fa-phone.left= telephone_field_tag :phone, nil,
                         data: {type: 'phone'},
                         pattern: "#{form_field_attr('phone', 5, 20)[:regex]}",
@@ -27,7 +27,7 @@
                         title: "#{form_field_attr('phone', 5, 20)[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('phone', 5, 20)[:moz_error]}",
                         value: "#{@res[:phone] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .mobile.fa-mobile.right= telephone_field_tag :mobile, nil,
                         data: {type: 'phone'},
                         pattern: "#{form_field_attr('mobile', 8, 20)[:regex]}",
@@ -36,7 +36,7 @@
                         title: "#{form_field_attr('mobile', 8, 20)[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('mobile', 8, 20)[:moz_error]}",
                         value: "#{@res[:mobile] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .arrival.fa-calendar.left= text_field_tag :arrival, nil, required: true,
                         data: {provide: 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-start-date' => '+0d'},
                         pattern: "#{form_field_attr('arrival')[:regex]}",
@@ -45,7 +45,7 @@
                         title: "#{form_field_attr('arrival')[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('arrival')[:moz_error]}",
                         value: "#{@res[:arrival] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .departure.fa-calendar.right= text_field_tag :departure, nil, required: true,
                         data: {provide: 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-start-date' => '+1d'},
                         pattern: "#{form_field_attr('departure')[:regex]}",
@@ -54,7 +54,7 @@
                         title: "#{form_field_attr('departure')[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('departure')[:moz_error]}",
                         value: "#{@res[:departure] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .adults.fa-male.left= number_field_tag :adults, nil, required: true,
                         min: 1, max: 19,
                         data: {type: 'numeric'},
@@ -64,7 +64,7 @@
                         title: "#{form_field_attr('adults')[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('adults')[:moz_error]}",
                         value: "#{@res[:adults] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .children.fa-users.right= number_field_tag :children, nil,
                         min: 0, max: 19,
                         data: {type: 'numeric'},
@@ -74,16 +74,16 @@
                         title: "#{form_field_attr('children')[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('children')[:moz_error]}",
                         value: "#{@res[:children] if (!@res.blank? && !@res[:errors].blank?)}"
-                        
+                    
                     .message.fa-pencil= text_area_tag :message, "#{@res[:message] if (!@res.blank? && !@res[:errors].blank?)}",
                         pattern: "#{form_field_attr('message', 6, 300)[:regex]}",
                         minlength: 6, maxlength: 300,
                         placeholder: 'Additional Details',
                         title: "#{form_field_attr('message', 6, 300)[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('message', 6, 300)[:moz_error]}"
-                        
+                    
                     = submit_tag 'Send your request', :class => 'btn btn-warning btn-lg pull-right'
-        
+
         #reservation-errors.alert.alert-danger.pull-left{style: "display: #{!@res.blank? ? "#{!@res[:errors].blank? ? 'block' : 'none'}" : 'none'};"}
             Before you try to request your reservation, please make certain that the
             following errors are corrected:
@@ -106,7 +106,7 @@
                     = form_field_attr('children')[:generic]
                 %li{id: 'message-error', style: "display: #{!@res.blank? ? "#{@res[:errors].include?(:message) ? 'list-item' : 'none'}" : 'none'};"}
                     = form_field_attr('message', 6, 300)[:generic]
-        
+
         - if !@res.blank? && @res[:errors].blank?
             .alert.alert-success.pull-left
                 Congratulations!
@@ -114,9 +114,9 @@
                 %br
                 Your reservation request has been successfully submitted and we will contact you for
                 further details as soon as possible.
-        
+
         .form-link
-            .link-text Click here to request a room
-        
+            .link-text= t('main.room')
+
         .external-link.initialized
-            .link-text Or click here to proceed through booking.com
+            .link-text= t('main.booking')
