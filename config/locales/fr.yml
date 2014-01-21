@@ -212,9 +212,9 @@
         errors:
             <<: *errors
 
-#Custom Text
+    #Custom Text
     articles:
-        h1: Hotel Belvedere - Nouvelles
+        title: Hotel Belvedere - Nouvelles
     shared:
         contact: Contacter
         gallery: Galerie de photos
@@ -233,7 +233,7 @@
         phoneoff: Téléphone Hors Saison
         fax: Fax
     contact:
-        contactus: Contactez-nous
+        title: Contactez-nous
         send: Envoyez-nous votre message
     main:
         request: Envoyez votre demande

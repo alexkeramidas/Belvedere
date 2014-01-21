@@ -203,34 +203,35 @@
     activerecord:
         errors:
             <<: *errors
-#Custom Text
+    
+    #Custom Text
     articles:
-            h1: Hotel Belvedere - Notizie
+        title: Hotel Belvedere - Notizie
     shared:
-            contact: Contatto
-            gallery: Galleria fotografica
-            hotel: l'Hotel
-            accomodation: Alloggio
-            services: Servizi
-            location: Posizione
-            news: Novità - Offerte
-            reservations: Prenotazioni
+        contact: Contatto
+        gallery: Galleria fotografica
+        hotel: l'Hotel
+        accomodation: Alloggio
+        services: Servizi
+        location: Posizione
+        news: Novità - Offerte
+        reservations: Prenotazioni
     about:
-            name: Hotel Belvedere
-            address: Indirizzo
-            addressdetail: Axladies Spiaggia, Skiathos
-            postal: CAP
-            phone: Telefono
-            phoneoff: Stagione Telefono Spento
-            fax: Fax
+        name: Hotel Belvedere
+        address: Indirizzo
+        addressdetail: Axladies Spiaggia, Skiathos
+        postal: CAP
+        phone: Telefono
+        phoneoff: Stagione Telefono Spento
+        fax: Fax
     contact:
-            contactus: Contattaci
-            send: Inviaci il tuo messaggio
+        title: Contattaci
+        send: Inviaci il tuo messaggio
     main:
-            request: Invia la tua richiesta
-            room: Clicca qui per richiedere una camera
-            booking: Oppure clicca qui per procedere attraverso booking.com
+        request: Invia la tua richiesta
+        room: Clicca qui per richiedere una camera
+        booking: Oppure clicca qui per procedere attraverso booking.com
     rooms:
-            title: Belvedere Hotel - Camere e Suite
+        title: Belvedere Hotel - Camere e Suite
     services:
         title: Belvedere Hotel - Servizi

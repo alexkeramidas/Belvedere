@@ -201,9 +201,10 @@ de:
     activerecord:
         errors:
             <<: *errors
-#Custom Text
+    
+    #Custom Text
     articles:
-        h1: Hotel Belvedere - Nachrichten
+        title: Hotel Belvedere - Nachrichten
     shared:
         contact: Kontakt
         gallery: Fotogalerie
@@ -222,13 +223,13 @@ de:
         phoneoff: Telefonnebensaison
         fax: Fax
     contact:
-        contactus: Kontaktieren Sie uns
+        title: Kontaktieren Sie uns
         send: Schicken Sie uns Ihre Nachricht
     main:
         request: Senden Sie Ihre Anfrage
         room: Klicken Sie hier, um ein Zimmer zu verlangen
         booking: Oder klicken Sie hier, um durch gehen booking.com
     rooms:
-        title: Belvedere Hotel - Zimmer & Suiten
+        title: "Belvedere Hotel - Zimmer & Suiten"
     services:
         title: Belvedere Hotel - Dienstleistungen

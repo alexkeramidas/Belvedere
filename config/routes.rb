@@ -8,15 +8,19 @@ BelvedereGit::Application.routes.draw do
 
     # You can have the root of your site routed with "root"
 
+    # handles /valid-locale
     scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/  do
-        # handles /valid-locale
         root 'pages#home', :trailing_slash => false
-        resources :articles, :only => [:index, :show], :trailing_slash => false
-        get 'location' => 'pages#location', :trailing_slash => false
+        
         get 'about' => 'pages#about', :trailing_slash => false
+        get 'location' => 'pages#location', :trailing_slash => false
         get 'photo_gallery' => 'pages#photo_gallery', :trailing_slash => false
-        get 'accommodation' => 'suites#index', :trailing_slash => false
+        
         get 'contact' => 'pages#contact', :trailing_slash => false
+        
+        resources :articles, :only => [:index, :show], :trailing_slash => false
+        
+        get 'accommodation' => 'suites#index', :trailing_slash => false
         get 'services' => 'services#index', :trailing_slash => false
     end
 
@@ -29,8 +33,9 @@ BelvedereGit::Application.routes.draw do
     # handles /
     get '', to: redirect("/#{I18n.locale}")
 
-    post 'send_mail' => 'pages#send_mail'
+    post 'send_mail' => 'pages#send_mail', :trailing_slash => false
     post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
+    
     get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
 
     # Example of regular route:

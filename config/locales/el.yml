@@ -203,9 +203,10 @@
     activerecord:
         errors:
             <<: *errors
-#Custom Text
+    
+    #Custom Text
     articles:
-        h1: Belvedere Hotel - Τα νέα μας
+        title: Belvedere Hotel - Τα νέα μας
     shared:
         contact: Επικοινωνία
         gallery: Φωτογραφίες
@@ -224,13 +225,13 @@
         phoneoff: Τηλέφωνο (Εκτός σεζόν)
         fax: Φαξ
     contact:
-        contactus: Επικοινωνήστε μαζί μας
+        title: Επικοινωνήστε μαζί μας
         send: Αποστολή μηνύματος
     main:
         request: Αποστολή κράτησης
         room: Πατήστε εδώ για κράτηση δωματίου
         booking: Ή κάντε κλικ εδώ για κράτηση μέσω booking.com
     rooms:
-        title: Belvedere Hotel - Δωμάτια & Σουίτες
+        title: "Belvedere Hotel - Δωμάτια & Σουίτες"
     services:
         title: Belvedere Hotel - Υπηρεσίες

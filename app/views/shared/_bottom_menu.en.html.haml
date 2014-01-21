@@ -1,8 +1,8 @@
 #bottom-menu{class: "#{'location' if params[:controller]=='pages' && params[:action]=='location'}"}
     .content.clearfix
-        = link_to (t 'shared.contact'), contact_url, class: "#{params[:controller]=='pages' && params[:action]=='contact' ? 'active' : ''}"
-        = link_to (t 'shared.gallery'), photo_gallery_url, class: "#{params[:controller]=='pages' && params[:action]=='photo_gallery' ? 'active' : ''}"
-        = link_to (t 'shared.reservations'), root_url(anchor: 'reservation'), class: "reservation-link #{params[:controller]=='pages' && params[:action]=='home' ? 'active' : ''}"
+        = link_to t('shared.contact').upcase, contact_url, class: "#{params[:controller]=='pages' && params[:action]=='contact' ? 'active' : ''}"
+        = link_to t('shared.gallery').upcase, photo_gallery_url, class: "#{params[:controller]=='pages' && params[:action]=='photo_gallery' ? 'active' : ''}"
+        = link_to t('shared.reservations').upcase, root_url(anchor: 'reservation'), class: "reservation-link #{params[:controller]=='pages' && params[:action]=='home' ? 'active' : ''}"
 
         %span.pull-right
             &copy;

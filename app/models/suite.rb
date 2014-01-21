@@ -6,7 +6,7 @@ class Suite < ActiveRecord::Base
     accepts_nested_attributes_for :photos, :allow_destroy => true, reject_if: proc {|attr| attr['image'].blank?}
 
     #Translations Configuration
-    has_many :article_translations, foreign_key: "article_id"
+    has_many :article_translations, foreign_key: 'article_id'
     accepts_nested_attributes_for :article_translations, :allow_destroy => true
     translates :title, :description
 

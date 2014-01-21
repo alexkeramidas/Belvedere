@@ -197,9 +197,10 @@
     activerecord:
         errors:
             <<: *errors
-#Custom Text
+    
+    #Custom Text
     articles:
-        h1: Hotel Belvedere - Noticias
+        title: Hotel Belvedere - Noticias
     shared:
         contact: Contacto
         gallery: Galería de fotos
@@ -218,7 +219,7 @@
         phoneoff: Temporada Teléfono Apagado
         fax: Fax
     contact:
-        contactus: Contáctenos
+        title: Contáctenos
         send: Envíenos su mensaje
     main:
         request: Envíe su petición

@@ -255,9 +255,10 @@
     activerecord:
         errors:
             <<: *errors
-#Custom Text
+    
+    #Custom Text
     articles:
-        h1: Belvedere Hotel - новости
+        title: Belvedere Hotel - новости
     shared:
         contact: контакт
         gallery: Фотогалерея
@@ -276,7 +277,7 @@
         phoneoff: Τелефон Μежсезонье
         fax: Φакс
     contact:
-        contactus: Cвязаться с нами
+        title: Cвязаться с нами
         send: Отправить нам сообщение
     main:
         request: Отправьте запрос

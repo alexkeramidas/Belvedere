@@ -68,11 +68,11 @@ en:
         - Friday
         - Saturday
         formats:
-        birth: ! '%d.%m.'
-        default: ! '%Y-%m-%d'
-        long: ! '%B %d, %Y'
-        month_and_year: ! '%b %Y'
-        short: ! '%b %d'
+            birth: ! '%d.%m.'
+            default: ! '%Y-%m-%d'
+            long: ! '%B %d, %Y'
+            month_and_year: ! '%b %Y'
+            short: ! '%b %d'
     month_names:
         -
         - January
@@ -92,9 +92,9 @@ en:
         - month
         - day
 
-  #Custom Text
+    #Custom Text
     articles:
-        h1: Belvedere Hotel - News
+        title: "Belvedere Hotel - News & Offers"
     shared:
         contact: Contact
         gallery: Photo Gallery
@@ -102,7 +102,7 @@ en:
         accomodation: Accomodation
         services: Services
         location: Location
-        news: News - Offers
+        news: "News & Offers"
         reservations: Reservations
     about:
         name: Hotel Belvedere
@@ -113,13 +113,13 @@ en:
         phoneoff: Telephone (Off Season)
         fax: Fax
     contact:
-        contactus: Contact Us
+        title: Contact Us
         send: Send Us Your Message
     main:
         request: Send your request
         room: Click here to request a room
         booking: Or click here to proceed through booking.com
     rooms:
-        title: Belvedere Hotel - Rooms & Suites
+        title: "Belvedere Hotel - Rooms & Suites"
     services:
         title: Belvedere Hotel - Services
