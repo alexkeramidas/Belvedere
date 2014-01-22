@@ -1,13 +1,19 @@
 class Article < ActiveRecord::Base
     PER_PAGE = 5
     ORDER_BY = {column: :updated_at, order: :desc}
-    
+
     validates_acceptance_of :article_type, :accept => 1
-    
+
     paginates_per Article::PER_PAGE
     default_scope ->{ order(Article::ORDER_BY[:column] => Article::ORDER_BY[:order]) }
-    
+
     scope :paginated, ->(page_num = 1, per_page = Article::PER_PAGE) { page(page_num).per(per_page) }
+
+    #Object translations
+    has_many :article_translations
+    translates :title, :description
+    accepts_nested_attributes_for :article_translations, :allow_destroy => true
+
 
     # Object methods
 
@@ -23,14 +29,14 @@ class Article < ActiveRecord::Base
             return ''
         end
     end
-    
+
     def page_at(per_page = nil)
         column = Article::ORDER_BY[:column]
         order = Article::ORDER_BY[:order]
         per = per_page || Article::PER_PAGE
-    
+
         operator = (order == :asc ? '<=' : '>=')
-        
+
         (Article.valid.visible.where("#{column} #{operator} ?", read_attribute(column)).order("#{column} #{order}").count.to_f / per).ceil
     end
 

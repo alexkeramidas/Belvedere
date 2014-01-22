@@ -74,6 +74,9 @@ gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
 gem 'rails-observers'
 
+#Add multilanguage functionality
+gem 'globalize', '~> 4.0.0'
+
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false

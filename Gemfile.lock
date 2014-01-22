@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/bastiaanterhorst/rich.git
-  revision: 1ab79e111a4cbf884f13a9f94c5b9463a648a741
+  revision: 801f535f17ec2669a9782e00e13e09737ed97204
   specs:
     rich (1.4.7)
       jquery-rails
@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: e9b7c4769f3d9480ed617762c60d62d2ed1be217
+  revision: f21cff30e7212706a39710e2c70ad0af8087ccea
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -128,6 +128,9 @@ GEM
       sass-rails (>= 3.1.1)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
+    globalize (4.0.0)
+      activemodel (>= 4.0.0, < 5)
+      activerecord (>= 4.0.0, < 5)
     haml (4.0.5)
       tilt
     haml-rails (0.5.1)
@@ -258,6 +261,7 @@ DEPENDENCIES
   draper (~> 1.0)
   fancybox-rails
   font-awesome-sass
+  globalize (~> 4.0.0)
   haml
   haml-rails
   jbuilder (~> 1.2)
