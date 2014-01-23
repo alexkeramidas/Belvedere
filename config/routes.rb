@@ -8,7 +8,7 @@ BelvedereGit::Application.routes.draw do
     # See how all your routes lay out with "rake routes".
 
     # handles /valid-locale/any-path
-    scope ':locale', locale: /(#{I18n.available_locales.join('|')})/  do
+    scope '(:locale)', locale: /(#{I18n.available_locales.join('|')})/  do
         root 'pages#home', :trailing_slash => false
         
         get 'about' => 'pages#about', :trailing_slash => false
@@ -26,6 +26,11 @@ BelvedereGit::Application.routes.draw do
     # handles /
     root to: redirect("/#{I18n.locale}", status: 302), as: :redirected_root
     
+    post 'send_mail' => 'pages#send_mail', :trailing_slash => false
+    post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
+    
+    get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
+
     # handles /invalid-locale/any-path
     scope ':locale', locale: /(?!(#{I18n.available_locales.join("|")})\/).*/ do
         get '/*path', to: redirect("/#{I18n.locale}/%{path}", status: 302)
@@ -34,11 +39,6 @@ BelvedereGit::Application.routes.draw do
     # handles /any-path
     get "/*path", to: redirect("/#{I18n.locale}/%{path}", status: 302), constraints: { path: /(?!(#{I18n.available_locales.join("|")})\/).*/ }, format: false
     
-    post 'send_mail' => 'pages#send_mail', :trailing_slash => false
-    post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
-    
-    get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
-
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'
 
