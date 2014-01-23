@@ -1,27 +1,42 @@
 BelvedereGit::Application.routes.draw do
-  mount Rich::Engine => '/rich', :as => 'rich'
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
-  ActiveAdmin.routes(self)
+    mount Rich::Engine => '/rich', :as => 'rich'
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    
+    ActiveAdmin.routes(self)
+    
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
-    # You can have the root of your site routed with "root"
-    root 'pages#home', :trailing_slash => false
-
-    get 'about' => 'pages#about', :trailing_slash => false
-    get 'location' => 'pages#location', :trailing_slash => false
-    get 'photo_gallery' => 'pages#photo_gallery', :trailing_slash => false
+    # handles /valid-locale/any-path
+    scope ':locale', locale: /(#{I18n.available_locales.join('|')})/  do
+        root 'pages#home', :trailing_slash => false
+        
+        get 'about' => 'pages#about', :trailing_slash => false
+        get 'location' => 'pages#location', :trailing_slash => false
+        get 'photo_gallery' => 'pages#photo_gallery', :trailing_slash => false
+        
+        get 'contact' => 'pages#contact', :trailing_slash => false
+        
+        resources :articles, :only => [:index, :show], :trailing_slash => false
+        
+        get 'accommodation' => 'suites#index', :trailing_slash => false
+        get 'services' => 'services#index', :trailing_slash => false
+    end
     
-    get 'contact' => 'pages#contact', :trailing_slash => false
+    # handles /
+    root to: redirect("/#{I18n.locale}", status: 302), as: :redirected_root
+    
+    # handles /invalid-locale/any-path
+    scope ':locale', locale: /(?!(#{I18n.available_locales.join("|")})\/).*/ do
+        get '/*path', to: redirect("/#{I18n.locale}/%{path}", status: 302)
+    end
+    
+    # handles /any-path
+    get "/*path", to: redirect("/#{I18n.locale}/%{path}", status: 302), constraints: { path: /(?!(#{I18n.available_locales.join("|")})\/).*/ }, format: false
+    
     post 'send_mail' => 'pages#send_mail', :trailing_slash => false
     post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
-
-    resources :articles, :only => [:index, :show], :trailing_slash => false
-
-    get 'accommodation' => 'suites#index', :trailing_slash => false
-    get 'services' => 'services#index', :trailing_slash => false
-
+    
     get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
 
     # Example of regular route:

@@ -24,7 +24,7 @@ module BelvedereGit
             r301 %r{^\/(.*)\/$}, '/$1'
         end
         
-        config.action_mailer.default_url_options = { :host => 'belvedere-hotel.herokuapp.com' }
+        config.action_mailer.default_url_options = { :host => 'belvedere-hotel.herokuapp.com', :locale => I18n.locale }
         config.action_mailer.delivery_method = :smtp
         config.action_mailer.smtp_settings = {
           :address              => 'smtp.gmail.com',
