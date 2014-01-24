@@ -1,4 +1,4 @@
-- title 'Contact Us'
+- title t('contact.title')
 .contact
     .formwrapper.pull-left
         = form_tag send_mail_path, method: 'POST', :class => 'contactform clearfix' do
@@ -28,7 +28,7 @@
                     title: "#{form_field_attr('contact', 6, 300)[:title]}",
                     'x-moz-errormessage' => "#{form_field_attr('contact', 6, 300)[:moz_error]}"
                     
-                = submit_tag 'Send us your message', :class => 'btn btn-warning btn-lg pull-right'
+                = submit_tag t('contact.send'), :class => 'btn btn-warning btn-lg pull-right'
 
     #contact-errors.alert.alert-danger.pull-left{style: "display: #{!@contact.blank? ? "#{!@contact[:errors].blank? ? 'block' : 'none'}" : 'none'};"}
         Before you submit your message, please see that the following errors are corrected:

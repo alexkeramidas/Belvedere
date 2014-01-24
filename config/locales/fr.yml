@@ -214,32 +214,37 @@
 
     #Custom Text
     articles:
-        title: Hotel Belvedere - Nouvelles
+        title: Nouvelles
     shared:
         contact: Contacter
         gallery: Galerie de photos
-        hotel: l'Hôtel
-        accomodation: Hébergement
+        hotel: L' Hôtel
+        accommodation: Hébergement
         services: Services
         location: Emplacement
         news: Actualités - Offres
         reservations: Réservations
     about:
+        title: L' Hôtel
         name: Hotel Belvedere
         address: Αdresse
-        addressdetail: Axladies Plage, Skiathos
+        address_detail: Axladies Plage, Skiathos
         phone: Téléphone
         postal: Code Postal
-        phoneoff: Téléphone Hors Saison
+        phone_off: Téléphone Hors Saison
         fax: Fax
     contact:
         title: Contactez-nous
         send: Envoyez-nous votre message
     main:
-        request: Envoyez votre demande
+        request_room: Envoyez votre demande
         room: Cliquez ici pour demander une chambre
         booking: Ou cliquez ici pour passer par booking.com
     rooms:
-        title: Belvedere Hotel - Chambres et Suites
+        title: Chambres et Suites
     services:
-        title: Belvedere Hotel - Services
+        title: Services
+    location:
+        title: Emplacement
+    gallery:
+        title: Galerie de photos

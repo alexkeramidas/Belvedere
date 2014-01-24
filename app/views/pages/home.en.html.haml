@@ -82,7 +82,7 @@
                         title: "#{form_field_attr('message', 6, 300)[:title]}",
                         'x-moz-errormessage' => "#{form_field_attr('message', 6, 300)[:moz_error]}"
                         
-                    = submit_tag 'Send your request', :class => 'btn btn-warning btn-lg pull-right'
+                    = submit_tag t('main.request_room'), :class => 'btn btn-warning btn-lg pull-right'
         
         #reservation-errors.alert.alert-danger.pull-left{style: "display: #{!@res.blank? ? "#{!@res[:errors].blank? ? 'block' : 'none'}" : 'none'};"}
             Before you try to request your reservation, please make certain that the
@@ -116,7 +116,7 @@
                 further details as soon as possible.
         
         .form-link
-            .link-text Click here to request a room
+            .link-text= t('main.room')
         
         .external-link.initialized
-            .link-text Or click here to proceed through booking.com
+            .link-text= t('main.booking')
