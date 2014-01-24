@@ -1,4 +1,4 @@
-- title "News & Offers#{' - ' if !@article.title.blank?}#{@article.title}"
+- title "#{t('articles.title')}#{' - ' if !@article.title.blank?}#{@article.title}"
 .articles.single
     %h1= @article.title
     .wrapper.clearfix

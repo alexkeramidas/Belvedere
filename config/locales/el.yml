@@ -206,32 +206,37 @@
     
     #Custom Text
     articles:
-        title: Belvedere Hotel - Τα νέα μας
+        title: Τα νέα μας
     shared:
         contact: Επικοινωνία
         gallery: Φωτογραφίες
         hotel: Το Ξενοδοχείο
-        accomodation: Διαμονή
+        accommodation: Διαμονή
         services: Υπηρεσίες
         location: Τοποθεσία
         news: Νέα - Προσφορές
         reservations: Κρατήσεις
     about:
+        title: Το Ξενοδοχείο
         name: Ξενοδοχείο Belvedere
         address: Διεύθυνση
-        addressdetail: Παραλία Αχλαδιές, Σκιάθος
+        address_detail: Παραλία Αχλαδιές, Σκιάθος
         postal: Ταχυδρομικός Κώδικας
         phone: Τηλέφωνο
-        phoneoff: Τηλέφωνο (Εκτός σεζόν)
+        phone_off: Τηλέφωνο (Εκτός σεζόν)
         fax: Φαξ
     contact:
         title: Επικοινωνήστε μαζί μας
         send: Αποστολή μηνύματος
     main:
-        request: Αποστολή κράτησης
+        request_room: Αποστολή κράτησης
         room: Πατήστε εδώ για κράτηση δωματίου
         booking: Ή κάντε κλικ εδώ για κράτηση μέσω booking.com
     rooms:
-        title: "Belvedere Hotel - Δωμάτια & Σουίτες"
+        title: "Δωμάτια & Σουίτες"
     services:
-        title: Belvedere Hotel - Υπηρεσίες
+        title: Υπηρεσίες
+    location:
+        title: Τοποθεσία
+    gallery:
+        title: Φωτογραφίες

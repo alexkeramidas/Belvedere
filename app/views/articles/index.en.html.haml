@@ -1,6 +1,6 @@
-- title 'News & Offers'
+- title t('articles.title')
 .articles{class: "#{'paginated' if @articles.total_pages > 1}"}
-    %h1 Belvedere Hotel - News &amp; Offers
+    %h1= "Belvedere Hotel - #{t('articles.title')}"
     .wrapper.clearfix
         - @articles.each do |article|
             .article
