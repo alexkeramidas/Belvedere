@@ -13,65 +13,65 @@ module ApplicationHelper
         when 'name'
             {
                 regex: "^(?!\\s*$).{#{min},#{max}}$",
-                title: "Name between #{min} and #{max} characters.",
-                moz_error: 'You must provide a valid name.',
-                generic: "Invalid name provided."
+                title: I18n.t('shared.forms.name.errors.title', min: min, max: max),
+                moz_error: I18n.t('shared.forms.name.errors.moz'),
+                generic: I18n.t('shared.forms.name.errors.generic')
             }
         when 'email'
             {
                 regex: '^[A-Za-z0-9_\-\.]+\@[A-Za-z0-9_\-\.]+\.[A-Za-z]{2,4}$',
-                title: 'name@domain.com (correct e-mail structure)',
-                moz_error: 'You must provide a valid e-mail address.',
-                generic: 'Invalid e-mail provided (expected format: name@domain.com).'
+                title: I18n.t('shared.forms.email.errors.title'),
+                moz_error: I18n.t('shared.forms.email.errors.moz'),
+                generic: I18n.t('shared.forms.email.errors.generic')
             }
         when 'phone'
             {
                 regex: phone_regex_pattern,
-                title: "Phone number for direct contact between #{min} and #{max} digits.",
-                moz_error: 'You must provide a valid phone number.',
-                generic: 'Invalid phone number (you can leave this field blank).'
+                title: I18n.t('main.reservation.phone.errors.title', min: min, max: max),
+                moz_error: I18n.t('main.reservation.phone.errors.moz'),
+                generic: I18n.t('main.reservation.phone.errors.generic')
             }
         when 'mobile'
             {
                 regex: phone_regex_pattern(min),
-                title: "Mobile phone number between #{min} and #{max} digits.",
-                moz_error: 'You must provide a valid mobile phone number.',
-                generic: 'Invalid mobile number (you can leave this field blank).'
+                title: I18n.t('main.reservation.mobile.errors.title', min: min, max: max),
+                moz_error: I18n.t('main.reservation.mobile.errors.moz'),
+                generic: I18n.t('main.reservation.mobile.errors.generic')
             }
         when 'arrival'
             {
                 regex: date_to_regex,
-                title: 'YYYY-MM-DD (correct arrival date format)',
-                moz_error: 'Please specify the date of your arrival (date format must be YYYY-MM-DD).',
-                generic: 'Invalid arrival date (expected format: YYYY-MM-DD, must be today or later).'
+                title: I18n.t('main.reservation.arrival.errors.title'),
+                moz_error: I18n.t('main.reservation.arrival.errors.moz'),
+                generic: I18n.t('main.reservation.arrival.errors.generic')
             }
         when 'departure'
             {
                 regex: date_to_regex(1.day.from_now),
-                title: 'YYYY-MM-DD (correct departure date format)',
-                moz_error: 'Please specify the date of your departure (date format must be YYYY-MM-DD).',
-                generic: 'Invalid departure date (expected format: YYYY-MM-DD, must be after arrival).'
+                title: I18n.t('main.reservation.departure.errors.title'),
+                moz_error: I18n.t('main.reservation.departure.errors.moz'),
+                generic: I18n.t('main.reservation.departure.errors.generic')
             }
         when 'adults'
             {
                 regex: '^(1[0-9]|[1-9])$',
-                title: 'Allowed number of adults for one reservation is between 1 and 19, no leading zeros.',
-                moz_error: 'The number of adults for each reservation must belong to the range from 1 to 19, no leading zeros.',
-                generic: 'Invalid number of adults (must be at least 1 and up to 19).'
+                title: I18n.t('main.reservation.adults.errors.title'),
+                moz_error: I18n.t('main.reservation.adults.errors.moz'),
+                generic: I18n.t('main.reservation.adults.errors.generic')
             }
         when 'children'
             {
                 regex: '^([0-1][0-9]|[0-9])$',
-                title: 'Allowed number of children for one reservation is between 0 and 19, no leading zeros.',
-                moz_error: 'The provided number of children must belong to the range from 0 to 19, no leading zeros.',
-                generic: 'Invalid number of children (must be up to 19, you can leave this field blank).'
+                title: I18n.t('main.reservation.children.errors.title'),
+                moz_error: I18n.t('main.reservation.children.errors.moz'),
+                generic: I18n.t('main.reservation.children.errors.generic')
             }
         when 'message'
             {
                 regex: "^(?!\\s*$).{#{min},#{max}}$",
-                title: "Additional details about your reservation between #{min} and #{max} characters.",
-                moz_error: 'You must provide a comprehensible message.',
-                generic: "Invalid additional details (accepted length: between #{min} and #{max} characters, you can leave this field blank)."
+                title: I18n.t('main.reservation.message.errors.title', min: min, max: max),
+                moz_error: I18n.t('main.reservation.message.errors.moz'),
+                generic: I18n.t('main.reservation.message.errors.generic', min: min, max: max)
             }
         when 'contact'
             {
