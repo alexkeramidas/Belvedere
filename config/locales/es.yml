@@ -199,8 +199,6 @@
             <<: *errors
     
     #Custom Text
-    articles:
-        title: Noticias
     shared:
         contact: Contacto
         gallery: Galería de fotos
@@ -210,6 +208,10 @@
         location: Ubicación
         news: Noticias - Ofertas
         reservations: Reservas
+    main:
+        request_room: Envíe su petición
+        room: Haga clic aquí para solicitar una habitación
+        booking: O haga clic aquí para proceder a través de booking.com
     about:
         title: El hotel
         name: Hotel Belvedere
@@ -219,18 +221,16 @@
         phone: Teléfono
         phone_off: Temporada Teléfono Apagado
         fax: Fax
-    contact:
-        title: Contáctenos
-        send: Envíenos su mensaje
-    main:
-        request_room: Envíe su petición
-        room: Haga clic aquí para solicitar una habitación
-        booking: O haga clic aquí para proceder a través de booking.com
     rooms:
         title: Habitaciones y Suites
     services:
         title: Servicios
     location:
         title: Ubicación
+    articles:
+        title: Noticias
+    contact:
+        title: Contáctenos
+        send: Envíenos su mensaje
     gallery:
         title: Galería de fotos

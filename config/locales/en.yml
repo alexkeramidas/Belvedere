@@ -232,8 +232,6 @@ en:
             <<: *errors
 
     #Custom Text
-    articles:
-        title: "News & Offers"
     shared:
         contact: Contact
         gallery: Photo Gallery
@@ -243,6 +241,10 @@ en:
         location: Location
         news: "News & Offers"
         reservations: Reservations
+    main:
+        request_room: Send your request
+        room: Click here to request a room
+        booking: Or click here to proceed through booking.com
     about:
         title: The Hotel
         name: Hotel Belvedere
@@ -252,18 +254,16 @@ en:
         phone: Telephone
         phone_off: Telephone (Off Season)
         fax: Fax
-    contact:
-        title: Contact Us
-        send: Send Us Your Message
-    main:
-        request_room: Send your request
-        room: Click here to request a room
-        booking: Or click here to proceed through booking.com
     rooms:
         title: "Rooms & Suites"
     services:
         title: Services
     location:
         title: Location
+    articles:
+        title: "News & Offers"
+    contact:
+        title: Contact Us
+        send: Send Us Your Message
     gallery:
         title: Photo Gallery
