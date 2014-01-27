@@ -206,18 +206,78 @@
     
     #Custom Text
     shared:
-        contact: Contatto
-        gallery: Galleria fotografica
         hotel: L' Hotel
         accommodation: Alloggio
         services: Servizi
         location: Posizione
         news: Novità - Offerte
+        contact: Contatto
+        gallery: Galleria fotografica
         reservations: Prenotazioni
+        forms:
+            name:
+                placeholder: Nome
+                errors:
+                    title: "Nome tra %{min} e %{max} caratteri."
+                    moz: È necessario fornire un nome valido.
+                    generic: Nome non valido fornito.
+            email:
+                placeholder: Posta Elettronica
+                errors:
+                    title: name@domain.com (struttura e-mail corretto)
+                    moz: È necessario fornire un indirizzo e-mail valido.
+                    generic: 'E-mail non valido fornito (formato previsto: name@domain.com).'
     main:
-        request_room: Invia la tua richiesta
         room: Clicca qui per richiedere una camera
         booking: Oppure clicca qui per procedere attraverso booking.com
+        reservation:
+            phone:
+                placeholder: Telefono
+                errors:
+                    title: "Numero di telefono per il contatto diretto tra %{min} e %{max} cifre."
+                    moz: È necessario fornire un numero di telefono valido.
+                    generic: Numero di telefono non valido (è possibile lasciare il campo vuoto).
+            mobile:
+                placeholder: Cellulare
+                errors:
+                    title: "Numero di cellulare tra %{min} e %{max} cifre."
+                    moz: È necessario fornire un numero di cellulare valido.
+                    generic: Numero di cellulare non valido (è possibile lasciare il campo vuoto).
+            arrival:
+                placeholder: Arrivo
+                errors:
+                    title: AAAA-MM-GG (corretto formato della data di arrivo)
+                    moz: Si prega di specificare la data di arrivo (formato della data deve essere AAAA-MM-GG).
+                    generic: 'Data di arrivo non valida (formato previsto: AAAA-MM-GG, deve essere oggi o successiva).'
+            departure:
+                placeholder: Partenza
+                errors:
+                    title: AAAA-MM-GG (corretto formato della data di partenza)
+                    moz: Si prega di specificare la data di partenza (formato della data deve essere AAAA-MM-GG).
+                    generic: "Data di partenza non valida (formato previsto: AAAA-MM-GG, deve essere dopo l'arrivo)."
+            adults:
+                placeholder: Adulti
+                errors:
+                    title: Numero consentito di adulti per una prenotazione è compreso tra 1 e 19, senza zeri iniziali.
+                    moz: Il numero di adulti per ogni prenotazione deve appartenere alla gamma da 1 a 19, senza zeri iniziali.
+                    generic: Numero di adulti non valido (deve essere almeno 1 e fino al 19).
+            children:
+                placeholder: Bambini
+                errors:
+                    title: Numero consentito di bambini per una prenotazione è compreso tra 0 e 19, senza zeri iniziali.
+                    moz: Il numero fornito di bambini deve appartenere alla gamma 0-19, senza zeri iniziali.
+                    generic: Numero di bambini non valido (deve essere fino a 19, è possibile lasciare il campo vuoto).
+            message:
+                placeholder: Dettagli Aggiuntivi
+                errors:
+                    title: "Ulteriori dettagli circa la prenotazione tra %{min} e %{max} caratteri."
+                    moz: È necessario fornire un messaggio comprensibile.
+                    generic: "Invalid ulteriori dettagli (lunghezza accettata: tra %{min} e %{max} caratteri, è possibile lasciare il campo vuoto)."
+            request: Invia la tua richiesta
+            error_message: 'Prima di provare a richiedere la prenotazione, si prega di accertarsi che i seguenti errori vengono corretti:'
+            success:
+                congrats: Congratulazioni!
+                text: La tua richiesta di prenotazione è stata presentata con successo e ti contatteremo per ulteriori dettagli appena possibile.
     about:
         title: L' Hotel
         name: Hotel Belvedere

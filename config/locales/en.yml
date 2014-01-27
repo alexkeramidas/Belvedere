@@ -233,18 +233,78 @@ en:
 
     #Custom Text
     shared:
-        contact: Contact
-        gallery: Photo Gallery
         hotel: The Hotel
         accommodation: Accommodation
         services: Services
         location: Location
         news: "News & Offers"
+        contact: Contact
+        gallery: Photo Gallery
         reservations: Reservations
+        forms:
+            name:
+                placeholder: Name
+                errors:
+                    title: "Name between %{min} and %{max} characters."
+                    moz: You must provide a valid name.
+                    generic: Invalid name provided.
+            email:
+                placeholder: Email
+                errors:
+                    title: name@domain.com (correct e-mail structure)
+                    moz: You must provide a valid e-mail address.
+                    generic: 'Invalid e-mail provided (expected format: name@domain.com).'
     main:
-        request_room: Send your request
         room: Click here to request a room
         booking: Or click here to proceed through booking.com
+        reservation:
+            phone:
+                placeholder: Phone Number
+                errors:
+                    title: "Phone number for direct contact between %{min} and %{max} digits."
+                    moz: You must provide a valid phone number.
+                    generic: Invalid phone number (you can leave this field blank).
+            mobile:
+                placeholder: Mobile Phone
+                errors:
+                    title: "Mobile phone number between %{min} and %{max} digits."
+                    moz: You must provide a valid mobile phone number.
+                    generic: Invalid mobile number (you can leave this field blank).
+            arrival:
+                placeholder: Arrival
+                errors:
+                    title: YYYY-MM-DD (correct arrival date format)
+                    moz: Please specify the date of your arrival (date format must be YYYY-MM-DD).
+                    generic: 'Invalid arrival date (expected format: YYYY-MM-DD, must be today or later).'
+            departure:
+                placeholder: Departure
+                errors:
+                    title: YYYY-MM-DD (correct departure date format)
+                    moz: Please specify the date of your departure (date format must be YYYY-MM-DD).
+                    generic: 'Invalid departure date (expected format: YYYY-MM-DD, must be after arrival).'
+            adults:
+                placeholder: Adults
+                errors:
+                    title: Allowed number of adults for one reservation is between 1 and 19, no leading zeros.
+                    moz: The number of adults for each reservation must belong to the range from 1 to 19, no leading zeros.
+                    generic: Invalid number of adults (must be at least 1 and up to 19).
+            children:
+                placeholder: Children
+                errors:
+                    title: Allowed number of children for one reservation is between 0 and 19, no leading zeros.
+                    moz: The provided number of children must belong to the range from 0 to 19, no leading zeros.
+                    generic: Invalid number of children (must be up to 19, you can leave this field blank).
+            message:
+                placeholder: Additional Details
+                errors:
+                    title: "Additional details about your reservation between %{min} and %{max} characters."
+                    moz: You must provide a comprehensible message.
+                    generic: "Invalid additional details (accepted length: between %{min} and %{max} characters, you can leave this field blank)."
+            request: Send your request
+            error_message: 'Before you try to request your reservation, please make certain that the following errors are corrected:'
+            success:
+                congrats: Congratulations!
+                text: Your reservation request has been successfully submitted and we will contact you for further details as soon as possible.
     about:
         title: The Hotel
         name: Hotel Belvedere
