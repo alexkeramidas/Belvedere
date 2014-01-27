@@ -213,8 +213,6 @@
             <<: *errors
 
     #Custom Text
-    articles:
-        title: Nouvelles
     shared:
         contact: Contacter
         gallery: Galerie de photos
@@ -224,6 +222,10 @@
         location: Emplacement
         news: Actualités - Offres
         reservations: Réservations
+    main:
+        request_room: Envoyez votre demande
+        room: Cliquez ici pour demander une chambre
+        booking: Ou cliquez ici pour passer par booking.com
     about:
         title: L' Hôtel
         name: Hotel Belvedere
@@ -233,18 +235,16 @@
         postal: Code Postal
         phone_off: Téléphone Hors Saison
         fax: Fax
-    contact:
-        title: Contactez-nous
-        send: Envoyez-nous votre message
-    main:
-        request_room: Envoyez votre demande
-        room: Cliquez ici pour demander une chambre
-        booking: Ou cliquez ici pour passer par booking.com
     rooms:
         title: Chambres et Suites
     services:
         title: Services
     location:
         title: Emplacement
+    articles:
+        title: Nouvelles
+    contact:
+        title: Contactez-nous
+        send: Envoyez-nous votre message
     gallery:
         title: Galerie de photos

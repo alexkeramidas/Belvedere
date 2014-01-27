@@ -257,8 +257,6 @@
             <<: *errors
     
     #Custom Text
-    articles:
-        title: новости
     shared:
         contact: контакт
         gallery: Фотогалерея
@@ -268,6 +266,10 @@
         location: расположение
         news: Новости - Предложения
         reservations: Бронирование
+    main:
+        request_room: Отправьте запрос
+        room: Нажмите здесь, чтобы просить номер
+        booking: Или нажмите здесь, чтобы пройти через booking.com
     about:
         title: Отель
         name: Hotel Belvedere
@@ -277,18 +279,16 @@
         phone: Τелефон
         phone_off: Τелефон Μежсезонье
         fax: Φакс
-    contact:
-        title: Cвязаться с нами
-        send: Отправить нам сообщение
-    main:
-        request_room: Отправьте запрос
-        room: Нажмите здесь, чтобы просить номер
-        booking: Или нажмите здесь, чтобы пройти через booking.com
     rooms:
         title: Номера и люкс
     services:
         title: услуги
     location:
         title: расположение
+    articles:
+        title: новости
+    contact:
+        title: Cвязаться с нами
+        send: Отправить нам сообщение
     gallery:
         title: Фотогалерея

@@ -205,8 +205,6 @@
             <<: *errors
     
     #Custom Text
-    articles:
-        title: Τα νέα μας
     shared:
         contact: Επικοινωνία
         gallery: Φωτογραφίες
@@ -216,6 +214,10 @@
         location: Τοποθεσία
         news: Νέα - Προσφορές
         reservations: Κρατήσεις
+    main:
+        request_room: Αποστολή κράτησης
+        room: Πατήστε εδώ για κράτηση δωματίου
+        booking: Ή κάντε κλικ εδώ για κράτηση μέσω booking.com
     about:
         title: Το Ξενοδοχείο
         name: Ξενοδοχείο Belvedere
@@ -225,18 +227,16 @@
         phone: Τηλέφωνο
         phone_off: Τηλέφωνο (Εκτός σεζόν)
         fax: Φαξ
-    contact:
-        title: Επικοινωνήστε μαζί μας
-        send: Αποστολή μηνύματος
-    main:
-        request_room: Αποστολή κράτησης
-        room: Πατήστε εδώ για κράτηση δωματίου
-        booking: Ή κάντε κλικ εδώ για κράτηση μέσω booking.com
     rooms:
         title: "Δωμάτια & Σουίτες"
     services:
         title: Υπηρεσίες
     location:
         title: Τοποθεσία
+    articles:
+        title: Τα νέα μας
+    contact:
+        title: Επικοινωνήστε μαζί μας
+        send: Αποστολή μηνύματος
     gallery:
         title: Φωτογραφίες
