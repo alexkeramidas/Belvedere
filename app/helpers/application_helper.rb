@@ -76,9 +76,9 @@ module ApplicationHelper
         when 'contact'
             {
                 regex: "^(?!\\s*$).{#{min},#{max}}$",
-                title: "Message between #{min} and #{max} characters.",
-                moz_error: 'You must provide a comprehensible message.',
-                generic: "Invalid message (accepted length: between #{min} and #{max} characters)."
+                title: I18n.t('contact.form.message.errors.title', min: min, max: max),
+                moz_error: I18n.t('contact.form.message.errors.moz'),
+                generic: I18n.t('contact.form.message.errors.generic', min: min, max: max)
             }
         else
             {

@@ -305,6 +305,17 @@
         title: Nouvelles
     contact:
         title: Contactez-nous
-        send: Envoyez-nous votre message
+        form:
+            message:
+                placeholder: Envoyez-nous votre message
+                errors:
+                    title: "Message entre %{min} et %{max} caractères."
+                    moz: Vous devez fournir un message compréhensible.
+                    generic: "Message non valide (longueur accepté: entre %{min} et %{max} caractères)."
+            send: Envoyez-nous votre message
+            error_message: "Avant de soumettre votre message, s'il vous plaît voyez que les erreurs suivantes sont corrigées:"
+            success:
+                congrats: Votre message a bien été envoyé!
+                text: Merci pour vos commentaires. Nous vous contacterons dès que possible.
     gallery:
         title: Galerie de photos

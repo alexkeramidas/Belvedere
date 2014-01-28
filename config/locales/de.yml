@@ -295,6 +295,17 @@ de:
         title: Nachrichten
     contact:
         title: Kontaktieren Sie uns
-        send: Schicken Sie uns Ihre Nachricht
+        form:
+            message:
+                placeholder: Senden Sie uns Ihre Nachricht
+                errors:
+                    title: "Message zwischen %{min} und %{max} Zeichen."
+                    moz: Sie müssen eine verständliche Botschaft zu liefern.
+                    generic: "Ungültige Nachricht (akzeptiert Länge: zwischen %{min} und %{max} Zeichen)."
+            send: Schicken Sie uns Ihre Nachricht
+            error_message: 'Bevor Sie Ihre Nachricht abschicken, finden Sie, dass die folgenden Fehler behoben sind:'
+            success:
+                congrats: Ihre Nachricht wurde versendet!
+                text: Vielen Dank für Ihr Feedback. Wir werden uns so bald wie möglich kontaktieren.
     gallery:
         title: Fotogalerie
