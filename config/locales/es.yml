@@ -291,6 +291,17 @@
         title: Noticias
     contact:
         title: Contáctenos
-        send: Envíenos su mensaje
+        form:
+            message:
+                placeholder: Envíenos su mensaje
+                errors:
+                    title: "Mensaje entre %{min} y %{max} caracteres."
+                    moz: Usted debe proporcionar un mensaje comprensible.
+                    generic: "Mensaje no válido (longitud aceptado: entre %{min} y %{max} caracteres)."
+            send: Envíenos su mensaje
+            error_message: 'Antes de enviar su mensaje, por favor ver como los siguientes errores se corrigen:'
+            success:
+                congrats: Tu mensaje ha sido enviado!
+                text: Gracias por tus comentarios. Nos pondremos en contacto con usted lo antes posible.
     gallery:
         title: Galería de fotos

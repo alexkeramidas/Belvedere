@@ -324,6 +324,17 @@ en:
         title: "News & Offers"
     contact:
         title: Contact Us
-        send: Send Us Your Message
+        form:
+            message:
+                placeholder: Send us your message
+                errors:
+                    title: "Message between %{min} and %{max} characters."
+                    moz: You must provide a comprehensible message.
+                    generic: "Invalid message (accepted length: between %{min} and %{max} characters)."
+            send: Send Us Your Message
+            error_message: 'Before you submit your message, please see that the following errors are corrected:'
+            success:
+                congrats: Your message has been sent!
+                text: Thank you for your feedback. We will contact you as soon as possible.
     gallery:
         title: Photo Gallery
