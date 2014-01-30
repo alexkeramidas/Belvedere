@@ -303,6 +303,7 @@
         title: Emplacement
     articles:
         title: Nouvelles
+        back: Retour aux nouvelles et offres
     contact:
         title: Contactez-nous
         form:

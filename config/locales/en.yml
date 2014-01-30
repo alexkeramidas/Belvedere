@@ -52,9 +52,9 @@ en:
         - Friday
         - Saturday
         formats:
-          default: ! '%Y-%m-%d'
-          long: ! '%B %d, %Y'
-          short: ! '%b %d'
+            default: ! '%Y-%m-%d'
+            long: ! '%B %d, %Y'
+            short: ! '%b %d'
         month_names:
         -
         - January
@@ -322,6 +322,7 @@ en:
         title: Location
     articles:
         title: "News & Offers"
+        back: "Go Back to News & Offers"
     contact:
         title: Contact Us
         form:

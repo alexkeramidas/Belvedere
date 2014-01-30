@@ -4,8 +4,8 @@
     .wrapper.clearfix
         .article
             = link_to articles_path(page: @article.page_at(@per_page)), class: 'title clearfix' do
-                %h3.pull-left.fa-long-arrow-left Go Back to News &amp; Offers
-                %h3.pull-right.fa-calendar= @article.created_at.strftime('%A, %d %b %Y, %H:%M %P')
+                %h3.pull-left.fa-long-arrow-left= t('articles.back')
+                %h3.pull-right.fa-calendar= l(@article.created_at, format: '%A, %d %b %Y, %H:%M %P')
             .content
                 .scroll-wrap
                     .scrollable= sanitize(@article.description).gsub(/img alt\=\"([^\"]*)\"/) { |m| m.gsub(/\"([^\"]*)\"/, "'Hotel Belvedere - News & Offers - #{@article.title}'") }.html_safe
