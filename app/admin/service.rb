@@ -52,16 +52,9 @@ ActiveAdmin.register Service, :as => 'Services' do
 
     form :html => { :multipart => true} do |f|
         f.inputs "Service" do
-            f.input :title
-            f.input :description
+            # f.input :title
+            # f.input :description
             f.input :visible
-        end
-        f.has_many :photos do |p|
-            unless p.object.new_record?
-                p.input :_destroy, :as => :boolean, :label => "Delete Image?", :required => false
-            end
-            p.input :description, :label => "Image Title"
-            p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.decorate.photo_path(:thumb)), :label => p.object.image_file_name
         end
         f.has_many :article_translations,  heading: 'Services Translations' do |t|
             unless t.object.new_record?
@@ -70,6 +63,13 @@ ActiveAdmin.register Service, :as => 'Services' do
             t.input :locale, :label => 'Language', :collection => languages, :as => :select
             t.input :title
             t.input :description
+        end
+        f.has_many :photos do |p|
+            unless p.object.new_record?
+                p.input :_destroy, :as => :boolean, :label => "Delete Image?", :required => false
+            end
+            p.input :description, :label => "Image Title"
+            p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.decorate.photo_path(:thumb)), :label => p.object.image_file_name
         end
         f.actions
     end
