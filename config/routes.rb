@@ -8,20 +8,27 @@ BelvedereGit::Application.routes.draw do
     # See how all your routes lay out with "rake routes".
 
     # handles /
-    root to: redirect("/#{I18n.locale}", status: 302), as: :redirected_root
+    root to: redirect("/#{I18n.locale}", status: 301), as: :redirected_root
     
     post 'send_mail' => 'pages#send_mail', :trailing_slash => false
     post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
     
     get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
-
+    
+    # handles /valid-path
+    get '/*path', to: redirect(status: 301) { |params, request| "/#{I18n.locale}/#{params[:path]}" }, constraints: { path: /(about|location|photo_gallery|contact|articles|accommodation|services).*/ }, format: false
+    
     # handles /invalid-locale/any-path
     scope ':locale', locale: /(?!(#{I18n.available_locales.join("|")})\/).*/ do
-        get '/*path', to: redirect("/#{I18n.locale}/%{path}", status: 302)
+        # handles /invalid-locale/valid-path
+        get '/*path', to: redirect(status: 301) { |params, request| "/#{I18n.locale}/#{params[:path]}" }, constraints: { path: /(about|location|photo_gallery|contact|articles|accommodation|services).*/ }, format: false
+        
+        #handles /invalid-locale/invalid-path
+        get '/*path', to: redirect(status: 301) { |params, request| "/#{params[:path]}" }, constraints: lambda { |request| true }, format: false
     end
     
-    # handles /any-path
-    get "/*path", to: redirect("/#{I18n.locale}/%{path}", status: 302), constraints: { path: /(?!(#{I18n.available_locales.join("|")})).+/ }, format: false
+    # handles /invalid-path
+    get '/*path', to: redirect(status: 301) { |params, request| "/#{I18n.locale}/#{params[:path]}" }, constraints: { path: /(?!(#{I18n.available_locales.join("|")})).+/ }, format: false
     
     # handles /valid-locale/any-path
     scope '(:locale)', locale: /(#{I18n.available_locales.join('|')})/  do
