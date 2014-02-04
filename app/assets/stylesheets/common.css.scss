@@ -256,11 +256,66 @@ a {
     min-height: 103px;
 
     .content {
+        position: relative;
         border-bottom: 1px solid #86001d;
         box-shadow: 0px 10px 15px rgba(0, 0, 0, .4);
         padding: 30px 30px 3px 30px;
 
-        div {
+        .language-options, .menu-options {
+            a {
+                &:before {
+                    content: "|";
+                    position: absolute;
+                    left: -6px;
+                }
+    
+                &:first-child {
+                    &:before {
+                        content: "";
+                    }
+                }
+            }
+        }
+
+        .language-options {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            
+            a {
+                position: relative;
+                display: inline-block;
+                font-size: 12px;
+                font-weight: bold;
+                color: #cf5037;
+                text-decoration: none;
+                padding: 3px 8px;
+
+                &:hover, &.active {
+                    &:before {
+                        color: #cf5037;
+                    }
+                }
+                
+                &:hover {
+                    background-color: #cf5037;
+                    border-radius: 3px;
+                    color: #5f0015;
+                    text-decoration: none;
+                }
+                
+                &.active {
+                    color: #f3be70;
+                    
+                    &:hover {
+                        background-color: #e99924;
+                        color: #5f0015;
+                    }
+                }
+            }
+        }
+
+        .menu-options {
             float: right;
             padding-top: 32px;
             text-align: right;
@@ -282,18 +337,6 @@ a {
 
                     &:before {
                         color: #f5f4e6;
-                    }
-                }
-
-                &:before {
-                    content: "|";
-                    position: absolute;
-                    left: -6px;
-                }
-
-                &:first-child {
-                    &:before {
-                        content: "";
                     }
                 }
             }
