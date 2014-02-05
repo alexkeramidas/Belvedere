@@ -241,6 +241,11 @@ en:
         contact: Contact
         gallery: Photo Gallery
         reservations: Reservations
+        noscript:
+            description: In order for this section of the site to operate smoothly, it is necessary that you enable JavaScript.
+            show: Here are the
+            link_text: instructions on how to enable Javascript on your browser
+            link: 'http://www.enable-javascript.com/'
         forms:
             name:
                 placeholder: Name

@@ -222,6 +222,11 @@
         contact: Contacter
         gallery: Galerie de photos
         reservations: Réservations
+        noscript:
+            description: Pour cette section du site aux bien fonctionner, il est nécessaire que vous activer JavaScript dans votre navigateur.
+            show: Voici les
+            link_text: instructions sur la façon d'activer JavaScript dans votre navigateur
+            link: 'http://www.enable-javascript.com/fr/'
         forms:
             name:
                 placeholder: Nom

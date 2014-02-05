@@ -214,6 +214,11 @@
         contact: Επικοινωνία
         gallery: Φωτογραφίες
         reservations: Κρατήσεις
+        noscript:
+            description: Για να λειτουργήσει ομαλά αυτό το τμήμα του site, είναι αναγκαίο να ενεργοποιήσετε το JavaScript στον browser σας.
+            show: Δείτε τις σχετικές
+            link_text: οδηγίες για το πώς να ενεργοποιήσετε το Javascript στον browser σας
+            link: 'http://aboutjavascript.com/el.html'
         forms:
             name:
                 placeholder: Ονοματεπώνυμο

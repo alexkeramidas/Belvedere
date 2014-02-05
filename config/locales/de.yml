@@ -212,6 +212,11 @@ de:
         contact: Kontakt
         gallery: Fotogalerie
         reservations: Reservierungen
+        noscript:
+            description: Damit dieser Bereich der Website reibungslos funktionieren, ist es notwendig, dass Sie JavaScript in Ihrem Browser aktivieren.
+            show: Hier sind die
+            link_text: Anweisungen, wie Sie Javascript in Ihrem Browser aktivieren
+            link: 'http://www.enable-javascript.com/de/'
         forms:
             name:
                 placeholder: Vollständiger Name

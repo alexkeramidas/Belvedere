@@ -214,6 +214,11 @@
         contact: Contatto
         gallery: Galleria fotografica
         reservations: Prenotazioni
+        noscript:
+            description: Affinché questa sezione del sito per funzionare correttamente, è necessario che JavaScript sia abilitato nel tuo browser.
+            show: Ecco le
+            link_text: istruzioni su come abilitare Javascript per il tuo browser
+            link: 'http://www.enable-javascript.com/it/'
         forms:
             name:
                 placeholder: Nome

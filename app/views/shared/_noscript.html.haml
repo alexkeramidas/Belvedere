@@ -1,9 +1,7 @@
 #noscript
     .text-wrap
+        %p= t('shared.noscript.description')
         %p
-            In order for this section of the site to operate smoothly, it is necessary
-            that you enable JavaScript.
-        %p
-            Here are the
-            = link_to 'instructions on how to enable Javascript on your browser', 'http://www.enable-javascript.com/', target: '_blank'
+            = t('shared.noscript.show')
+            = link_to t('shared.noscript.link_text'), t('shared.noscript.link'), target: '_blank'
             &#46;

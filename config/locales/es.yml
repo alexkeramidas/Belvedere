@@ -208,6 +208,11 @@
         contact: Contacto
         gallery: Galería de fotos
         reservations: Reservas
+        noscript:
+            description: Para que esta sección del sitio funcionando sin problemas, es necesario que active JavaScript en su navegador.
+            show: Aquí están las
+            link_text: instrucciones sobre cómo habilitar javascript en tu navegador
+            link: 'http://www.enable-javascript.com/es/'
         forms:
             name:
                 placeholder: Nombre

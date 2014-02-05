@@ -261,11 +261,16 @@
         hotel: Отель
         accommodation: Размещение
         services: Услуги
-        location: расположение
+        location: Местоположение
         news: Новости - Предложения
-        contact: контакт
+        contact: Контакт
         gallery: Фотогалерея
         reservations: Бронирование
+        noscript:
+            description: Для того, чтобы этого раздела сайта, чтобы работать гладко, необходимо, чтобы вы включите JavaScript в вашем браузере.
+            show: Вот
+            link_text: инструкции о том, как включить Javascript в Вашем браузере
+            link: 'http://www.enable-javascript.com/ru/'
         forms:
             name:
                 placeholder: Имя
