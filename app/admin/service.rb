@@ -44,7 +44,7 @@ ActiveAdmin.register Service, :as => 'Services' do
                 ul :style => 'list-style:none;' do
                     ad.photos.each do |img|
                         li :style => 'float:left; margin-right:10px;' do
-                            image_tag(img.decorate.photo_path(:medium))
+                            image_tag(img.decorate.photo_path(:thumb))
                         end
                     end
                 end
