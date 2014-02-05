@@ -58,8 +58,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #Use Paperclip with ImageMagick
-gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
-gem 'rmagick', '2.13.2', :git => 'git://github.com/rmagick/rmagick.git'
+gem 'paperclip', '3.5.3'
+gem 'rmagick', '2.13.2'
 
 #Use amazon s3 to upload images
 gem 'aws-sdk'
