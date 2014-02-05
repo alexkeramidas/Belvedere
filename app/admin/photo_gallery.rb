@@ -16,7 +16,9 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
     index do
         selectable_column
         column :title
-        column :description
+        column :description do |p|
+            sanitize(p.description, :tags => []).html_safe.truncate(500)
+        end
         column :visible
         column :created_at
         column :updated_at
@@ -24,29 +26,30 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
     end
 
     show do |ad|
-          attributes_table do
-            row :title
-            row :description
-            row :images do
+        attributes_table do
+            row :created_at
+            row :translations do
                 ul do
+                    ad.translations.each do |article|
+                        li do
+                            l = languages.detect { |lang| lang[1] == article.locale.to_s }[0]
+                            t = article.title
+                            d = sanitize(article.description, :tags => []).html_safe.truncate(1000)
+                            "<b>#{l}:</b> #{t}<br><br>#{d}".html_safe
+                        end
+                    end
+                end
+            end
+            row :images do
+                ul :style => 'list-style:none;' do
                     ad.photos.each do |img|
-                        ul do
+                        li :style => 'float:left; margin-right:10px;' do
                             image_tag(img.decorate.photo_path(:medium))
                         end
                     end
                 end
             end
-            row :translations do
-                ul do
-                    ad.translations.each do |article|
-                        ul do
-                            li do article.locale end
-                            ul do article.title end
-                            ul do article.description end
-                        end
-                    end
-                end
-            end
+            row :visible
         end
     end
 
@@ -60,7 +63,7 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
             unless t.object.new_record?
                 t.input :_destroy, :as => :boolean, :label => "Remove Translation?", :required => false
             end
-            t.input :locale, :label => 'Language', :collection => languages, :as => :select
+            t.input :locale, :label => 'Language', :collection => languages, :as => :select, :include_blank => false
             t.input :title
             t.input :description
         end
