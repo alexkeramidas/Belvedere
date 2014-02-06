@@ -35,5 +35,7 @@ module BelvedereGit
           :authentication       => :plain,
           :enable_starttls_auto => true
         }
+        
+        config.i18n.available_locales = [:en, :el, :de, :es, :fr, :it, :ru]
     end
 end

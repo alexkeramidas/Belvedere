@@ -14,6 +14,13 @@ BelvedereGit::Application.routes.draw do
     post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
     
     get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
+    get 'sitemap-en.xml' => 'sitemaps#sitemap_en', as: 'sitemap_en', defaults: {format: 'xml'}
+    get 'sitemap-el.xml' => 'sitemaps#sitemap_el', as: 'sitemap_el', defaults: {format: 'xml'}
+    get 'sitemap-de.xml' => 'sitemaps#sitemap_de', as: 'sitemap_de', defaults: {format: 'xml'}
+    get 'sitemap-es.xml' => 'sitemaps#sitemap_es', as: 'sitemap_es', defaults: {format: 'xml'}
+    get 'sitemap-fr.xml' => 'sitemaps#sitemap_fr', as: 'sitemap_fr', defaults: {format: 'xml'}
+    get 'sitemap-it.xml' => 'sitemaps#sitemap_it', as: 'sitemap_it', defaults: {format: 'xml'}
+    get 'sitemap-ru.xml' => 'sitemaps#sitemap_ru', as: 'sitemap_ru', defaults: {format: 'xml'}
     
     # handles /valid-path
     get '/*path', to: redirect(status: 301) { |params, request| "/#{I18n.locale}/#{params[:path]}" }, constraints: { path: /(about|location|photo_gallery|contact|articles|accommodation|services).*/ }, format: false
