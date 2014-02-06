@@ -205,6 +205,9 @@
             <<: *errors
     
     #Custom Text
+    meta:
+        language_name: 'Italiano - IT'
+        language_menu: 'Italiano'
     shared:
         hotel: L' Hotel
         accommodation: Alloggio

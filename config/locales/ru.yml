@@ -257,6 +257,9 @@
             <<: *errors
     
     #Custom Text
+    meta:
+        language_name: 'Russian - RU'
+        language_menu: 'Русский'
     shared:
         hotel: Отель
         accommodation: Размещение

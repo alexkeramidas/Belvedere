@@ -4,13 +4,8 @@
             = image_tag "logo.png", alt: 'Hotel Belvedere - Logo'
         
         .language-options
-            = link_to "English", "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, 'en') : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == 'en'}"
-            = link_to "Ελληνικά", "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, 'el') : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == 'el'}"
-            = link_to "Deutsch", "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, 'de') : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == 'de'}"
-            = link_to "Français", "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, 'fr') : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == 'fr'}"
-            = link_to "Español", "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, 'es') : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == 'es'}"
-            = link_to "Italiano", "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, 'it') : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == 'it'}"
-            = link_to "Русский", "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, 'ru') : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == 'ru'}"
+            - I18n.available_locales.each do |loc|
+                = link_to t('meta.language_menu', locale: loc.to_s), "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, loc.to_s) : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == loc.to_s}"
         
         .menu-options
             = link_to t('shared.hotel'), about_url, class: "#{params[:controller]=='pages' && params[:action]=='about' ? 'active' : ''}"

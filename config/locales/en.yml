@@ -232,6 +232,9 @@ en:
             <<: *errors
 
     #Custom Text
+    meta:
+        language_name: 'English - EN'
+        language_menu: 'English'
     shared:
         hotel: The Hotel
         accommodation: Accommodation

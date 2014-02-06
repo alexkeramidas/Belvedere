@@ -213,6 +213,9 @@
             <<: *errors
 
     #Custom Text
+    meta:
+        language_name: 'Francais - FR'
+        language_menu: 'Français'
     shared:
         hotel: L' Hôtel
         accommodation: Hébergement

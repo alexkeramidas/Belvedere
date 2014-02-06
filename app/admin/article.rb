@@ -1,6 +1,7 @@
-ActiveAdmin.register Article, :as => 'News' do
+include ActiveAdmin::ViewsHelper
 
-    languages = [['English - EN','en'],['Deutsch - DE','de'],['Greek - EL','el'],['Espanol - ES','es'],['Francais - FR','fr'],['Italiano - IT','it'],['Russian - RU','ru']]
+ActiveAdmin.register Article, :as => 'News' do
+    languages = language_list
 
     menu :priority => 3
 

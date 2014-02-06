@@ -203,6 +203,9 @@ de:
             <<: *errors
     
     #Custom Text
+    meta:
+        language_name: 'Deutsch - DE'
+        language_menu: 'Deutsch'
     shared:
         hotel: Das Hotel
         accommodation: Unterkunft

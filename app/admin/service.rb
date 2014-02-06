@@ -1,7 +1,9 @@
+include ActiveAdmin::ViewsHelper
+
 ActiveAdmin.register Service, :as => 'Services' do
     menu :priority => 2, :parent => "Website"
 
-    languages = [['English - EN','en'],['Deutsch - DE','de'],['Greek - EL','el'],['Espanol - ES','es'],['Francais - FR','fr'],['Italiano - IT','it'],['Russian - RU','ru']]
+    languages = language_list
 
     config.per_page = 10
 

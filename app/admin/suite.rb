@@ -1,7 +1,9 @@
+include ActiveAdmin::ViewsHelper
+
 ActiveAdmin.register Suite, :as => 'Rooms' do
     menu :priority => 1, :parent => "Website"
 
-    languages = [['English - EN','en'],['Deutsch - DE','de'],['Greek - EL','el'],['Espanol - ES','es'],['Francais - FR','fr'],['Italiano - IT','it'],['Russian - RU','ru']]
+    languages = language_list
 
     config.per_page = 10
 
