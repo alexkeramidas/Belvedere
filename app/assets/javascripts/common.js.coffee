@@ -13,6 +13,20 @@ class BelvedereGit.Base
         $('#noscript').detach()
         
         
+        # Remove share links if window is too small
+        
+        toggleShareLinks = () ->
+            if $('body').height() < 320
+                $('#share-links').addClass('hidden')
+            else
+                $('#share-links').removeClass('hidden')
+        
+        toggleShareLinks()
+        
+        $(window).resize ->
+            toggleShareLinks()
+        
+        
         # Custom scrollbars for elements with the 'scrollable' class
         
         $('.scrollable').mCustomScrollbar({
