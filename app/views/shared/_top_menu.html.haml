@@ -1,6 +1,6 @@
 #top-menu{class: "#{'location' if params[:controller]=='pages' && params[:action]=='location'}"}
     .content.clearfix
-        = link_to root_url do
+        = link_to root_url, class: 'logo' do
             = image_tag "logo.png", alt: 'Hotel Belvedere - Logo'
         
         .language-options

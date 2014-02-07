@@ -256,10 +256,19 @@ a {
     min-height: 103px;
 
     .content {
-        position: relative;
         border-bottom: 1px solid #86001d;
         box-shadow: 0px 10px 15px rgba(0, 0, 0, .4);
         padding: 30px 30px 3px 30px;
+        
+        a.logo {
+            display: block;
+            width: 266px;
+            float: left;
+            
+            img {
+                padding-bottom: 17px;
+            }
+        }
 
         .language-options, .menu-options {
             a {
@@ -278,9 +287,9 @@ a {
         }
 
         .language-options {
-            position: absolute;
-            top: 20px;
-            right: 35px;
+            float: right;
+            clear: right;
+            padding-right: 3px;
             
             a {
                 position: relative;
@@ -317,7 +326,8 @@ a {
 
         .menu-options {
             float: right;
-            padding-top: 32px;
+            clear: right;
+            padding-top: 10px;
             text-align: right;
 
             a {
@@ -341,10 +351,6 @@ a {
                 }
             }
         }
-    }
-
-    img {
-        padding-bottom: 17px;
     }
 }
 
