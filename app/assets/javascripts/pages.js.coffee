@@ -10,6 +10,32 @@ class BelvedereGit.pages extends BelvedereGit.Base
     home: () ->
         $('body').bgCarousel()
         
+        # Show welcome tip with animation
+        showTip = ->
+            $('.tip').removeClass('hidden')
+            $('body').waitForImages
+                finished: ->
+                    $('.tip').removeClass('small')
+                waitForAll: true
+        
+        # Hide welcome tip with animation
+        hideTip = ->
+            $('.tip').addClass('small')
+            setTimeout (->
+                $('.tip').addClass('hidden')
+            ), 1000
+        
+        # Hide welcome tip without animation
+        hideTipImmediately = ->
+            $('.tip').addClass('small').addClass('hidden')
+        
+        # Display welcome tip when page loads and close it if the close button is clicked
+        showTip()
+        $('.tip .button-close').on('click', (e) ->
+            hideTip()
+            false
+        )
+        
         $('#arrival').datepicker 'option',
             startDate: '+0d'
         $('#departure').datepicker 'option',
@@ -74,6 +100,8 @@ class BelvedereGit.pages extends BelvedereGit.Base
             $('.reservation-link').removeClass('active')
         
         $('.form-link').on('click', (e) ->
+            hideTipImmediately()
+            
             if window.location.hash == '#reservation'
                 $('.external-link').removeClass('initialized').css('display', 'none')
             
@@ -86,6 +114,8 @@ class BelvedereGit.pages extends BelvedereGit.Base
         )
         
         $('.reservation-link').on('click', (e) ->
+            hideTipImmediately()
+            
             if $formwrapper.css('display') == 'none'
                 reservationFormOpen()
             false
