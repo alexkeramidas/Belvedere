@@ -29,8 +29,7 @@ class BelvedereGit.pages extends BelvedereGit.Base
         hideTipImmediately = ->
             $('.tip').addClass('small').addClass('hidden')
         
-        # Display welcome tip when page loads and close it if the close button is clicked
-        showTip()
+        showTip() if window.location.hash == ''
         $('.tip .button-close').on('click', (e) ->
             hideTip()
             false
