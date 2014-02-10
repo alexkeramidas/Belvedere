@@ -122,11 +122,7 @@
         .tip.hidden.small
             = link_to '&times;'.html_safe, '#', class: 'button-close'
             .text
-                %strong Welcome!
+                %strong= t('main.welcome.title')
                 %br
                 %br
-                If you are already familiar with our hotel, you can use the two buttons located
-                directly above the top left corner of this message, to request your reservation.
-                %br
-                %br
-                If not, feel free to navigate throughout the site using the top and bottom menus.
+                = t('main.welcome.message')
