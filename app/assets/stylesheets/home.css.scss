@@ -134,6 +134,78 @@
                 display: none;
             }
         }
+        
+        .tip {
+            position: absolute;
+            top: 100px;
+            width: 500px;
+            height: 130px;
+            background: #927f6d;
+            background-color: rgba(146, 127, 109, 0.9);
+            font-family: 'Della Respira', 'DellaRespira-Regular', serif;
+            color: #ffc64d;
+            font-size: 15px;
+            line-height: 18px;
+            text-shadow: 1px 1px rgba(48, 35, 21, .8);
+            border: 3px solid rgba(48, 35, 21, 0.8);
+            padding: 10px 20px;
+            @include transition(all linear 1s);
+            
+            &:before, &:after {
+                position: absolute;
+                top: -20px;
+                left: 0px;
+                width: 0;
+                height: 0;
+                content: " ";
+                border: solid transparent;
+                pointer-events: none;
+            }
+            
+            &:before {
+                border-color: rgba(48, 35, 21, 0);
+                border-right-color: rgba(48, 35, 21, 0.8);
+                border-width: 21px;
+                margin-left: 7px;
+                margin-top: -4px;
+                @include rotate(225deg);
+            }
+            
+            &:after {
+                border-color: rgba(146, 127, 109, 0);
+                border-right-color: rgba(146, 127, 109, 0.9);
+                border-width: 17px;
+                margin-left: 8px;
+                margin-top: 3px;
+                @include rotate(225deg);
+            }
+            
+            &.small {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            
+            a.button-close {
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                width: 20px;
+                height: 20px;
+                color: #ffc64d;
+                font-size: 25px;
+                
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            
+            .text {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+        }
     }
 
     .formwrapper {

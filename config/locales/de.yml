@@ -284,6 +284,9 @@ de:
             success:
                 congrats: Herzlichen Glückwunsch!
                 text: Ihre Buchung wurde erfolgreich eingereicht und wir werden Sie für weitere Details so bald wie möglich kontaktieren.
+        welcome:
+            title: Herzlich Willkommen!
+            message: Wenn Sie eine Reservierung vornehmen möchten, können Sie Ihrer Wahl zu bilden mit den beiden Tasten direkt über der oberen linken Ecke dieser Nachricht entfernt.
     about:
         title: Das Hotel
         name: Hotel Belvedere

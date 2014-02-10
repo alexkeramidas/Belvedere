@@ -286,6 +286,9 @@
             success:
                 congrats: Congratulazioni!
                 text: La tua richiesta di prenotazione è stata presentata con successo e ti contatteremo per ulteriori dettagli appena possibile.
+        welcome:
+            title: Benvenuto!
+            message: "Se si desidera richiedere una prenotazione, potete fare la vostra scelta con i due pulsanti posizionati direttamente sopra l'angolo in alto a sinistra di questo messaggio."
     about:
         title: L' Hotel
         name: Hotel Belvedere

@@ -118,3 +118,11 @@
         
         .external-link.initialized
             .link-text= t('main.booking')
+        
+        .tip.hidden.small
+            = link_to '&times;'.html_safe, '#', class: 'button-close'
+            .text
+                %strong= t('main.welcome.title')
+                %br
+                %br
+                = t('main.welcome.message')
