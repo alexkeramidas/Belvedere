@@ -258,7 +258,7 @@
     
     #Custom Text
     meta:
-        language_name: 'Russian - RU'
+        language_admin: 'Russian - RU'
         language_menu: 'Русский'
     shared:
         hotel: Отель

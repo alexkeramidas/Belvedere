@@ -233,7 +233,7 @@ en:
 
     #Custom Text
     meta:
-        language_name: 'English - EN'
+        language_admin: 'English - EN'
         language_menu: 'English'
     shared:
         hotel: The Hotel

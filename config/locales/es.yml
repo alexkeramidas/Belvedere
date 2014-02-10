@@ -200,7 +200,7 @@
     
     #Custom Text
     meta:
-        language_name: 'Espanol - ES'
+        language_admin: 'Spanish - ES'
         language_menu: 'Español'
     shared:
         hotel: El hotel

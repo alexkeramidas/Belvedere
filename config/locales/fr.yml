@@ -214,7 +214,7 @@
 
     #Custom Text
     meta:
-        language_name: 'Francais - FR'
+        language_admin: 'French - FR'
         language_menu: 'Français'
     shared:
         hotel: L' Hôtel

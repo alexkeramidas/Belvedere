@@ -206,7 +206,7 @@
     
     #Custom Text
     meta:
-        language_name: 'Italiano - IT'
+        language_admin: 'Italian - IT'
         language_menu: 'Italiano'
     shared:
         hotel: L' Hotel

@@ -204,7 +204,7 @@ de:
     
     #Custom Text
     meta:
-        language_name: 'Deutsch - DE'
+        language_admin: 'German - DE'
         language_menu: 'Deutsch'
     shared:
         hotel: Das Hotel

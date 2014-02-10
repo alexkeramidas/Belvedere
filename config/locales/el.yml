@@ -206,7 +206,7 @@
     
     #Custom Text
     meta:
-        language_name: 'Greek - EL'
+        language_admin: 'Greek - EL'
         language_menu: 'Ελληνικά'
     shared:
         hotel: Το Ξενοδοχείο
