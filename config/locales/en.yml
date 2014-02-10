@@ -236,11 +236,11 @@ en:
         language_admin: 'English - EN'
         language_menu: 'English'
     shared:
-        hotel: The Hotel
+        hotel: About
         accommodation: Accommodation
         services: Services
         location: Location
-        news: "News & Offers"
+        news: News
         contact: Contact
         gallery: Photo Gallery
         reservations: Reservations

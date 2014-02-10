@@ -349,6 +349,10 @@ a {
                         color: #f5f4e6;
                     }
                 }
+                
+                &:first-child {
+                    margin-right: 4px;
+                }
             }
         }
     }

@@ -8,6 +8,8 @@
                 = link_to t('meta.language_menu', locale: loc.to_s), "#{request.url.split('/').each_with_index.map{ |el, i| i==3 ? el.gsub(I18n.locale.to_s, loc.to_s) : el }.join('/')}", class: "#{'active' if I18n.locale.to_s == loc.to_s}"
         
         .menu-options
+            = link_to root_url, class: "#{params[:controller]=='pages' && params[:action]=='home' ? 'active' : ''}" do
+                .fa-home
             = link_to t('shared.hotel'), about_url, class: "#{params[:controller]=='pages' && params[:action]=='about' ? 'active' : ''}"
             = link_to t('shared.accommodation'), accommodation_url, class: "#{params[:controller]=='suites' ? 'active' : ''}"
             = link_to t('shared.services'), services_url, class: "#{params[:controller]=='services' ? 'active' : ''}"
