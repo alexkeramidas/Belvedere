@@ -1,18 +1,6 @@
 GIT
-  remote: git://github.com/bastiaanterhorst/rich.git
-  revision: ff14a9f91658df0ff46028c5b510c13b9ac6a2b0
-  specs:
-    rich (1.4.7)
-      jquery-rails
-      kaminari
-      mime-types
-      rack-raw-upload
-      rails (>= 3.2.0)
-      sass-rails
-
-GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 60d8be97ec2c29a871f55bd28e00ca9ec9257028
+  revision: c9e7774c0768dadac82681d2d233b89d012b8dc5
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -63,7 +51,7 @@ GEM
       activesupport (>= 3.0.0)
     arel (4.0.2)
     atomic (1.1.14)
-    aws-sdk (1.33.0)
+    aws-sdk (1.34.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
@@ -163,6 +151,8 @@ GEM
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
+    protected_attributes (1.0.3)
+      activemodel (>= 4.0.0, < 5.0)
     rack (1.5.2)
     rack-raw-upload (1.1.1)
       multi_json
@@ -199,6 +189,14 @@ GEM
     request_store (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rich (1.4.6)
+      jquery-rails
+      kaminari
+      mime-types
+      paperclip
+      rack-raw-upload
+      rails (>= 3.2.0)
+      sass-rails
     rmagick (2.13.2)
     sass (3.2.14)
     sass-rails (4.0.1)
@@ -259,11 +257,12 @@ DEPENDENCIES
   mini_magick
   paperclip (= 3.5.3)
   pg (= 0.17.0)
+  protected_attributes
   rack-rewrite
   rails (= 4.0.0)
   rails-observers
   rails_12factor
-  rich!
+  rich
   rmagick (= 2.13.2)
   sass-rails (~> 4.0.0)
   sdoc
