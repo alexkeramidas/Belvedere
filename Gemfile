@@ -37,8 +37,7 @@ gem 'draper', '~> 1.0'
 # Use ActiveAdmin for the site's administration
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use Rich as WYSIWYG Editor for ActiveAdmin
-gem 'rich'
-gem 'protected_attributes'
+gem 'rich', github: 'bastiaanterhorst/rich'
 # Rich editor now requires carrierwave & mini_magick
 gem 'carrierwave'
 gem 'mini_magick'
@@ -59,7 +58,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #Use Paperclip with ImageMagick
-gem 'paperclip', '3.5.3'
+gem 'paperclip'
 gem 'rmagick', '2.13.2'
 
 #Use amazon s3 to upload images

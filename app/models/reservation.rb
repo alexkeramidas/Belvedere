@@ -1,5 +1,4 @@
 class Reservation < ActiveRecord::Base
-
     before_validation :children_to_zero
 
     validates :email, :with => :validate_email

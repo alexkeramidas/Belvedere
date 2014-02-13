@@ -10,6 +10,7 @@ class Photo < ActiveRecord::Base
                       :default_url => Photo::MISSING_URL
     
     validates_attachment_presence :image
+    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
     # ATTENTION!! photo_geometry is not to be used directly from within views and controllers,
     # since it will generate an error if the image in question does not exist.

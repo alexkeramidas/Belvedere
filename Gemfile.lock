@@ -1,6 +1,18 @@
 GIT
+  remote: git://github.com/bastiaanterhorst/rich.git
+  revision: 02cec78fac2d78499222c07cf25a28a2a7257962
+  specs:
+    rich (1.4.7)
+      jquery-rails
+      kaminari
+      mime-types
+      rack-raw-upload
+      rails (>= 3.2.0)
+      sass-rails
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: c9e7774c0768dadac82681d2d233b89d012b8dc5
+  revision: 19abd8f9145d5ea702d7e67936606792a77283af
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -58,7 +70,7 @@ GEM
     bcrypt-ruby (3.1.2-x86-mingw32)
     bootstrap-datepicker-rails (1.3.0.1)
       railties (>= 3.0)
-    bootstrap-sass (3.1.0.2)
+    bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
@@ -142,7 +154,7 @@ GEM
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
-    paperclip (3.5.3)
+    paperclip (4.1.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
@@ -151,8 +163,6 @@ GEM
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
-    protected_attributes (1.0.3)
-      activemodel (>= 4.0.0, < 5.0)
     rack (1.5.2)
     rack-raw-upload (1.1.1)
       multi_json
@@ -189,14 +199,6 @@ GEM
     request_store (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
-    rich (1.4.6)
-      jquery-rails
-      kaminari
-      mime-types
-      paperclip
-      rack-raw-upload
-      rails (>= 3.2.0)
-      sass-rails
     rmagick (2.13.2)
     sass (3.2.14)
     sass-rails (4.0.1)
@@ -255,14 +257,13 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mini_magick
-  paperclip (= 3.5.3)
+  paperclip
   pg (= 0.17.0)
-  protected_attributes
   rack-rewrite
   rails (= 4.0.0)
   rails-observers
   rails_12factor
-  rich
+  rich!
   rmagick (= 2.13.2)
   sass-rails (~> 4.0.0)
   sdoc
