@@ -25,6 +25,8 @@ class Article < ActiveRecord::Base
             return 'Suites'
         when 3
             return 'Photo Gallery'
+        when 4
+            return 'Services'
         else
             return ''
         end
