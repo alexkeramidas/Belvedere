@@ -82,6 +82,16 @@ group :doc do
     gem 'sdoc', require: false
 end
 
+# gems Used for testing
+
+group :test, :development do
+    gem 'turn'
+    gem 'rspec-rails'
+    gem 'capybara'
+    gem 'guard-rspec'
+    gem 'minitest-spec-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

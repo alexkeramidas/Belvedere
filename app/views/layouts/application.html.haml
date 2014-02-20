@@ -6,7 +6,7 @@
         %title= content_for(:title) || 'Belvedere Hotel'
         = stylesheet_link_tag "application"
         = javascript_include_tag "application"
-
+        = favicon_link_tag 'favicon.ico'
     %body{style: 'overflow: hidden;'}
         :javascript
             jQuery(function() {
@@ -15,19 +15,19 @@
                     return $M['#{params[:action]}'].call();
                 }
             });
-        
+
         = render 'shared/breadcrumbs'
-        
+
         = render 'shared/share_links'
-        
+
         = render 'shared/bg_carousel'
-        
+
         #page-wrapper
-            
+
             #page-content
                 = render 'shared/top_menu'
-                
+
                 #page-body
                     = yield
-                
+
                 = render 'shared/bottom_menu'
