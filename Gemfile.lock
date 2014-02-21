@@ -59,6 +59,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.5)
     ansi (1.4.3)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
@@ -167,6 +168,8 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     listen (2.5.0)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
@@ -187,8 +190,6 @@ GEM
       rails (>= 3.0, < 4.1)
     multi_json (1.8.4)
     nio4r (1.0.0)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
@@ -201,10 +202,6 @@ GEM
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.4)
-    pry (0.9.12.6)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
-      slop (~> 3.4)
     pry (0.9.12.6-x86-mingw32)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -331,6 +328,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  launchy
   mini_magick
   minitest-spec-rails
   paperclip

@@ -90,6 +90,7 @@ group :test, :development do
     gem 'capybara'
     gem 'guard-rspec'
     gem 'minitest-spec-rails'
+    gem 'launchy'
 end
 
 # Use ActiveModel has_secure_password
