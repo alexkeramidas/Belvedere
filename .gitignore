@@ -17,3 +17,6 @@
 
 # Ignore locally uploaded photos
 /public/photos
+
+# Ignore Rubymine project Folder
+/.idea
