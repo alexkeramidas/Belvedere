@@ -1,5 +1,6 @@
 !!! html
 %html
+
     %head
         = render 'shared/meta_tags'
         %title= content_for(:title) || 'Belvedere Hotel'
@@ -15,15 +16,17 @@
                     return $M['#{params[:action]}'].call();
                 }
             });
-        
+
+            beaches = ("#{poi_url}")
+
         = render 'shared/breadcrumbs'
-        
+
         .location-container
-        
+
             = render 'shared/top_menu'
-            
+
             = yield
-            
+
             = render 'shared/bottom_menu'
-        
+
         = render 'shared/share_links'

@@ -27,6 +27,8 @@ class Article < ActiveRecord::Base
             return 'Photo Gallery'
         when 4
             return 'Services'
+        when 5
+            return 'Points of Interest'
         else
             return ''
         end

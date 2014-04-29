@@ -1,18 +1,18 @@
 BelvedereGit::Application.routes.draw do
     mount Rich::Engine => '/rich', :as => 'rich'
     devise_for :admin_users, ActiveAdmin::Devise.config
-    
+
     ActiveAdmin.routes(self)
-    
+
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
     # handles /
     root to: redirect("/#{I18n.locale}", status: 301), as: :redirected_root
-    
+
     post 'send_mail' => 'pages#send_mail', :trailing_slash => false
     post 'make_reservation' => 'pages#make_reservation', :trailing_slash => false
-    
+
     get 'sitemap.xml' => 'sitemaps#index', as: 'sitemap', defaults: { format: 'xml' }
     get 'sitemap-en.xml' => 'sitemaps#sitemap_en', as: 'sitemap_en', defaults: {format: 'xml'}
     get 'sitemap-el.xml' => 'sitemaps#sitemap_el', as: 'sitemap_el', defaults: {format: 'xml'}
@@ -21,38 +21,39 @@ BelvedereGit::Application.routes.draw do
     get 'sitemap-fr.xml' => 'sitemaps#sitemap_fr', as: 'sitemap_fr', defaults: {format: 'xml'}
     get 'sitemap-it.xml' => 'sitemaps#sitemap_it', as: 'sitemap_it', defaults: {format: 'xml'}
     get 'sitemap-ru.xml' => 'sitemaps#sitemap_ru', as: 'sitemap_ru', defaults: {format: 'xml'}
-    
+
     # handles /valid-path
     get '/*path', to: redirect(status: 301) { |params, request| "/#{I18n.locale}/#{params[:path]}" }, constraints: { path: /(about|location|photo_gallery|contact|articles|accommodation|services).*/ }, format: false
-    
+
     # handles /invalid-locale/any-path
     scope ':locale', locale: /(?!(#{I18n.available_locales.join("|")})\/).*/ do
         # handles /invalid-locale/valid-path
         get '/*path', to: redirect(status: 301) { |params, request| "/#{I18n.locale}/#{params[:path]}" }, constraints: { path: /(about|location|photo_gallery|contact|articles|accommodation|services).*/ }, format: false
-        
+
         #handles /invalid-locale/invalid-path
         get '/*path', to: redirect(status: 301) { |params, request| "/#{params[:path]}" }, constraints: lambda { |request| true }, format: false
     end
-    
+
     # handles /invalid-path
     get '/*path', to: redirect(status: 301) { |params, request| "/#{I18n.locale}/#{params[:path]}" }, constraints: { path: /(?!(#{I18n.available_locales.join("|")})).+/ }, format: false
-    
+
     # handles /valid-locale/any-path
     scope '(:locale)', locale: /(#{I18n.available_locales.join('|')})/  do
         root 'pages#home', :trailing_slash => false
-        
+
         get 'about' => 'pages#about', :trailing_slash => false
         get 'location' => 'pages#location', :trailing_slash => false
         get 'photo_gallery' => 'pages#photo_gallery', :trailing_slash => false
-        
+
         get 'contact' => 'pages#contact', :trailing_slash => false
-        
+
         resources :articles, :only => [:index, :show], :trailing_slash => false
-        
+
         get 'accommodation' => 'suites#index', :trailing_slash => false
         get 'services' => 'services#index', :trailing_slash => false
+        get 'poi' => 'pois#index', :trailing_slash => false
     end
-    
+
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'
 

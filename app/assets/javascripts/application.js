@@ -18,7 +18,6 @@
 //
 //= require fancybox
 //
-//= require turbolinks
 //
 // WARNING! Each Javascript or Coffescript file inside vendor/assets/javascripts now has to be manually required
 // as shown below (do NOT use require_tree for that directory and do NOT add stuff needed for admin only).
