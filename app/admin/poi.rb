@@ -1,13 +1,13 @@
 include ActiveAdmin::ViewsHelper
 
-ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
-    menu :priority => 2, :parent => "Website"
+ActiveAdmin.register Poi, :as => 'Pois' do
+    menu :priority => 5, :parent => "Website"
 
     languages = language_list
 
     config.per_page = 10
 
-    filter :photos, collection: proc {Photo.all.map { |photo| [photo.image_file_name, photo.id] }}
+    # filter :photos, collection: proc {Photo.all.map { |photo| [photo.image_file_name, photo.id] }}
     filter :title
     filter :description
     filter :visible
@@ -18,8 +18,8 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
     index do
         selectable_column
         column :title
-        column :description do |p|
-            sanitize(p.description, :tags => []).html_safe.truncate(500)
+        column :description do |r|
+            sanitize(r.description, :tags => []).html_safe.truncate(500)
         end
         column :visible
         column :created_at
@@ -42,26 +42,26 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
                     end
                 end
             end
-            row :images do
-                ul :style => 'list-style:none;' do
-                    ad.photos.each do |img|
-                        li :style => 'float:left; margin-right:10px;' do
-                            image_tag(img.decorate.photo_path(:thumb))
-                        end
-                    end
-                end
-            end
+            # row :images do
+                # ul :style => 'list-style:none;' do
+                    # ad.photos.each do |img|
+                        # li :style => 'float:left; margin-right:10px;' do
+                            # image_tag(img.decorate.photo_path(:thumb))
+                        # end
+                    # end
+                # end
+            # end
             row :visible
         end
     end
 
     form :html => { :multipart => true} do |f|
-        f.inputs "Gallery" do
+        f.inputs "Point of Interest" do
             # f.input :title
             # f.input :description
             f.input :visible
         end
-        f.has_many :article_translations,   heading: 'Photo Gallery Translations' do |t|
+        f.has_many :article_translations,  heading: 'Point of Interest Translations' do |t|
             unless t.object.new_record?
                 t.input :_destroy, :as => :boolean, :label => "Remove Translation?", :required => false
             end
@@ -69,24 +69,24 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
             t.input :title
             t.input :description
         end
-        f.has_many :photos do |p|
-            unless p.object.new_record?
-                p.input :_destroy, :as => :boolean, :label => "Delete Image?", :required => false
-            end
-            p.input :description, :label => "Image Title"
-            p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.decorate.photo_path(:thumb)), :label => p.object.image_file_name
-        end
-
+        # f.has_many :photos do |p|
+            # unless p.object.new_record?
+                # p.input :_destroy, :as => :boolean, :label => "Delete Image?", :required => false
+            # end
+            # p.input :description, :label => "Image Title"
+            # p.input :image, :as => :file, :hint => p.object.new_record? ? "" : p.template.image_tag(p.object.decorate.photo_path(:thumb)), :label => p.object.image_file_name
+        # end
         f.actions
     end
 
     controller do
         def permitted_params
-             params.permit galleries: [:title, :description, :visible, :article_type => 3,  :photos_attributes => [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
+            params.permit pois: [:title, :description, :visible, :article_type => 5, :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
+            # params.permit pois: [:title, :description, :visible, :article_type => 5,  photos_attributes: [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
         end
 
         def scoped_collection
-            PhotoGallery.valid
+            Poi.valid
         end
     end
 end

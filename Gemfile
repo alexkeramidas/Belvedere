@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Ruby version
-ruby '1.9.3'
+ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 
@@ -15,7 +15,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'font-awesome-sass'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '0.17.0'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -59,7 +59,8 @@ gem 'jbuilder', '~> 1.2'
 
 #Use Paperclip with ImageMagick
 gem 'paperclip'
-gem 'rmagick', '2.13.2'
+gem 'rmagick', '~> 2.13.2', :platforms => :ruby
+#gem 'rmagick', '=2.13.2.mswin32', :platforms => :mswin
 
 #Use amazon s3 to upload images
 gem 'aws-sdk'
@@ -80,6 +81,17 @@ gem 'globalize', '~> 4.0.0'
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false
+end
+
+# gems Used for testing
+
+group :test, :development do
+    gem 'turn'
+    gem 'rspec-rails'
+    gem 'capybara'
+    gem 'guard-rspec'
+    gem 'minitest-spec-rails'
+    gem 'launchy'
 end
 
 # Use ActiveModel has_secure_password

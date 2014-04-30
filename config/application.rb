@@ -37,7 +37,9 @@ module BelvedereGit
         }
         
         config.i18n.available_locales = [:en, :el, :de, :es, :fr, :it, :ru]
-        
+
+        config.i18n.fallbacks = true
+
         config.before_configuration do
             I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
             config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
