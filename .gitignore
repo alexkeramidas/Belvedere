@@ -13,15 +13,9 @@
 database.yml
 doc/
 /public/photos
-<<<<<<< HEAD
 *.swp
 *~
 .project
 .DS_Store
 .idea
 .secret
-=======
-
-# Ignore Rubymine project Folder
-/.idea
->>>>>>> master
