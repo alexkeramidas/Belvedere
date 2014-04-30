@@ -19,3 +19,5 @@ doc/
 .DS_Store
 .idea
 .secret
+.settings
+.project
