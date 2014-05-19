@@ -30,11 +30,11 @@ BelvedereGit::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = false
+   config.assets.debug = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  #config.assets.compile = false
+  config.assets.compile = true
 
   #Use Sprockets better errors
-  config.assets.raise_production_errors = true
+  config.assets.raise_production_errors = false
 end
