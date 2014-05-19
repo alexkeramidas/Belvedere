@@ -78,6 +78,9 @@ gem 'rails-observers'
 #Add multilanguage functionality
 gem 'globalize', '~> 4.0.0'
 
+#Deployment handling
+gem 'sprockets_better_errors'
+
 group :doc do
     # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false

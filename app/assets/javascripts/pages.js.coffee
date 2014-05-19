@@ -240,8 +240,9 @@ class BelvedereGit.pages extends BelvedereGit.Base
 
             map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-            hotelPin = '/assets/belvedere_pin.png'
-            beachPin = '/assets/beach_pin.png'
+            beachPin = image_path('beach_pin.png')
+            hotelPin = image_path('belvedere_pin.png')
+
 
 # Belvedere Hotel Info & Marker
             belvedereMarker = new google.maps.Marker
