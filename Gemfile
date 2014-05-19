@@ -36,8 +36,13 @@ gem 'draper', '~> 1.0'
 
 # Use ActiveAdmin for the site's administration
 gem 'activeadmin', github: 'gregbell/active_admin'
+
+# Explicit use of devise for active admin, subject to change in new active admin edition!!!
+gem 'devise'
+
 # Use Rich as WYSIWYG Editor for ActiveAdmin
 gem 'rich', github: 'bastiaanterhorst/rich'
+
 # Rich editor now requires carrierwave & mini_magick
 gem 'carrierwave'
 gem 'mini_magick'
