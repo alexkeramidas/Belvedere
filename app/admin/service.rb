@@ -57,8 +57,6 @@ ActiveAdmin.register Service, :as => 'Services' do
 
     form :html => { :multipart => true} do |f|
         f.inputs "Service" do
-            # f.input :title
-            # f.input :description
             f.input :visible
         end
         f.has_many :article_translations,  heading: 'Services Translations' do |t|

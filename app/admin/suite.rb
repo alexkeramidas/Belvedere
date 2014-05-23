@@ -57,8 +57,6 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
 
     form :html => { :multipart => true} do |f|
         f.inputs "Room" do
-            # f.input :title
-            # f.input :description
             f.input :visible
         end
         f.has_many :article_translations,  heading: 'Room Translations' do |t|
