@@ -24,7 +24,7 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
         column :visible
         column :created_at
         column :updated_at
-        default_actions
+        actions
     end
 
     show do |ad|

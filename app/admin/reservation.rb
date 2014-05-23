@@ -24,7 +24,7 @@ ActiveAdmin.register Reservation do
         column :mobile
         column :created_at
         column :updated_at
-        default_actions
+        actions
     end
 
     form do |f|
