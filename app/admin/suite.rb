@@ -79,7 +79,7 @@ ActiveAdmin.register Suite, :as => 'Rooms' do
 
     controller do
         def permitted_params
-            params.permit rooms: [:title, :description, :visible, :article_type => 2,  photos_attributes: [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
+            params.permit suite: [:title, :description, :visible, :article_type => 2,  photos_attributes: [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
         end
 
         def scoped_collection

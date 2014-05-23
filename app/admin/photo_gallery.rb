@@ -82,7 +82,7 @@ ActiveAdmin.register PhotoGallery, :as => 'Galleries' do
 
     controller do
         def permitted_params
-             params.permit galleries: [:title, :description, :visible, :article_type => 3,  :photos_attributes => [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
+             params.permit photo_gallery: [:title, :description, :visible, :article_type => 3,  :photos_attributes => [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
         end
 
         def scoped_collection

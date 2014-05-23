@@ -55,7 +55,7 @@ ActiveAdmin.register Article, :as => 'News' do
 
     controller do
         def permitted_params
-            params.permit news: [:title, :description, :visible, :article_type => 1, :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
+            params.permit article: [:title, :description, :visible, :article_type => 1, :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
         end
         def scoped_collection
             Article.valid

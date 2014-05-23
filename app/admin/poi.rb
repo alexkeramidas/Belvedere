@@ -62,7 +62,7 @@ ActiveAdmin.register Poi, :as => 'Pois' do
 
     controller do
         def permitted_params
-            params.permit pois: [:title, :description, :visible, :article_type => 5, :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
+            params.permit poi: [:title, :description, :visible, :article_type => 5, :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
         end
 
         def scoped_collection

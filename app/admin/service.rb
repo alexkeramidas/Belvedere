@@ -79,7 +79,7 @@ ActiveAdmin.register Service, :as => 'Services' do
 
     controller do
         def permitted_params
-            params.permit services: [:title, :description, :visible, :article_type => 4,  photos_attributes: [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
+            params.permit service: [:title, :description, :visible, :article_type => 4,  photos_attributes: [:id, :article_id, :description, :image, :_destroy], :article_translations_attributes => [:id, :locale, :title, :description, :_destroy]]
         end
 
         def scoped_collection
