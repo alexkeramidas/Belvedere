@@ -431,7 +431,7 @@ a {
         }
     }
 
-    a {
+    a.bottom_menu {
         color: #cf5037;
         text-decoration: none;
         display: inline-block;
@@ -478,3 +478,51 @@ div {
         margin-bottom: 10px;
     }
 }
+
+#findUs-links {
+    font-size: 18px;
+    color: #ddd;
+    z-index: 40;
+    margin-right: 10px;
+
+      dt {
+        display: inline-block;
+
+        .footer-social-media {
+          width: 30px;
+          height: 30px;
+          padding: 6px 8px;
+          border-radius: 3px;
+          overflow: hidden;
+          font-weight: normal;
+          clear: both;
+          @include transition(width .3s ease, color .3s ease);
+
+          &:before {
+            color: #fff;
+            padding-right: 6px;
+          }
+
+          &:hover, &:active, &:focus {
+            color: #fafafa;
+            text-decoration: none;
+          }
+        }
+
+        .fa-facebook:hover {
+            background: #415a8d;
+        }
+
+        .fa-twitter:hover {
+          background: #00bbff;
+        }
+
+        .fa-google-plus:hover {
+          background: #f00000;
+        }
+
+        .fa-linkedin:hover {
+          background: #069;
+        }
+      }
+  }

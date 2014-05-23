@@ -1,12 +1,23 @@
 #bottom-menu{class: "#{'location' if params[:controller]=='pages' && params[:action]=='location'}"}
     .content.clearfix
-        = link_to t('shared.contact').upcase, contact_url, class: "#{params[:controller]=='pages' && params[:action]=='contact' ? 'active' : ''}"
-        = link_to t('shared.gallery').upcase, photo_gallery_url, class: "#{params[:controller]=='pages' && params[:action]=='photo_gallery' ? 'active' : ''}"
-        = link_to t('shared.reservations').upcase, root_url(anchor: 'reservation'), class: "reservation-link #{params[:controller]=='pages' && params[:action]=='home' ? 'active' : ''}"
+        = link_to t('shared.contact').upcase, contact_url, class: "#{params[:controller]=='pages' && params[:action]=='contact' ? 'active' : ''} bottom_menu"
+        = link_to t('shared.gallery').upcase, photo_gallery_url, class: "#{params[:controller]=='pages' && params[:action]=='photo_gallery' ? 'active' : ''} bottom_menu"
+        = link_to t('shared.reservations').upcase, root_url(anchor: 'reservation'), class: "reservation-link #{params[:controller]=='pages' && params[:action]=='home' ? 'active' : ''} bottom_menu"
 
         %span.pull-right
             &copy;
             = " Hotel Belvedere #{Time.now.year == 2013 ? 2013 : "2013 - #{Time.now.year}"}"
+
+        #findUs-links.pull-right
+            %dl
+                %dt
+                    = link_to '', 'https://www.facebook.com/belvedere.skiathos', target: '_blank', class: 'footer-social-media fa-facebook pull-right'
+                %dt
+                    = link_to '', 'http://twitter.com/home?status=Hotel%20Belvedere%20-%20http://www.belvederehotel.gr', target: '_blank', class: 'footer-social-media fa-twitter pull-right'
+                %dt
+                    = link_to '', 'https://plus.google.com/share?url=http://www.belvederehotel.gr', target: '_blank', class: 'footer-social-media fa-google-plus pull-right'
+                %dt
+                    = link_to 'LinkedIn', 'http://www.linkedin.com/shareArticle?mini=true&url=http://www.belvederehotel.gr&title=Hotel%20Belvedere&summary=&source=', target: '_blank', class: 'footer-social-media fa-linkedin pull-right'
 
         .wrapper
             = render 'shared/bg_carousel_controls'
